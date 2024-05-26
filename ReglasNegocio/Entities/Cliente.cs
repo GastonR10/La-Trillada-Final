@@ -13,7 +13,7 @@ namespace ReglasNegocio.Entities
         public string Email { get; set; }
         public string Telefono { get; set; }
         public string Direccion {  get; set; }
-        public List<Pedido> Pedidos { get; set; } = new List<Pedido>();
+        public List<PedidoCliente> Pedidos { get; set; } = new List<PedidoCliente>();
 
         public Cliente() { }    
         public Cliente(string nombreUsuario, string password, string nombre, string apellido, string email, string telefono, string direccion)
