@@ -11,8 +11,8 @@ namespace ReglasNegocio.DTO_Entities
     { 
         private int IdCliente { get; set; }
 
-        public DTO_PedidoCliente(int id, string comentario, string estado, bool aceptado, DTO_Carrito carrito, int idMesa, DateTime fecha, int idCliente)
-            : base(id, comentario, estado, aceptado, carrito, idMesa, fecha)
+        public DTO_PedidoCliente(int id, string comentario, string estado, bool aceptado, DTO_Carrito carrito, int idMesa, int idCliente)
+            : base(id, comentario, estado, aceptado, carrito, idMesa )
         {
             IdCliente = idCliente;
         }

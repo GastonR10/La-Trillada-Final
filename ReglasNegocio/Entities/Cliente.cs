@@ -15,6 +15,7 @@ namespace ReglasNegocio.Entities
         public string Direccion {  get; set; }
         public List<Pedido> Pedidos { get; set; } = new List<Pedido>();
 
+        public Cliente() { }    
         public Cliente(string nombreUsuario, string password, string nombre, string apellido, string email, string telefono, string direccion)
            : base(nombreUsuario, password)
         {

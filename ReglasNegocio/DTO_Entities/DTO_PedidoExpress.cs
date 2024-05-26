@@ -14,8 +14,8 @@ namespace ReglasNegocio.DTO_Entities
         private string Direccion { get; set; }
         private string Nombre { get; set; }
 
-        public DTO_PedidoExpress(int id, string comentario, string estado, bool aceptado, DTO_Carrito carrito, int idMesa, DateTime fecha, string email, string telefono, string direccion, string nombre)
-        : base(id, comentario, estado, aceptado, carrito, idMesa, fecha)
+        public DTO_PedidoExpress(int id, string comentario, string estado, bool aceptado, DTO_Carrito carrito, int idMesa, string email, string telefono, string direccion, string nombre)
+        : base(id, comentario, estado, aceptado, carrito, idMesa)
         {
             Email = email;
             Telefono = telefono;

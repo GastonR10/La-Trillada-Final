@@ -25,24 +25,9 @@ namespace ProyectoFinal.Models
                 .HasValue<PedidoCliente>("Cliente")
                 .HasValue<PedidoExpress>("Express");
 
+    
+
             //usar datanotations en las clases.
-            // Configurar la clave primaria de Usuario
-            modelBuilder.Entity<Usuario>()
-                .HasKey(p => p.Id);
-            // Configurar la clave primaria de Carrito
-            modelBuilder.Entity<Carrito>()
-                .HasKey(p => p.Id);
-            // Configurar la clave primaria de Producto
-            modelBuilder.Entity<Producto>()
-                .HasKey(p => p.Id);
-            // Configurar la clave primaria de Reserva
-            modelBuilder.Entity<Reserva>()
-                .HasKey(p => p.Id);
-            // Configurar la clave primaria de TipoProducto
-            modelBuilder.Entity<TipoProducto>()
-                .HasKey(p => p.Id);
-
-
             base.OnModelCreating(modelBuilder);
         }
     }

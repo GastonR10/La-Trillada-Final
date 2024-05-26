@@ -12,6 +12,7 @@ namespace ReglasNegocio.Entities
         public int Id { get; set; }
         public bool Reservada { get; set; }
 
+        public Mesa() { }
         public Mesa(int id)
         {
             Id = id;

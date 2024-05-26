@@ -16,7 +16,7 @@ namespace ReglasNegocio.Entities
 
         public string? Comentario { get; set; }
 
-        public string Estado { get; set; }// hacer enum para estado.
+        public Enums.Estado Estado { get; set; }// hacer enum para estado.
 
         public bool Aceptado { get; set; }
 
@@ -30,10 +30,10 @@ namespace ReglasNegocio.Entities
 
         public DateTime Fecha { get; set; }
 
-        private Pedido() { //cambiar a public si me explota entity framework
+        public Pedido() { //cambiar a public si me explota entity framework
             Id = 0;
             Comentario = null;
-            //Estado = Enums.Estados.Pendiente;
+            Estado = Enums.Estado.Pendiente;
             Aceptado = false;
             IdCarrito = 0;
             Carrito = null!;

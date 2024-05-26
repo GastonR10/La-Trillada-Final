@@ -17,15 +17,14 @@ namespace ReglasNegocio.DTO_Entities
         private int IdMesa { get; set; }
         private DateTime Fecha { get; set; }
 
-        public DTO_Pedido(int id,string comentario, string estado, bool aceptado, DTO_Carrito carrito, int idMesa, DateTime fecha)
+        public DTO_Pedido(int id,string comentario, string estado, bool aceptado, DTO_Carrito carrito, int idMesa)
         {
             Id = id;
             Comentario = comentario;
             Estado = estado;
             Aceptado = aceptado;
             Carrito = carrito;
-            IdMesa = idMesa;
-            Fecha = DateTime.Now;
+            IdMesa = idMesa;       
         }
     }
 }

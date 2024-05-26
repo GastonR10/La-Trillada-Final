@@ -13,6 +13,8 @@ namespace ReglasNegocio.Entities
         public string Direccion { get; set; }
         public string Nombre { get; set;}
 
+        public PedidoExpress() : base() { }
+
         public PedidoExpress(string comentario, Carrito carrito, int idMesa, string email, string telefono, string direccion, string nombre)
           : base(comentario, carrito, idMesa)
         {
