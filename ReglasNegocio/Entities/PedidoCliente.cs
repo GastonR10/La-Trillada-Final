@@ -10,8 +10,8 @@ namespace ReglasNegocio.Entities
     {
         public int IdCliente {  get; set; }
         public Cliente Cliente { get; set; }
-        public PedidoCliente(string comentario, string estado, bool aceptado, int idCarrito, int idMesa, DateTime fecha, int idCliente)
-            : base(comentario, estado, aceptado, idCarrito, idMesa, fecha)
+        public PedidoCliente(string comentario, Carrito carrito,int idMesa,int idCliente)
+            : base(comentario, carrito, idMesa)
         {
             IdCliente = idCliente;
         }
