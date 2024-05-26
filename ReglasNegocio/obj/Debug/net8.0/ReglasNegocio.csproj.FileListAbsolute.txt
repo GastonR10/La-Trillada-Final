@@ -9,3 +9,4 @@ C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ReglasNegocio\obj\Debug\net
 C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ReglasNegocio\obj\Debug\net8.0\refint\ReglasNegocio.dll
 C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ReglasNegocio\obj\Debug\net8.0\ReglasNegocio.pdb
 C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ReglasNegocio\obj\Debug\net8.0\ref\ReglasNegocio.dll
+C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ReglasNegocio\obj\Debug\net8.0\ReglasNegocio.sourcelink.json

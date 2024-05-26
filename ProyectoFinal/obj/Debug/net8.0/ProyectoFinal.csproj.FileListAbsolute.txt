@@ -136,3 +136,4 @@ C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal\obj\Debug\net
 C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal\obj\Debug\net8.0\ProyectoFinal.pdb
 C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal\obj\Debug\net8.0\ProyectoFinal.genruntimeconfig.cache
 C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal\obj\Debug\net8.0\ref\ProyectoFinal.dll
+C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal\obj\Debug\net8.0\ProyectoFinal.sourcelink.json
