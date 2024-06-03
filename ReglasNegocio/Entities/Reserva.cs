@@ -19,7 +19,6 @@ namespace ReglasNegocio.Entities
         [ForeignKey(nameof(Cliente))]
         public int IdCliente { get; set; }
         public Cliente Cliente { get; set; }
-
         public Reserva() { }    
         public Reserva(DateTime horaInicio, DateTime horaFin, int idMesa, Cliente cliente)
         {         

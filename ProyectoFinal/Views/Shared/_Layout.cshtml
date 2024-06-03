@@ -25,6 +25,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Index">Productos</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -38,12 +41,15 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - ProyectoFinal - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            2024 - LaTrillada
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    @* ENTITIES *@
+    <script src="~/js/entities/producto.js"></script>
+    @* FIN ENTITIES *@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
