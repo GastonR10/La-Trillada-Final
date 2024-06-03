@@ -18,6 +18,8 @@ namespace ProyectoFinal.Controllers
 
         public IActionResult Index()
         {
+            var tiposProducto = _db.TipoProductos.ToList(); // Obtener tipos de productos desde la base de datos
+            ViewBag.TiposProducto = tiposProducto; // Asignar tipos de producto a ViewBag
             return View();
         }
 
@@ -27,7 +29,7 @@ namespace ProyectoFinal.Controllers
             {
                 Producto producto = new Producto(prod);
                 _db.Productos.Add(producto);
-                _db.SaveChanges();
+                await _db.SaveChangesAsync();
                 return Ok("Alta exitosa");
             }
             catch (Exception ex)

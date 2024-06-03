@@ -1,4 +1,6 @@
-﻿<script src="~/js/pages/productos.js"></script>
+﻿@model ReglasNegocio.Entities.Producto
+
+<script src="~/js/pages/productos.js"></script>
 
 <div class="text-center">
     <h1>Productos</h1>
@@ -19,18 +21,20 @@
 <br />
 <div class="row">
     <div class="col-6 col-12">
-        <label>Descripción: </label>
+        <label for="descripcion">Descripción: </label>
         <br />
-        <input type="text" />
+        <textarea name="descripcion" id="descripcionProducto" rows="5" cols="50"></textarea>
     </div>
     <br />
     <div class="col-6 col-12">
         <label>Tipo: </label>
         <br />
-        <select>
+        <select id="slcTipoProducto">
             <option value="0">--Seleccionar--</option>
-            <option value="1">Parrilla</option>
-            <option value="2">Postres</option>
+            @foreach (var tipo in ViewBag.TiposProducto)
+            {
+                <option value="@tipo.Id">@tipo.Descripcion</option>
+            }
         </select>
     </div>
 </div>
