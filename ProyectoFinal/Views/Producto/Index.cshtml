@@ -1,6 +1,4 @@
-﻿@model ReglasNegocio.Entities.Producto
-
-<script src="~/js/pages/productos.js"></script>
+﻿<script src="~/js/pages/productos.js"></script>
 
 <div class="text-center">
     <h1>Productos</h1>
@@ -30,11 +28,7 @@
         <label>Tipo: </label>
         <br />
         <select id="slcTipoProducto">
-            <option value="0">--Seleccionar--</option>
-            @foreach (var tipo in ViewBag.TiposProducto)
-            {
-                <option value="@tipo.Id">@tipo.Descripcion</option>
-            }
+
         </select>
     </div>
 </div>
@@ -51,5 +45,6 @@
 
 <div style="display:none;">
     @Html.Hidden("URLCreateProducto", Url.Action("Index", "CreateProducto"))
+    @Html.Hidden("URLGetTiposProducto", Url.Action("GetTiposProducto", "TipoProducto"))
 </div>
 

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal.Models;
+using ReglasNegocio.DTO_Entities;
 using ReglasNegocio.Entities;
 
 namespace ProyectoFinal.Controllers
@@ -23,8 +24,21 @@ namespace ProyectoFinal.Controllers
         [HttpGet]
         public async Task<IActionResult> GetTiposProducto()
         {
-            var tiposProducto = await _context.TipoProductos.ToListAsync();
-            return Json(tiposProducto);
+            try
+            {
+                var tiposProducto = await _context.TipoProductos
+                    .Select(tp => new DTO_TipoProducto
+                    {
+                        Id = tp.Id,
+                        Descripcion = tp.Descripcion
+                    }).ToListAsync();
+
+                return Json(tiposProducto);
+            }
+            catch (Exception ex)
+            {
+               return BadRequest(ex.Message);   
+            }
         }
 
     }
