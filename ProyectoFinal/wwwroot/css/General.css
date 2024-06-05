@@ -1,1 +1,68 @@
 ﻿
+/*menu PRINCIPAL*/
+.menuPrincipal {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+    transition: all 0.3s;
+    z-index: 1000;
+    margin-top: 40px;
+    border-left: solid orangered !important;
+    border-right: solid orangered !important;
+    
+}
+
+    .menuPrincipal.visible {
+        left: 0;
+    }
+
+.content {
+    transition: margin-left 0.3s;
+}
+
+    .content.shifted {
+        margin-left: 250px;
+    }
+
+.divEncabezado {
+    height: 40px;
+    border-color: orangered !important;
+    border: solid;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1100;
+    background-color: #fff; /* Asegúrate de que tenga un fondo para que se vea sobre otros elementos */
+
+}
+
+.btnMenu {
+    background-color: #fff;
+    border: none;
+    padding: 5px;
+}
+
+.opcionMenu {
+    border-bottom-color: orangered !important;
+    border-bottom: solid;
+}
+/*FIN menu PRINCIPAL*/
+
+/*PAGINA MAIN*/
+.main-content {
+    margin-top: 40px; /* Ajusta este margen según la altura de tu encabezado */
+}
+
+/*FIN PAGINA MAIN*/
+
+/*BOTON GRAL*/
+.btnGeneral {
+    border-color: orangered !important;
+    border: solid;
+    padding:5% 10%;
+}
+/*FIN BOTON GRAL*/
