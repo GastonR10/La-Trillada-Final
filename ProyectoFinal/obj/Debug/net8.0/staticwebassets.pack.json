@@ -5,12 +5,32 @@
       "PackagePath": "staticwebassets\\ProyectoFinal.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\General.css",
+      "PackagePath": "staticwebassets\\css\\General.css"
+    },
+    {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
+      "PackagePath": "staticwebassets\\js\\Entities\\Producto.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\TipoProducto.js",
+      "PackagePath": "staticwebassets\\js\\Entities\\TipoProducto.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Layout.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Productos.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Productos.js"
     },
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\site.js",

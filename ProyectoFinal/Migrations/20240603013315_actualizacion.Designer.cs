@@ -12,8 +12,8 @@ using ProyectoFinal.Models;
 namespace ProyectoFinal.Migrations
 {
     [DbContext(typeof(BarContext))]
-    [Migration("20240526214852_Migracion_Inicial")]
-    partial class Migracion_Inicial
+    [Migration("20240603013315_actualizacion")]
+    partial class actualizacion
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -168,6 +168,14 @@ namespace ProyectoFinal.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Foto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("IdTipoProducto")
                         .HasColumnType("int");

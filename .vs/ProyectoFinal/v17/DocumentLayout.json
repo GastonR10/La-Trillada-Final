@@ -3,40 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Migrations\\20240526214852_Migracion_Inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ProyectoFinal\\Migrations\\20240526214852_Migracion_Inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\views\\producto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\views\\producto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\reglasnegocio\\entities\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|solutionrelative:reglasnegocio\\entities\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\wwwroot\\js\\entities\\producto.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\entities\\producto.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\reglasnegocio\\entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|solutionrelative:reglasnegocio\\entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\wwwroot\\css\\general.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\css\\general.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\reglasnegocio\\entities\\pedidocliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|solutionrelative:reglasnegocio\\entities\\pedidocliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\wwwroot\\js\\pages\\layout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\pages\\layout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\reglasnegocio\\entities\\pedidoexpress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|solutionrelative:reglasnegocio\\entities\\pedidoexpress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\proyectofinal.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\proyectofinal.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\models\\barcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\models\\barcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\reglasnegocio\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|solutionrelative:reglasnegocio\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,116 +35,63 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20240526214852_Migracion_Inicial.cs",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Migrations\\20240526214852_Migracion_Inicial.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal\\Migrations\\20240526214852_Migracion_Inicial.cs",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Migrations\\20240526214852_Migracion_Inicial.cs",
-              "RelativeToolTip": "ProyectoFinal\\Migrations\\20240526214852_Migracion_Inicial.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T21:48:52.123Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Views\\Producto\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Views\\Producto\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Views\\Producto\\Index.cshtml",
+              "RelativeToolTip": "ProyectoFinal\\Views\\Producto\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-05T00:23:55.466Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\Entities\\Cliente.cs",
-              "RelativeDocumentMoniker": "ReglasNegocio\\Entities\\Cliente.cs",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\Entities\\Cliente.cs",
-              "RelativeToolTip": "ReglasNegocio\\Entities\\Cliente.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T21:33:24.792Z",
-              "EditorCaption": ""
+              "Title": "Producto.js",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBAAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-06-04T23:12:33.127Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "PedidoExpress.cs",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\Entities\\PedidoExpress.cs",
-              "RelativeDocumentMoniker": "ReglasNegocio\\Entities\\PedidoExpress.cs",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\Entities\\PedidoExpress.cs",
-              "RelativeToolTip": "ReglasNegocio\\Entities\\PedidoExpress.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T21:32:39.139Z",
-              "EditorCaption": ""
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAA0AAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T22:49:22.866Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PedidoCliente.cs",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\Entities\\PedidoCliente.cs",
-              "RelativeDocumentMoniker": "ReglasNegocio\\Entities\\PedidoCliente.cs",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\Entities\\PedidoCliente.cs",
-              "RelativeToolTip": "ReglasNegocio\\Entities\\PedidoCliente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T21:32:31.007Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProyectoFinal",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal.csproj",
-              "RelativeDocumentMoniker": "ProyectoFinal\\ProyectoFinal.csproj",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal.csproj",
-              "RelativeToolTip": "ProyectoFinal\\ProyectoFinal.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-26T16:42:48.815Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\appsettings.json",
-              "RelativeDocumentMoniker": "ProyectoFinal\\appsettings.json",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\appsettings.json",
-              "RelativeToolTip": "ProyectoFinal\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-26T16:22:20.935Z",
-              "EditorCaption": ""
+              "Title": "Layout.js",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-06-04T23:14:05.895Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Pedido.cs",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\Entities\\Pedido.cs",
-              "RelativeDocumentMoniker": "ReglasNegocio\\Entities\\Pedido.cs",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\Entities\\Pedido.cs",
-              "RelativeToolTip": "ReglasNegocio\\Entities\\Pedido.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T16:16:07.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Enums.cs",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\Enums.cs",
-              "RelativeDocumentMoniker": "ReglasNegocio\\Enums.cs",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\Enums.cs",
-              "RelativeToolTip": "ReglasNegocio\\Enums.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T16:15:01.657Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BarContext.cs",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Models\\BarContext.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal\\Models\\BarContext.cs",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Models\\BarContext.cs",
-              "RelativeToolTip": "ProyectoFinal\\Models\\BarContext.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAIwBYAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-19T23:46:01.901Z"
+              "Title": "General.css",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\General.css",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\css\\General.css",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\General.css",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\css\\General.css",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAEEAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-04T23:04:50.268Z"
             }
           ]
         }
