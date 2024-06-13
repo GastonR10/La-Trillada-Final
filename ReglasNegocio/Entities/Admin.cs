@@ -8,10 +8,10 @@ namespace ReglasNegocio.Entities
 {
     public class Admin: Usuario
     {
-        public Admin() { }
-        public Admin(string NombreUsuario, string Password): base(NombreUsuario, Password) 
-        { 
+        //public Admin() { }
+        ////public Admin(string NombreUsuario, string Password, string rol): base(NombreUsuario, Password, rol) 
+        ////{ 
             
-        }
+        ////}
     }
 }

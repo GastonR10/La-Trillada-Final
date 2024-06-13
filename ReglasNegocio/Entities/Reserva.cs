@@ -16,11 +16,11 @@ namespace ReglasNegocio.Entities
         public DateTime HoraFin { get; set; }
         [ForeignKey(nameof(Mesa))]
         public int IdMesa { get; set; }
-        [ForeignKey(nameof(Cliente))]
+        [ForeignKey(nameof(Usuario))]
         public int IdCliente { get; set; }
-        public Cliente Cliente { get; set; }
+        public Usuario Cliente { get; set; }
         public Reserva() { }    
-        public Reserva(DateTime horaInicio, DateTime horaFin, int idMesa, Cliente cliente)
+        public Reserva(DateTime horaInicio, DateTime horaFin, int idMesa, Usuario cliente)
         {         
             HoraInicio = horaInicio;
             HoraFin = horaFin;

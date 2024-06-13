@@ -55,6 +55,10 @@
 /*PAGINA MAIN*/
 .main-content {
     margin-top: 40px; /* Ajusta este margen según la altura de tu encabezado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 /*FIN PAGINA MAIN*/
@@ -66,3 +70,10 @@
     padding:5% 10%;
 }
 /*FIN BOTON GRAL*/
+
+/*TEXTO GENERAL*/
+.textoGeneral {
+    color:black;
+}
+
+/*FIN TEXTO GENERAL*/

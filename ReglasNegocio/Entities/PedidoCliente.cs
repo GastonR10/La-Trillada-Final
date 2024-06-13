@@ -11,10 +11,10 @@ namespace ReglasNegocio.Entities
     {
         [ForeignKey(nameof(Cliente))]
         public int ClienteId {  get; set; }
-        public Cliente Cliente { get; set; }
+        public Usuario Cliente { get; set; }
 
         public PedidoCliente() : base() { }
-        public PedidoCliente(string comentario, Carrito carrito,int idMesa,Cliente cliente)
+        public PedidoCliente(string comentario, Carrito carrito,int idMesa, Usuario cliente)
             : base(comentario, carrito, idMesa)
         {
             Cliente = cliente;

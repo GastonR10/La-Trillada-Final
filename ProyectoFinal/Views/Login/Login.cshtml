@@ -1,0 +1,30 @@
+﻿<script src="~/js/pages/login.js"></script>
+
+<div id="boxCentral">
+    <div class="imagen-box">
+        <p class="centrarTextoLogin">Bienvenido a La Trillada, registrarse te permitirá tener registro de tus pedidos y comentar sobre tus experiencias.</p>
+    </div>
+    <div class="login-box">
+        <h2>Iniciar Sesión</h2>
+        <div class="form-group">
+
+            <label for="username">Usuario:</label>
+            <br />
+            <input type="text" class="form-control" id="usuarioLogin" placeholder="Ingrese su usuario">
+        </div>
+        <br />
+        <div class="form-group">
+
+            <label for="password">Contraseña:</label>
+            <br />
+            <input type="password" class="form-control" id="passwordLogin" placeholder="Ingrese su contraseña">
+        </div>
+        <br />
+        <button id="btnLogin" class="btn btn-primary btn-block" onclick="Ingresar();">Enviar</button>
+        <p class="text-center mt-3">¿No tienes cuenta? <a href="#">Regístrate</a></p>
+    </div>
+</div>
+
+<div style="display:none;">
+    @Html.Hidden("URLAltaUsuario", Url.Action("AltaUsuario", "Login"))
+</div>

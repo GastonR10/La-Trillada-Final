@@ -5,8 +5,7 @@ namespace ProyectoFinal.Models
 {
     public class BarContext : DbContext 
     {
-        public DbSet<Admin> Administradores { get; set; }
-        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Mesa> Mesa { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Carrito> Carritos { get; set; }
@@ -19,6 +18,26 @@ namespace ProyectoFinal.Models
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Usuario>()
+            .Property(u => u.Nombre)
+            .HasDefaultValue(null);
+
+            modelBuilder.Entity<Usuario>()
+                .Property(u => u.Apellido)
+                .HasDefaultValue(null);
+
+            modelBuilder.Entity<Usuario>()
+                .Property(u => u.Email)
+                .HasDefaultValue(null);
+
+            modelBuilder.Entity<Usuario>()
+                .Property(u => u.Telefono)
+                .HasDefaultValue(null);
+
+            modelBuilder.Entity<Usuario>()
+                .Property(u => u.Direccion)
+                .HasDefaultValue(null);
+
             // Configurar la herencia de Pedido
             modelBuilder.Entity<Pedido>()
                 .HasDiscriminator<string>("TipoPedido")

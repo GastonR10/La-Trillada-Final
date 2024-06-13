@@ -1,0 +1,57 @@
+﻿
+#boxCentral {
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    height: 420px; /* Fixed height to ensure proportionate content */
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.imagen-box {
+    background: url('../imagenes/login.jpg') no-repeat center center;
+    /*background-image: url('../imagenes/login.jpg');*/ /* Reemplaza 'image.png' con la ruta de tu imagen */
+    background-size: cover;
+    color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.login-box {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    #boxCentral {
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+    .imagen-box {
+        display: none;
+    }
+
+    .login-box {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+.textoLogin{
+    color: orangered;
+}
+
+.centrarTextoLogin {
+    padding: 0 25px;
+}
