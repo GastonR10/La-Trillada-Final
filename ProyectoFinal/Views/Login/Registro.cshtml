@@ -1,0 +1,66 @@
+﻿<div class="text-center">
+    <h1>Registro</h1>
+</div>
+<div class="row">
+    <div class="col-6 col-12">
+        <label>Nombre: </label>
+        <br />
+        <input type="text" id="nombre" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Apellido: </label>
+        <br />
+        <input type="text" id="apellido" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Nombre de usuario: </label>
+        <br />
+        <input type="text" id="nombreUsuario" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Contraseña: </label>
+        <br />
+        <input type="password" id="contrasena" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Repetir contraseña: </label>
+        <br />
+        <input type="password" id="RepContrasena" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Correo Electrónico: </label>
+        <br />
+        <input type="email" id="correo" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Celular: </label>
+        <br />
+        <input type="tel" id="Celular" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Dirección: </label>
+        <br />
+        <input type="text" id="direccion" />
+    </div>
+    <br/>
+    <br />
+    <div class="col-8">
+        <button id="btnRegistroCli" class="btnGeneral" onclick="RegistrarUsuario();">REGISTRARME</button>
+    </div>
+    <div class="row text-center" id="divMsjRegUsu" style="display:none;">
+        <label id="lblMensajeRegUsu"></label>
+    </div>
+    
+</div>
+<script type="text/javascript" src="~/js/pages/registro.js" asp-append-version="true"></script>
+
+<div style="display:none;">
+    @Html.Hidden("URLAltaCliente", Url.Action("AltaCliente", "Login"))
+</div>

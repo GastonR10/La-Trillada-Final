@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using ProyectoFinal.Models;
 using ReglasNegocio.DTO_Entities;
 using ReglasNegocio.Entities;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ProyectoFinal.Controllers
 {
@@ -15,48 +17,174 @@ namespace ProyectoFinal.Controllers
             _db = context;
         }
 
-        [HttpGet("AltaUsuario")]
-        public IActionResult Login(DTO_Usuario usuario) {
-            //no me deja usar Usuario xq es abstracta.. ver eso NACHITO.
-            var user = _db.Usuarios
-                               .Where(u => u.NombreUsuario == usuario.NombreUsuario && u.Password == usuario.Password)
-                               .FirstOrDefault();
-
-            if (user != null)
-            {
-                HttpContext.Session.SetString("rol", user.rol);
-
-                // Verificar el rol del usuario
-                if (user.rol == "Admin")
-                {
-                    // Usuario es un admin
-                    return View("AdminHome", user as Usuario);
-                }
-                else if (user.rol == "Cliente")
-                {
-                    // Usuario es un cliente
-                    return View("ClienteHome", user as Usuario);
-                }
-
-                // Si por alguna razón no es ni Admin ni Cliente, manejarlo adecuadamente
-                return View("Error");
-            }
-            else
-            {
-                // Usuario no encontrado, retorna un error o una vista indicando que no se encontró.,
-                // si no encontro, retornar notfound y comunicar msj de error.
-                return View("UsuarioNoEncontrado");
-            }
-          
+        public IActionResult Login()
+        {
+            return View();
         }
 
-        //public IActionResult Logout() { 
-        //    return View();
-        //}
+        [HttpPost("Ingresar")]
+        public async Task<IActionResult> Ingresar([FromBody] DTO_Usuario usuario)
+        {
+            try
+            {
+                var user = _db.Usuarios
+                                .Where(u => u.NombreUsuario == usuario.NombreUsuario && u.Password == usuario.Password)
+                                .FirstOrDefault();
+
+                if (user != null)
+                {
+                    HttpContext.Session.SetString("rol", user.rol);
+
+                    // Verificar el rol del usuario
+                    if (user.rol == "Admin")
+                    {
+                        return Ok(new { redirectUrl = Url.Action("Index", "Producto") });
+                    }
+                    else if (user.rol == "Cliente")
+                    {
+                        return Ok(new { redirectUrl = Url.Action("Index", "Producto") });
+                    }
+
+                    // Si por alguna razón no es ni Admin ni Cliente, manejarlo adecuadamente
+                    return BadRequest();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        public ActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction(nameof(Login));
+        }
 
         public IActionResult Registro()
         {
-            return View(); 
+            return View();
+        }
+        public IActionResult RegistroAdmin()
+        {
+            return View();
+        }
+
+        [HttpPost("AltaUsuario")]
+        public async Task<IActionResult> AltaUsuario([FromBody] DTO_Usuario usuario)
+        {
+            try
+            {
+                // Verificar si el usuario ya existe en la base de datos
+                Usuario? existingUser = await _db.Usuarios
+                    .FirstOrDefaultAsync(u => u.NombreUsuario == usuario.NombreUsuario);
+
+                if (existingUser != null)
+                {
+                    // Si el usuario ya existe, retornar un BadRequest
+                    return BadRequest("El nombre de usuario ya existe.");
+                }
+
+                // Crear el nuevo usuario con rol "Admin"
+                Usuario newUser = new Usuario
+                {
+                    NombreUsuario = usuario.NombreUsuario,
+                    Password = usuario.Password,
+                    rol = "Admin"
+                };
+
+                // Guardar el nuevo usuario en la base de datos
+                _db.Usuarios.Add(newUser);
+                await _db.SaveChangesAsync();
+
+                // Retornar una respuesta exitosa
+                return Ok(newUser);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500);
+            }
+
+        }
+
+        [HttpPost("AltaAdmin")]
+        public async Task<IActionResult> AltaAdmin([FromBody] DTO_Usuario usuario)
+        {
+            try
+            {
+                // Verificar si el usuario ya existe en la base de datos
+                Usuario? existingUser = await _db.Usuarios
+                    .FirstOrDefaultAsync(u => u.NombreUsuario == usuario.NombreUsuario);
+
+                if (existingUser != null)
+                {
+                    // Si el usuario ya existe, retornar un BadRequest
+                    return BadRequest();
+                }
+
+                // Crear el nuevo usuario con rol "Admin"
+                Usuario newUser = new Usuario(usuario.NombreUsuario, usuario.Password, "Admin");
+
+                // Guardar el nuevo usuario en la base de datos
+                _db.Usuarios.Add(newUser);
+                await _db.SaveChangesAsync();
+
+                // Retornar una respuesta exitosa
+                return Ok();
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500);
+            }
+
+        }
+
+        [HttpPost("AltaCliente")]
+        public async Task<IActionResult> AltaCliente([FromBody] DTO_Usuario usuario)
+        {
+            try
+            {
+                // Verificar si el usuario ya existe en la base de datos
+                Usuario? existingUser = await _db.Usuarios
+                    .FirstOrDefaultAsync(u => u.NombreUsuario == usuario.NombreUsuario);
+
+                if (existingUser != null)
+                {
+                    // Si el usuario ya existe, retornar un BadRequest con un mensaje
+                    return BadRequest("El usuario ya existe.");
+                }
+
+                // Crear el nuevo usuario con rol "Cliente"
+                Usuario newUser = new Usuario(usuario.NombreUsuario, usuario.Password, "Cliente", usuario.Nombre, usuario.Apellido, usuario.Email, usuario.Telefono, usuario.Direccion);       
+
+                // Guardar el nuevo usuario en la base de datos
+                _db.Usuarios.Add(newUser);
+                await _db.SaveChangesAsync();
+
+                // Retornar una respuesta exitosa con el nuevo usuario
+                return Ok(newUser);
+            }
+            catch (Exception ex)
+            {
+                // Retornar un error 500 con un mensaje de error
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+            }
+        }
+
+        public IActionResult DatosPersonales()
+        {
+            return View();
         }
     }
+
+  
+
+
+
 }

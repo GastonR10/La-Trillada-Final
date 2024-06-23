@@ -1,4 +1,4 @@
-﻿<script src="~/js/pages/login.js"></script>
+﻿<script type="text/javascript" src="~/js/pages/login.js" asp-append-version="true"></script>
 
 <div id="boxCentral">
     <div class="imagen-box">
@@ -26,5 +26,5 @@
 </div>
 
 <div style="display:none;">
-    @Html.Hidden("URLAltaUsuario", Url.Action("AltaUsuario", "Login"))
+    @Html.Hidden("URLAltaUsuario", Url.Action("Ingresar", "Login"))
 </div>

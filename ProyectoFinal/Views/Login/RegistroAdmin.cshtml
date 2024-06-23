@@ -1,0 +1,40 @@
+﻿<script type="text/javascript" src="~/js/pages/registroadmin.js" asp-append-version="true"></script>
+
+<div class="text-center">
+    <h1>Registrar un Administrador</h1>
+</div>
+<div class="row">
+    
+    <div class="col-6 col-12">
+        <label>Nombre de usuario: </label>
+        <br />
+        <input type="text" id="nombreUsuarioAdmin" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Contraseña: </label>
+        <br />
+        <input type="password" id="contrasenaAdmin" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Repetir contraseña: </label>
+        <br />
+        <input type="password" id="RepContrasenaAdmin" />
+    </div>
+    <br />
+    <br />
+    <div class="col-8">
+        <button id="btnRegistro" class="btnGeneral" onclick="RegistrarAdmin();">REGISTRAR</button>
+    </div>
+
+    <div class="row text-center" id="divMsjAdm" style="display:none;">
+        <label id="lblMensajeAdm"></label>
+    </div>
+</div>
+
+
+
+<div style="display:none;">
+    @Html.Hidden("URLAltaAdmin", Url.Action("AltaAdmin", "Login"))
+</div>

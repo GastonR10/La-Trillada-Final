@@ -17,61 +17,67 @@
             <button class="btnMenu col-1" id="btnMostrarMenu">☰ <span class="d-none d-lg-inline">Menú</span></button>
         </div>
     </div>
-
     <div class="menuPrincipal" id="sidebar">
         <ul class="nav flex-column">
-              <li class="nav-item opcionMenu">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Login">Ingresar</a>
-            </li>
-              <li class="nav-item opcionMenu">
-                <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Registrarse</a>
-            </li>
-            <li class="nav-item opcionMenu">
-                <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Pedido</a>
-            </li>
-            <li class="nav-item opcionMenu">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            </li>         
-            <li class="nav-item opcionMenu">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Index">Producto</a>
-            </li>
-            <li class="nav-item opcionMenu">
-                <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Productos</a>
-            </li>
-            <li class="nav-item opcionMenu">
-                <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Lista de Productos</a>
-            </li>
-            <li class="nav-item opcionMenu">
-                <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Datos Personales</a>
-            </li>
-            <li class="nav-item opcionMenu">
-                <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Ingresar Admin</a>
-            </li>
-            <li class="nav-item opcionMenu">
-                <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Cerrar Sesión</a>
-            </li>
- 
+            @if (Context.Session.GetString("rol") == null)
+            {
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Login">Ingresar</a>
+                </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Registro">Registrarse</a>
+                </li>
+            }
+            @if (Context.Session.GetString("rol") == "Admin")
+            {
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Index">Producto</a>
+                </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="RegistroAdmin">Ingresar Admin</a>
+                </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Lista de Productos</a>
+                </li>
+
+            }
+            @if (Context.Session.GetString("rol") == "Cliente")
+            {
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="">DatosPersonales</a>
+                </li>
+            }
+            @if (Context.Session.GetString("rol") == "Cliente" || Context.Session.GetString("rol") == "Admin")
+            {
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Pedido</a>
+                </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Productos</a>
+                </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">Cerrar Sesión</a>
+                </li>
+            }
         </ul>
     </div>
-
     <div class="container main-content">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
             2024 - LaTrillada
         </div>
     </footer>
-
     <script src="~/js/pages/layout.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @* ENTITIES *@
     <script src="~/js/entities/producto.js"></script>
     <script src="~/js/entities/tipoproducto.js"></script>
+    <script src="~/js/entities/usuario.js"></script>
     @* FIN ENTITIES *@
     @await RenderSectionAsync("Scripts", required: false)
 </body>

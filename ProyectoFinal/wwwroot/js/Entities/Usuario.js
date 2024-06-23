@@ -1,35 +1,106 @@
 class Usuario {
-    constructor(usuario, password) {
+    constructor(nombre, apellido, usuario, password, correo, celular, direccion) {
         this.NombreUsuario = usuario;
         this.Password = password;
+        this.Nombre = nombre;
+        this.Apellido = apellido;
+        this.Email = correo;
+        this.Telefono = celular;
+        this.Direccion = direccion;
     }
+
+    //constructor(usuario, password) {
+    //    this.NombreUsuario = usuario;
+    //    this.Password = password;
+    //}
 
     static async AltaDeIngreso(usuario, password) {
         try {
             const url = $("#URLAltaUsuario").val();
-            const usuario = new Usuario(usuario, password);
+           /* const usu = new Usuario(usuario, password);*/ // Cambié el nombre de la variable a 'usu'
+            const usu = new Usuario(null, null, usuario, password, null, null, null);
 
             const response = await fetch(url, {
-                method: 'GET',
+                method: 'POST', // Cambiado a POST
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(usuario)
+                body: JSON.stringify(usu) // El cuerpo ahora está permitido con POST
             });
 
-            if (!response.ok) {
+            if (response.badRequest) {
                 throw new Error(`Error en la solicitud: ${response.statusText}`);
             }
 
-            return response;
+            const data = await response.json();
 
+            if (data.redirectUrl) {
+                window.location.href = data.redirectUrl;
+            } else if (data.error) {
+                console.error('Error:', data.error);
+                alert('Error: ' + data.error);
+            }
 
         } catch (ex) {
+            console.error('Error:', ex.message);
+            throw ex;
+        }
+    }
 
+    static async AltaAdmin(usuario, password) {
+        try {
+            const url = $("#URLAltaAdmin").val();
+            const usu = new Usuario(null, null,usuario, password, null, null, null); // Cambié el nombre de la variable a 'usu'
+
+            const response = await fetch(url, {
+                method: 'POST', // Cambiado a POST
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(usu) // El cuerpo ahora está permitido con POST
+            });
+
+            if (response.status == 400) {
+                return "El nombre de usuario ya existe.";
+            }
+            if (response.ok) {
+                return "ok"
+            }
+
+            return "error"
+
+        } catch (ex) {
             console.error('Error:', ex.message);
             throw ex;
         }
     }
 
 
+    static async AltaCliente(nombre, apellido, usuario, password, correo, celular, direccion) {
+        try {
+            const url = $("#URLAltaCliente").val();
+            const usu = new Usuario(nombre, apellido, usuario, password, correo, celular, direccion); // Cambié el nombre de la variable a 'usu'
+
+            const response = await fetch(url, {
+                method: 'POST', // Cambiado a POST
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(usu) // El cuerpo ahora está permitido con POST
+            });
+
+            if (response.status == 400) {
+                return "El nombre de usuario ya existe.";
+            }
+            if (response.ok) {
+                return "ok"
+            }
+
+            return "error"
+
+        } catch (ex) {
+            console.error('Error:', ex.message);
+            throw ex;
+        }
+    }
 }
