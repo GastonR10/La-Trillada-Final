@@ -1,1 +1,52 @@
-﻿
+﻿<script type="text/javascript" src="~/js/pages/datospersonales.js" asp-append-version="true"></script>
+
+<div class="text-center">
+    <h1>Datos Personales</h1>
+</div>
+<div class="row">
+    <div class="col-6 col-12">
+        <label>Nombre: </label>
+        <br />
+        <input type="text" id="nombre" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Apellido: </label>
+        <br />
+        <input type="text" id="apellido" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Mail: </label>
+        <br />
+        <input type="email" id="correo" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Celular: </label>
+        <br />
+        <input type="tel" id="Celular" />
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Dirección: </label>
+        <br />
+        <input type="text" id="direccion" />
+    </div>
+    <br />
+    <br />
+    <div class="col-8">
+        <button id="btnEditar" class="btnGeneral" onclick="EditarCliente();">CONFIRMAR EDICIÓN</button>
+    </div>
+    <div class="row text-center" id="divMsjEditCli" style="display:none;">
+        <label id="lblMensajeEditCli"></label>
+    </div>
+
+</div>
+
+
+
+<div style="display:none;">
+    @Html.Hidden("URLObtenerUsuario", Url.Action("ObtenerUsuario", "Login"))
+    @Html.Hidden("URLEditarCliente", Url.Action("EditarCliente", "Login"))
+</div>

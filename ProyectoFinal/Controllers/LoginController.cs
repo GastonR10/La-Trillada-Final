@@ -34,6 +34,7 @@ namespace ProyectoFinal.Controllers
                 if (user != null)
                 {
                     HttpContext.Session.SetString("rol", user.rol);
+                    HttpContext.Session.SetString("Usuario", user.NombreUsuario);
 
                     // Verificar el rol del usuario
                     if (user.rol == "Admin")
@@ -42,7 +43,7 @@ namespace ProyectoFinal.Controllers
                     }
                     else if (user.rol == "Cliente")
                     {
-                        return Ok(new { redirectUrl = Url.Action("Index", "Producto") });
+                        return Ok(new { redirectUrl = Url.Action("DatosPersonales", "Login") });
                     }
 
                     // Si por alguna razón no es ni Admin ni Cliente, manejarlo adecuadamente
@@ -181,9 +182,72 @@ namespace ProyectoFinal.Controllers
         {
             return View();
         }
+
+        [HttpGet("ObtenerUsuario")]
+        public async Task<IActionResult> ObtenerUsuario()
+        {
+            try
+            {
+                // Verificar si el usuario ya existe en la base de datos
+                Usuario? us = await _db.Usuarios
+                    .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
+
+                if (us == null)
+                {
+                    // Si el usuario ya existe, retornar un BadRequest con un mensaje
+                    return BadRequest("El usuario no existe.");
+                }
+
+                DTO_Usuario UsuarioRetorno = new DTO_Usuario("", "", "",us.Nombre, us.Apellido, us.Email, us.Telefono, us.Direccion);
+                return Ok(UsuarioRetorno);
+            }
+            catch (Exception ex)
+            {
+                // Retornar un error 500 con un mensaje de error
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+            }
+        }
+
+        [HttpPost("EditarCliente")]
+        public async Task<IActionResult> EditarCliente([FromBody] DTO_Usuario usuario)
+        {
+            try
+            {
+                // Verificar si el usuario ya existe en la base de datos
+                Usuario? existingUser = await _db.Usuarios
+                    .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
+
+                if (existingUser == null)
+                {
+                    // Si el usuario no existe, retornar un BadRequest con un mensaje
+                    return BadRequest("El usuario no existe.");
+                }
+
+                // Actualizar los campos del usuario existente con los nuevos datos
+                existingUser.Nombre = usuario.Nombre;
+                existingUser.Apellido = usuario.Apellido;
+                existingUser.Email = usuario.Email;
+                existingUser.Telefono = usuario.Telefono;
+                existingUser.Direccion = usuario.Direccion;
+
+                // Guardar los cambios en la base de datos
+                _db.Usuarios.Update(existingUser);
+                await _db.SaveChangesAsync();
+
+                // Retornar una respuesta exitosa con el usuario actualizado
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                // Retornar un error 500 con un mensaje de error
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+            }
+        }
+
     }
 
-  
+
 
 
 

@@ -19,28 +19,30 @@ namespace ReglasNegocio.DTO_Entities
         public string? Direccion { get; set; }
         public List<DTO_PedidoCliente> Pedidos { get; set; }
 
-        public DTO_Usuario(string nombreUsuario, string password, string rol, string nombre, string apellido, string email, string telefono, string direccion)
+        public DTO_Usuario(string nombreUsuario, string password, string rol, string? nombre, string? apellido, string? email, string? telefono, string? direccion)
         {
             NombreUsuario = nombreUsuario;
             Password = password;
             this.rol = rol;
+            Nombre = nombre;
+            Apellido = apellido;
+            Email = email;
+            Telefono = telefono;
+            Direccion = direccion;
 
-            if (rol == "cliente")
-            {
-                Nombre = nombre;
-                Apellido = apellido;
-                Email = email;
-                Telefono = telefono;
-                Direccion = direccion;
-            }
-            else if (rol == "admin")
-            {
-                Nombre = null;
-                Apellido = null;
-                Email = null;
-                Telefono = null;
-                Direccion = null;
-            }
         }
+
+        //public DTO_Usuario(string? nombre, string? apellido, string? email, string? telefono, string? direccion)
+        //{
+        //    NombreUsuario = "";
+        //    Password = "";
+        //    this.rol = "";
+        //    Nombre = nombre;
+        //    Apellido = apellido;
+        //    Email = email;
+        //    Telefono = telefono;
+        //    Direccion = direccion;
+
+        //}
     }
 }

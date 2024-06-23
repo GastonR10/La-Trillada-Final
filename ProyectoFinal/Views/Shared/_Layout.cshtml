@@ -44,7 +44,7 @@
             @if (Context.Session.GetString("rol") == "Cliente")
             {
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="">DatosPersonales</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="DatosPersonales">Datos Personales</a>
                 </li>
             }
             @if (Context.Session.GetString("rol") == "Cliente" || Context.Session.GetString("rol") == "Admin")
