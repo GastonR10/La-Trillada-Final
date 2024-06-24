@@ -1,0 +1,15 @@
+﻿<div class="text-center">
+    <h1>Lista de productos</h1>
+</div>
+
+<div id="tblProductos">
+</div>
+
+<div style="display:none;">
+    @Html.Hidden("URLGetProductosList", Url.Action("GetAllProductos", "Producto"))
+    @Html.Hidden("URLGetTiposProducto", Url.Action("GetTiposProducto", "TipoProducto"))
+    @Html.Hidden("URLUpdateProducto", Url.Action("UpdateProducto", "Producto"))
+    @Html.Hidden("URLGetProductoVista", Url.Action("GetProductoVista", "Producto"))
+</div>
+
+<script type="text/javascript" src="~/js/pages/ProductosList.js" asp-append-version="true"></script>

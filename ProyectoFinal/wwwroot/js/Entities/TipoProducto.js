@@ -1,22 +1,8 @@
-﻿//function getTiposProducto() {
-//    fetch('/TipoProducto/GetTiposProducto')
-//        .then(response => response.json())
-//        .then(data => {
-//            let select = document.getElementById("tipoProducto");
-//            data.forEach(tipo => {
-//                let option = document.createElement("option");
-//                option.value = tipo.id;
-//                option.text = tipo.nombre;
-//                select.add(option);
-//            });
-//        })
-//        .catch(error => console.error('Error:', error));
-//}
-
-class TipoProducto {
-    constructor(id, descripcion) {
+﻿class TipoProducto {
+    constructor(id, descripcion, orden) {
         this.Id = id;
         this.Descripcion = descripcion;
+        this.Orden = orden;
     }
 
     static async getTiposProducto() {
@@ -37,7 +23,7 @@ class TipoProducto {
             const data = await response.json();
 
             // Crear instancias de TipoProducto con los datos obtenidos
-            const tiposProducto = data.map(item => new TipoProducto(item.Id, item.Descripcion));
+            const tiposProducto = data.map(item => new TipoProducto(item.Id, item.Descripcion, 0));
 
             return tiposProducto;
 

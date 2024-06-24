@@ -12,8 +12,7 @@
 }
 
 .imagen-box {
-    background: url('../imagenes/login.jpg') no-repeat center center;
-    /*background-image: url('../imagenes/login.jpg');*/ /* Reemplaza 'image.png' con la ruta de tu imagen */
+    background: url('../img/login.jpg') no-repeat center center;  
     background-size: cover;
     color: white;
     width: 50%;

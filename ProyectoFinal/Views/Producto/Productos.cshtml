@@ -1,0 +1,11 @@
+﻿<div class="container mt-5">
+    <div class="row" id="productosContainer">
+        <!-- Aquí se insertarán las tarjetas de productos -->
+    </div>
+</div>
+
+<div style="display:none;">
+    @Html.Hidden("URLGetProductosActivos", Url.Action("GetProductosActivos", "Producto"))
+</div>
+
+<script type="text/javascript" src="~/js/pages/ProductosActivos.js" asp-append-version="true"></script>

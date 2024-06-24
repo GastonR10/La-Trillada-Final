@@ -1,9 +1,4 @@
 ﻿using ReglasNegocio.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ReglasNegocio.DTO_Entities
 {
@@ -15,14 +10,35 @@ namespace ReglasNegocio.DTO_Entities
         public string Foto { get; set; }
         public int IdTipoProducto { get; set; }
         public DTO_TipoProducto TipoProducto { get; set; }
+        public decimal Precio { get; set; }
+        public bool Activo { get; set; }
+        public bool Eliminado { get; set; }
 
-        public DTO_Producto(string nombre, string descripcion, string foto, int idTipoProducto, DTO_TipoProducto tipoProducto)
+        public DTO_Producto()
         {
+            Id = 0;
+        }
+        public DTO_Producto(int id, string nombre, string descripcion, string foto, int idTipoProducto, decimal precio, bool activo, bool eliminado)
+        {
+            Id = id;
             Nombre = nombre;
             Descripcion = descripcion;
             Foto = foto;
             IdTipoProducto = idTipoProducto;
-            TipoProducto = tipoProducto;
+            Precio = precio;
+            Activo = activo;
+            Eliminado = eliminado;
+        }
+        public DTO_Producto(Producto prod)
+        {
+            Id = prod.Id;
+            Nombre = prod.Nombre;
+            Descripcion = prod.Descripcion;
+            Foto = prod.Foto;
+            IdTipoProducto = prod.IdTipoProducto;
+            Precio = prod.Precio;
+            Activo = prod.Activo;
+            Eliminado = prod.Eliminado;
         }
     }
 }

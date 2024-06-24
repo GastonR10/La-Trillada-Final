@@ -1,0 +1,37 @@
+﻿<h1>Editar</h1>
+<div id="productoEdit">
+ 
+    <div class="row">
+<div class="col-6">
+<label for="productoNombre">Nombre: </label>
+<input id="productoNombre"></input>
+</div>
+<div>
+<label for="productoDescripcion">Descripcion: </label>
+<input id="productoDescripcion"></input>
+</div class="col-6">
+<div>
+<label for="productoPrecio">Precio: </label>
+<input id="productoPrecio"></input>
+</div>
+<div class="col-6">
+<label for="productoTipo">Tipo de Producto:</label>
+<select id="productoTipo"></select>
+</div>
+<div class="col-6">
+<label for="activo">Activo</label>
+<input type="checkbox" id="productoActivo" onchange="activarDesactivar();">
+</div>
+<div class="col-6">
+<img id="productoImg" />    
+</div>
+<div class="col-12">
+<button class="btn btn-warning" onclick="editarProducto();">Editar</button>
+<button class="btn btn-danger" onclick="eliminarProducto();">Eliminar</button>
+</div>
+</div>
+<div style="display:none;">
+        @Html.Hidden("URLGetProducto", Url.Action("GetProducto", "Producto"))
+</div>
+ 
+    <script type="text/javascript" src="~/js/pages/ProductoEdit.js" asp-append-version="true"></script>

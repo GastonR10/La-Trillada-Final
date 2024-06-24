@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal.Models;
 using ReglasNegocio.DTO_Entities;
-using ReglasNegocio.Entities;
 
 namespace ProyectoFinal.Controllers
 {
@@ -27,17 +21,14 @@ namespace ProyectoFinal.Controllers
             try
             {
                 var tiposProducto = await _context.TipoProductos
-                    .Select(tp => new DTO_TipoProducto
-                    {
-                        Id = tp.Id,
-                        Descripcion = tp.Descripcion
-                    }).ToListAsync();
+                    .OrderBy(x => x.Orden)
+                    .Select(tp => new DTO_TipoProducto(tp)).ToListAsync();
 
                 return Json(tiposProducto);
             }
             catch (Exception ex)
             {
-               return BadRequest(ex.Message);   
+                return BadRequest(ex.Message);
             }
         }
 

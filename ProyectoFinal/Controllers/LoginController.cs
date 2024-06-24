@@ -39,11 +39,11 @@ namespace ProyectoFinal.Controllers
                     // Verificar el rol del usuario
                     if (user.rol == "Admin")
                     {
-                        return Ok(new { redirectUrl = Url.Action("Index", "Producto") });
+                        return Ok(new { redirectUrl = Url.Action("CreateProducto", "Producto") });
                     }
                     else if (user.rol == "Cliente")
                     {
-                        return Ok(new { redirectUrl = Url.Action("DatosPersonales", "Login") });
+                        return Ok(new { redirectUrl = Url.Action("GetProductos", "Producto") });
                     }
 
                     // Si por alguna razón no es ni Admin ni Cliente, manejarlo adecuadamente
