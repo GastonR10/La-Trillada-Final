@@ -1,6 +1,6 @@
-$(document).ready(function () {
+$(document).ready(async function () {
     // Código a ejecutar cuando el DOM esté listo
-    getTiposProducto();
+    await getTiposProducto();
 });
 
 async function getTiposProducto() {
@@ -45,6 +45,11 @@ async function AgregarProducto() {
             msj.textContent = "Alta exitosa!.";
             let divMsj = document.getElementById('divMsj');
             divMsj.style.display = 'block';
+            $("#nombreProducto").val("");
+            $("#descripcionProducto").val("");
+            $("#fotoProducto").val("");
+            $("#slcTipoProducto").val("0");
+            $("#precioProducto").val("");
         }
     } catch (ex) {
         console.error('Error:', ex.message);

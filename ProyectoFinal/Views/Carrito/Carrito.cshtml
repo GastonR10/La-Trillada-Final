@@ -1,0 +1,17 @@
+﻿<div class="text-center">
+    <h1>Carrito</h1>
+</div>
+
+<div id="divProdList" class="row">
+
+</div>
+
+
+<div style="display:none;">
+    @Html.Hidden("URLGetProductIds", Url.Action("GetProductIds", "Producto"))
+    @Html.Hidden("URLObtenerProductosCarrito", Url.Action("ObtenerProductosCarrito", "Carrito"))
+    @Html.Hidden("URLEliminarLinea", Url.Action("EliminarLinea", "Carrito"))
+
+</div>
+
+<script type="text/javascript" src="~/js/pages/carritopage.js" asp-append-version="true"></script>

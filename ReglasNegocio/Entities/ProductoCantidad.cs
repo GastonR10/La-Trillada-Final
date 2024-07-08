@@ -13,15 +13,23 @@ namespace ReglasNegocio.Entities
         [Key]
         public int Id { get; set; }
         [ForeignKey(nameof(Producto))]
-        public int IdProducto { get; set;}
-        public Producto Producto { get; set; }
+        public int IdProducto { get; set; }
+        public Producto? Producto { get; set; }
         public int Cantidad { get; set; }
+        [ForeignKey(nameof(Carrito))]
+        [Column("CarritoId")]
+        public int IdCarrito { get; set; }
+        public Carrito? Carrito { get; set; }
+        public string? Comentario { get; set; }
 
-        public ProductoCantidad() { }   
-        public ProductoCantidad(Producto producto, int cantidad)
-        {            
-            Producto = producto;
+        public ProductoCantidad() { 
+            
+        }
+        public ProductoCantidad(int idProducto, int cantidad, int idCarrito)
+        {           
+            IdProducto = idProducto;
             Cantidad = cantidad;
+            IdCarrito = idCarrito;
         }
     }
 }

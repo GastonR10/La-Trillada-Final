@@ -24,12 +24,12 @@ async function obtenerProductos() {
 
                 const thead = document.createElement('thead');
                 thead.innerHTML = `
-<tr>
-<th>Nombre</th>
-<th>Precio</th>
-<th>Acciones</th>
-</tr>
-                    `;
+                    <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                    </tr>
+                                        `;
                 table.appendChild(thead);
 
                 const tbody = document.createElement('tbody');
@@ -38,16 +38,16 @@ async function obtenerProductos() {
                 productosPorTipo.forEach(producto => {
                     const tr = document.createElement('tr');
                     tr.innerHTML = `
-<td>${producto.Nombre}</td>
-<td>$${producto.Precio}</td>
-<td>
-<button class="btn btn-warning" onclick="vistaEditarProducto(${producto.Id})">Editar</button>
-<button class="btn btn-danger" onclick="eliminarProducto(${producto.Id})">Eliminar</button>
-</td>
-<td>
-<label for="activo-${producto.Id}">Activo</label>
-<input type="checkbox" ${producto.Activo ? 'checked' : ''} id="activo-${producto.Id}" onchange="activarDesactivar(${producto.Id}, this.checked);">
-</td>
+                    <td>${producto.Nombre}</td>
+                    <td>$${producto.Precio}</td>
+                    <td>
+                    <button class="btn btn-warning" onclick="vistaEditarProducto(${producto.Id})">Editar</button>
+                    <button class="btn btn-danger" onclick="eliminarProducto(${producto.Id})">Eliminar</button>
+                    </td>
+                    <td>
+                    <label for="activo-${producto.Id}">Activo</label>
+                    <input type="checkbox" ${producto.Activo ? 'checked' : ''} id="activo-${producto.Id}" onchange="activarDesactivar(${producto.Id}, this.checked);">
+                    </td>
                         `;
                     tbody.appendChild(tr);
                 });
@@ -92,12 +92,11 @@ async function eliminarProducto(productId) {
                 throw new Error('Failed to update product status');
             }
             alert("Elemento eliminado");
+            await obtenerProductos();
 
         } else {
             alert("Eliminación cancelada");
         }
-
-        obtenerProductos();
 
     } catch (ex) {
         console.error('Error:', ex.message);

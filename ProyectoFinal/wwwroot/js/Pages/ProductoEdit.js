@@ -1,13 +1,13 @@
 let _idProducto;
 
-$(document).ready(function () {
+$(document).ready(async function () {
     // Código a ejecutar cuando el DOM esté listo
-    obtenerProducto();
+    await obtenerProducto();
+
 });
 
 async function obtenerProducto() {
     try {
-
         const parts = window.location.pathname.split('/');
         const id = parts.pop();
 
@@ -28,9 +28,10 @@ async function obtenerProducto() {
         nombre.value = producto.Nombre;
         desc.value = producto.Descripcion;
         precio.value = producto.Precio;
-        tipo.value = producto.IdTipoProducto;
         activo.checked = producto.Activo;
         img.src = producto.Foto;
+        await getTiposProducto();
+        tipo.value = producto.IdTipoProducto;
         img.alt = producto.Nombre;
 
 
@@ -40,14 +41,95 @@ async function obtenerProducto() {
     }
 }
 
-async function editarProducto(id) {
+async function getTiposProducto() {
     try {
+        let res = await TipoProducto.getTiposProducto();
 
-        let res = await Producto.getProducto(id);
+        const selectElement = document.getElementById('productoTipo');
+
+        // Crear y añadir la opción predeterminada
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '0';
+        defaultOption.text = '-- Seleccionar --';
+        selectElement.appendChild(defaultOption);
+
+        // Añadir las opciones obtenidas del servidor
+        res.forEach(tipo => {
+            const option = document.createElement('option');
+            option.value = tipo.Id;
+            option.text = tipo.Descripcion;
+            selectElement.appendChild(option);
+        });
+
+
+    } catch (ex) {
+        console.error('Error:', ex.message);
+        throw ex;
+    }
+}
+
+async function editarProducto() {
+    try {
+        const nombre = $("#productoNombre").val();
+        const desc = $("#productoDescripcion").val();
+        const precio = $("#productoPrecio").val();
+        const tipo = $("#productoTipo").val();
+        const activo = $("#productoActivo").prop('checked');
+        const fotoNueva = $("#fotoNueva")[0].files[0];
+
+        //const img = $("#productoImg")[0].files[0];
+
+        const producto = new Producto(_idProducto, nombre, desc, fotoNueva, tipo, precio, activo, 0);
+
+        //const fotoString = document.getElementById('productoImg').getAttribute('src');
+
+        let res = await Producto.editarProducto(producto);
 
         if (!res.ok) {
-            throw new Error('Failed to update product status');
+            throw new Error('Failed to edit product');
         }
+        let redirectUrl = $("#URLGetProductoVista").val();
+        //const urlWithId = `${redirectUrl}/${_idProducto}`;
+        window.location.href = redirectUrl
+        alert("Producto editado con éxito");
+
+    } catch (ex) {
+        console.error('Error:', ex.message);
+        throw ex;
+    }
+}
+
+function volverListaProducto() {
+    try {
+
+        let redirectUrl = $("#URLProductosList").val();
+        window.location.href = redirectUrl;
+
+    } catch (ex) {
+        console.error('Error:', ex.message);
+        throw ex;
+    }
+}
+
+async function eliminarProducto() {
+    try {
+        let confirmacion = confirm(`¿Estás seguro de que deseas eliminar el producto?`);
+
+        if (confirmacion) {
+            // Lógica para eliminar el elemento
+            let res = await Producto.UpdateEliminar(_idProducto);
+
+            if (!res.ok) {
+                throw new Error('Failed to update product status');
+            }
+            alert("Elemento eliminado");
+            let redirectUrl = $("#URLProductosList").val();
+            window.location.href = redirectUrl;
+
+        } else {
+            alert("Eliminación cancelada");
+        }
+
 
     } catch (ex) {
         console.error('Error:', ex.message);

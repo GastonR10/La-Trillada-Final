@@ -30,6 +30,8 @@ namespace ReglasNegocio.Entities
 
         public DateTime Fecha { get; set; }
 
+        public bool Pos {  get; set; }
+
         public Pedido() { //cambiar a public si me explota entity framework
             Id = 0;
             Comentario = null;
@@ -39,13 +41,15 @@ namespace ReglasNegocio.Entities
             Carrito = null!;
             IdMesa = 0;
             Fecha = DateTime.Now;
+            Pos = false;
         }
         
-        public Pedido(string? comentario, Carrito carrito, int idMesa): this() 
+        public Pedido(string? comentario, Carrito carrito, int idMesa, bool pos): this() 
         {            
             Comentario = comentario;
             Carrito = carrito;
             IdMesa = idMesa;
+            Pos = pos;  
         }
 
         

@@ -6,7 +6,7 @@ async function Ingresar() {
         let res = await Usuario.AltaDeIngreso(usuario, password);
 
         if (res == null || res == undefined) {
-            console.log("Es OK")
+            console.log("Es OK");
         }
 
        /* if () si ingreso redirijo desde el controlador, sino tiro aca mensaje*/

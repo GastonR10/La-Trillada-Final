@@ -10,11 +10,27 @@
     <link href="~/css/login.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/ProyectoFinal.styles.css" asp-append-version="true" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <link href="~/icons/fontawesome.css" rel="stylesheet" />
+    <link href="~/icons/brands.css" rel="stylesheet" />
+    <link href="~/icons/solid.css" rel="stylesheet" />
+
+    @* ENTITIES *@
+    <script src="~/js/entities/producto.js"></script>
+    <script src="~/js/entities/tipoproducto.js"></script>
+    <script src="~/js/entities/usuario.js"></script>
+    <script src="~/js/entities/carrito.js"></script>
+    <script src="~/js/entities/productocantidad.js"></script>
+    @* FIN ENTITIES *@
+    <script src="~/js/pages/layout.js"></script>
 </head>
 <body>
     <div id="divEncabezado" class="divEncabezado text-center content container-fluid">
         <div class="row">
             <button class="btnMenu col-1" id="btnMostrarMenu">☰ <span class="d-none d-lg-inline">Menú</span></button>
+            <div class="col-10"></div>
+            <div class="col-1 btnMenu">
+                <a class="text-dark" asp-area="" asp-controller="Carrito" asp-action="Carrito"><i class="fa-regular fa-cart-shopping"></i> Carrito</a>
+            </div>
         </div>
     </div>
     <div class="menuPrincipal" id="sidebar">
@@ -22,41 +38,44 @@
             @if (Context.Session.GetString("rol") == null)
             {
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Login">Ingresar</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="Login"><i class="fa-solid fa-user"></i>  Ingresar</a>
                 </li>
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Registro">Registrarse</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="Registro"><i class="fa-solid fa-arrow-right"></i>  Registrarse</a>
+                </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Productos</a>
                 </li>
             }
             @if (Context.Session.GetString("rol") == "Admin")
             {
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="CreateProducto">Crear Producto</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="CreateProducto"><i class="fa-regular fa-circle-plus"></i>  Crear Producto</a>
                 </li>
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="RegistroAdmin">Ingresar Admin</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="RegistroAdmin"><i class="fa-solid fa-user-shield"></i>  Ingresar Admin</a>
                 </li>
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="GetProductosList">Lista de Productos</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductosList"><i class="fa-regular fa-list-ul"></i>  Lista de Productos</a>
                 </li>
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Pedidos</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="" asp-action=""><i class="fa-regular fa-clipboard-list"></i>  Pedidos</a>
                 </li>
 
             }
             @if (Context.Session.GetString("rol") == "Cliente")
             {
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="DatosPersonales">Datos Personales</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="DatosPersonales"><i class="fa-solid fa-circle-user"></i>  Datos Personales</a>
                 </li>
             }
             @if (Context.Session.GetString("rol") == "Cliente" || Context.Session.GetString("rol") == "Admin")
             {
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="GetProductos">Productos</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Productos</a>
                 </li>
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">Cerrar Sesión</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="Logout"><i class="fa-regular fa-right-to-bracket"></i>  Cerrar Sesión</a>
                 </li>
 
             }
@@ -72,14 +91,10 @@
             2024 - LaTrillada
         </div>
     </footer>
-    <script src="~/js/pages/layout.js"></script>
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @* ENTITIES *@
-    <script src="~/js/entities/producto.js"></script>
-    <script src="~/js/entities/tipoproducto.js"></script>
-    <script src="~/js/entities/usuario.js"></script>
-    @* FIN ENTITIES *@
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

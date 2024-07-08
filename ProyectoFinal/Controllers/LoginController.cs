@@ -27,7 +27,7 @@ namespace ProyectoFinal.Controllers
         {
             try
             {
-                var user = _db.Usuarios
+                Usuario? user = _db.Usuarios
                                 .Where(u => u.NombreUsuario == usuario.NombreUsuario && u.Password == usuario.Password)
                                 .FirstOrDefault();
 
@@ -244,6 +244,7 @@ namespace ProyectoFinal.Controllers
                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
         }
+
 
     }
 

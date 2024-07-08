@@ -12,6 +12,7 @@ namespace ProyectoFinal.Models
         public DbSet<Producto> Productos { get; set; }
         public DbSet<TipoProducto> TipoProductos { get; set; }
         public DbSet<Reserva> Reservas { get; set; }
+        public DbSet<ProductoCantidad> ProductoCantidad { get; set; }
 
         public BarContext(DbContextOptions<BarContext> options): base(options) { 
             
@@ -44,7 +45,24 @@ namespace ProyectoFinal.Models
                 .HasValue<PedidoCliente>("Cliente")
                 .HasValue<PedidoExpress>("Express");
 
-    
+
+            modelBuilder.Entity<Usuario>()
+           .HasMany(u => u.Pedidos)
+           .WithOne(p => p.Cliente)
+           .HasForeignKey(p => p.ClienteId)
+           .OnDelete(DeleteBehavior.Restrict); // o .OnDelete(DeleteBehavior.NoAction)
+
+            modelBuilder.Entity<PedidoCliente>()
+                .HasOne(p => p.Carrito)
+                .WithMany()
+                .HasForeignKey(p => p.IdCarrito)
+                .OnDelete(DeleteBehavior.Cascade); // o .OnDelete(DeleteBehavior.NoAction)
+
+            modelBuilder.Entity<Usuario>()
+                .HasOne(u => u.CarritoAbierto)
+                .WithMany()
+                .HasForeignKey(u => u.CarritoAbiertoId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             //usar datanotations en las clases.
             base.OnModelCreating(modelBuilder);

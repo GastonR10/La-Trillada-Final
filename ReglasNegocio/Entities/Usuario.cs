@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,11 @@ namespace ReglasNegocio.Entities
         public string? Telefono { get; set; }
         public string? Direccion { get; set; }
         public List<PedidoCliente>? Pedidos { get; set; } = new List<PedidoCliente>();
+    
+        [ForeignKey(nameof(CarritoAbierto))]
+        public int CarritoAbiertoId { get; set; }
+        public Carrito? CarritoAbierto { get; set; }
+
         public Usuario() { }
         public Usuario(string nombreUsuario, string password, string rol, string? nombre, string? apellido, string? email, string? telefono, string? direccion)
         {
@@ -35,6 +41,7 @@ namespace ReglasNegocio.Entities
             Email = email;
             Telefono = telefono;
             Direccion = direccion;
+            CarritoAbierto = new Carrito();
 
         }
         public Usuario(string nombreUsuario, string password, string rol)
@@ -47,9 +54,10 @@ namespace ReglasNegocio.Entities
             Email = null;
             Telefono = null;
             Direccion = null;
+            CarritoAbierto = new Carrito();
         }
 
-        
+
 
 
     }

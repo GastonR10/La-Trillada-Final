@@ -7,6 +7,7 @@ class Usuario {
         this.Email = correo;
         this.Telefono = celular;
         this.Direccion = direccion;
+        this.CarritoAbierto = new Carrito();
     }
 
     //constructor(usuario, password) {
@@ -17,7 +18,7 @@ class Usuario {
     static async AltaDeIngreso(usuario, password) {
         try {
             const url = $("#URLIngresar").val();
-           /* const usu = new Usuario(usuario, password);*/ // Cambié el nombre de la variable a 'usu'
+            /* const usu = new Usuario(usuario, password);*/ // Cambié el nombre de la variable a 'usu'
             const usu = new Usuario(null, null, usuario, password, null, null, null);
 
             const response = await fetch(url, {
@@ -28,8 +29,8 @@ class Usuario {
                 body: JSON.stringify(usu) // El cuerpo ahora está permitido con POST
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            if (response.status == 404) {
+                return null;
             }
 
             const data = await response.json();
@@ -50,7 +51,7 @@ class Usuario {
     static async AltaAdmin(usuario, password) {
         try {
             const url = $("#URLAltaAdmin").val();
-            const usu = new Usuario(null, null,usuario, password, null, null, null); // Cambié el nombre de la variable a 'usu'
+            const usu = new Usuario(null, null, usuario, password, null, null, null); // Cambié el nombre de la variable a 'usu'
 
             const response = await fetch(url, {
                 method: 'POST', // Cambiado a POST
@@ -104,7 +105,7 @@ class Usuario {
         }
     }
 
-    
+
     static async ObtenerUsuario() {
         try {
             const url = $("#URLObtenerUsuario").val();
@@ -134,7 +135,7 @@ class Usuario {
     static async EditarCliente(nombre, apellido, correo, celular, direccion) {
         try {
             const url = $("#URLEditarCliente").val();
-            const usu = new Usuario(nombre, apellido, "", "", correo, celular, direccion); 
+            const usu = new Usuario(nombre, apellido, "", "", correo, celular, direccion);
 
             const response = await fetch(url, {
                 method: 'POST', // Cambiado a POST
@@ -158,4 +159,6 @@ class Usuario {
             throw ex;
         }
     }
+
+   
 }
