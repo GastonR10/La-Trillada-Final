@@ -98,8 +98,12 @@ function generarGrilla(productosCantidad) {
 
     // Añadir el event listener para el botón Pedir
     document.getElementById('btnPedir').addEventListener('click', function () {
-        alert('Pedido realizado!');
-        // Aquí puedes agregar la lógica para procesar el pedido
+
+        // Obtiene la URL desde el campo oculto
+        var urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
+
+        // Redirige a la vista PedidoLogueado del controlador Pedido
+        window.location.href = urlPedidoLogueado;
     });
 }
 

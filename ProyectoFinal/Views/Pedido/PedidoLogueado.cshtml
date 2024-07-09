@@ -2,13 +2,39 @@
     <h1>Pedido</h1>
 </div>
 
-<div class="row">
-    <div class="col-6 col-12">
+
+<div class="row" id="">
+
+    <div class="col-6" id="">
+        <button class="btnGeneral" onclick="TipoPedido(1);" style="border-color:aqua">Domicilio</button>
+    </div>
+    </br>
+    <div class="col-6" id="">
+        <button class="btnGeneral" onclick="TipoPedido(2);">Local</button>
+    </div>
+
+</div>
+
+
+<div class="row" id="pedidoLogueadoGeneral" style="display:none">
+    <div class="col-6 col-12" id="pedidoDomicilioLogueado" style="display:none">
         <label>Dirección: </label>
         <br />
-        <input type="text" id="direccion" />
+        <p id="direccionPedido"> </p>
     </div>
     <br />
+
+
+    <div class="col-6 col-12" id="pedidoLocalLogueado" style="display:none">
+        <label>Mesa: </label>
+        <br />
+        <select id="mesasSlc" class="form-select">
+        </select>
+    </div>
+    <br />
+
+
+
     <div class="col-6 col-12">
         <label>Método de pago: </label>
         <br />
@@ -18,14 +44,17 @@
         </select>
     </div>
     <br />
-    <div class="col-6 col-12">
-        <label>Mesa: </label>
-        <br />
-        <select id="mesasSlc" class="form-select">         
-        </select>
-    </div>
-    <br />
+
     <div class="col-8">
         <button id="btnPedidoLog" class="btnGeneral" onclick="RealizarPedidoLog();">Realizar</button>
     </div>
+
 </div>
+
+<div style="display:none;">
+    @Html.Hidden("URLObtenerUsuario", Url.Action("ObtenerUsuario", "Login"))
+    @Html.Hidden("URLGetMesas", Url.Action("GetMesas", "Mesa"))
+
+</div>
+
+<script type="text/javascript" src="~/js/pages/pedidologueado.js" asp-append-version="true"></script>
