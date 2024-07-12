@@ -13,10 +13,10 @@ namespace ReglasNegocio.Entities
         public int ClienteId {  get; set; }
         public Usuario Cliente { get; set; }
         public PedidoCliente() : base() { }
-        public PedidoCliente(string comentario, Carrito carrito,int idMesa, bool pos, Usuario cliente)
-            : base(comentario, carrito, idMesa, pos)
+        public PedidoCliente(string comentario, int idCarrito,int idMesa, bool pos, string dir, int clienteId)
+            : base(comentario, idCarrito, idMesa, pos, dir)
         {
-            Cliente = cliente;
+            ClienteId = clienteId;
         }
 
     }

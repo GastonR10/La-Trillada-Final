@@ -13,5 +13,35 @@ class Pedido {
         this.Direccion = direccion;
         this.Nombre = nombre;
     }
+
+
+    static async RealizarPedidoLogueado(dir, mesa, pagoTipo) {
+        try {
+            const url = $("#URLRealizarPedidoLogueado").val();
+
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dir, mesa, pagoTipo)
+            });
+
+            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
+                return "El producto no existe.";
+            }
+            if (response.ok) {
+                return "ok"
+            }
+
+            return "error"
+
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+
+    }
+    
 }
 

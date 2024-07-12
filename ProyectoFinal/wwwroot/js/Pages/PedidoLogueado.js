@@ -75,21 +75,26 @@ function TipoPedido(tipoPedido) {
 
 }
 
-function RealizarPedidoLog() {
+async function RealizarPedidoLog() {
     try {
         let inputDir = document.getElementById("pedidoDomicilioLogueado");
         let inputLocal = document.getElementById("pedidoLocalLogueado");
 
         let res;
 
+        let pagoTipo = document.getElementById("metodoPago").value; 
+
         if (inputDir.style.display === "block") {
 
-            res = await Pedido.RealizarPedidoLogueado();
+            let dir = $("#direccionPedido").text();;
+            res = await Pedido.RealizarPedidoLogueado(dir, null, pagoTipo);
 
         } else if (inputLocal.style.display === "block") {
 
-            res = await Pedido.RealizarPedidoLogueado();
+            let mesa = document.getElementById("mesasSlc").value;
+            res = await Pedido.RealizarPedidoLogueado("", mesa, pagoTipo);
         }
+
 
         console.log(res);
 
