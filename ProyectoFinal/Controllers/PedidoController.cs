@@ -31,16 +31,27 @@ namespace ProyectoFinal.Controllers
 
                 if (existingUser == null)
                 {
-                    // Si el usuario no existe, retornar un BadRequest con un mensaje
                     return BadRequest("El usuario no existe.");
                 }
 
-                _db.Pedidos.Add(new PedidoCliente(rp.Comentario, existingUser.CarritoAbiertoId, rp.Mesa, rp.PagoTipo, rp.Dir, existingUser.Id));
+                // Crear un nuevo pedido y agregarlo a la base de datos
+                PedidoCliente pedido = new PedidoCliente(rp.Comentario, existingUser.CarritoAbiertoId, rp.Mesa, rp.PagoTipo, rp.Dir, existingUser.Id);
+                _db.Pedidos.Add(pedido);
 
+                // Crear un nuevo carrito y agregarlo a la base de datos
+                Carrito nuevoCarrito = new Carrito();
+                _db.Carritos.Add(nuevoCarrito);
 
-           //     public PedidoCliente(string comentario, Carrito carrito, int idMesa, bool pos, Usuario cliente)
-           // : base(comentario, carrito, idMesa, pos)
+                // Guardar los cambios para obtener el nuevo Id del carrito
                 await _db.SaveChangesAsync();
+
+                // Asignar el nuevo IdCarritoAbierto al usuario
+                existingUser.CarritoAbiertoId = nuevoCarrito.Id;
+
+                // Guardar los cambios en el usuario
+                _db.Usuarios.Update(existingUser);
+                await _db.SaveChangesAsync();
+
                 return Ok();
 
             }

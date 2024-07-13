@@ -13,6 +13,8 @@ namespace ReglasNegocio.DTO_Entities
         public bool PagoTipo { get; set; }
         public string Comentario { get; set; }
 
+        public DTO_RealizarPedidoLogueadoRequest() { }
+
         public DTO_RealizarPedidoLogueadoRequest(string dir, int mesa, bool pagoTipo, string comentario) {
             Dir = dir;
             Mesa = mesa;

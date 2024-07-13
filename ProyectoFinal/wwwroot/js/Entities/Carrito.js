@@ -26,6 +26,7 @@ class Carrito {
                 const producto = new Producto(item.Producto.Id, item.Producto.Nombre, item.Producto.Descripcion, item.Producto.Foto, item.Producto.IdTipoProducto, item.Producto.Precio, item.Producto.Activo, item.Producto.Eliminado);
                 productoCantidad.setProducto(producto);
                 productoCantidad.setId(item.Id);
+                productoCantidad.setComentario(item.Comentario);
                 return productoCantidad;
             });
 

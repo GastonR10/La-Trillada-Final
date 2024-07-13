@@ -20,10 +20,14 @@ class Pedido {
             const url = $("#URLRealizarPedidoLogueado").val();
 
             if (mesa == null) mesa = 0;
-            const requestBody = {
+
+            pagoTipo == 1 ? pagoTipo = true : pagoTipo = false;
+                
+         
+            let requestBody = {
                 Dir: dir,
                 Mesa: mesa,
-                PagoTipo: parseInt(pagoTipo, 10),
+                PagoTipo: pagoTipo,
                 Comentario: comentario
             };
 
@@ -49,6 +53,6 @@ class Pedido {
         }
 
     }
-    
+
 }
 

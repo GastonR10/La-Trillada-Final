@@ -17,6 +17,7 @@ namespace ReglasNegocio.DTO_Entities
         public int IdCarrito { get; set; }
 
         public Carrito? Carrito { get; set; }
+        public string Comentario { get; set; }
 
         public DTO_ProductoCantidad() { 
             Id = 0;
@@ -29,7 +30,8 @@ namespace ReglasNegocio.DTO_Entities
             Id = pc.Id;
             Producto = new DTO_Producto(pc.Producto); 
             Cantidad = pc.Cantidad;
-            IdCarrito = pc.IdCarrito;   
+            IdCarrito = pc.IdCarrito;
+            Comentario = pc.Comentario;
         }
     }
 }

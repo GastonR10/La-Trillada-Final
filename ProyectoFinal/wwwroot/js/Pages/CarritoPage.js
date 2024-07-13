@@ -50,6 +50,8 @@ function generarGrilla(productosCantidad) {
             const total = producto.Precio * cantidad;
             sumaTotal += total;
 
+            const comentario = productoCantidad.Comentario || '';
+
             const tr = document.createElement('tr');
             tr.setAttribute('data-index', productoCantidad.Id); // Asignar el Id como atributo de la fila
             tr.innerHTML = `
@@ -57,7 +59,7 @@ function generarGrilla(productosCantidad) {
                 <td>${producto.Nombre}</td>
                 <td>$${producto.Precio.toFixed(2)}</td>
                 <td>${cantidad}</td>
-                <td><input type="text" class="form-control comentario-input" placeholder="Comentario"></td>
+                <td><input type="text" class="form-control comentario-input" value="${comentario}" placeholder="Comentario"></td>
                 <td>$${total.toFixed(2)}</td>
                 <td><button class="btn btn-link btn-eliminar-producto" data-index="${productoCantidad.Id}"><i class="fa-solid fa-trash"></i></button></td>
             `;
@@ -97,13 +99,34 @@ function generarGrilla(productosCantidad) {
     });
 
     // Añadir el event listener para el botón Pedir
-    document.getElementById('btnPedir').addEventListener('click', function () {
+    document.getElementById('btnPedir').addEventListener('click', async function () {
 
-        // Obtiene la URL desde el campo oculto
-        var urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
+        const duplas = [];
 
-        // Redirige a la vista PedidoLogueado del controlador Pedido
-        window.location.href = urlPedidoLogueado;
+        // Recorrer todas las filas del cuerpo de la tabla
+        const rows = document.querySelectorAll('#divProdList tbody tr');
+        rows.forEach(row => {
+            const comentarioInput = row.querySelector('.comentario-input');
+            const comentario = comentarioInput ? comentarioInput.value : "";
+            const id = row.getAttribute('data-index');
+
+            if (comentario && id) {
+                duplas.push({ Id: id, Comentario: comentario });
+            }
+        });
+
+        try {
+            // Llamar a la función para agregar los comentarios en masa
+            await ProductoCantidad.AgregarComentariosMasivo(duplas);
+
+            // Obtiene la URL desde el campo oculto
+            const urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
+
+            // Redirige a la vista PedidoLogueado del controlador Pedido
+            window.location.href = urlPedidoLogueado;
+        } catch (ex) {
+            console.error('Error:', ex.message);
+        }
     });
 }
 
