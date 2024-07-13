@@ -83,16 +83,17 @@ async function RealizarPedidoLog() {
         let res;
 
         let pagoTipo = document.getElementById("metodoPago").value; 
+        let comentario = $("#comPedido").val();
 
         if (inputDir.style.display === "block") {
 
-            let dir = $("#direccionPedido").text();;
-            res = await Pedido.RealizarPedidoLogueado(dir, null, pagoTipo);
+            let dir = $("#direccionPedido").text();
+            res = await Pedido.RealizarPedidoLogueado(dir, null, pagoTipo, comentario);
 
         } else if (inputLocal.style.display === "block") {
 
             let mesa = document.getElementById("mesasSlc").value;
-            res = await Pedido.RealizarPedidoLogueado("", mesa, pagoTipo);
+            res = await Pedido.RealizarPedidoLogueado("", mesa, pagoTipo, comentario);
         }
 
 

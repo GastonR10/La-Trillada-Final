@@ -15,17 +15,24 @@ class Pedido {
     }
 
 
-    static async RealizarPedidoLogueado(dir, mesa, pagoTipo) {
+    static async RealizarPedidoLogueado(dir, mesa, pagoTipo, comentario) {
         try {
             const url = $("#URLRealizarPedidoLogueado").val();
 
+            if (mesa == null) mesa = 0;
+            const requestBody = {
+                Dir: dir,
+                Mesa: mesa,
+                PagoTipo: parseInt(pagoTipo, 10),
+                Comentario: comentario
+            };
 
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(dir, mesa, pagoTipo)
+                body: JSON.stringify(requestBody)
             });
 
             if (response.status == 400) {// lo dejamos de momento pero no deberia estar.

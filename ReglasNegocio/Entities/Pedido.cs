@@ -26,7 +26,7 @@ namespace ReglasNegocio.Entities
         public Carrito Carrito { get; set; }
 
         [ForeignKey(nameof(Mesa))]
-        public int IdMesa { get; set; }
+        public int? IdMesa { get; set; }
 
         public string Direccion { get; set; }
 

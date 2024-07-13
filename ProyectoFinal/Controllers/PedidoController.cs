@@ -21,7 +21,7 @@ namespace ProyectoFinal.Controllers
         }
 
         [HttpPost("RealizarPedidoLogueado")]
-        public async Task<IActionResult> RealizarPedidoLogueado([FromBody] string dir, [FromBody] int mesa, [FromBody] bool pagoTipo)
+        public async Task<IActionResult> RealizarPedidoLogueado([FromBody] DTO_RealizarPedidoLogueadoRequest rp)
         {
             try
             {
@@ -35,8 +35,7 @@ namespace ProyectoFinal.Controllers
                     return BadRequest("El usuario no existe.");
                 }
 
-
-                _db.Pedidos.Add(new PedidoCliente( "", existingUser.CarritoAbiertoId, mesa, pagoTipo, dir, existingUser.Id));
+                _db.Pedidos.Add(new PedidoCliente(rp.Comentario, existingUser.CarritoAbiertoId, rp.Mesa, rp.PagoTipo, rp.Dir, existingUser.Id));
 
 
            //     public PedidoCliente(string comentario, Carrito carrito, int idMesa, bool pos, Usuario cliente)
