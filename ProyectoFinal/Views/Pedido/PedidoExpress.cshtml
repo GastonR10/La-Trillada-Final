@@ -20,7 +20,20 @@
     <div class="col-6 col-12" id="pedidoDomicilioLogueado" style="display:none">
         <label>Dirección: </label>
         <br />
-        <p id="direccionPedido"> </p>
+        <input type="text" id="direccionPedEx" />
+        <br />
+        <label>Nombre: </label>
+        <br />
+        <input type="text" id="nombrePedEx" />
+        <br />
+        <label>Email: </label>
+        <br />
+        <input type="text" id="mailPedEx" />
+        <br />
+        <label>Celular: </label>
+        <br />
+        <input type="number" id="telefonoPedEx" />
+
     </div>
     <br />
 
@@ -50,18 +63,15 @@
     <br />
 
     <div class="col-8">
-        <button id="btnPedidoLog" class="btnGeneral" onclick="RealizarPedidoLog();">Realizar</button>
+        <button id="btnPedidoLog" class="btnGeneral" onclick="RealizarPedidoExpress();">Realizar</button>
     </div>
 
 </div>
 
 <div style="display:none;">
-    @Html.Hidden("URLObtenerUsuario", Url.Action("ObtenerUsuario", "Login"))
     @Html.Hidden("URLGetMesas", Url.Action("GetMesas", "Mesa"))
-    @Html.Hidden("URLRealizarPedidoLogueado", Url.Action("RealizarPedidoLogueado", "Pedido"))
-
+    @Html.Hidden("URLRealizarPedidoExpress", Url.Action("RealizarPedidoExpress", "Pedido"))
 </div>
 
 <script type="text/javascript" src="~/js/utilities.js" asp-append-version="true"></script>
-<script type="text/javascript" src="~/js/pages/pedidologueado.js" asp-append-version="true"></script>
-
+<script type="text/javascript" src="~/js/pages/pedidoexpress.js" asp-append-version="true"></script>

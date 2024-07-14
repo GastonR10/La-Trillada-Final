@@ -1,5 +1,3 @@
-//let _carrito = new Carrito();
-//_carrito.cargarDesdeLocalStorage();
 
 $(document).ready(function () {
     $('#btnMostrarMenu').click(function () {

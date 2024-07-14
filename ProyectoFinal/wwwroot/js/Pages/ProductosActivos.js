@@ -1,4 +1,14 @@
 $(document).ready(async function () {
+
+    if (sessionStorage.getItem('Logueado') === null) {
+        // Si no existe, la crea y le asigna el valor "false"
+        sessionStorage.setItem('Logueado', false);
+    }
+
+    if (localStorage.getItem('carrito') === null) {
+        // Si no existe, lo crea y le asigna un array vacío
+        localStorage.setItem('carrito', JSON.stringify([]));
+    }
     // Código a ejecutar cuando el DOM esté listo
     await obtenerProductosActivos();
 });
@@ -77,8 +87,37 @@ async function obtenerProductosActivos() {
                 const productoId = event.target.getAttribute('data-producto-id');
                 const cantidadInput = event.target.closest('.card').querySelector('.cantidad-input');
                 const cantidad = parseInt(cantidadInput.value);
-                await Carrito.agregarProducto(productoId, cantidad);
-                console.log(_carrito.ProductosCantidad); // Para verificar
+
+                if (sessionStorage.getItem('Logueado') == "true") {
+                    await Carrito.agregarProducto(productoId, cantidad);
+                } else {
+                    let carrito = JSON.parse(localStorage.getItem('carrito'));
+                    if (!carrito) carrito = [];
+
+                    // Encontrar el último ID usado en el carrito y calcular el siguiente
+                    let ultimoId = carrito.length > 0 ? carrito[carrito.length - 1].Id : 0;
+                    let nuevoId = ultimoId + 1;
+
+                    // Obtener información del producto
+                    const producto = productos.find(p => p.Id == productoId);
+
+                    // Crear el objeto del producto a agregar
+                    let productoCantidad = {
+                        Id: nuevoId,
+                        IdProducto: productoId,
+                        Cantidad: cantidad,
+                        Comentario: "",
+                        Producto: {
+                            Id: producto.Id,
+                            Nombre: producto.Nombre,
+                            Foto: producto.Foto,
+                            Precio: producto.Precio
+                        }
+                    };
+
+                    carrito.push(productoCantidad);
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+                }
 
                 // Reiniciar el campo de cantidad a 1
                 cantidadInput.value = 1;

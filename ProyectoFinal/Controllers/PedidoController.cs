@@ -61,5 +61,56 @@ namespace ProyectoFinal.Controllers
                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
         }
+
+        public IActionResult PedidoExpress()
+        {
+            return View();
+        }
+
+        [HttpPost("RealizarPedidoExpress")]
+        public async Task<IActionResult> RealizarPedidoExpress([FromBody] DTO_RealizarPedidoExpressRequest rp, [FromBody] DTO_Carrito carrito)
+        {
+            try
+            {
+                // Verificar si el usuario ya existe en la base de datos
+                Usuario? existingUser = await _db.Usuarios
+                    .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
+
+                if (existingUser == null)
+                {
+                    return BadRequest("El usuario no existe.");
+                }
+
+                //TAMBIEN VA A RECIBIR UN DTO CARRITO, HAY QUE DAR DE ALTA AL CARRITO Y LOS PRODUCTOS CANTIDAD EN LA BASE DE DATOS. LUEGO EL PEDIDO.
+
+                // Crear un nuevo carrito y agregarlo a la base de datos
+                Carrito nuevoCarrito = new Carrito();
+                _db.Carritos.Add(nuevoCarrito);
+
+                // Crear un nuevo pedido y agregarlo a la base de datos
+                PedidoExpress pedido = new PedidoExpress(rp.Comentario, nuevoCarrito.Id, rp.Mesa, rp.PagoTipo, rp.Dir, rp.Mail, rp.Tel.ToString(), rp.Nombre);
+                _db.Pedidos.Add(pedido);
+
+
+
+                // Guardar los cambios para obtener el nuevo Id del carrito
+                await _db.SaveChangesAsync();
+
+                // Asignar el nuevo IdCarritoAbierto al usuario
+                existingUser.CarritoAbiertoId = nuevoCarrito.Id;
+
+                // Guardar los cambios en el usuario
+                _db.Usuarios.Update(existingUser);
+                await _db.SaveChangesAsync();
+
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                // Retornar un error 500 con un mensaje de error
+                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+            }
+        }
     }
 }

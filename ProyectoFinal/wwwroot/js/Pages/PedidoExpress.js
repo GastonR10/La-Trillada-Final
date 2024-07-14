@@ -1,25 +1,7 @@
 $(document).ready(async function () {
-    await cargarInfoPersonal();
     await cargarMesas("mesasSlc");
 });
 
-async function cargarInfoPersonal() {
-    try {
-        let res = await Usuario.ObtenerUsuario();
-
-        if (res != null) {
-            let inputDir = document.getElementById("direccionPedido");
-
-            inputDir.innerText = res.Direccion;
-        }
-
-        console.log(res);
-
-    } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
-    }
-}
 
 function TipoPedido(tipoPedido) {
     try {
@@ -44,31 +26,34 @@ function TipoPedido(tipoPedido) {
 
 }
 
-async function RealizarPedidoLog() {
+async function RealizarPedidoExpress() {
     try {
         let inputDir = document.getElementById("pedidoDomicilioLogueado");
         let inputLocal = document.getElementById("pedidoLocalLogueado");
 
         let res;
 
-        let pagoTipo = document.getElementById("metodoPago").value; 
+        let pagoTipo = document.getElementById("metodoPago").value;
         let comentario = $("#comPedido").val();
 
         if (inputDir.style.display === "block") {
 
-            let dir = $("#direccionPedido").text();
-            res = await Pedido.RealizarPedidoLogueado(dir, null, pagoTipo, comentario);
+            let dir = $("#direccionPedEx").val();
+            let nom = $("#nombrePedEx").val();
+            let mail = $("#mailPedEx").val();
+            let tel = $("#telefonoPedEx").val();
+            res = await Pedido.RealizarPedidoExpress(dir, nom, mail, tel, null, pagoTipo, comentario);
 
         } else if (inputLocal.style.display === "block") {
 
             let mesa = document.getElementById("mesasSlc").value;
-            res = await Pedido.RealizarPedidoLogueado("", mesa, pagoTipo, comentario);
+            res = await Pedido.RealizarPedidoExpress("", "", "", -1, mesa, pagoTipo, comentario);
         }
 
 
         console.log(res);
 
-            
+
     } catch (ex) {
         console.error('Error:', ex.message);
         throw ex;

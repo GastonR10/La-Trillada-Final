@@ -54,5 +54,48 @@ class Pedido {
 
     }
 
+
+    static async RealizarPedidoExpress(dir, nom, mail, tel, mesa, pagoTipo, comentario) {
+        try {
+            const url = $("#URLRealizarPedidoExpress").val();
+
+            if (mesa == null) mesa = 0;
+
+            pagoTipo == 1 ? pagoTipo = true : pagoTipo = false;
+
+
+            let requestBody = {
+                Dir: dir,
+                Nombre: nom,
+                Mail: mail,
+                Tel: tel,
+                Mesa: mesa,
+                PagoTipo: pagoTipo,
+                Comentario: comentario
+            };
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestBody)
+            });
+
+            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
+                return "El producto no existe.";
+            }
+            if (response.ok) {
+                return "ok"
+            }
+
+            return "error"
+
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+
+    }
+
 }
 

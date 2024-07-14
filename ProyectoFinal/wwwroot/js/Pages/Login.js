@@ -1,3 +1,6 @@
+$(document).ready(function () {
+    sessionStorage.setItem('Logueado', false);
+});
 async function Ingresar() {
     try {
         let usuario = $("#usuarioLogin").val();
@@ -9,10 +12,10 @@ async function Ingresar() {
             console.log("Es OK");
         }
 
-       /* if () si ingreso redirijo desde el controlador, sino tiro aca mensaje*/
+        /* if () si ingreso redirijo desde el controlador, sino tiro aca mensaje*/
     } catch (ex) {
 
         console.error('Error:', ex.message);
-        throw ex; 
+        throw ex;
     }
 }

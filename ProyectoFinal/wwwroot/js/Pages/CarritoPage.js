@@ -4,7 +4,16 @@ $(document).ready(async function () {
 
 async function obtenerCarrito() {
     try {
-        let productosCantidad = await Carrito.obtenerProductosCarrito();
+
+        let productosCantidad = [];
+
+        if (sessionStorage.getItem('Logueado') == "true") {
+            productosCantidad = await Carrito.obtenerProductosCarrito();
+        }
+        else {
+            productosCantidad = JSON.parse(localStorage.getItem('carrito'));
+        }
+
 
         // Generar la grilla de productos
         generarGrilla(productosCantidad);
@@ -94,7 +103,24 @@ function generarGrilla(productosCantidad) {
     document.getElementById('divProdList').addEventListener('click', async function (event) {
         if (event.target.closest('.btn-eliminar-producto')) {
             const index = event.target.closest('.btn-eliminar-producto').getAttribute('data-index');
-            await eliminarLineaPorId(index);
+
+            if (sessionStorage.getItem('Logueado') == "true") {
+                await eliminarLineaPorId(index);
+            } else {
+                // Obtener el carrito del localStorage
+                let carrito = JSON.parse(localStorage.getItem('carrito'));
+                if (!carrito) carrito = [];
+
+                // Filtrar el carrito para excluir el producto con el Id específico
+                carrito = carrito.filter(item => item.Id != index);
+
+                // Guardar el carrito actualizado en el localStorage
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                
+                // Volver a generar la grilla para reflejar los cambios
+                generarGrilla(carrito);
+            }
+         
         }
     });
 
@@ -110,20 +136,46 @@ function generarGrilla(productosCantidad) {
             const comentario = comentarioInput ? comentarioInput.value : "";
             const id = row.getAttribute('data-index');
 
-            if (comentario && id) {
+            if (id) {
                 duplas.push({ Id: id, Comentario: comentario });
             }
         });
 
         try {
-            // Llamar a la función para agregar los comentarios en masa
-            await ProductoCantidad.AgregarComentariosMasivo(duplas);
 
-            // Obtiene la URL desde el campo oculto
-            const urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
+            if (sessionStorage.getItem('Logueado') == "true") {
+                // Llamar a la función para agregar los comentarios en masa
+                await ProductoCantidad.AgregarComentariosMasivo(duplas);
 
-            // Redirige a la vista PedidoLogueado del controlador Pedido
-            window.location.href = urlPedidoLogueado;
+                // Obtiene la URL desde el campo oculto
+                const urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
+
+                // Redirige a la vista PedidoLogueado del controlador Pedido
+                window.location.href = urlPedidoLogueado;
+            } else {
+
+                // Obtener el carrito del localStorage
+                let carrito = JSON.parse(localStorage.getItem('carrito'));
+                if (!carrito) carrito = [];
+
+                // Actualizar los comentarios en el carrito
+                duplas.forEach(dupla => {
+                    const productoCantidad = carrito.find(item => item.Id == dupla.Id);
+                    if (productoCantidad) {
+                        productoCantidad.Comentario = dupla.Comentario;
+                    }
+                });
+
+                // Guardar el carrito actualizado en el localStorage
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                // Obtiene la URL desde el campo oculto
+                const urlPedidoLogueado = document.getElementById('URLPedidoExpress').value;
+
+                // Redirige a la vista PedidoLogueado del controlador Pedido
+                window.location.href = urlPedidoLogueado;
+            }
+         
         } catch (ex) {
             console.error('Error:', ex.message);
         }

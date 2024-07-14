@@ -14,12 +14,11 @@ namespace ReglasNegocio.Entities
 
         public PedidoExpress() : base() { }
 
-        public PedidoExpress(string comentario, int idCarrito, int idMesa, bool pos, string dir, string email, string telefono, string direccion, string nombre)
+        public PedidoExpress(string comentario, int idCarrito, int idMesa, bool pos, string dir, string email, string telefono, string nombre)
           : base(comentario, idCarrito, idMesa, pos, dir)
         {
             Email = email;
             Telefono = telefono;    
-            Direccion = direccion;  
             Nombre = nombre;
         }
 

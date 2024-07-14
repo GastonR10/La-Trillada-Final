@@ -36,6 +36,7 @@ class Usuario {
             const data = await response.json();
 
             if (data.redirectUrl) {
+                sessionStorage.setItem('Logueado', true);
                 window.location.href = data.redirectUrl;
             } else if (data.error) {
                 console.error('Error:', data.error);
