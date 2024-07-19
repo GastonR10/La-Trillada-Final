@@ -104,7 +104,7 @@ async function obtenerProductosActivos() {
                     // Crear el objeto del producto a agregar
                     let productoCantidad = {
                         Id: nuevoId,
-                        IdProducto: productoId,
+                        IdProducto: parseInt(productoId, 10),
                         Cantidad: cantidad,
                         Comentario: "",
                         Producto: {

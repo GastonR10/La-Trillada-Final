@@ -15,6 +15,7 @@ namespace ReglasNegocio.DTO_Entities
         public int Mesa { get; set; }
         public bool PagoTipo { get; set; }
         public string Comentario { get; set; }
+        public DTO_Carrito Carrito { get; set; }
 
         //public DTO_RealizarPedidoExpressRequest() { }
 

@@ -5,6 +5,7 @@ class ProductoCantidad {
         this.Producto = null;
         this.Id = 0;
         this.Comentario = "";
+        this.IdCarrito = 0;
     }
     setProducto(producto) {
         this.Producto = producto;

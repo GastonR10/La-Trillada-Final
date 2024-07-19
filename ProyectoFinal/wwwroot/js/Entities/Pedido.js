@@ -63,6 +63,12 @@ class Pedido {
 
             pagoTipo == 1 ? pagoTipo = true : pagoTipo = false;
 
+            let carrito = new Carrito();
+            carrito.ProductosCantidad = JSON.parse(localStorage.getItem("carrito"));
+
+            if (!carrito.ProductosCantidad) {
+                carrito.ProductosCantidad = [];
+            }
 
             let requestBody = {
                 Dir: dir,
@@ -71,7 +77,8 @@ class Pedido {
                 Tel: tel,
                 Mesa: mesa,
                 PagoTipo: pagoTipo,
-                Comentario: comentario
+                Comentario: comentario,
+                Carrito: carrito
             };
 
             const response = await fetch(url, {
@@ -86,6 +93,7 @@ class Pedido {
                 return "El producto no existe.";
             }
             if (response.ok) {
+                localStorage.setItem('carrito', JSON.stringify([]));
                 return "ok"
             }
 

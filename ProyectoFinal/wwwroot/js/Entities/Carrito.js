@@ -1,6 +1,7 @@
 class Carrito {
     constructor() {
         this.ProductosCantidad = [];
+        this.PrecioTotal = 0;
     }
 
     static async obtenerProductosCarrito() {

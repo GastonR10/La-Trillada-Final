@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReglasNegocio.DTO_Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -31,5 +32,13 @@ namespace ReglasNegocio.Entities
             Cantidad = cantidad;
             IdCarrito = idCarrito;
         }
+
+        public ProductoCantidad(DTO_ProductoCantidad pc)
+        {
+            IdProducto = pc.IdProducto;
+            Cantidad = pc.Cantidad;
+            Comentario = pc.Comentario;
+        }
+
     }
 }
