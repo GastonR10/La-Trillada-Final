@@ -1,0 +1,13 @@
+﻿<script type="text/javascript" src="~/js/pages/admpedidos.js" asp-append-version="true"></script>
+
+<div class="text-center">
+    <h1>Administración Pedidos</h1>
+</div>
+
+<div id="divPedidosPendientes" class="row">
+
+</div>
+
+<div style="display:none;">
+    @Html.Hidden("URLPedidosPendientes", Url.Action("PedidosPendientes", "Pedido"))
+</div>

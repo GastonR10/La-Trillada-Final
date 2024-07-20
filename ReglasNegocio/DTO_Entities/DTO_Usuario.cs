@@ -17,6 +17,7 @@ namespace ReglasNegocio.DTO_Entities
         public string? Email { get; set; }
         public string? Telefono { get; set; }
         public string? Direccion { get; set; }
+        public DTO_Carrito? CarritoAbierto { get; set; }
         public List<DTO_PedidoCliente> Pedidos { get; set; }
 
         public DTO_Usuario(string nombreUsuario, string password, string rol, string? nombre, string? apellido, string? email, string? telefono, string? direccion)
@@ -29,6 +30,8 @@ namespace ReglasNegocio.DTO_Entities
             Email = email;
             Telefono = telefono;
             Direccion = direccion;
+            CarritoAbierto = new DTO_Carrito();
+            Pedidos = new List<DTO_PedidoCliente>();
 
         }
 

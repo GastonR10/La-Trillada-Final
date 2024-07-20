@@ -26,9 +26,13 @@ namespace ReglasNegocio.Entities
         public Carrito Carrito { get; set; }
 
         [ForeignKey(nameof(Mesa))]
-        public int IdMesa { get; set; }
+        public int? IdMesa { get; set; }
+
+        public string Direccion { get; set; }
 
         public DateTime Fecha { get; set; }
+
+        public bool Pos {  get; set; }
 
         public Pedido() { //cambiar a public si me explota entity framework
             Id = 0;
@@ -38,14 +42,18 @@ namespace ReglasNegocio.Entities
             IdCarrito = 0;
             Carrito = null!;
             IdMesa = 0;
+            Direccion = "";
             Fecha = DateTime.Now;
+            Pos = false;
         }
         
-        public Pedido(string? comentario, Carrito carrito, int idMesa): this() 
+        public Pedido(string? comentario, int idCarrito, int idMesa, bool pos, string dir): this() 
         {            
             Comentario = comentario;
-            Carrito = carrito;
+            IdCarrito = idCarrito;
             IdMesa = idMesa;
+            Pos = pos;  
+            Direccion = dir;
         }
 
         

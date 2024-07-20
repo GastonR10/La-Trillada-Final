@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReglasNegocio.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,18 @@ namespace ReglasNegocio.DTO_Entities
 {
     public class DTO_Mesa
     {
-        private int Id { get; set; }
-        private bool Reservada { get; set; }
+        public int Id { get; set; }
+        public bool Reservada { get; set; }
 
         public DTO_Mesa(int id, bool reservada) { 
             Id = id;
             Reservada = reservada;
-        }   
+        }
+
+        public DTO_Mesa(Mesa m)
+        {
+            Id = m.Id;
+            Reservada = m.Reservada;
+        }
     }
 }

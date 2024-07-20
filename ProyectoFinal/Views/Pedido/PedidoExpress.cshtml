@@ -1,0 +1,77 @@
+﻿<div class="text-center">
+    <h1>Pedido</h1>
+</div>
+
+
+<div class="row" id="">
+
+    <div class="col-6" id="">
+        <button class="btnGeneral" onclick="TipoPedido(1);" style="border-color:aqua">Domicilio</button>
+    </div>
+    </br>
+    <div class="col-6" id="">
+        <button class="btnGeneral" onclick="TipoPedido(2);">Local</button>
+    </div>
+
+</div>
+
+
+<div class="row" id="pedidoLogueadoGeneral" style="display:none">
+    <div class="col-6 col-12" id="pedidoDomicilioLogueado" style="display:none">
+        <label>Dirección: </label>
+        <br />
+        <input type="text" id="direccionPedEx" />
+        <br />
+        <label>Nombre: </label>
+        <br />
+        <input type="text" id="nombrePedEx" />
+        <br />
+        <label>Email: </label>
+        <br />
+        <input type="text" id="mailPedEx" />
+        <br />
+        <label>Celular: </label>
+        <br />
+        <input type="number" id="telefonoPedEx" />
+
+    </div>
+    <br />
+
+
+    <div class="col-6 col-12" id="pedidoLocalLogueado" style="display:none">
+        <label>Mesa: </label>
+        <br />
+        <select id="mesasSlc" class="form-select">
+        </select>
+    </div>
+    <br />
+
+
+
+    <div class="col-6 col-12">
+        <label for="metodoPago">Método de pago: </label>
+        <br />
+        <select id="metodoPago" class="form-select">
+            <option value="0">Efectivo</option>
+            <option value="1">POS</option>
+        </select>
+        <br />
+        <label for="comPedido">Comentario: </label>
+        <br />
+        <textarea id="comPedido"></textarea>
+    </div>
+    <br />
+
+    <div class="col-8">
+        <button id="btnPedidoLog" class="btnGeneral" onclick="RealizarPedidoExpress();">Realizar</button>
+    </div>
+
+</div>
+
+<div style="display:none;">
+    @Html.Hidden("URLGetMesas", Url.Action("GetMesas", "Mesa"))
+    @Html.Hidden("URLRealizarPedidoExpress", Url.Action("RealizarPedidoExpress", "Pedido"))
+</div>
+
+<script type="text/javascript" src="~/js/utilities.js" asp-append-version="true"></script>
+<script type="text/javascript" src="~/js/pages/pedidoexpress.js" asp-append-version="true"></script>

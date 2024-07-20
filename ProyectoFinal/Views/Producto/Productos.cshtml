@@ -6,6 +6,9 @@
 
 <div style="display:none;">
     @Html.Hidden("URLGetProductosActivos", Url.Action("GetProductosActivos", "Producto"))
+    @Html.Hidden("URLGetTiposProducto", Url.Action("GetTiposProducto", "TipoProducto"))
+    @Html.Hidden("URLAgregarProducto", Url.Action("AgregarProducto", "Carrito"))
+
 </div>
 
 <script type="text/javascript" src="~/js/pages/ProductosActivos.js" asp-append-version="true"></script>

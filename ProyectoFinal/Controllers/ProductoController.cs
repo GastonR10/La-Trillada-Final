@@ -1,13 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal.Models;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ProyectoFinal.Models;
 using ReglasNegocio.DTO_Entities;
 using ReglasNegocio.Entities;
-using System.Runtime.CompilerServices;
 
 namespace ProyectoFinal.Controllers
 {
@@ -49,7 +44,7 @@ namespace ProyectoFinal.Controllers
         }
 
 
-        [HttpPost("CreateProducto")]
+        [HttpPost("Create")]
         public async Task<IActionResult> Create(IFormFile? file, string fileName, DTO_Producto prod)
         {
             try
@@ -68,6 +63,7 @@ namespace ProyectoFinal.Controllers
                     {
                         await file.CopyToAsync(stream);
                     }
+
 
                 }
 
@@ -133,65 +129,107 @@ namespace ProyectoFinal.Controllers
 
         }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateProducto([FromBody] DTO_Producto productoDTO)
+        [HttpPost]
+        public async Task<IActionResult> UpdateProducto(IFormFile? fotoNueva, DTO_Producto productoDTO)
         {
-            Producto? producto = await _db.Productos.FindAsync(productoDTO.Id);
-
-            if (producto == null)
-            {
-                return NotFound();
-            }
-
-            // Actualizar los campos del producto según los valores en el DTO
-            if (productoDTO.Nombre != null)
-            {
-                producto.Nombre = productoDTO.Nombre;
-            }
-            if (productoDTO.Descripcion != null)
-            {
-                producto.Descripcion = productoDTO.Descripcion;
-            }
-            if (productoDTO.Foto != null)
-            {
-                producto.Foto = productoDTO.Foto;
-            }
-            if (productoDTO.IdTipoProducto != 0)
-            {
-                producto.IdTipoProducto = productoDTO.IdTipoProducto;
-            }
-            if (productoDTO.Precio != 0)
-            {
-                producto.Precio = productoDTO.Precio;
-            }
-            if (productoDTO.Activo != producto.Activo)
-            {
-                producto.Activo = productoDTO.Activo;
-            }
-            if (productoDTO.Eliminado != producto.Eliminado)
-            {
-                producto.Eliminado = productoDTO.Eliminado;
-            }
-            // Guardar los cambios en la base de datos
             try
             {
-                await _db.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!_db.Productos.Any(p => p.Id == productoDTO.Id))
+                Producto? producto = await _db.Productos.FindAsync(productoDTO.Id);
+
+                if (producto == null)
                 {
                     return NotFound();
                 }
-                else
+
+                if (fotoNueva != null && fotoNueva.Length > 0)
                 {
-                    throw;
+                    string filePath = "";
+
+                    if (producto.Foto == null || producto.Foto == "null")
+                    {
+                        string fotoStringNuevaNombre = productoDTO.Foto.TrimStart('/');
+                        filePath = Path.Combine(_webHostEnvironment.WebRootPath, fotoStringNuevaNombre);
+
+                        string uploads = Path.Combine(_webHostEnvironment.WebRootPath, @"img\product");
+                        if (!Directory.Exists(uploads))
+                        {
+                            Directory.CreateDirectory(uploads);
+                        }
+                    }
+                    else
+                    {
+                        string fotoString = producto.Foto.TrimStart('/'); ;
+                        filePath = Path.Combine(_webHostEnvironment.WebRootPath, fotoString);
+                    }
+
+
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await fotoNueva.CopyToAsync(stream);
+                    }
                 }
+
+                // Actualizar los campos del producto según los valores en el DTO
+                if (productoDTO.Nombre != null && productoDTO.Nombre != producto.Nombre)
+                {
+                    producto.Nombre = productoDTO.Nombre;
+                }
+                if (productoDTO.Descripcion != null && productoDTO.Descripcion != producto.Descripcion)
+                {
+                    producto.Descripcion = productoDTO.Descripcion;
+                }
+                if (fotoNueva != null && producto.Foto == null)
+                {
+                    producto.Foto = productoDTO.Foto;
+                }
+                if (productoDTO.IdTipoProducto != 0 && productoDTO.IdTipoProducto != producto.IdTipoProducto)
+                {
+                    producto.IdTipoProducto = productoDTO.IdTipoProducto;
+                }
+                if (productoDTO.Precio != 0 && productoDTO.Precio != producto.Precio)
+                {
+                    producto.Precio = productoDTO.Precio;
+                }
+                if (productoDTO.Activo != producto.Activo)
+                {
+                    producto.Activo = productoDTO.Activo;
+                }
+                if (productoDTO.Eliminado != producto.Eliminado)
+                {
+                    producto.Eliminado = productoDTO.Eliminado;
+                }
+                // Guardar los cambios en la base de datos
+
+                await _db.SaveChangesAsync();
+
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("GetProductIds")]
+        public async Task<IActionResult> GetProductIds([FromBody] List<int> IdsProduct)
+        {
+            try
+            {
+                List<DTO_Producto> productos = await _db.Productos
+              .Where(p => IdsProduct.Contains(p.Id) && !p.Eliminado)
+              .Select(p => new DTO_Producto(p))
+              .ToListAsync();
+
+                return Json(productos);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
 
-            return Ok();
         }
     }
-
-
 }

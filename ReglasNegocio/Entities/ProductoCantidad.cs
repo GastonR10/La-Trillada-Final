@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReglasNegocio.DTO_Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -13,15 +14,31 @@ namespace ReglasNegocio.Entities
         [Key]
         public int Id { get; set; }
         [ForeignKey(nameof(Producto))]
-        public int IdProducto { get; set;}
-        public Producto Producto { get; set; }
+        public int IdProducto { get; set; }
+        public Producto? Producto { get; set; }
         public int Cantidad { get; set; }
+        [ForeignKey(nameof(Carrito))]
+        [Column("CarritoId")]
+        public int IdCarrito { get; set; }
+        public Carrito? Carrito { get; set; }
+        public string? Comentario { get; set; }
 
-        public ProductoCantidad() { }   
-        public ProductoCantidad(Producto producto, int cantidad)
-        {            
-            Producto = producto;
-            Cantidad = cantidad;
+        public ProductoCantidad() { 
+            
         }
+        public ProductoCantidad(int idProducto, int cantidad, int idCarrito)
+        {           
+            IdProducto = idProducto;
+            Cantidad = cantidad;
+            IdCarrito = idCarrito;
+        }
+
+        public ProductoCantidad(DTO_ProductoCantidad pc)
+        {
+            IdProducto = pc.IdProducto;
+            Cantidad = pc.Cantidad;
+            Comentario = pc.Comentario;
+        }
+
     }
 }

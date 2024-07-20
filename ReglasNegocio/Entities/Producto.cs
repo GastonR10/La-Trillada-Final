@@ -33,7 +33,7 @@ namespace ReglasNegocio.Entities
             Descripcion = producto.Descripcion;
             Foto = producto.Foto;
             IdTipoProducto = producto.IdTipoProducto;
-            Activo = true;
+            Activo = producto.Activo;
             Precio = producto.Precio;
             Eliminado = false;
         }
