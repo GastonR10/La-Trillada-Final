@@ -25,6 +25,10 @@ namespace ReglasNegocio.DTO_Entities
             PrecioTotal = precioTotal;
         }
 
+        //public DTO_Carrito(Carrito c) { 
+            
+        //}
+
 
     }
 }

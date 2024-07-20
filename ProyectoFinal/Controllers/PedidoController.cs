@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal.Models;
+using ReglasNegocio;
 using ReglasNegocio.DTO_Entities;
 using ReglasNegocio.Entities;
+using static ReglasNegocio.Enums;
 
 namespace ProyectoFinal.Controllers
 {
@@ -104,6 +106,31 @@ namespace ProyectoFinal.Controllers
                 // Retornar un error 500 con un mensaje de error
                 return StatusCode(500, $"Error interno del servidor: {ex.Message}");
             }
+        }
+
+        public IActionResult AdministracionPedidos()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> PedidosPendientes()
+        {
+            try
+            {
+                List<DTO_Pedido> pedidosPendientes = await _db.Pedidos
+                                             .Where(p => p.Estado != Estado.Cancelado && p.Estado != Estado.Finalizado)
+                                             .Select(p => new DTO_Pedido(p))
+                                             .ToListAsync();
+
+                
+                return Json(pedidosPendientes);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
     }
 }

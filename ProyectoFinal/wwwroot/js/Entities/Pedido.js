@@ -1,10 +1,10 @@
 class Pedido {
-    constructor(id, comentario, estado, aceptado, carrito, idMesa, fecha, eliminado, email, telefono, direccion, nombre) {
+    constructor(id, comentario, estado, aceptado, idMesa, fecha, eliminado, email, telefono, direccion, nombre) {
         this.Id = id;
         this.Comentario = comentario;
         this.Estado = estado;
         this.Aceptado = aceptado;
-        this.Carrito = carrito;
+        this.Carrito = null;
         this.IdMesa = idMesa;
         this.Fecha = fecha;
         this.Eliminado = eliminado;
@@ -103,6 +103,36 @@ class Pedido {
             console.error('Error fetching products:', error);
         }
 
+    }
+
+    static async GetAllPendientes() {
+        try {
+            const url = $("#URLPedidosPendientes").val();
+
+
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify()
+            });
+
+            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
+                return "Sin permisos de Administrador.";
+            }
+
+            const data = await response.json();
+
+            const pedidos = data.map(item => new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono,item.Direccion, item.Nombre));
+
+            return pedidos;
+
+            return "error"
+
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
     }
 
 }

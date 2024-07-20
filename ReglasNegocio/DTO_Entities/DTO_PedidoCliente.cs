@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 namespace ReglasNegocio.DTO_Entities
 {
     public class DTO_PedidoCliente: DTO_Pedido
-    { 
-        private int IdCliente { get; set; }
+    {
+        public int ClienteId { get; set; }
+        public DTO_Usuario Cliente { get; set; }
 
-        public DTO_PedidoCliente(int id, string comentario, string estado, bool aceptado, DTO_Carrito carrito, int idMesa, int idCliente)
-            : base(id, comentario, estado, aceptado, carrito, idMesa )
+        public DTO_PedidoCliente(int id, string comentario, Enums.Estado estado, bool aceptado, DTO_Carrito carrito, int idMesa, bool pos, string dir, DateTime fecha, int idCliente, DTO_Usuario Cliente)
+            : base(id, comentario, estado, aceptado, carrito, idMesa, pos, dir, fecha)
         {
-            IdCliente = idCliente;
+            ClienteId = idCliente;
         }
     }
 }
