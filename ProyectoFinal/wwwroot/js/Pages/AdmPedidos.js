@@ -107,5 +107,7 @@ function cancelarPedido(id) {
 
 function verPedido(id) {
     console.log(`Ver pedido ${id}`);
-    // Implementa la lógica para ver el pedido
+    let redirectUrl = $("#URLGetPedidoVista").val();
+    const urlWithId = `${redirectUrl}/${id}`;
+    window.location.href = urlWithId;
 }

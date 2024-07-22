@@ -1,5 +1,5 @@
 class Pedido {
-    constructor(id, comentario, estado, aceptado, idMesa, fecha, eliminado, email, telefono, direccion, nombre) {
+    constructor(id, comentario, estado, aceptado, idMesa, fecha, eliminado, email, telefono, direccion, nombre, pos) {
         this.Id = id;
         this.Comentario = comentario;
         this.Estado = estado;
@@ -12,8 +12,46 @@ class Pedido {
         this.Telefono = telefono;
         this.Direccion = direccion;
         this.Nombre = nombre;
+        this.Pos = pos;
     }
 
+    static async getPedido(id) {
+        try {
+            let url = $("#URLGetPedido").val();
+
+            url = url + "/" + id
+
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.badRequest) {
+                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            }
+
+            const data = await response.json();
+
+            let pedido;
+
+            if (data.Cliente != null && data.Cliente != undefined) {
+                pedido = new Pedido(data.Id, data.Comentario, data.Estado, data.Aceptado, data.IdMesa, data.Fecha, data.Eliminado, data.Cliente.Email, data.Cliente.Telefono, data.Cliente.Direccion, data.Cliente.Nombre, data.Pos);
+            } else {
+                pedido = new Pedido(data.Id, data.Comentario, data.Estado, data.Aceptado, data.IdMesa, data.Fecha, data.Eliminado, data.Email, data.Telefono, data.Direccion, data.Nombre, data.Pos);
+            }
+
+            pedido.Carrito = data.Carrito;
+
+            return pedido;
+
+
+        } catch (ex) {
+            console.error('Error al agregar el producto:', error);
+            throw error;
+        }
+    }
 
     static async RealizarPedidoLogueado(dir, mesa, pagoTipo, comentario) {
         try {

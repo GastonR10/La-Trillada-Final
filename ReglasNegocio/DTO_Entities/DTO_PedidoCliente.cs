@@ -17,5 +17,20 @@ namespace ReglasNegocio.DTO_Entities
         {
             ClienteId = idCliente;
         }
+
+        public DTO_PedidoCliente(PedidoCliente p)
+        {
+            Id = p.Id;
+            Comentario = p.Comentario;
+            Estado = p.Estado.ToString();
+            Aceptado = p.Aceptado;
+            Carrito = new DTO_Carrito(p.Carrito);
+            IdMesa = p.IdMesa;
+            Pos = p.Pos;
+            Direccion = p.Direccion;
+            Fecha = p.Fecha;
+            ClienteId = p.ClienteId;
+            Cliente = new DTO_Usuario(p.Cliente.NombreUsuario, "", p.Cliente.rol, p.Cliente.Nombre, p.Cliente.Apellido, p.Cliente.Email, p.Cliente.Telefono, p.Cliente.Direccion);
+        }
     }
 }

@@ -25,9 +25,15 @@ namespace ReglasNegocio.DTO_Entities
             PrecioTotal = precioTotal;
         }
 
-        //public DTO_Carrito(Carrito c) { 
-            
-        //}
+        public DTO_Carrito(Carrito c) { 
+            Id = c.Id;
+            ProductosCantidad = new List<DTO_ProductoCantidad>();
+            foreach(ProductoCantidad p in c.CantidadesProductos)
+            {
+                ProductosCantidad.Add(new DTO_ProductoCantidad(p));
+            }
+            PrecioTotal = c.PrecioTotal;
+        }
 
 
     }

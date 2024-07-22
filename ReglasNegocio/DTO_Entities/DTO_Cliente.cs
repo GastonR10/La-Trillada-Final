@@ -31,5 +31,7 @@ namespace ReglasNegocio.DTO_Entities
             Direccion = direccion;
             Pedidos = pedidos;
         }
+
+        //public DTO_Cliente(Usuario c) { }
     }
 }

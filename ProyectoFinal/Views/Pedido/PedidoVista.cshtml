@@ -1,0 +1,55 @@
+﻿
+<div class="text-center">
+    <h1>Pedido</h1>
+</div>
+
+<div class="row" id="pedidoSeleccionado">
+    <div class="col-6 col-12">
+        <label>Nombre: </label>
+        <br />
+        <p id="nombreCliente"> </p>
+    </div>
+    <br />
+    <div class="col-6 col-12" style="display:none">
+        <label>Dirección: </label>
+        <br />
+        <p id="direccionCliente"> </p>
+    </div>
+    <br />
+    <div class="col-6 col-12" style="display:none">
+        <label>Mesa: </label>
+        <br />
+        <p id="mesaCliente"> </p>
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Telefono: </label>
+        <br />
+        <p id="telefonoCliente"> </p>
+    </div>
+    <br />
+
+    <div class="col-6 col-12">
+        <label>Método de pago: </label>
+        <br />
+        <p id="metodoPago"> </p>
+    </div>
+    <br />
+    <div class="col-6 col-12">
+        <label>Comentario: </label>
+        <br />
+        <p id="comentarioPedido"> </p>
+    </div>
+    <br />
+    <div id="divProdList" class="row">
+        @* acá va la lista de productos *@
+    </div>
+    <br />
+</div>
+
+
+<div style="display:none;">
+    @Html.Hidden("URLGetPedido", Url.Action("GetPedido", "Pedido"))
+</div>
+
+<script type="text/javascript" src="~/js/pages/pedidovista.js" asp-append-version="true"></script>
