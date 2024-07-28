@@ -169,7 +169,7 @@ namespace ProyectoFinal.Controllers
                     total += pc.Cantidad * pc.Producto.Precio;
 
                     ProductoCantidad productoCantidad = new ProductoCantidad(pc);
-                    productoCantidad.IdCarrito = nuevoCarrito.Id;                    
+                    productoCantidad.IdCarrito = nuevoCarrito.Id;
                     _db.ProductoCantidad.Add(productoCantidad);
                 }
 
@@ -212,6 +212,81 @@ namespace ProyectoFinal.Controllers
 
 
                 return Json(pedidosPendientes);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ActualizarEstadoPedido([FromBody] int id)
+        {
+            try
+            {
+                Pedido? pedido = await _db.Pedidos.FindAsync(id);
+
+                if (pedido == null)
+                {
+                    return NotFound();
+                }
+
+                switch (pedido.Estado)
+                {
+                    case Estado.Pendiente:
+                        pedido.Estado = Estado.EnPreparacion;
+                        break;
+
+                    case Estado.EnPreparacion:
+                        pedido.Estado = Estado.EnCamino;
+                        break;
+
+                    case Estado.EnCamino:
+                        pedido.Estado = Estado.Finalizado;
+                        break;
+
+                    default:
+                        // Manejar otros casos si es necesario
+                        break;
+                }
+
+                _db.Pedidos.Update(pedido);
+
+                await _db.SaveChangesAsync();
+
+                return Ok(pedido);
+
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CancelarPedido([FromBody] int id)
+        {
+            try
+            {
+                Pedido? pedido = await _db.Pedidos.FindAsync(id);
+
+                if (pedido == null)
+                {
+                    return NotFound();
+                }
+
+                pedido.Estado = Estado.Cancelado;
+
+                _db.Pedidos.Update(pedido);
+
+                await _db.SaveChangesAsync();
+
+                return Ok(pedido);
+
+
             }
             catch (Exception ex)
             {

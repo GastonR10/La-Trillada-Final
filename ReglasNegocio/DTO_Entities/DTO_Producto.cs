@@ -32,8 +32,8 @@ namespace ReglasNegocio.DTO_Entities
         public DTO_Producto(Producto prod)
         {
             Id = prod.Id;
-            Nombre = prod.Nombre;
-            Descripcion = prod.Descripcion;
+            Nombre = prod.Nombre;            
+            Descripcion = prod.Descripcion;                      
             Foto = prod.Foto;
             IdTipoProducto = prod.IdTipoProducto;
             Precio = prod.Precio;

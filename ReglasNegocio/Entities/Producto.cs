@@ -21,7 +21,10 @@ namespace ReglasNegocio.Entities
         #endregion
 
         #region Constructores
-        public Producto() { }
+        public Producto() 
+        {
+            
+        }
         public Producto(string nombre, TipoProducto tipoProducto)
         {
             Nombre = nombre;
@@ -30,7 +33,14 @@ namespace ReglasNegocio.Entities
         public Producto(DTO_Producto producto)
         {
             Nombre = producto.Nombre;
-            Descripcion = producto.Descripcion;
+            if(producto.Descripcion == null)
+            {
+                Descripcion = "";
+            } else
+            {
+                Descripcion = producto.Descripcion;
+            }
+            
             Foto = producto.Foto;
             IdTipoProducto = producto.IdTipoProducto;
             Activo = producto.Activo;

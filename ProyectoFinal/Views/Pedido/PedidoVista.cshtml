@@ -10,13 +10,13 @@
         <p id="nombreCliente"> </p>
     </div>
     <br />
-    <div class="col-6 col-12" style="display:none">
+    <div class="col-6 col-12" style="display:none" id="divDireccion">
         <label>Dirección: </label>
         <br />
         <p id="direccionCliente"> </p>
     </div>
     <br />
-    <div class="col-6 col-12" style="display:none">
+    <div class="col-6 col-12" style="display:none" id="divMesa">
         <label>Mesa: </label>
         <br />
         <p id="mesaCliente"> </p>
@@ -36,6 +36,12 @@
     </div>
     <br />
     <div class="col-6 col-12">
+        <label>Estado: </label>
+        <br />
+        <p id="estadoPedido"> </p>
+    </div>
+    <br />
+    <div class="col-6 col-12">
         <label>Comentario: </label>
         <br />
         <p id="comentarioPedido"> </p>
@@ -45,11 +51,19 @@
         @* acá va la lista de productos *@
     </div>
     <br />
+    <div id="botones">
+        <button id="btnEstado" class="btn btn-primary"></button>
+        <button id="btnCancelar" class="btn btn-danger">Cancelar</button>
+        <button id="btnVolver" class="btn btn-warning">Volver</button>
+    </div>
 </div>
 
 
 <div style="display:none;">
     @Html.Hidden("URLGetPedido", Url.Action("GetPedido", "Pedido"))
+    @Html.Hidden("URLActualizarEstadoPedido", Url.Action("ActualizarEstadoPedido", "Pedido"))
+    @Html.Hidden("URLAdministracionPedidos", Url.Action("AdministracionPedidos", "Pedido"))
+    @Html.Hidden("URLCancelarPedido", Url.Action("CancelarPedido", "Pedido"))
 </div>
 
 <script type="text/javascript" src="~/js/pages/pedidovista.js" asp-append-version="true"></script>

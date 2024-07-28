@@ -20,18 +20,30 @@ async function cargarPedido() {
 
         const nombre = document.getElementById('nombreCliente');
         const direccion = document.getElementById('direccionCliente');
+        const divDireccion = document.getElementById('divDireccion');
         const mesa = document.getElementById('mesaCliente');
+        const divMesa = document.getElementById('divMesa');
         const tel = document.getElementById('telefonoCliente');        
         const metodoPago = document.getElementById('metodoPago');
+        const estado = document.getElementById('estadoPedido');
         const comentario = document.getElementById('comentarioPedido');
         const listaProd = document.getElementById('divProdList');
 
         nombre.innerText = pedido.Nombre;
         direccion.innerText = pedido.Direccion;
-        mesa.innerText = pedido.Mesa;
+        mesa.innerText = "" + pedido.IdMesa;
         tel.innerText = pedido.Telefono;
         pedido.Pos ? metodoPago.innerText = "POS" : metodoPago.innerText = "Efectivo"
+        estado.innerText = pedido.Estado;
         comentario.innerText = pedido.Comentario;
+
+        if (pedido.IdMesa == 0) {
+            divDireccion.style.display = "block";
+        } else {
+            divMesa.style.display = "block";
+        }
+
+
 
         // Crear la tabla
         const table = document.createElement('table');
@@ -109,8 +121,72 @@ async function cargarPedido() {
         listaProd.appendChild(table);
 
 
+        //Botones
+        const btnEstado = document.getElementById('btnEstado');
+        const btnCancelar = document.getElementById('btnCancelar');
+        const btnVolver = document.getElementById('btnVolver');
+
+        if (pedido.Estado == "Pendiente") {
+            btnEstado.textContent = 'Aceptar';
+        } else if (pedido.Estado == "EnPreparacion") {
+            btnEstado.textContent = 'En camino';
+        } else if (pedido.Estado == "EnCamino") {
+            btnEstado.textContent = 'Finalizar';
+        }
+        btnEstado.onclick = function () {
+            actualizarEstadoPedido(_idPedido); // Reemplaza _idPedido con el ID del pedido
+        };
+
+        btnCancelar.onclick = function () {
+            cancelarPedido(_idPedido); // Reemplaza _idPedido con el ID del pedido
+        };
+
+        btnVolver.onclick = function () {
+            volver();
+        };
+
     } catch (ex) {
         console.error('Error:', ex.message);
         throw ex;
+    }
+
+    async function actualizarEstadoPedido(id) {
+        console.log(`Aceptar pedido ${id}`);
+        // Implementa la lógica para aceptar el pedido
+        try {
+            let confirmacion = confirm(`¿Está seguro?`);
+
+            if (confirmacion) {
+                await Pedido.actualizarEstadoPedido(id);
+
+                await cargarPedido();
+            }
+
+        } catch (ex) {
+            console.error('Error:', ex.message);
+            throw ex;
+        }
+    }
+
+    async function cancelarPedido(id) {
+        console.log(`Cancelar pedido ${id}`);
+        let confirmacion = confirm(`¿Está seguro que desea cancelar?`);
+
+        if (confirmacion) {
+            await Pedido.cancelarPedido(id);
+
+            await cargarPedido();
+        }
+    }
+
+    function volver() {
+        try {
+            let redirectUrl = $("#URLAdministracionPedidos").val();
+            window.location.href = redirectUrl;
+        } catch (ex) {
+            console.error('Error:', ex.message);
+            throw ex;
+        }
+
     }
 }

@@ -1,0 +1,17 @@
+﻿.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.table th:nth-child(2), .table td:nth-child(2) {
+    width: 200px; /* Ajusta este valor según sea necesario */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

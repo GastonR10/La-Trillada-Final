@@ -15,6 +15,56 @@ class Pedido {
         this.Pos = pos;
     }
 
+    static async actualizarEstadoPedido(id) {
+        try {
+            let url = $("#URLActualizarEstadoPedido").val();
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(id)
+
+            });
+
+            if (response.badRequest) {
+                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            }
+
+            return true;
+
+        } catch (ex) {
+            console.error('Error al agregar el producto:', error);
+            throw error;
+        }
+    }
+
+    static async cancelarPedido(id) {
+        try {
+            let url = $("#URLCancelarPedido").val();
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(id)
+
+            });
+
+            if (response.badRequest) {
+                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            }
+
+            return true;
+
+        } catch (ex) {
+            console.error('Error al agregar el producto:', error);
+            throw error;
+        }
+    }
+
     static async getPedido(id) {
         try {
             let url = $("#URLGetPedido").val();
