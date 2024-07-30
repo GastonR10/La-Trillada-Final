@@ -70,25 +70,25 @@ function grillaPedidosFinalizados(pedidosFinalizados) {
 
             // Nombre
             const tdNombre = document.createElement('td');
-            tdNombre.textContent = pedido.Nombre;
+            tdNombre.textContent = pedido.Nombre || 'N/A';
             tdNombre.style.textAlign = 'center';
             row.appendChild(tdNombre);
 
             //Dirección
             const tdDireccion = document.createElement('td');
-            tdDireccion.textContent = pedido.Direccion;
+            tdDireccion.textContent = pedido.Direccion || 'N/A';
             tdDireccion.style.textAlign = 'center';
             row.appendChild(tdDireccion);
 
             // Telefono
             const tdTelefono = document.createElement('td');
-            tdTelefono.textContent = pedido.Telefono;
+            tdTelefono.textContent = pedido.Telefono || 'N/A';
             tdTelefono.style.textAlign = 'center';
             row.appendChild(tdTelefono);
 
             // Precio
             const tdPrecio = document.createElement('td');
-            tdPrecio.textContent = '$ ' + pedido.Carrito.PrecioTotal;
+            tdPrecio.textContent = '$ ' + (pedido.Carrito.PrecioTotal || 0);
             tdPrecio.style.textAlign = 'center';
             row.appendChild(tdPrecio);
 
