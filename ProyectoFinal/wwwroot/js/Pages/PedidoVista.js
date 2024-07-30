@@ -126,13 +126,6 @@ async function cargarPedido() {
         const btnCancelar = document.getElementById('btnCancelar');
         const btnVolver = document.getElementById('btnVolver');
 
-        if (pedido.Estado == "Pendiente") {
-            btnEstado.textContent = 'Aceptar';
-        } else if (pedido.Estado == "EnPreparacion") {
-            btnEstado.textContent = 'En camino';
-        } else if (pedido.Estado == "EnCamino") {
-            btnEstado.textContent = 'Finalizar';
-        }
         btnEstado.onclick = function () {
             actualizarEstadoPedido(_idPedido); // Reemplaza _idPedido con el ID del pedido
         };
@@ -142,8 +135,31 @@ async function cargarPedido() {
         };
 
         btnVolver.onclick = function () {
-            volver();
+            volver(0);
         };
+
+        switch (pedido.Estado) {
+            case 'Pendiente':
+                btnEstado.textContent = 'Aceptar';
+                break;
+            case 'EnPreparacion':
+                btnEstado.textContent = 'En camino';
+                break;
+            case 'EnCamino':
+                btnEstado.textContent = 'Finalizar';
+                break;
+            case 'Finalizado':
+                btnCancelar.style.display = "none";
+                btnEstado.style.display = "none";
+                btnVolver.onclick = function () {
+                    volver(1);
+                };
+            default:
+                // Manejar el caso donde el estado no coincide con ninguno de los valores anteriores
+                btnEstado.textContent = 'Desconocido';
+                break;
+        }
+        
 
     } catch (ex) {
         console.error('Error:', ex.message);
@@ -179,10 +195,17 @@ async function cargarPedido() {
         }
     }
 
-    function volver() {
+    function volver(finalizado) {
         try {
-            let redirectUrl = $("#URLAdministracionPedidos").val();
-            window.location.href = redirectUrl;
+            if (finalizado) {
+                let redirectUrl = $("#URLPedidosFinalizados").val();
+                window.location.href = redirectUrl;
+
+            } else {
+                let redirectUrl = $("#URLAdministracionPedidos").val();
+                window.location.href = redirectUrl;
+            }
+            
         } catch (ex) {
             console.error('Error:', ex.message);
             throw ex;

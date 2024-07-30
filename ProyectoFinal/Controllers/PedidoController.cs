@@ -205,13 +205,30 @@ namespace ProyectoFinal.Controllers
         {
             try
             {
-                List<DTO_Pedido> pedidosPendientes = await _db.Pedidos
-                                             .Where(p => p.Estado != Estado.Cancelado && p.Estado != Estado.Finalizado)
-                                             .Select(p => new DTO_Pedido(p))
-                                             .ToListAsync();
+                List<PedidoCliente> pedidosCliente = await _db.Pedidos.OfType<PedidoCliente>()
+                                                      .Include(p => p.Cliente)
+                                                      .Include(p => p.Carrito)
+                                                            .ThenInclude(c => c.CantidadesProductos)
+                                                                .ThenInclude(pc => pc.Producto)
+                                                      .Where(p => p.Estado != Estado.Cancelado && p.Estado != Estado.Finalizado)
+                                                      .ToListAsync();
 
+                List<PedidoExpress> pedidosExpress = await _db.Pedidos.OfType<PedidoExpress>()
+                                                      .Include(p => p.Carrito)
+                                                            .ThenInclude(c => c.CantidadesProductos)
+                                                                .ThenInclude(pc => pc.Producto)
+                                                      .Where(p => p.Estado != Estado.Cancelado && p.Estado != Estado.Finalizado)
+                                                      .ToListAsync();
 
-                return Json(pedidosPendientes);
+                List<DTO_PedidoCliente> pedidosClienteDTO = pedidosCliente.Select(p => new DTO_PedidoCliente(p)).ToList();
+                List<DTO_PedidoExpress> pedidosExpressDTO = pedidosExpress.Select(p => new DTO_PedidoExpress(p)).ToList();
+
+                return Ok(new
+                {
+                    PedidosCliente = pedidosClienteDTO,
+                    PedidosExpress = pedidosExpressDTO
+                });
+
             }
             catch (Exception ex)
             {
@@ -294,5 +311,75 @@ namespace ProyectoFinal.Controllers
             }
 
         }
+
+        public IActionResult PedidosFinalizados()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPedidosFinalizados()
+        {
+            try
+            {
+                List<PedidoCliente> pedidosCliente = await _db.Pedidos.OfType<PedidoCliente>()
+                                                      .Include(p => p.Cliente)
+                                                      .Include(p => p.Carrito)
+                                                            .ThenInclude(c => c.CantidadesProductos)
+                                                                .ThenInclude(pc => pc.Producto)
+                                                      .Where(p => p.Estado == Estado.Finalizado)
+                                                      .ToListAsync();
+
+                List<PedidoExpress> pedidosExpress = await _db.Pedidos.OfType<PedidoExpress>()
+                                                      .Include(p => p.Carrito)
+                                                            .ThenInclude(c => c.CantidadesProductos)
+                                                                .ThenInclude(pc => pc.Producto)
+                                                      .Where(p => p.Estado == Estado.Finalizado)
+                                                      .ToListAsync();
+
+                List<DTO_PedidoCliente> pedidosClienteDTO = pedidosCliente.Select(p => new DTO_PedidoCliente(p)).ToList();
+                List<DTO_PedidoExpress> pedidosExpressDTO = pedidosExpress.Select(p => new DTO_PedidoExpress(p)).ToList();
+
+                return Ok(new
+                {
+                    PedidosCliente = pedidosClienteDTO,
+                    PedidosExpress = pedidosExpressDTO
+                });
+
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+        public async Task<IActionResult> GetPedidos()
+        {
+            try
+            {
+                List<PedidoCliente> pedidosCliente = await _db.Pedidos.OfType<PedidoCliente>()
+                                                      .Include(p => p.Cliente)
+                                                      .ToListAsync();
+
+                List<PedidoExpress> pedidosExpress = await _db.Pedidos.OfType<PedidoExpress>()
+                                                      .ToListAsync();
+
+                List<DTO_PedidoCliente> pedidosClienteDTO = pedidosCliente.Select(p => new DTO_PedidoCliente(p)).ToList();
+                List<DTO_PedidoExpress> pedidosExpressDTO = pedidosExpress.Select(p => new DTO_PedidoExpress(p)).ToList();
+
+                return Ok(new
+                {
+                    PedidosCliente = pedidosClienteDTO,
+                    PedidosExpress = pedidosExpressDTO
+                });
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
     }
 }

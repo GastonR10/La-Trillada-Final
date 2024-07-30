@@ -1,3 +1,5 @@
+let _PedidosPendientes;
+
 $(document).ready(async function () {
     await obtenerPedidos();
 });
@@ -5,9 +7,9 @@ $(document).ready(async function () {
 async function obtenerPedidos() {
     try {
 
-        let pedidosPendientes = await Pedido.GetAllPendientes();
+        _PedidosPendientes = await Pedido.GetAllPendientes();
 
-        grillaPedidosPendientes(pedidosPendientes)
+        grillaPedidosPendientes(_PedidosPendientes)
 
 
     }
@@ -50,7 +52,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
             // Crear el encabezado de la tabla
             const thead = document.createElement('thead');
             const headerRow = document.createElement('tr');
-            const headers = ['Nro de Pedido', 'Acciones'];
+            const headers = ['Nro de Pedido', 'Nombre', 'Direccion', 'Telefono', 'Precio', 'Acciones'];
 
             headers.forEach(headerText => {
                 const th = document.createElement('th');
@@ -69,8 +71,33 @@ function grillaPedidosPendientes(pedidosPendientes) {
 
                 // Nro de Pedido
                 const tdId = document.createElement('td');
-                tdId.textContent = pedido.Id; tdId.style.textAlign = 'center';
+                tdId.textContent = pedido.Id;
+                tdId.style.textAlign = 'center';
                 row.appendChild(tdId);
+
+                // Nombre
+                const tdNombre = document.createElement('td');
+                tdNombre.textContent = pedido.Nombre;
+                tdNombre.style.textAlign = 'center';
+                row.appendChild(tdNombre);
+
+                //Dirección
+                const tdDireccion = document.createElement('td');
+                tdDireccion.textContent = pedido.Direccion;
+                tdDireccion.style.textAlign = 'center';
+                row.appendChild(tdDireccion);
+
+                // Telefono
+                const tdTelefono = document.createElement('td');
+                tdTelefono.textContent = pedido.Telefono;
+                tdTelefono.style.textAlign = 'center';
+                row.appendChild(tdTelefono);
+
+                // Precio
+                const tdPrecio = document.createElement('td');
+                tdPrecio.textContent = '$ ' + pedido.Carrito.PrecioTotal;
+                tdPrecio.style.textAlign = 'center';
+                row.appendChild(tdPrecio);
 
                 // Contenedor de botones
                 const tdAcciones = document.createElement('td');

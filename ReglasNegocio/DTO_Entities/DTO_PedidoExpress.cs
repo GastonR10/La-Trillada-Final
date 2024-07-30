@@ -27,7 +27,14 @@ namespace ReglasNegocio.DTO_Entities
             Comentario = p.Comentario;
             Estado = p.Estado.ToString();
             Aceptado = p.Aceptado;
-            Carrito = new DTO_Carrito(p.Carrito);
+            if(p.Carrito != null)
+            {
+                Carrito = new DTO_Carrito(p.Carrito);
+            } else
+            {
+                Carrito = null;
+            }
+            
             IdMesa = p.IdMesa;
             Pos = p.Pos;
             Direccion = p.Direccion;

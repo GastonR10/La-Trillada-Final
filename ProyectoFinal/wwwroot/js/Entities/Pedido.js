@@ -110,8 +110,8 @@ class Pedido {
             if (mesa == null) mesa = 0;
 
             pagoTipo == 1 ? pagoTipo = true : pagoTipo = false;
-                
-         
+
+
             let requestBody = {
                 Dir: dir,
                 Mesa: mesa,
@@ -212,11 +212,72 @@ class Pedido {
 
             const data = await response.json();
 
-            const pedidos = data.map(item => new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono,item.Direccion, item.Nombre));
+            const pedidos = [
+                ...data.PedidosCliente.map(item => {
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Cliente, item.Carrito);
+                    pedido.Carrito = item.Carrito;
+                    return pedido;
+                }
+                ),
+                ...data.PedidosExpress.map(item => {
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, null, item.Carrito);
+                    pedido.Carrito = item.Carrito;
+                    return pedido;
+                }
+
+                )
+            ];
+
+            // Ordenar por número de pedido (Id)
+            pedidos.sort((a, b) => a.Id - b.Id);
+
+            return pedidos;
+            
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+    }
+
+    static async GetFinalizados() {
+        try {
+            const url = $("#URLPedidosFinalizados").val();
+
+
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify()
+            });
+
+            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
+                return "Sin permisos de Administrador.";
+            }
+
+            const data = await response.json();
+
+            const pedidos = [
+                ...data.PedidosCliente.map(item => {
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Cliente, item.Carrito);
+                    pedido.Carrito = item.Carrito;
+                    return pedido;
+                }
+                ),
+                ...data.PedidosExpress.map(item => {
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, null, item.Carrito);
+                    pedido.Carrito = item.Carrito;
+                    return pedido;
+                }
+                    
+                )
+            ];
+
+            // Ordenar por número de pedido (Id)
+            pedidos.sort((a, b) => a.Id - b.Id);
 
             return pedidos;
 
-            return "error"
 
         } catch (error) {
             console.error('Error fetching products:', error);
