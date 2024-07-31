@@ -6,25 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProyectoFinal.Migrations
 {
     /// <inheritdoc />
-    public partial class actualizacion : Migration
+    public partial class cambioCarritos : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Administradores",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    NombreUsuario = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Administradores", x => x.Id);
-                });
-
             migrationBuilder.CreateTable(
                 name: "Carritos",
                 columns: table => new
@@ -36,25 +22,6 @@ namespace ProyectoFinal.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Carritos", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Clientes",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Apellido = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Telefono = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NombreUsuario = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Clientes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -76,11 +43,64 @@ namespace ProyectoFinal.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Orden = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TipoProductos", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Usuarios",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NombreUsuario = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    rol = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Apellido = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Telefono = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CarritoAbiertoId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuarios", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Usuarios_Carritos_CarritoAbiertoId",
+                        column: x => x.CarritoAbiertoId,
+                        principalTable: "Carritos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Productos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Foto = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IdTipoProducto = table.Column<int>(type: "int", nullable: false),
+                    Activo = table.Column<bool>(type: "bit", nullable: false),
+                    Precio = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Eliminado = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Productos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Productos_TipoProductos_IdTipoProducto",
+                        column: x => x.IdTipoProducto,
+                        principalTable: "TipoProductos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -112,11 +132,11 @@ namespace ProyectoFinal.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Pedidos_Clientes_ClienteId",
+                        name: "FK_Pedidos_Usuarios_ClienteId",
                         column: x => x.ClienteId,
-                        principalTable: "Clientes",
+                        principalTable: "Usuarios",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -128,37 +148,16 @@ namespace ProyectoFinal.Migrations
                     HoraInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
                     HoraFin = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IdMesa = table.Column<int>(type: "int", nullable: false),
-                    IdCliente = table.Column<int>(type: "int", nullable: false)
+                    IdCliente = table.Column<int>(type: "int", nullable: false),
+                    ClienteId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Reservas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Reservas_Clientes_IdCliente",
-                        column: x => x.IdCliente,
-                        principalTable: "Clientes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Productos",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Foto = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IdTipoProducto = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Productos", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Productos_TipoProductos_IdTipoProducto",
-                        column: x => x.IdTipoProducto,
-                        principalTable: "TipoProductos",
+                        name: "FK_Reservas_Usuarios_ClienteId",
+                        column: x => x.ClienteId,
+                        principalTable: "Usuarios",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -171,7 +170,7 @@ namespace ProyectoFinal.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IdProducto = table.Column<int>(type: "int", nullable: false),
                     Cantidad = table.Column<int>(type: "int", nullable: false),
-                    CarritoId = table.Column<int>(type: "int", nullable: true)
+                    CarritoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -180,7 +179,8 @@ namespace ProyectoFinal.Migrations
                         name: "FK_ProductoCantidad_Carritos_CarritoId",
                         column: x => x.CarritoId,
                         principalTable: "Carritos",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ProductoCantidad_Productos_IdProducto",
                         column: x => x.IdProducto,
@@ -215,17 +215,19 @@ namespace ProyectoFinal.Migrations
                 column: "IdTipoProducto");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reservas_IdCliente",
+                name: "IX_Reservas_ClienteId",
                 table: "Reservas",
-                column: "IdCliente");
+                column: "ClienteId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Usuarios_CarritoAbiertoId",
+                table: "Usuarios",
+                column: "CarritoAbiertoId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Administradores");
-
             migrationBuilder.DropTable(
                 name: "Mesa");
 
@@ -239,16 +241,16 @@ namespace ProyectoFinal.Migrations
                 name: "Reservas");
 
             migrationBuilder.DropTable(
-                name: "Carritos");
-
-            migrationBuilder.DropTable(
                 name: "Productos");
 
             migrationBuilder.DropTable(
-                name: "Clientes");
+                name: "Usuarios");
 
             migrationBuilder.DropTable(
                 name: "TipoProductos");
+
+            migrationBuilder.DropTable(
+                name: "Carritos");
         }
     }
 }

@@ -5,8 +5,84 @@
       "PackagePath": "staticwebassets\\ProyectoFinal.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\all.css",
+      "PackagePath": "staticwebassets\\Icons\\all.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\all.min.css",
+      "PackagePath": "staticwebassets\\Icons\\all.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\brands.css",
+      "PackagePath": "staticwebassets\\Icons\\brands.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\brands.min.css",
+      "PackagePath": "staticwebassets\\Icons\\brands.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\fontawesome.css",
+      "PackagePath": "staticwebassets\\Icons\\fontawesome.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\Icons\\fontawesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\regular.css",
+      "PackagePath": "staticwebassets\\Icons\\regular.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\regular.min.css",
+      "PackagePath": "staticwebassets\\Icons\\regular.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\solid.css",
+      "PackagePath": "staticwebassets\\Icons\\solid.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\solid.min.css",
+      "PackagePath": "staticwebassets\\Icons\\solid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\svg-with-js.css",
+      "PackagePath": "staticwebassets\\Icons\\svg-with-js.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\svg-with-js.min.css",
+      "PackagePath": "staticwebassets\\Icons\\svg-with-js.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\v4-font-face.css",
+      "PackagePath": "staticwebassets\\Icons\\v4-font-face.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\v4-font-face.min.css",
+      "PackagePath": "staticwebassets\\Icons\\v4-font-face.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\v4-shims.css",
+      "PackagePath": "staticwebassets\\Icons\\v4-shims.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\v4-shims.min.css",
+      "PackagePath": "staticwebassets\\Icons\\v4-shims.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\v5-font-face.css",
+      "PackagePath": "staticwebassets\\Icons\\v5-font-face.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\v5-font-face.min.css",
+      "PackagePath": "staticwebassets\\Icons\\v5-font-face.min.css"
+    },
+    {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\General.css",
       "PackagePath": "staticwebassets\\css\\General.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
     },
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\site.css",
@@ -17,20 +93,120 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\login.jpg",
+      "PackagePath": "staticwebassets\\img\\login.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Mila Nacho266140.webp",
+      "PackagePath": "staticwebassets\\img\\product\\Mila Nacho266140.webp"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\NachoBurguer144602.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\NachoBurguer144602.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\asado895142.webp",
+      "PackagePath": "staticwebassets\\img\\product\\asado895142.webp"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\burger107772.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\burger107772.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\mc roberto361980.jpg",
+      "PackagePath": "staticwebassets\\img\\product\\mc roberto361980.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\mila392252.webp",
+      "PackagePath": "staticwebassets\\img\\product\\mila392252.webp"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\mila975439.webp",
+      "PackagePath": "staticwebassets\\img\\product\\mila975439.webp"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Carrito.js",
+      "PackagePath": "staticwebassets\\js\\Entities\\Carrito.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Mesa.js",
+      "PackagePath": "staticwebassets\\js\\Entities\\Mesa.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Pedido.js",
+      "PackagePath": "staticwebassets\\js\\Entities\\Pedido.js"
+    },
+    {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
       "PackagePath": "staticwebassets\\js\\Entities\\Producto.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\ProductoCantidad.js",
+      "PackagePath": "staticwebassets\\js\\Entities\\ProductoCantidad.js"
     },
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\TipoProducto.js",
       "PackagePath": "staticwebassets\\js\\Entities\\TipoProducto.js"
     },
     {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Usuario.js",
+      "PackagePath": "staticwebassets\\js\\Entities\\Usuario.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\AdmPedidos.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\AdmPedidos.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\CarritoPage.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\CarritoPage.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\DatosPersonales.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\DatosPersonales.js"
+    },
+    {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
       "PackagePath": "staticwebassets\\js\\Pages\\Layout.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Productos.js",
-      "PackagePath": "staticwebassets\\js\\Pages\\Productos.js"
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Login.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Login.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoExpress.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\PedidoExpress.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoLogueado.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\PedidoLogueado.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductoEdit.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\ProductoEdit.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductoIndex.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\ProductoIndex.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductosActivos.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\ProductosActivos.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductosList.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\ProductosList.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Registro.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Registro.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\RegistroAdmin.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\RegistroAdmin.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Utilities.js",
+      "PackagePath": "staticwebassets\\js\\Utilities.js"
     },
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\site.js",
@@ -263,6 +439,38 @@
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-v4compatibility.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-v4compatibility.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-v4compatibility.woff2"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProyectoFinal.Microsoft.AspNetCore.StaticWebAssets.props",

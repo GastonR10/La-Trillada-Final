@@ -1,11 +1,19 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProyectoFinal
 build_property.RootNamespace = ProyectoFinal
@@ -17,6 +25,10 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Carrito/Carrito.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xDYXJyaXRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
@@ -30,8 +42,48 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Producto/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSW5kZXguY3NodG1s
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Login/DatosPersonales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cRGF0b3NQZXJzb25hbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Login/Registro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVnaXN0cm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Login/RegistroAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVnaXN0cm9BZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Pedido/AdministracionPedidos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEFkbWluaXN0cmFjaW9uUGVkaWRvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Pedido/PedidoExpress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBlZGlkb0V4cHJlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Pedido/PedidoLogueado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBlZGlkb0xvZ3VlYWRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Producto/ProductoCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cUHJvZHVjdG9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Producto/ProductoEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cUHJvZHVjdG9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Producto/Productos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cUHJvZHVjdG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Producto/ProductosList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cUHJvZHVjdG9zTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Shared/Error.cshtml]

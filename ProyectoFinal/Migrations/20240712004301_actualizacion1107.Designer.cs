@@ -12,8 +12,8 @@ using ProyectoFinal.Models;
 namespace ProyectoFinal.Migrations
 {
     [DbContext(typeof(BarContext))]
-    [Migration("20240603013315_actualizacion")]
-    partial class actualizacion
+    [Migration("20240712004301_actualizacion1107")]
+    partial class actualizacion1107
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,27 +24,6 @@ namespace ProyectoFinal.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("ReglasNegocio.Entities.Admin", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("NombreUsuario")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Administradores");
-                });
 
             modelBuilder.Entity("ReglasNegocio.Entities.Carrito", b =>
                 {
@@ -60,47 +39,6 @@ namespace ProyectoFinal.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Carritos");
-                });
-
-            modelBuilder.Entity("ReglasNegocio.Entities.Cliente", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Apellido")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Direccion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NombreUsuario")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Telefono")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Clientes");
                 });
 
             modelBuilder.Entity("ReglasNegocio.Entities.Mesa", b =>
@@ -133,6 +71,10 @@ namespace ProyectoFinal.Migrations
                     b.Property<string>("Comentario")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Estado")
                         .HasColumnType("int");
 
@@ -144,6 +86,9 @@ namespace ProyectoFinal.Migrations
 
                     b.Property<int>("IdMesa")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Pos")
+                        .HasColumnType("bit");
 
                     b.Property<string>("TipoPedido")
                         .IsRequired()
@@ -169,12 +114,17 @@ namespace ProyectoFinal.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("Activo")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Eliminado")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Foto")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("IdTipoProducto")
@@ -183,6 +133,9 @@ namespace ProyectoFinal.Migrations
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Precio")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -202,15 +155,19 @@ namespace ProyectoFinal.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CarritoId")
-                        .HasColumnType("int");
+                    b.Property<string>("Comentario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdCarrito")
+                        .HasColumnType("int")
+                        .HasColumnName("CarritoId");
 
                     b.Property<int>("IdProducto")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CarritoId");
+                    b.HasIndex("IdCarrito");
 
                     b.HasIndex("IdProducto");
 
@@ -224,6 +181,9 @@ namespace ProyectoFinal.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("HoraFin")
                         .HasColumnType("datetime2");
@@ -239,7 +199,7 @@ namespace ProyectoFinal.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdCliente");
+                    b.HasIndex("ClienteId");
 
                     b.ToTable("Reservas");
                 });
@@ -256,9 +216,57 @@ namespace ProyectoFinal.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Orden")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("TipoProductos");
+                });
+
+            modelBuilder.Entity("ReglasNegocio.Entities.Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Apellido")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CarritoAbiertoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Direccion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NombreUsuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefono")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("rol")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarritoAbiertoId");
+
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("ReglasNegocio.Entities.PedidoCliente", b =>
@@ -276,10 +284,6 @@ namespace ProyectoFinal.Migrations
             modelBuilder.Entity("ReglasNegocio.Entities.PedidoExpress", b =>
                 {
                     b.HasBaseType("ReglasNegocio.Entities.Pedido");
-
-                    b.Property<string>("Direccion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -320,9 +324,11 @@ namespace ProyectoFinal.Migrations
 
             modelBuilder.Entity("ReglasNegocio.Entities.ProductoCantidad", b =>
                 {
-                    b.HasOne("ReglasNegocio.Entities.Carrito", null)
+                    b.HasOne("ReglasNegocio.Entities.Carrito", "Carrito")
                         .WithMany("CantidadesProductos")
-                        .HasForeignKey("CarritoId");
+                        .HasForeignKey("IdCarrito")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ReglasNegocio.Entities.Producto", "Producto")
                         .WithMany()
@@ -330,26 +336,39 @@ namespace ProyectoFinal.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Carrito");
+
                     b.Navigation("Producto");
                 });
 
             modelBuilder.Entity("ReglasNegocio.Entities.Reserva", b =>
                 {
-                    b.HasOne("ReglasNegocio.Entities.Cliente", "Cliente")
+                    b.HasOne("ReglasNegocio.Entities.Usuario", "Cliente")
                         .WithMany()
-                        .HasForeignKey("IdCliente")
+                        .HasForeignKey("ClienteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Cliente");
                 });
 
+            modelBuilder.Entity("ReglasNegocio.Entities.Usuario", b =>
+                {
+                    b.HasOne("ReglasNegocio.Entities.Carrito", "CarritoAbierto")
+                        .WithMany()
+                        .HasForeignKey("CarritoAbiertoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CarritoAbierto");
+                });
+
             modelBuilder.Entity("ReglasNegocio.Entities.PedidoCliente", b =>
                 {
-                    b.HasOne("ReglasNegocio.Entities.Cliente", "Cliente")
+                    b.HasOne("ReglasNegocio.Entities.Usuario", "Cliente")
                         .WithMany("Pedidos")
                         .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Cliente");
@@ -360,7 +379,7 @@ namespace ProyectoFinal.Migrations
                     b.Navigation("CantidadesProductos");
                 });
 
-            modelBuilder.Entity("ReglasNegocio.Entities.Cliente", b =>
+            modelBuilder.Entity("ReglasNegocio.Entities.Usuario", b =>
                 {
                     b.Navigation("Pedidos");
                 });
