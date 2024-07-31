@@ -1,0 +1,19 @@
+﻿.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    flex: 1;
+}
+
+.card-footer {
+    text-align: center;
+}

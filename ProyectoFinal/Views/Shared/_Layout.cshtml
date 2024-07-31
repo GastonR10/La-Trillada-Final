@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href="~/css/general.css" rel="stylesheet" />
     <link href="~/css/login.css" rel="stylesheet" />
+    <link href="~/css/productosactivos.css" rel="stylesheet" />
+    <link href="~/css/pedidosadmin.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/ProyectoFinal.styles.css" asp-append-version="true" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <link href="~/icons/fontawesome.css" rel="stylesheet" />
@@ -61,7 +63,7 @@
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductosList"><i class="fa-regular fa-list-ul"></i>  Lista de Productos</a>
                 </li>
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="" asp-action=""><i class="fa-regular fa-clipboard-list"></i>  Pedidos</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Pedido" asp-action="PedidosFinalizados"><i class="fa-regular fa-clipboard-list"></i>  Pedidos Finalizados</a>
                 </li>
                 <li class="nav-item opcionMenu">
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Pedido" asp-action="AdministracionPedidos"><i class="fa-solid fa-file-lines"></i>  Administración de Pedidos</a>

@@ -35,17 +35,16 @@ namespace ReglasNegocio.DTO_Entities
 
         }
 
-        //public DTO_Usuario(string? nombre, string? apellido, string? email, string? telefono, string? direccion)
+        //public DTO_Usuario(Usuario u)
         //{
-        //    NombreUsuario = "";
+        //    NombreUsuario = u.NombreUsuario;
         //    Password = "";
-        //    this.rol = "";
-        //    Nombre = nombre;
-        //    Apellido = apellido;
-        //    Email = email;
-        //    Telefono = telefono;
-        //    Direccion = direccion;
-
+        //    this.rol = u.rol;
+        //    Nombre = u.Nombre;
+        //    Apellido = u.Apellido;
+        //    Email = u.Email;
+        //    Telefono = u.Telefono;
+        //    Direccion = u.Direccion;    
         //}
     }
 }

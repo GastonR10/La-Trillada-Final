@@ -81,7 +81,7 @@ namespace ProyectoFinal.Migrations
                     b.Property<int>("IdCarrito")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdMesa")
+                    b.Property<int?>("IdMesa")
                         .HasColumnType("int");
 
                     b.Property<bool>("Pos")

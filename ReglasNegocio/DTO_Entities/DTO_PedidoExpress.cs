@@ -21,6 +21,27 @@ namespace ReglasNegocio.DTO_Entities
             Nombre = nombre;
         }
 
-
+        public DTO_PedidoExpress(PedidoExpress p)
+        {
+            Id = p.Id;
+            Comentario = p.Comentario;
+            Estado = p.Estado.ToString();
+            Aceptado = p.Aceptado;
+            if(p.Carrito != null)
+            {
+                Carrito = new DTO_Carrito(p.Carrito);
+            } else
+            {
+                Carrito = null;
+            }
+            
+            IdMesa = p.IdMesa;
+            Pos = p.Pos;
+            Direccion = p.Direccion;
+            Fecha = p.Fecha;
+            Email = p.Email;
+            Telefono = p.Telefono;
+            Nombre = p.Nombre;
+        }
     }
 }

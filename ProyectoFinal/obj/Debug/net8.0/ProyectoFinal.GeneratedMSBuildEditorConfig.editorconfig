@@ -70,6 +70,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBlZGlkb0xvZ3VlYWRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Pedido/PedidosFinalizados.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBlZGlkb3NGaW5hbGl6YWRvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Pedido/PedidoVista.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBlZGlkb1Zpc3RhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Producto/ProductoCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cUHJvZHVjdG9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

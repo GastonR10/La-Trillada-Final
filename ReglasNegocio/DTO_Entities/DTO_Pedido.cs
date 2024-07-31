@@ -20,7 +20,7 @@ namespace ReglasNegocio.DTO_Entities
 
         public int IdCarrito { get; set; }
 
-        public DTO_Carrito Carrito { get; set; }
+        public DTO_Carrito? Carrito { get; set; }
 
         public int? IdMesa { get; set; }
 

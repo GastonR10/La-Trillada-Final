@@ -11,7 +11,7 @@ namespace ReglasNegocio.DTO_Entities
     {     
 
         public int Id { get; set; }
-        public List<DTO_ProductoCantidad> ProductosCantidad { get; set; }
+        public List<DTO_ProductoCantidad>? ProductosCantidad { get; set; }
         public decimal PrecioTotal { get; set; }
 
         public DTO_Carrito() {
@@ -25,10 +25,18 @@ namespace ReglasNegocio.DTO_Entities
             PrecioTotal = precioTotal;
         }
 
-        //public DTO_Carrito(Carrito c) { 
-            
-        //}
+        public DTO_Carrito(Carrito c) {
+            if (c != null)
+            {
+                Id = c.Id;
 
-
+                ProductosCantidad = new List<DTO_ProductoCantidad>();
+                foreach (ProductoCantidad p in c.CantidadesProductos)
+                {
+                    ProductosCantidad.Add(new DTO_ProductoCantidad(p));
+                }
+                PrecioTotal = c.PrecioTotal;
+            }
+        }
     }
 }

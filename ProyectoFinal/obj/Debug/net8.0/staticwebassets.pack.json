@@ -85,6 +85,14 @@
       "PackagePath": "staticwebassets\\css\\Login.css"
     },
     {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\PedidosAdmin.css",
+      "PackagePath": "staticwebassets\\css\\PedidosAdmin.css"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\ProductosActivos.css",
+      "PackagePath": "staticwebassets\\css\\ProductosActivos.css"
+    },
+    {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -97,12 +105,56 @@
       "PackagePath": "staticwebassets\\img\\login.jpg"
     },
     {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Asado632581.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Asado632581.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Chorizo809532.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Chorizo809532.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Faina110537.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Faina110537.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Guiso193147.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Guiso193147.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Hamburguesa19125.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Hamburguesa19125.jpeg"
+    },
+    {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Mila Nacho266140.webp",
       "PackagePath": "staticwebassets\\img\\product\\Mila Nacho266140.webp"
     },
     {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Milanesa de la casa328262.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Milanesa de la casa328262.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Milanesa934078.png",
+      "PackagePath": "staticwebassets\\img\\product\\Milanesa934078.png"
+    },
+    {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\NachoBurguer144602.jpg",
       "PackagePath": "staticwebassets\\img\\product\\NachoBurguer144602.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Pancho367647.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Pancho367647.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Papas fritas493475.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Papas fritas493475.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Pizzeta con pepperoni687730.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Pizzeta con pepperoni687730.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Salmon a la plancha791781.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Salmon a la plancha791781.jpeg"
     },
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\asado895142.webp",
@@ -111,6 +163,10 @@
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\burger107772.jpg",
       "PackagePath": "staticwebassets\\img\\product\\burger107772.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\error.png",
+      "PackagePath": "staticwebassets\\img\\product\\error.png"
     },
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\mc roberto361980.jpg",
@@ -179,6 +235,14 @@
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoLogueado.js",
       "PackagePath": "staticwebassets\\js\\Pages\\PedidoLogueado.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoVista.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\PedidoVista.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidosFinalizados.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\PedidosFinalizados.js"
     },
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductoEdit.js",

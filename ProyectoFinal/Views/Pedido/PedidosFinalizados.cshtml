@@ -1,0 +1,13 @@
+﻿<div class="text-center">
+    <h1>Pedidos Finalizados</h1>
+</div>
+
+<div id="divPedidosFinalizados" class="row">
+</div>
+
+<div style="display:none;">
+    @Html.Hidden("URLPedidosFinalizados", Url.Action("GetPedidosFinalizados", "Pedido"))
+    @Html.Hidden("URLGetPedidoVista", Url.Action("GetPedidoVista", "Pedido"))
+</div>
+
+<script type="text/javascript" src="~/js/pages/PedidosFinalizados.js" asp-append-version="true"></script>
