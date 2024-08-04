@@ -241,6 +241,10 @@
       "PackagePath": "staticwebassets\\js\\Pages\\PedidoVista.js"
     },
     {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidosCliente.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\PedidosCliente.js"
+    },
+    {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidosFinalizados.js",
       "PackagePath": "staticwebassets\\js\\Pages\\PedidosFinalizados.js"
     },
@@ -267,6 +271,10 @@
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\RegistroAdmin.js",
       "PackagePath": "staticwebassets\\js\\Pages\\RegistroAdmin.js"
+    },
+    {
+      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\VerPedidoCliente.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\VerPedidoCliente.js"
     },
     {
       "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Utilities.js",

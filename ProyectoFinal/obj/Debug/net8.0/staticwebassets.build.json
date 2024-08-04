@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cL+L2KAya5hPbnt5UCx2Kb+ODG4dLJwwC4qm6McuCAU=",
+  "Hash": "vPkBeU9vfDxywHRiVUtbGNPLSSq9sW+q3hD5ntU7FJ0=",
   "Source": "ProyectoFinal",
   "BasePath": "_content/ProyectoFinal",
   "Mode": "Default",
@@ -1157,6 +1157,25 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\PedidoLogueado.js"
     },
     {
+      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidosCliente.js",
+      "SourceId": "ProyectoFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinal",
+      "RelativePath": "js/Pages/PedidosCliente.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Pages\\PedidosCliente.js"
+    },
+    {
       "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidosFinalizados.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
@@ -1307,6 +1326,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Pages\\RegistroAdmin.js"
+    },
+    {
+      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\VerPedidoCliente.js",
+      "SourceId": "ProyectoFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinal",
+      "RelativePath": "js/Pages/VerPedidoCliente.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Pages\\VerPedidoCliente.js"
     },
     {
       "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\site.js",
