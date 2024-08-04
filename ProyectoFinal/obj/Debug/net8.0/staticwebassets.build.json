@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cL+L2KAya5hPbnt5UCx2Kb+ODG4dLJwwC4qm6McuCAU=",
+  "Hash": "r/hKyAZ/H3wMRHnaXeW3fuA9izrVc6ubeIS5mFPog7I=",
   "Source": "ProyectoFinal",
   "BasePath": "_content/ProyectoFinal",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ProyectoFinal\\wwwroot",
       "Source": "ProyectoFinal",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ProyectoFinal.styles.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ProyectoFinal.styles.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "ProyectoFinal.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ProyectoFinal.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ProyectoFinal.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoFinal.bundle.scp.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoFinal.bundle.scp.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "ProyectoFinal.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoFinal.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoFinal.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\General.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\css\\General.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/General.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\General.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\Login.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\css\\Login.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/Login.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Login.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\PedidosAdmin.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\css\\PedidosAdmin.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/PedidosAdmin.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\css\\PedidosAdmin.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\ProductosActivos.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\css\\ProductosActivos.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/ProductosActivos.css",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\css\\ProductosActivos.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\css\\site.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\favicon.ico",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\all.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\all.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/all.css",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\all.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\all.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\all.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/all.min.css",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\all.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\brands.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\brands.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/brands.css",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\brands.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\brands.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\brands.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/brands.min.css",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\brands.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\fontawesome.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\fontawesome.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/fontawesome.css",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\fontawesome.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\fontawesome.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\fontawesome.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/fontawesome.min.css",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\fontawesome.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\regular.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\regular.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/regular.css",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\regular.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\regular.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\regular.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/regular.min.css",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\regular.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\solid.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\solid.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/solid.css",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\solid.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\solid.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\solid.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/solid.min.css",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\solid.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\svg-with-js.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\svg-with-js.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/svg-with-js.css",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\svg-with-js.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\svg-with-js.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\svg-with-js.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/svg-with-js.min.css",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\svg-with-js.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\v4-font-face.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\v4-font-face.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/v4-font-face.css",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\v4-font-face.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\v4-font-face.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\v4-font-face.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/v4-font-face.min.css",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\v4-font-face.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\v4-shims.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\v4-shims.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/v4-shims.css",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\v4-shims.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\v4-shims.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\v4-shims.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/v4-shims.min.css",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\v4-shims.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\v5-font-face.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\v5-font-face.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/v5-font-face.css",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\v5-font-face.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Icons\\v5-font-face.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\v5-font-face.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "Icons/v5-font-face.min.css",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\Icons\\v5-font-face.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\login.jpg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\login.jpg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/login.jpg",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\img\\login.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Asado632581.jpeg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Asado632581.jpeg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/Asado632581.jpeg",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\Asado632581.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\asado895142.webp",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\asado895142.webp",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/asado895142.webp",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\asado895142.webp"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\burger107772.jpg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\burger107772.jpg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/burger107772.jpg",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\burger107772.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Chorizo809532.jpeg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Chorizo809532.jpeg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/Chorizo809532.jpeg",
       "AssetKind": "All",
@@ -606,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\Chorizo809532.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\error.png",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\error.png",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/error.png",
       "AssetKind": "All",
@@ -625,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\error.png"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Faina110537.jpeg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Faina110537.jpeg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/Faina110537.jpeg",
       "AssetKind": "All",
@@ -644,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\Faina110537.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Guiso193147.jpeg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Guiso193147.jpeg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/Guiso193147.jpeg",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\Guiso193147.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Hamburguesa19125.jpeg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Hamburguesa19125.jpeg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/Hamburguesa19125.jpeg",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\Hamburguesa19125.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\mc roberto361980.jpg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\mc roberto361980.jpg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/mc roberto361980.jpg",
       "AssetKind": "All",
@@ -701,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\mc roberto361980.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Mila Nacho266140.webp",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Mila Nacho266140.webp",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/Mila Nacho266140.webp",
       "AssetKind": "All",
@@ -720,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\Mila Nacho266140.webp"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\mila392252.webp",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\mila392252.webp",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/mila392252.webp",
       "AssetKind": "All",
@@ -739,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\mila392252.webp"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\mila975439.webp",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\mila975439.webp",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/mila975439.webp",
       "AssetKind": "All",
@@ -758,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\mila975439.webp"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Milanesa de la casa328262.jpeg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Milanesa de la casa328262.jpeg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/Milanesa de la casa328262.jpeg",
       "AssetKind": "All",
@@ -777,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\Milanesa de la casa328262.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Milanesa934078.png",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Milanesa934078.png",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/Milanesa934078.png",
       "AssetKind": "All",
@@ -796,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\Milanesa934078.png"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\NachoBurguer144602.jpg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\NachoBurguer144602.jpg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/NachoBurguer144602.jpg",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\NachoBurguer144602.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Pancho367647.jpeg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Pancho367647.jpeg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/Pancho367647.jpeg",
       "AssetKind": "All",
@@ -834,10 +834,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\Pancho367647.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Papas fritas493475.jpeg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Papas fritas493475.jpeg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/Papas fritas493475.jpeg",
       "AssetKind": "All",
@@ -853,10 +853,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\Papas fritas493475.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Pizzeta con pepperoni687730.jpeg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Pizzeta con pepperoni687730.jpeg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/Pizzeta con pepperoni687730.jpeg",
       "AssetKind": "All",
@@ -872,10 +872,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\Pizzeta con pepperoni687730.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\img\\product\\Salmon a la plancha791781.jpeg",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Salmon a la plancha791781.jpeg",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "img/product/Salmon a la plancha791781.jpeg",
       "AssetKind": "All",
@@ -891,10 +891,10 @@
       "OriginalItemSpec": "wwwroot\\img\\product\\Salmon a la plancha791781.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Carrito.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Carrito.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Entities/Carrito.js",
       "AssetKind": "All",
@@ -910,10 +910,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Entities\\Carrito.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Mesa.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Mesa.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Entities/Mesa.js",
       "AssetKind": "All",
@@ -929,10 +929,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Entities\\Mesa.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Pedido.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Pedido.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Entities/Pedido.js",
       "AssetKind": "All",
@@ -948,10 +948,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Entities\\Pedido.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Entities/Producto.js",
       "AssetKind": "All",
@@ -967,10 +967,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Entities\\Producto.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\ProductoCantidad.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\ProductoCantidad.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Entities/ProductoCantidad.js",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Entities\\ProductoCantidad.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\TipoProducto.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\TipoProducto.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Entities/TipoProducto.js",
       "AssetKind": "All",
@@ -1005,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Entities\\TipoProducto.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Usuario.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Usuario.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Entities/Usuario.js",
       "AssetKind": "All",
@@ -1024,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Entities\\Usuario.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\AdmPedidos.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\AdmPedidos.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/AdmPedidos.js",
       "AssetKind": "All",
@@ -1043,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\AdmPedidos.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\CarritoPage.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\CarritoPage.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/CarritoPage.js",
       "AssetKind": "All",
@@ -1062,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\CarritoPage.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\DatosPersonales.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\DatosPersonales.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/DatosPersonales.js",
       "AssetKind": "All",
@@ -1081,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\DatosPersonales.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/Layout.js",
       "AssetKind": "All",
@@ -1100,10 +1100,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\Layout.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Login.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\Login.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/Login.js",
       "AssetKind": "All",
@@ -1119,10 +1119,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\Login.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoExpress.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoExpress.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/PedidoExpress.js",
       "AssetKind": "All",
@@ -1138,10 +1138,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\PedidoExpress.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoLogueado.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoLogueado.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/PedidoLogueado.js",
       "AssetKind": "All",
@@ -1157,10 +1157,29 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\PedidoLogueado.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidosFinalizados.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidosCliente.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinal",
+      "RelativePath": "js/Pages/PedidosCliente.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Pages\\PedidosCliente.js"
+    },
+    {
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidosFinalizados.js",
+      "SourceId": "ProyectoFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/PedidosFinalizados.js",
       "AssetKind": "All",
@@ -1176,10 +1195,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\PedidosFinalizados.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoVista.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoVista.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/PedidoVista.js",
       "AssetKind": "All",
@@ -1195,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\PedidoVista.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductoEdit.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductoEdit.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/ProductoEdit.js",
       "AssetKind": "All",
@@ -1214,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\ProductoEdit.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductoIndex.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductoIndex.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/ProductoIndex.js",
       "AssetKind": "All",
@@ -1233,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\ProductoIndex.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductosActivos.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductosActivos.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/ProductosActivos.js",
       "AssetKind": "All",
@@ -1252,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\ProductosActivos.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductosList.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductosList.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/ProductosList.js",
       "AssetKind": "All",
@@ -1271,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\ProductosList.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Registro.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\Registro.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/Registro.js",
       "AssetKind": "All",
@@ -1290,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\Registro.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\RegistroAdmin.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\RegistroAdmin.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Pages/RegistroAdmin.js",
       "AssetKind": "All",
@@ -1309,10 +1328,29 @@
       "OriginalItemSpec": "wwwroot\\js\\Pages\\RegistroAdmin.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\VerPedidoCliente.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinal",
+      "RelativePath": "js/Pages/VerPedidoCliente.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Pages\\VerPedidoCliente.js"
+    },
+    {
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\site.js",
+      "SourceId": "ProyectoFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -1328,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Utilities.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Utilities.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "js/Utilities.js",
       "AssetKind": "All",
@@ -1347,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot\\js\\Utilities.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -1366,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -1385,10 +1423,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -1404,10 +1442,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1423,10 +1461,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -1442,10 +1480,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -1461,10 +1499,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -1480,10 +1518,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -1499,10 +1537,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -1518,10 +1556,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -1537,10 +1575,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -1556,10 +1594,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -1575,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -1594,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -1613,10 +1651,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -1632,10 +1670,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -1651,10 +1689,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -1670,10 +1708,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -1689,10 +1727,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -1708,10 +1746,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -1727,10 +1765,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -1746,10 +1784,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -1765,10 +1803,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -1784,10 +1822,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -1803,10 +1841,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -1822,10 +1860,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -1841,10 +1879,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -1860,10 +1898,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -1879,10 +1917,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -1898,10 +1936,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -1917,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -1936,10 +1974,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -1955,10 +1993,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1974,10 +2012,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1993,10 +2031,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -2012,10 +2050,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -2031,10 +2069,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -2050,10 +2088,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -2069,10 +2107,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -2088,10 +2126,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -2107,10 +2145,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -2126,10 +2164,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -2145,10 +2183,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -2164,10 +2202,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -2183,10 +2221,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -2202,10 +2240,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -2221,10 +2259,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -2240,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -2259,10 +2297,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -2278,10 +2316,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -2297,10 +2335,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -2316,10 +2354,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -2335,10 +2373,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -2354,10 +2392,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -2373,10 +2411,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -2392,10 +2430,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -2411,10 +2449,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -2430,10 +2468,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-brands-400.ttf",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-brands-400.ttf",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "webfonts/fa-brands-400.ttf",
       "AssetKind": "All",
@@ -2449,10 +2487,10 @@
       "OriginalItemSpec": "wwwroot\\webfonts\\fa-brands-400.ttf"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-brands-400.woff2",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-brands-400.woff2",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "webfonts/fa-brands-400.woff2",
       "AssetKind": "All",
@@ -2468,10 +2506,10 @@
       "OriginalItemSpec": "wwwroot\\webfonts\\fa-brands-400.woff2"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-regular-400.ttf",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-regular-400.ttf",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "webfonts/fa-regular-400.ttf",
       "AssetKind": "All",
@@ -2487,10 +2525,10 @@
       "OriginalItemSpec": "wwwroot\\webfonts\\fa-regular-400.ttf"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-regular-400.woff2",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-regular-400.woff2",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "webfonts/fa-regular-400.woff2",
       "AssetKind": "All",
@@ -2506,10 +2544,10 @@
       "OriginalItemSpec": "wwwroot\\webfonts\\fa-regular-400.woff2"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-solid-900.ttf",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-solid-900.ttf",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "webfonts/fa-solid-900.ttf",
       "AssetKind": "All",
@@ -2525,10 +2563,10 @@
       "OriginalItemSpec": "wwwroot\\webfonts\\fa-solid-900.ttf"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-solid-900.woff2",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-solid-900.woff2",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "webfonts/fa-solid-900.woff2",
       "AssetKind": "All",
@@ -2544,10 +2582,10 @@
       "OriginalItemSpec": "wwwroot\\webfonts\\fa-solid-900.woff2"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-v4compatibility.ttf",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-v4compatibility.ttf",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "webfonts/fa-v4compatibility.ttf",
       "AssetKind": "All",
@@ -2563,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\webfonts\\fa-v4compatibility.ttf"
     },
     {
-      "Identity": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\webfonts\\fa-v4compatibility.woff2",
+      "Identity": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-v4compatibility.woff2",
       "SourceId": "ProyectoFinal",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal",
       "RelativePath": "webfonts/fa-v4compatibility.woff2",
       "AssetKind": "All",
