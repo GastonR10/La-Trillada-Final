@@ -24,6 +24,12 @@ namespace ProyectoFinal.Controllers
             return View("PedidoVista", id);
         }
 
+        [HttpGet("Pedido/VerPedidoCliente/{id}")]
+        public IActionResult VerPedidoCliente(int id)
+        {
+            return View("VerPedidoCliente", id);
+        }
+
         [HttpGet("Pedido/GetPedido/{id}")]
         public async Task<IActionResult> GetPedido(int id)
         {
@@ -379,6 +385,49 @@ namespace ProyectoFinal.Controllers
             {
                 return NotFound(ex.Message);
             }
+        }
+
+        public IActionResult PedidosCliente()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> PedidosClienteLogueado()
+        {
+            try
+            {
+                // Verificar si el usuario ya existe en la base de datos
+                Usuario? existingUser = await _db.Usuarios
+                    .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
+
+                if (existingUser == null)
+                {
+                    // Si el usuario no existe, retornar un BadRequest con un mensaje
+                    return BadRequest("El usuario no existe.");
+                }
+                 
+                List<PedidoCliente> pedidosCliente = await _db.Pedidos.OfType<PedidoCliente>()
+                                                      .Include(p => p.Cliente)
+                                                      .Include(p => p.Carrito)
+                                                            .ThenInclude(c => c.CantidadesProductos)
+                                                                .ThenInclude(pc => pc.Producto)                                                    
+                                                      .ToListAsync();
+
+              
+
+                List<DTO_PedidoCliente> pedidosClienteDTO = pedidosCliente.Select(p => new DTO_PedidoCliente(p)).ToList();
+
+
+                return Ok(pedidosClienteDTO);
+                    
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
 
     }

@@ -1,0 +1,13 @@
+﻿<div class="text-center">
+    <h1>Pedidos</h1>
+</div>
+
+<div id="divPedidosCliente" class="row">
+</div>
+
+<div style="display:none;">
+    @Html.Hidden("URLPedidosCliente", Url.Action("PedidosClienteLogueado", "Pedido"))
+    @Html.Hidden("URLGetPedidoClienteVista", Url.Action("VerPedidoCliente", "Pedido"))
+</div>
+
+<script type="text/javascript" src="~/js/pages/pedidoscliente.js" asp-append-version="true"></script>
