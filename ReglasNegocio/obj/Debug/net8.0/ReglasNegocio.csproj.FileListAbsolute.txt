@@ -10,3 +10,15 @@ C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ReglasNegocio\obj\Debug\net
 C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ReglasNegocio\obj\Debug\net8.0\ReglasNegocio.pdb
 C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ReglasNegocio\obj\Debug\net8.0\ref\ReglasNegocio.dll
 C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ReglasNegocio\obj\Debug\net8.0\ReglasNegocio.sourcelink.json
+C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ReglasNegocio\bin\Debug\net8.0\ReglasNegocio.deps.json
+C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ReglasNegocio\bin\Debug\net8.0\ReglasNegocio.dll
+C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ReglasNegocio\bin\Debug\net8.0\ReglasNegocio.pdb
+C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ReglasNegocio\obj\Debug\net8.0\ReglasNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ReglasNegocio\obj\Debug\net8.0\ReglasNegocio.AssemblyInfoInputs.cache
+C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ReglasNegocio\obj\Debug\net8.0\ReglasNegocio.AssemblyInfo.cs
+C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ReglasNegocio\obj\Debug\net8.0\ReglasNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ReglasNegocio\obj\Debug\net8.0\ReglasNegocio.sourcelink.json
+C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ReglasNegocio\obj\Debug\net8.0\ReglasNegocio.dll
+C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ReglasNegocio\obj\Debug\net8.0\refint\ReglasNegocio.dll
+C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ReglasNegocio\obj\Debug\net8.0\ReglasNegocio.pdb
+C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ReglasNegocio\obj\Debug\net8.0\ref\ReglasNegocio.dll

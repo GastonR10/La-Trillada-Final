@@ -1,38 +1,78 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\",
+  "WorkspaceRootPath": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\wwwroot\\js\\pages\\admpedidos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\pages\\admpedidos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\wwwroot\\css\\pedidosadmin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\css\\pedidosadmin.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\models\\barcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\models\\barcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\wwwroot\\js\\pages\\pedidosfinalizados.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\pages\\pedidosfinalizados.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\views\\producto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\views\\producto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\wwwroot\\js\\entities\\producto.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\entities\\producto.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}|"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\wwwroot\\js\\entities\\pedido.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\entities\\pedido.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\wwwroot\\css\\general.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\css\\general.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\views\\pedido\\pedidosfinalizados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\views\\pedido\\pedidosfinalizados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\wwwroot\\js\\pages\\layout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\pages\\layout.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\wwwroot\\js\\entities\\carrito.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\entities\\carrito.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\reglasnegocio\\dto_entities\\dto_carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|solutionrelative:reglasnegocio\\dto_entities\\dto_carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\reglasnegocio\\dto_entities\\dto_pedidoexpress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|solutionrelative:reglasnegocio\\dto_entities\\dto_pedidoexpress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\reglasnegocio\\dto_entities\\dto_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|solutionrelative:reglasnegocio\\dto_entities\\dto_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\reglasnegocio\\entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|solutionrelative:reglasnegocio\\entities\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\wwwroot\\js\\pages\\pedidovista.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\pages\\pedidovista.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\reglasnegocio\\entities\\pedidocliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|solutionrelative:reglasnegocio\\entities\\pedidocliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\views\\pedido\\pedidologueado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\views\\pedido\\pedidologueado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\views\\pedido\\pedidovista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\views\\pedido\\pedidovista.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\santiago\\desktop\\proyectofinal\\la-trillada-privado\\proyectofinal\\views\\pedido\\administracionpedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\views\\pedido\\administracionpedidos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,107 +82,232 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 9,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BarContext.cs",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Models\\BarContext.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal\\Models\\BarContext.cs",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Models\\BarContext.cs",
-              "RelativeToolTip": "ProyectoFinal\\Models\\BarContext.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAA4wB4AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T00:53:33.509Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Program.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal\\Program.cs",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Program.cs",
-              "RelativeToolTip": "ProyectoFinal\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T00:01:22.181Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\appsettings.json",
-              "RelativeDocumentMoniker": "ProyectoFinal\\appsettings.json",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\appsettings.json",
-              "RelativeToolTip": "ProyectoFinal\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-07T00:01:17.466Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Views\\Producto\\Index.cshtml",
-              "RelativeDocumentMoniker": "ProyectoFinal\\Views\\Producto\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Views\\Producto\\Index.cshtml",
-              "RelativeToolTip": "ProyectoFinal\\Views\\Producto\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-05T00:23:55.466Z",
-              "EditorCaption": ""
+              "Title": "PedidoController.cs",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Controllers\\PedidoController.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Controllers\\PedidoController.cs",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Controllers\\PedidoController.cs",
+              "RelativeToolTip": "ProyectoFinal\\Controllers\\PedidoController.cs",
+              "ViewState": "AQIAAMUAAAAAAAAAAAAuwNoAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T00:03:37.655Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Producto.js",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
-              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
-              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBAAAAAaAAAA",
+              "DocumentIndex": 11,
+              "Title": "PedidoVista.js",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoVista.js",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Pages\\PedidoVista.js",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoVista.js",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Pages\\PedidoVista.js",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwAYAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-06-04T23:12:33.127Z"
+              "WhenOpened": "2024-07-29T23:51:42.178Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAA0AAABWAAAA",
+              "DocumentIndex": 16,
+              "Title": "PedidoVista.cshtml",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Views\\Pedido\\PedidoVista.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Views\\Pedido\\PedidoVista.cshtml",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Views\\Pedido\\PedidoVista.cshtml",
+              "RelativeToolTip": "ProyectoFinal\\Views\\Pedido\\PedidoVista.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAEIAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T22:49:22.866Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Layout.js",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
-              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
-              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-06-04T23:14:05.895Z"
+              "WhenOpened": "2024-07-29T23:51:08.327Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "General.css",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\General.css",
-              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\css\\General.css",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\General.css",
-              "RelativeToolTip": "ProyectoFinal\\wwwroot\\css\\General.css",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAEEAAAAPAAAA",
+              "Title": "PedidosFinalizados.cshtml",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Views\\Pedido\\PedidosFinalizados.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Views\\Pedido\\PedidosFinalizados.cshtml",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Views\\Pedido\\PedidosFinalizados.cshtml",
+              "RelativeToolTip": "ProyectoFinal\\Views\\Pedido\\PedidosFinalizados.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-29T23:48:47.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PedidosFinalizados.js",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidosFinalizados.js",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Pages\\PedidosFinalizados.js",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidosFinalizados.js",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Pages\\PedidosFinalizados.js",
+              "ViewState": "AQIAADwAAAAAAAAAAAAowE0AAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-29T23:41:48.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Pedido.js",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Pedido.js",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Entities\\Pedido.js",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Pedido.js",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Entities\\Pedido.js",
+              "ViewState": "AQIAALcAAAAAAAAAAAAAAMgAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-30T00:30:03.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Carrito.js",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Carrito.js",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Entities\\Carrito.js",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Carrito.js",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Entities\\Carrito.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-30T01:30:48.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdmPedidos.js",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\AdmPedidos.js",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Pages\\AdmPedidos.js",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\AdmPedidos.js",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Pages\\AdmPedidos.js",
+              "ViewState": "AQIAAJ8AAAAAAAAAAAAowE8AAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-30T01:06:42.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ReglasNegocio\\Entities\\Pedido.cs",
+              "RelativeDocumentMoniker": "ReglasNegocio\\Entities\\Pedido.cs",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ReglasNegocio\\Entities\\Pedido.cs",
+              "RelativeToolTip": "ReglasNegocio\\Entities\\Pedido.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T00:11:27.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PedidosAdmin.css",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\css\\PedidosAdmin.css",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\css\\PedidosAdmin.css",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\css\\PedidosAdmin.css",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\css\\PedidosAdmin.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-06-04T23:04:50.268Z"
+              "WhenOpened": "2024-07-29T23:42:57.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PedidoLogueado.cshtml",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Views\\Pedido\\PedidoLogueado.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Views\\Pedido\\PedidoLogueado.cshtml",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Views\\Pedido\\PedidoLogueado.cshtml",
+              "RelativeToolTip": "ProyectoFinal\\Views\\Pedido\\PedidoLogueado.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-30T00:10:56.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PedidoCliente.cs",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ReglasNegocio\\Entities\\PedidoCliente.cs",
+              "RelativeDocumentMoniker": "ReglasNegocio\\Entities\\PedidoCliente.cs",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ReglasNegocio\\Entities\\PedidoCliente.cs",
+              "RelativeToolTip": "ReglasNegocio\\Entities\\PedidoCliente.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T00:11:08.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DTO_Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ReglasNegocio\\DTO_Entities\\DTO_Pedido.cs",
+              "RelativeDocumentMoniker": "ReglasNegocio\\DTO_Entities\\DTO_Pedido.cs",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ReglasNegocio\\DTO_Entities\\DTO_Pedido.cs",
+              "RelativeToolTip": "ReglasNegocio\\DTO_Entities\\DTO_Pedido.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBYAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T00:14:01.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DTO_PedidoExpress.cs",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ReglasNegocio\\DTO_Entities\\DTO_PedidoExpress.cs",
+              "RelativeDocumentMoniker": "ReglasNegocio\\DTO_Entities\\DTO_PedidoExpress.cs",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ReglasNegocio\\DTO_Entities\\DTO_PedidoExpress.cs",
+              "RelativeToolTip": "ReglasNegocio\\DTO_Entities\\DTO_PedidoExpress.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T00:14:22.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DTO_Carrito.cs",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ReglasNegocio\\DTO_Entities\\DTO_Carrito.cs",
+              "RelativeDocumentMoniker": "ReglasNegocio\\DTO_Entities\\DTO_Carrito.cs",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ReglasNegocio\\DTO_Entities\\DTO_Carrito.cs",
+              "RelativeToolTip": "ReglasNegocio\\DTO_Entities\\DTO_Carrito.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T00:42:15.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "ProyectoFinal\\Controllers\\LoginController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowCkAAABnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T00:03:07.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AdministracionPedidos.cshtml",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Views\\Pedido\\AdministracionPedidos.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Views\\Pedido\\AdministracionPedidos.cshtml",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Views\\Pedido\\AdministracionPedidos.cshtml",
+              "RelativeToolTip": "ProyectoFinal\\Views\\Pedido\\AdministracionPedidos.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-29T23:48:33.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAEUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-29T23:44:12.717Z"
             }
           ]
         }

@@ -1,268 +1,512 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoFinal.bundle.scp.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoFinal.bundle.scp.css",
       "PackagePath": "staticwebassets\\ProyectoFinal.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\General.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\all.css",
+      "PackagePath": "staticwebassets\\Icons\\all.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\all.min.css",
+      "PackagePath": "staticwebassets\\Icons\\all.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\brands.css",
+      "PackagePath": "staticwebassets\\Icons\\brands.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\brands.min.css",
+      "PackagePath": "staticwebassets\\Icons\\brands.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\fontawesome.css",
+      "PackagePath": "staticwebassets\\Icons\\fontawesome.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\Icons\\fontawesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\regular.css",
+      "PackagePath": "staticwebassets\\Icons\\regular.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\regular.min.css",
+      "PackagePath": "staticwebassets\\Icons\\regular.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\solid.css",
+      "PackagePath": "staticwebassets\\Icons\\solid.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\solid.min.css",
+      "PackagePath": "staticwebassets\\Icons\\solid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\svg-with-js.css",
+      "PackagePath": "staticwebassets\\Icons\\svg-with-js.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\svg-with-js.min.css",
+      "PackagePath": "staticwebassets\\Icons\\svg-with-js.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\v4-font-face.css",
+      "PackagePath": "staticwebassets\\Icons\\v4-font-face.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\v4-font-face.min.css",
+      "PackagePath": "staticwebassets\\Icons\\v4-font-face.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\v4-shims.css",
+      "PackagePath": "staticwebassets\\Icons\\v4-shims.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\v4-shims.min.css",
+      "PackagePath": "staticwebassets\\Icons\\v4-shims.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\v5-font-face.css",
+      "PackagePath": "staticwebassets\\Icons\\v5-font-face.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\Icons\\v5-font-face.min.css",
+      "PackagePath": "staticwebassets\\Icons\\v5-font-face.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\css\\General.css",
       "PackagePath": "staticwebassets\\css\\General.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\css\\PedidosAdmin.css",
+      "PackagePath": "staticwebassets\\css\\PedidosAdmin.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\css\\ProductosActivos.css",
+      "PackagePath": "staticwebassets\\css\\ProductosActivos.css"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\login.jpg",
+      "PackagePath": "staticwebassets\\img\\login.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Asado632581.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Asado632581.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Chorizo809532.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Chorizo809532.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Faina110537.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Faina110537.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Guiso193147.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Guiso193147.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Hamburguesa19125.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Hamburguesa19125.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Milanesa de la casa328262.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Milanesa de la casa328262.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Milanesa934078.png",
+      "PackagePath": "staticwebassets\\img\\product\\Milanesa934078.png"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Pancho367647.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Pancho367647.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Papas fritas493475.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Papas fritas493475.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Pizzeta con pepperoni687730.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Pizzeta con pepperoni687730.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\Salmon a la plancha791781.jpeg",
+      "PackagePath": "staticwebassets\\img\\product\\Salmon a la plancha791781.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\img\\product\\error.png",
+      "PackagePath": "staticwebassets\\img\\product\\error.png"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Carrito.js",
+      "PackagePath": "staticwebassets\\js\\Entities\\Carrito.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Mesa.js",
+      "PackagePath": "staticwebassets\\js\\Entities\\Mesa.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Pedido.js",
+      "PackagePath": "staticwebassets\\js\\Entities\\Pedido.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Producto.js",
       "PackagePath": "staticwebassets\\js\\Entities\\Producto.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\TipoProducto.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\ProductoCantidad.js",
+      "PackagePath": "staticwebassets\\js\\Entities\\ProductoCantidad.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\TipoProducto.js",
       "PackagePath": "staticwebassets\\js\\Entities\\TipoProducto.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Entities\\Usuario.js",
+      "PackagePath": "staticwebassets\\js\\Entities\\Usuario.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\AdmPedidos.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\AdmPedidos.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\CarritoPage.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\CarritoPage.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\DatosPersonales.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\DatosPersonales.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\Layout.js",
       "PackagePath": "staticwebassets\\js\\Pages\\Layout.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Productos.js",
-      "PackagePath": "staticwebassets\\js\\Pages\\Productos.js"
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\Login.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Login.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoExpress.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\PedidoExpress.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoLogueado.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\PedidoLogueado.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidoVista.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\PedidoVista.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\PedidosFinalizados.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\PedidosFinalizados.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductoEdit.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\ProductoEdit.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductoIndex.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\ProductoIndex.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductosActivos.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\ProductosActivos.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\ProductosList.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\ProductosList.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\Registro.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\Registro.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Pages\\RegistroAdmin.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\RegistroAdmin.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\Utilities.js",
+      "PackagePath": "staticwebassets\\js\\Utilities.js"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-v4compatibility.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-v4compatibility.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Santiago\\Desktop\\ProyectoFinal\\La-Trillada-Privado\\ProyectoFinal\\wwwroot\\webfonts\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-v4compatibility.woff2"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProyectoFinal.Microsoft.AspNetCore.StaticWebAssets.props",
