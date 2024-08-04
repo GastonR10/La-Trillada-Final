@@ -1,4 +1,4 @@
-let _idPedido;
+    let _idPedido;
 
 $(document).ready(async function () {
     // Código a ejecutar cuando el DOM esté listo
