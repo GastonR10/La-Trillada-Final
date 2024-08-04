@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal.Models;
@@ -12,10 +13,12 @@ namespace ProyectoFinal.Controllers
     public class PedidoController : Controller
     {
         private readonly BarContext _db;
+        private readonly IHubContext<NotificationHub> _hubContext;
 
-        public PedidoController(BarContext context)
+        public PedidoController(BarContext context, IHubContext<NotificationHub> hubContext)
         {
             _db = context;
+            _hubContext = hubContext;
         }
 
         [HttpGet("Pedido/GetPedidoVista/{id}")]
@@ -139,6 +142,9 @@ namespace ProyectoFinal.Controllers
                 // Guardar los cambios en el usuario
                 _db.Usuarios.Update(existingUser);
                 await _db.SaveChangesAsync();
+
+                // Enviar notificación a los clientes
+                await _hubContext.Clients.All.SendAsync("ReceiveMessage", "Nuevo pedido realizado");
 
                 return Ok();
 
@@ -411,7 +417,8 @@ namespace ProyectoFinal.Controllers
                                                       .Include(p => p.Cliente)
                                                       .Include(p => p.Carrito)
                                                             .ThenInclude(c => c.CantidadesProductos)
-                                                                .ThenInclude(pc => pc.Producto)                                                    
+                                                                .ThenInclude(pc => pc.Producto)      
+                                                      .Where(p => p.ClienteId == existingUser.Id)
                                                       .ToListAsync();
 
               

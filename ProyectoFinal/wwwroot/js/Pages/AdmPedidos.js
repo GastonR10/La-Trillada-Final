@@ -2,6 +2,7 @@ let _PedidosPendientes;
 
 $(document).ready(async function () {
     await obtenerPedidos();
+    configurarSignalR();
 });
 
 async function obtenerPedidos() {
@@ -116,7 +117,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
                     const btnCancelar = document.createElement('button');
                     btnCancelar.className = 'btn btn-danger';
                     btnCancelar.textContent = 'Cancelar';
-                    btnCancelar.addEventListener('click', () => await cancelarPedido(pedido.Id));
+                    btnCancelar.addEventListener('click', async () => await cancelarPedido(pedido.Id));
                     divAcciones.appendChild(btnCancelar);
 
                     // Botón Ver
@@ -139,7 +140,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
                     const btnCancelar = document.createElement('button');
                     btnCancelar.className = 'btn btn-danger';
                     btnCancelar.textContent = 'Cancelar';
-                    btnCancelar.addEventListener('click', () => await cancelarPedido(pedido.Id));
+                    btnCancelar.addEventListener('click', async     () => await cancelarPedido(pedido.Id));
                     divAcciones.appendChild(btnCancelar);
 
                     // Botón Ver
@@ -161,7 +162,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
                     const btnCancelar = document.createElement('button');
                     btnCancelar.className = 'btn btn-danger';
                     btnCancelar.textContent = 'Cancelar';
-                    btnCancelar.addEventListener('click', () => await cancelarPedido(pedido.Id));
+                    btnCancelar.addEventListener('click', async () => await cancelarPedido(pedido.Id));
                     divAcciones.appendChild(btnCancelar);
 
                     // Botón Ver
@@ -231,5 +232,26 @@ function verPedido(id) {
         console.error('Error:', ex.message);
         throw ex;
     }
-
 }
+
+function configurarSignalR() {
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("/notificationHub") // Asegúrate de que la URL sea la correcta para tu servidor SignalR
+        .configureLogging(signalR.LogLevel.Information)
+        .build();
+
+    connection.on("RecibirPedido", async function () {
+        console.log('Recibido pedido');
+        await obtenerPedidos(); // Obtén la lista actualizada de pedidos
+    });
+
+    connection.start()
+        .then(function () {
+            console.log('Conectado a SignalR');
+        })
+        .catch(function (err) {
+            console.error('Error al conectar a SignalR:', err.message);
+        });
+}
+    
+

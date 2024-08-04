@@ -1,7 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal.Models;
+using Microsoft.AspNetCore.SignalR;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSignalR(); // Agregar SignalR
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
@@ -15,7 +18,6 @@ builder.Services.AddControllersWithViews()
 builder.Services.AddDbContext<BarContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddSession();
-
 
 var app = builder.Build();
 
@@ -39,5 +41,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Producto}/{action=GetProductos}");
+
+app.MapHub<NotificationHub>("/notificationHub"); // Mapear el hub de SignalR
 
 app.Run();
