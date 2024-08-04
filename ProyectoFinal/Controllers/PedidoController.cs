@@ -144,7 +144,7 @@ namespace ProyectoFinal.Controllers
                 await _db.SaveChangesAsync();
 
                 // Enviar notificación a los clientes
-                await _hubContext.Clients.All.SendAsync("ReceiveMessage", "Nuevo pedido realizado");
+                await _hubContext.Clients.All.SendAsync("RecibirPedido", "Nuevo pedido realizado");
 
                 return Ok();
 
