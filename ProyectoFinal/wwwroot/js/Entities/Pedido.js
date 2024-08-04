@@ -214,13 +214,13 @@ class Pedido {
 
             const pedidos = [
                 ...data.PedidosCliente.map(item => {
-                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Cliente, item.Carrito);
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Cliente, item.Pos);
                     pedido.Carrito = item.Carrito;
                     return pedido;
                 }
                 ),
                 ...data.PedidosExpress.map(item => {
-                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, null, item.Carrito);
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, null, item.Pos);
                     pedido.Carrito = item.Carrito;
                     return pedido;
                 }
@@ -259,13 +259,13 @@ class Pedido {
 
             const pedidos = [
                 ...data.PedidosCliente.map(item => {
-                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Cliente, item.Carrito);
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Cliente, item.Pos);
                     pedido.Carrito = item.Carrito;
                     return pedido;
                 }
                 ),
                 ...data.PedidosExpress.map(item => {
-                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, null, item.Carrito);
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, null, item.Pos);
                     pedido.Carrito = item.Carrito;
                     return pedido;
                 }
@@ -281,6 +281,53 @@ class Pedido {
 
         } catch (error) {
             console.error('Error fetching products:', error);
+        }
+    }
+
+    static async GetPedidosCliente() {
+        try {
+            const url = $("#URLPedidosCliente").val();
+
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.status === 400) {
+                return "Sin permisos.";
+            }
+
+            const data = await response.json();
+
+            const pedidos = data.map(item => {
+                const pedido = new Pedido(
+                    item.Id,
+                    item.Comentario,
+                    item.Estado,
+                    item.Aceptado,
+                    item.IdMesa,
+                    new Date(item.Fecha), // Convertir la fecha a objeto Date
+                    item.Eliminado,
+                    item.Cliente.Email,
+                    item.Cliente.Telefono,
+                    item.Direccion,
+                    item.Cliente.Nombre,
+                    item.Pos
+                );
+                pedido.Carrito = item.Carrito;
+                return pedido;
+            });
+
+            // Ordenar por fecha de la más reciente a la más antigua
+            pedidos.sort((a, b) => b.Fecha - a.Fecha);
+
+            return pedidos;
+
+        } catch (error) {
+            console.error('Error fetching pedidos:', error);
+            return [];
         }
     }
 
