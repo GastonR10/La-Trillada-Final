@@ -214,13 +214,13 @@ class Pedido {
 
             const pedidos = [
                 ...data.PedidosCliente.map(item => {
-                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Cliente, item.Pos);
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Pos);
                     pedido.Carrito = item.Carrito;
                     return pedido;
                 }
                 ),
                 ...data.PedidosExpress.map(item => {
-                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, null, item.Pos);
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, item.Pos);
                     pedido.Carrito = item.Carrito;
                     return pedido;
                 }
@@ -259,13 +259,13 @@ class Pedido {
 
             const pedidos = [
                 ...data.PedidosCliente.map(item => {
-                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Cliente, item.Pos);
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Pos);
                     pedido.Carrito = item.Carrito;
                     return pedido;
                 }
                 ),
                 ...data.PedidosExpress.map(item => {
-                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, null, item.Pos);
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, item.Pos);
                     pedido.Carrito = item.Carrito;
                     return pedido;
                 }

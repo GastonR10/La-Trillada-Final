@@ -53,7 +53,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
             // Crear el encabezado de la tabla
             const thead = document.createElement('thead');
             const headerRow = document.createElement('tr');
-            const headers = ['Nro de Pedido', 'Nombre', 'Direccion', 'Telefono', 'Precio', 'Acciones'];
+            const headers = ['Fecha', 'Hora', 'Nro de Pedido', 'Nombre', 'Direccion', 'Telefono', 'Forma de pago', 'Precio', 'Acciones'];
 
             headers.forEach(headerText => {
                 const th = document.createElement('th');
@@ -69,6 +69,21 @@ function grillaPedidosPendientes(pedidosPendientes) {
             const tbody = document.createElement('tbody');
             pedidosFiltrados.forEach(pedido => {
                 const row = document.createElement('tr');
+
+                // Fecha
+                const tdFecha = document.createElement('td');
+                const date = new Date(pedido.Fecha);
+                const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`;              
+                tdFecha.textContent = formattedDate;
+                tdFecha.style.textAlign = 'center';
+                row.appendChild(tdFecha);
+
+                // Hora
+                const tdHora = document.createElement('td');
+                const formattedHour = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+                tdHora.textContent = formattedHour;
+                tdHora.style.textAlign = 'center';
+                row.appendChild(tdHora);
 
                 // Nro de Pedido
                 const tdId = document.createElement('td');
@@ -93,6 +108,12 @@ function grillaPedidosPendientes(pedidosPendientes) {
                 tdTelefono.textContent = pedido.Telefono || 'N/A';
                 tdTelefono.style.textAlign = 'center';
                 row.appendChild(tdTelefono);
+
+                // Forma de pago
+                const tdPos = document.createElement('td');
+                tdPos.textContent = pedido.Pos ? "POS" : "Efectivo";
+                tdPos.style.textAlign = 'center';
+                row.appendChild(tdPos);
 
                 // Precio
                 const tdPrecio = document.createElement('td');
