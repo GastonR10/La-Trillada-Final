@@ -33,8 +33,10 @@
         <button class="btn btn-danger" onclick="eliminarProducto();">Eliminar</button>
         <button class="btn btn-primary" onclick="volverListaProducto();">Volver</button>
     </div>
-
+    
 </div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 11"></div>
+
 <div style="display:none;">
     @Html.Hidden("URLGetProducto", Url.Action("GetProducto", "Producto"))
     @Html.Hidden("URLProductosList", Url.Action("GetProductosList", "Producto"))

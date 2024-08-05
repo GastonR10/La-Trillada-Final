@@ -131,7 +131,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
                     const btnAceptar = document.createElement('button');
                     btnAceptar.className = 'btn btn-primary';
                     btnAceptar.textContent = 'Aceptar';
-                    btnAceptar.addEventListener('click', async () => await actualizarEstadoPedido(pedido.Id));
+                    btnAceptar.addEventListener('click', async () => await actualizarEstadoPedido(pedido.Id, pedido.Estado));
                     divAcciones.appendChild(btnAceptar);
 
                     // Botón Cancelar
@@ -154,7 +154,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
                     const btnEnCamino = document.createElement('button');
                     btnEnCamino.className = 'btn btn-primary';
                     btnEnCamino.textContent = 'En camino';
-                    btnEnCamino.addEventListener('click', async () => await actualizarEstadoPedido(pedido.Id));
+                    btnEnCamino.addEventListener('click', async () => await actualizarEstadoPedido(pedido.Id, pedido.Estado));
                     divAcciones.appendChild(btnEnCamino);
 
                     // Botón Cancelar
@@ -176,7 +176,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
                     const btnFinalizar = document.createElement('button');
                     btnFinalizar.className = 'btn btn-primary';
                     btnFinalizar.textContent = 'Finalizar';
-                    btnFinalizar.addEventListener('click', async () => await actualizarEstadoPedido(pedido.Id));
+                    btnFinalizar.addEventListener('click', async () => await actualizarEstadoPedido(pedido.Id, pedido.Estado));
                     divAcciones.appendChild(btnFinalizar);
 
                     // Botón Cancelar
@@ -214,7 +214,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
 }
 
 
-async function actualizarEstadoPedido(id) {
+async function actualizarEstadoPedido(id, estado) {
     console.log(`Aceptar pedido ${id}`);
     // Implementa la lógica para aceptar el pedido
     try {
@@ -224,6 +224,18 @@ async function actualizarEstadoPedido(id) {
             await Pedido.actualizarEstadoPedido(id);
 
             await obtenerPedidos();
+
+            let mensaje = "";    
+
+            if (estado == 'Pendiente') {
+                mensaje = "El pedido " + id + " fue enviado a preparacion";
+            } else if (estado == 'EnPreparacion') {
+                mensaje = "El pedido " + id + " fue colocado en camino";
+            } else if (estado == 'EnCamino') {
+                mensaje = "El pedido " + id + " fue finalizado con exito";
+            } 
+
+            Tools.Toast(mensaje, 'success')
         }
 
     } catch (ex) {
@@ -240,6 +252,8 @@ async function cancelarPedido(id) {
         await Pedido.cancelarPedido(id);
 
         await obtenerPedidos();
+
+        Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success')
     }
 }
 

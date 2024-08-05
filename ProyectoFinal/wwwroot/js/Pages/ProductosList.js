@@ -1,6 +1,18 @@
-$(document).ready(function () {
+$(document).ready(async function () {
+    //Mostrar toaster si entramos luego de eliminar producto
+    const toastMessage = localStorage.getItem('toastMessage');
+    const toastType = localStorage.getItem('toastType');
+    if (toastMessage && toastType) {
+        // Mostrar el toaster
+        Tools.Toast(toastMessage, toastType);
+
+        // Limpiar el almacenamiento local
+        localStorage.removeItem('toastMessage');
+        localStorage.removeItem('toastType');
+    }
+
     // Código a ejecutar cuando el DOM esté listo
-    obtenerProductos();
+    await obtenerProductos();
 });
 
 
@@ -46,7 +58,7 @@ async function obtenerProductos() {
                     </td>
                     <td>
                     <label for="activo-${producto.Id}">Activo</label>
-                    <input type="checkbox" ${producto.Activo ? 'checked' : ''} id="activo-${producto.Id}" onchange="activarDesactivar(${producto.Id}, this.checked);">
+                    <input type="checkbox" ${producto.Activo ? 'checked' : ''} id="activo-${producto.Id}" onchange="activarDesactivar(${producto.Id}, '${producto.Nombre}', this.checked);">
                     </td>
                         `;
                     tbody.appendChild(tr);
@@ -65,7 +77,7 @@ async function obtenerProductos() {
     }
 }
 
-async function activarDesactivar(productId, isActive) {
+async function activarDesactivar(productId, prodNombre, isActive) {
     try {
 
         let res = await Producto.UpdateActivo(productId, isActive);
@@ -73,6 +85,15 @@ async function activarDesactivar(productId, isActive) {
         if (!res.ok) {
             throw new Error('Failed to update product status');
         }
+
+        let mensaje = "";
+        if (!isActive) {
+            mensaje = prodNombre + ' desactivado con exito';
+        } else {
+            mensaje = prodNombre + ' activado con exito';
+        }
+
+        Tools.Toast(mensaje, 'success');
 
     } catch (ex) {
         console.error('Error:', ex.message);
@@ -91,12 +112,14 @@ async function eliminarProducto(productId) {
             if (!res.ok) {
                 throw new Error('Failed to update product status');
             }
-            alert("Elemento eliminado");
+            //alert("Elemento eliminado");
             await obtenerProductos();
+            Tools.Toast('Producto eliminado con exito', 'success');
 
         } else {
-            alert("Eliminación cancelada");
-        }
+            //alert("Eliminación cancelada");
+            Tools.Toast('Eliminacion cancelada', 'error');
+        }   
 
     } catch (ex) {
         console.error('Error:', ex.message);

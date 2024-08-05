@@ -29,7 +29,7 @@ async function obtenerProducto() {
         desc.value = producto.Descripcion;
         precio.value = producto.Precio;
         activo.checked = producto.Activo;
-        img.src = producto.Foto;
+        img.src = producto.Foto || "/img/product/error.png";
         await getTiposProducto();
         tipo.value = producto.IdTipoProducto;
         img.alt = producto.Nombre;
@@ -88,10 +88,10 @@ async function editarProducto() {
         if (!res.ok) {
             throw new Error('Failed to edit product');
         }
-        let redirectUrl = $("#URLGetProductoVista").val();
-        //const urlWithId = `${redirectUrl}/${_idProducto}`;
-        window.location.href = redirectUrl
-        alert("Producto editado con éxito");
+        
+        await obtenerProducto();
+        
+        Tools.Toast('Producto editado con exito', 'success');
 
     } catch (ex) {
         console.error('Error:', ex.message);
@@ -122,12 +122,17 @@ async function eliminarProducto() {
             if (!res.ok) {
                 throw new Error('Failed to update product status');
             }
-            alert("Elemento eliminado");
+            
+            //Guardo variables para mostrar toaster luego de cambio de vista
+            localStorage.setItem('toastMessage', 'Elemento eliminado con exito');
+            localStorage.setItem('toastType', 'success');
+            
             let redirectUrl = $("#URLProductosList").val();
             window.location.href = redirectUrl;
-
+            
         } else {
-            alert("Eliminación cancelada");
+            //alert("Eliminación cancelada");
+            Tools.Toast("Eliminacion cancelada", 'error')
         }
 
 

@@ -127,7 +127,7 @@ async function cargarPedido() {
         const btnVolver = document.getElementById('btnVolver');
 
         btnEstado.onclick = function () {
-            actualizarEstadoPedido(_idPedido); // Reemplaza _idPedido con el ID del pedido
+            actualizarEstadoPedido(_idPedido, pedido.Estado); // Reemplaza _idPedido con el ID del pedido
         };
 
         btnCancelar.onclick = function () {
@@ -166,7 +166,7 @@ async function cargarPedido() {
         throw ex;
     }
 
-    async function actualizarEstadoPedido(id) {
+    async function actualizarEstadoPedido(id, estado) {
         console.log(`Aceptar pedido ${id}`);
         // Implementa la lógica para aceptar el pedido
         try {
@@ -176,6 +176,17 @@ async function cargarPedido() {
                 await Pedido.actualizarEstadoPedido(id);
 
                 await cargarPedido();
+
+                let mensaje = "";
+                if (estado == 'Pendiente') {
+                    mensaje = "El pedido " + id + " fue enviado a preparacion";
+                } else if (estado == 'EnPreparacion') {
+                    mensaje = "El pedido " + id + " fue colocado en camino";
+                } else if (estado == 'EnCamino') {
+                    mensaje = "El pedido " + id + " fue finalizado con exito";
+                }
+
+                Tools.Toast(mensaje, 'success')
             }
 
         } catch (ex) {
@@ -192,6 +203,8 @@ async function cargarPedido() {
             await Pedido.cancelarPedido(id);
 
             await cargarPedido();
+
+            Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success')
         }
     }
 

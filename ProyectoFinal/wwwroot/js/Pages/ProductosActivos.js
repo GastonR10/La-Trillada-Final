@@ -9,6 +9,7 @@ $(document).ready(async function () {
         // Si no existe, lo crea y le asigna un array vacío
         localStorage.setItem('carrito', JSON.stringify([]));
     }
+    
     // Código a ejecutar cuando el DOM esté listo
     await obtenerProductosActivos();
 });

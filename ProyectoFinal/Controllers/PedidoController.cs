@@ -286,7 +286,7 @@ namespace ProyectoFinal.Controllers
 
                 await _db.SaveChangesAsync();
 
-                return Ok(pedido);
+                return Ok(pedido.Estado);
 
 
             }

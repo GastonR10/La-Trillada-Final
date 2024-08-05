@@ -43,6 +43,7 @@ async function AgregarProducto() {
         if (respuesta.status == 200) {
             let msj = document.getElementById('lblMensaje');
             msj.textContent = "Alta exitosa!.";
+            Tools.Toast("Alta exitosa!", 'success')
             let divMsj = document.getElementById('divMsj');
             divMsj.style.display = 'block';
             $("#nombreProducto").val("");
@@ -51,6 +52,7 @@ async function AgregarProducto() {
             $("#slcTipoProducto").val("0");
             $("#precioProducto").val("");
         }
+        
     } catch (ex) {
         console.error('Error:', ex.message);
         throw ex;

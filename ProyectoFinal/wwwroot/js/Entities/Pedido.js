@@ -32,7 +32,7 @@ class Pedido {
                 throw new Error(`Error en la solicitud: ${response.statusText}`);
             }
 
-            return true;
+            return response;
 
         } catch (ex) {
             console.error('Error al agregar el producto:', error);
