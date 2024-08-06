@@ -10,10 +10,20 @@ $(document).ready(async function () {
         localStorage.setItem('carrito', JSON.stringify([]));
     }
 
-    // Código a ejecutar cuando el DOM esté listo
+    // Ejecuta la lógica inicial al cargar la página
+    await actualizarVista();
+
+    // Agregar un listener para el evento popstate
+    window.addEventListener('popstate', async function (event) {
+        await actualizarVista();
+    });
+});
+
+// Función para actualizar la vista
+async function actualizarVista() {
     await obtenerProductosActivos();
     await mostrarTotalCarrito();
-});
+}
 
 async function obtenerProductosActivos() {
     try {
@@ -21,6 +31,7 @@ async function obtenerProductosActivos() {
         let tiposProd = await TipoProducto.getTiposProducto();
 
         const container = document.getElementById('productosContainer');
+        container.innerHTML = ''; // Limpia el contenido previo
 
         tiposProd.forEach(tipo => {
             const productosPorTipo = productos.filter(p => p.IdTipoProducto === tipo.Id);
