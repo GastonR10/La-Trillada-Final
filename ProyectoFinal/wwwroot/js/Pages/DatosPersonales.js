@@ -1,5 +1,7 @@
 $(document).ready(async function () {
+    showLoader();
     await cargarInfo();
+    hideLoader();
 });
 
 async function cargarInfo() {

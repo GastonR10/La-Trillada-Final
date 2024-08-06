@@ -1,4 +1,5 @@
 $(document).ready(async function () {
+    showLoader();
     //Mostrar toaster si entramos luego de eliminar producto
     const toastMessage = localStorage.getItem('toastMessage');
     const toastType = localStorage.getItem('toastType');
@@ -13,6 +14,8 @@ $(document).ready(async function () {
 
     // Código a ejecutar cuando el DOM esté listo
     await obtenerProductos();
+
+    hideLoader();
 });
 
 

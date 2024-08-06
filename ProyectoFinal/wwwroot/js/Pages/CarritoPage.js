@@ -1,5 +1,7 @@
 $(document).ready(async function () {
+    showLoader();
     await obtenerCarrito();
+    hideLoader();
 });
 
 async function obtenerCarrito() {
@@ -14,7 +16,7 @@ async function obtenerCarrito() {
             productosCantidad = JSON.parse(localStorage.getItem('carrito'));
         }
 
-
+        console.log(productosCantidad);
         // Generar la grilla de productos
         generarGrilla(productosCantidad);
 

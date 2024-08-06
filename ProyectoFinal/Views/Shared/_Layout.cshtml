@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>@ViewData["Title"] - ProyectoFinal</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -101,20 +101,23 @@
             @RenderBody()
         </main>
     </div>
+
+    <div id="loader" class="loader">
+        <div class="spinner"></div>
+        <p>Cargando...</p>
+    </div>
+
     <footer class="border-top footer text-muted">
         <div class="container">
             2024 - LaTrillada
         </div>
     </footer>
-    <div class="fixed-footer" id="footerTotal" style="display:none">
-        <span>Total a pagar: $<span id="total-amount">0.00</span></span>
-        <a href="/Carrito/Carrito" class="btn btn-primary">Ir al carrito</a>
-        @Html.Hidden("URLObtenerTotalCarrito", Url.Action("ObtenerTotalCarrito", "Carrito"))
-    </div>
+    
 
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/tools.js"></script>
+    <script src="~/js/tools.js" asp-append-version="true"></script>
+    <script src="~/js/loader.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

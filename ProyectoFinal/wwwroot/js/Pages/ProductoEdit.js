@@ -1,9 +1,11 @@
 let _idProducto;
 
 $(document).ready(async function () {
+    showLoader();
     // Código a ejecutar cuando el DOM esté listo
     await obtenerProducto();
 
+    hideLoader();
 });
 
 async function obtenerProducto() {

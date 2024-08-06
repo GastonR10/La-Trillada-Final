@@ -1,7 +1,9 @@
 
 
 $(document).ready(async function () {
+    showLoader();
     await obtenerPedidosCliente();
+    hideLoader();
 });
 
 async function obtenerPedidosCliente() {

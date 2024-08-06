@@ -1,6 +1,8 @@
 $(document).ready(async function () {
+    showLoader();
     await cargarInfoPersonal();
     await cargarMesas("mesasSlc");
+    hideLoader();
 });
 
 async function cargarInfoPersonal() {

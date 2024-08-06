@@ -1,6 +1,8 @@
 $(document).ready(async function () {
+    showLoader();
     // Código a ejecutar cuando el DOM esté listo
     await getTiposProducto();
+    hideLoader();
 });
 
 async function getTiposProducto() {

@@ -1,8 +1,10 @@
 let _PedidosPendientes;
 
 $(document).ready(async function () {
+    showLoader();
     await obtenerPedidos();
     configurarSignalR();
+    hideLoader();
 });
 
 async function obtenerPedidos() {

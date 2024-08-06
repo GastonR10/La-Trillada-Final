@@ -1,4 +1,5 @@
 $(document).ready(async function () {
+    showLoader();
 
     if (sessionStorage.getItem('Logueado') === null) {
         // Si no existe, la crea y le asigna el valor "false"
@@ -14,9 +15,11 @@ $(document).ready(async function () {
     await actualizarVista();
 
     // Agregar un listener para el evento popstate
-    window.addEventListener('popstate', async function (event) {
+    window.addEventListener('pageshow', async function (event) {
         await actualizarVista();
     });
+
+    hideLoader();
 });
 
 // Función para actualizar la vista
@@ -95,48 +98,52 @@ async function obtenerProductosActivos() {
             });
         });
 
-        container.addEventListener('click', async function (event) {
-            if (event.target.classList.contains('btn-agregar-carrito')) {
-                const productoId = event.target.getAttribute('data-producto-id');
-                const cantidadInput = event.target.closest('.card').querySelector('.cantidad-input');
+        // Asignar eventos de clic a los botones de agregar al carrito
+        container.querySelectorAll('.btn-agregar-carrito').forEach(btn => {
+            btn.addEventListener('click', async function (event) {
+                event.preventDefault();
+                const productoId = this.getAttribute('data-producto-id');
+                const cantidadInput = this.closest('.card').querySelector('.cantidad-input');
                 const cantidad = parseInt(cantidadInput.value);
 
-                if (sessionStorage.getItem('Logueado') == "true") {
-                    await Carrito.agregarProducto(productoId, cantidad);
-                    await mostrarTotalCarrito();
+                if (cantidad > 0) {
+                    if (sessionStorage.getItem('Logueado') == "true") {
+                        await Carrito.agregarProducto(productoId, cantidad);
+                    } else {
+                        let carrito = JSON.parse(localStorage.getItem('carrito'));
+                        if (!carrito) carrito = [];
+
+                        // Encontrar el último ID usado en el carrito y calcular el siguiente
+                        let ultimoId = carrito.length > 0 ? carrito[carrito.length - 1].Id : 0;
+                        let nuevoId = ultimoId + 1;
+
+                        // Obtener información del producto
+                        const producto = productos.find(p => p.Id == productoId);
+
+                        // Crear el objeto del producto a agregar
+                        let productoCantidad = {
+                            Id: nuevoId,
+                            IdProducto: parseInt(productoId, 10),
+                            Cantidad: cantidad,
+                            Comentario: "",
+                            Producto: {
+                                Id: producto.Id,
+                                Nombre: producto.Nombre,
+                                Foto: producto.Foto,
+                                Precio: producto.Precio
+                            }
+                        };
+
+                        carrito.push(productoCantidad);
+                        localStorage.setItem('carrito', JSON.stringify(carrito));
+                    }
+
+                    cantidadInput.value = 1;
+                    mostrarTotalCarrito();
                 } else {
-                    let carrito = JSON.parse(localStorage.getItem('carrito'));
-                    if (!carrito) carrito = [];
-
-                    // Encontrar el último ID usado en el carrito y calcular el siguiente
-                    let ultimoId = carrito.length > 0 ? carrito[carrito.length - 1].Id : 0;
-                    let nuevoId = ultimoId + 1;
-
-                    // Obtener información del producto
-                    const producto = productos.find(p => p.Id == productoId);
-
-                    // Crear el objeto del producto a agregar
-                    let productoCantidad = {
-                        Id: nuevoId,
-                        IdProducto: parseInt(productoId, 10),
-                        Cantidad: cantidad,
-                        Comentario: "",
-                        Producto: {
-                            Id: producto.Id,
-                            Nombre: producto.Nombre,
-                            Foto: producto.Foto,
-                            Precio: producto.Precio
-                        }
-                    };
-
-                    carrito.push(productoCantidad);
-                    localStorage.setItem('carrito', JSON.stringify(carrito));
+                    Tools.Toast("La cantidad debe ser mayor a 0", 'error')
                 }
-
-                // Reiniciar el campo de cantidad a 1
-                cantidadInput.value = 1;
-                mostrarTotalCarrito();
-            }
+            });
         });
 
     }
@@ -165,6 +172,8 @@ async function mostrarTotalCarrito() {
     if (totalCarrito > 0) {
         seccionTotal.style.display = 'block';
         valorCarrito.innerText = totalCarrito.toFixed(2);
+    } else {
+        seccionTotal.style.display = 'none';
     }
     
 }

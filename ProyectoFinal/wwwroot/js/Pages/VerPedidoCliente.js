@@ -1,8 +1,11 @@
     let _idPedido;
 
 $(document).ready(async function () {
+    showLoader();
     // Código a ejecutar cuando el DOM esté listo
     await cargarPedido();
+
+    hideLoader();
 });
 
 async function cargarPedido() {

@@ -1,7 +1,9 @@
 ﻿let _PedidosFinalizados;
 
 $(document).ready(async function () {
+    showLoader();
     await obtenerPedidosFinalizados();
+    hideLoader();
 });
 
 async function obtenerPedidosFinalizados() {
