@@ -124,6 +124,7 @@ async function obtenerProductosActivos() {
 
                 // Reiniciar el campo de cantidad a 1
                 cantidadInput.value = 1;
+                mostrarTotalCarrito();
             }
         });
 
