@@ -35,7 +35,10 @@
             <button class="btnMenu col-1" id="btnMostrarMenu">☰ <span class="d-none d-lg-inline">Menú</span></button>
             <div class="col-10"></div>
             <div class="col-1 btnMenu">
-                <a class="text-dark" asp-area="" asp-controller="Carrito" asp-action="Carrito"><i class="fa-regular fa-cart-shopping"></i> Carrito</a>
+                <a class="text-dark" asp-area="" asp-controller="Carrito" asp-action="Carrito">
+                    <i class="fa-regular fa-cart-shopping"></i> Carrito
+                    <span id="cart-counter" class="badge badge-pill badge-danger" style="display: none;">0</span>
+                </a>
             </div>
         </div>
     </div>
@@ -103,6 +106,11 @@
             2024 - LaTrillada
         </div>
     </footer>
+    <div class="fixed-footer" id="footerTotal" style="display:none">
+        <span>Total a pagar: $<span id="total-amount">0.00</span></span>
+        <a href="/Carrito/Carrito" class="btn btn-primary">Ir al carrito</a>
+        @Html.Hidden("URLObtenerTotalCarrito", Url.Action("ObtenerTotalCarrito", "Carrito"))
+    </div>
 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

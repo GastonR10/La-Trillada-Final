@@ -9,9 +9,10 @@ $(document).ready(async function () {
         // Si no existe, lo crea y le asigna un array vacío
         localStorage.setItem('carrito', JSON.stringify([]));
     }
-    
+
     // Código a ejecutar cuando el DOM esté listo
     await obtenerProductosActivos();
+    await mostrarTotalCarrito();
 });
 
 async function obtenerProductosActivos() {
@@ -43,7 +44,7 @@ async function obtenerProductosActivos() {
                         <div class="card-body">
                         <h5 class="card-title">${producto.Nombre}</h5>
                         <p class="card-text">${producto.Descripcion}</p>
-                        <p class="card-text"><strong>Precio:</strong> $${producto.Precio}</p>
+                        <p class="card-text" ><strong>Precio:</strong> $${producto.Precio}</p>
                         </div>
                         <div class="card-footer">
                         <div class="input-group">
@@ -91,6 +92,7 @@ async function obtenerProductosActivos() {
 
                 if (sessionStorage.getItem('Logueado') == "true") {
                     await Carrito.agregarProducto(productoId, cantidad);
+                    await mostrarTotalCarrito();
                 } else {
                     let carrito = JSON.parse(localStorage.getItem('carrito'));
                     if (!carrito) carrito = [];
@@ -130,4 +132,27 @@ async function obtenerProductosActivos() {
         console.error('Error:', ex.message);
         throw ex;
     }
+}
+
+async function mostrarTotalCarrito() {
+    const seccionTotal = document.getElementById('footerTotal');
+    const valorCarrito = document.getElementById('total-amount');
+    let totalCarrito = 0;
+    if (sessionStorage.getItem('Logueado') == "true") {
+
+        totalCarrito = await Carrito.obtenerTotalCarrito();
+
+    } else {
+        const carrito = JSON.parse(localStorage.getItem('carrito') || '[]'); // Convierte el string a un objeto JSON
+
+        carrito.forEach(pc => {
+            totalCarrito += pc.Cantidad * pc.Producto.Precio;
+        })        
+    }
+
+    if (totalCarrito > 0) {
+        seccionTotal.style.display = 'block';
+        valorCarrito.innerText = totalCarrito.toFixed(2);
+    }
+    
 }

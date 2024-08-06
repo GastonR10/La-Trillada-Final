@@ -4,6 +4,34 @@ class Carrito {
         this.PrecioTotal = 0;
     }
 
+    static async obtenerTotalCarrito() {
+
+        try {
+            const url = $("#URLObtenerTotalCarrito").val();
+
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
+                return "No se encontro usuario logeado.";
+            }
+
+            const data = await response.json();
+                        
+            return data;
+
+        }
+        catch (ex) {
+            console.error('Error:', ex.message);
+            throw ex;
+        }
+
+    }
+
     static async obtenerProductosCarrito() {
 
         try {
@@ -32,17 +60,12 @@ class Carrito {
             });
 
             return productosCantidad;
-
-            return "error"
-
+            
         }
         catch (ex) {
             console.error('Error:', ex.message);
             throw ex;
         }
-
-
-
 
     }
 
@@ -57,11 +80,10 @@ class Carrito {
         }
 
     }
-
+    
     static async agregarProducto(idProducto, cantidad) {
         try {
-
-
+                        
             const url = $("#URLAgregarProducto").val();
             const productoCantidad = new ProductoCantidad(idProducto, cantidad);
 
@@ -76,7 +98,7 @@ class Carrito {
             if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
                 return "El producto no existe.";
             }
-            if (response.ok) {
+            if (response.ok) {                
                 return "ok"
             }
 

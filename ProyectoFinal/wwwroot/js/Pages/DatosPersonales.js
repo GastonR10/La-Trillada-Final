@@ -41,15 +41,9 @@ async function EditarCliente() {
         let res = await Usuario.EditarCliente(nombre, apellido, correo, celular, direccion);
 
         if (res == "ok") {
-            let msj = document.getElementById('lblMensajeEditCli');
-            msj.textContent = "Edición exitosa!";
-            let divMsj = document.getElementById('divMsjEditCli');
-            divMsj.style.display = 'block';
-        } else {
-            let msj = document.getElementById('lblMensajeEditCli');
-            msj.textContent = res;
-            let divMsj = document.getElementById('divMsjEditCli');
-            divMsj.style.display = 'block';
+            Tools.Toast('Edicion exitosa!', 'success')
+        } else {            
+            Tools.Toast(res, 'error')
         }
 
     } catch (ex) {
