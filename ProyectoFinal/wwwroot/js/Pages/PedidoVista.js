@@ -2,6 +2,7 @@
 
 $(document).ready(async function () {
     showLoader();
+    avisarNuevoPedido();
     // Código a ejecutar cuando el DOM esté listo
     await cargarPedido();
 
@@ -129,15 +130,15 @@ async function cargarPedido() {
         const btnCancelar = document.getElementById('btnCancelar');
         const btnVolver = document.getElementById('btnVolver');
 
-        btnEstado.onclick = function () {
+        btnEstado.onclick = async function () {
             showLoader();
-            actualizarEstadoPedido(_idPedido, pedido.Estado); // Reemplaza _idPedido con el ID del pedido
+            await actualizarEstadoPedido(_idPedido, pedido.Estado); // Reemplaza _idPedido con el ID del pedido
             hideLoader();
         };
 
-        btnCancelar.onclick = function () {
+        btnCancelar.onclick = async function () {
             showLoader();
-            cancelarPedido(_idPedido); // Reemplaza _idPedido con el ID del pedido
+            await cancelarPedido(_idPedido); // Reemplaza _idPedido con el ID del pedido
             hideLoader();
         };
 

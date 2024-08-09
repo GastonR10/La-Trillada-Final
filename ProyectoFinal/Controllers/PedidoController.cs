@@ -146,6 +146,9 @@ namespace ProyectoFinal.Controllers
                 // Enviar notificación a los clientes
                 await _hubContext.Clients.All.SendAsync("RecibirPedido", "Nuevo pedido realizado");
 
+                // Tirar toaster luego de cada nuevo pedido
+                await _hubContext.Clients.All.SendAsync("AvisarPedido");
+
                 return Ok();
 
             }
@@ -198,6 +201,9 @@ namespace ProyectoFinal.Controllers
                 await _db.SaveChangesAsync();
 
                 await _hubContext.Clients.All.SendAsync("RecibirPedido", "Nuevo pedido realizado");
+
+                // Tirar toaster luego de cada nuevo pedido
+                await _hubContext.Clients.All.SendAsync("AvisarPedido");
 
                 return Ok();
 

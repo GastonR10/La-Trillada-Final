@@ -142,6 +142,9 @@ async function obtenerProductosActivos() {
                     mostrarTotalCarrito();
                 } else {
                     Tools.Toast("La cantidad debe ser mayor a 0", 'error')
+                    Tools.Toast("La cantidad debe ser mayor a 0", 'success')
+                    Tools.Toast("La cantidad debe ser mayor a 0", 'warning')
+                    Tools.Toast("La cantidad debe ser mayor a 0", 'info')
                 }
             });
         });

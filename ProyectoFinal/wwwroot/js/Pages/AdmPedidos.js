@@ -217,6 +217,8 @@ function grillaPedidosPendientes(pedidosPendientes) {
 
 
 async function actualizarEstadoPedido(id, estado) {
+    showLoader();
+
     console.log(`Aceptar pedido ${id}`);
     // Implementa la lógica para aceptar el pedido
     try {
@@ -244,9 +246,13 @@ async function actualizarEstadoPedido(id, estado) {
         console.error('Error:', ex.message);
         throw ex;
     }
+
+    hideLoader();
 }
 
 async function cancelarPedido(id) {
+    showLoader();
+
     console.log(`Cancelar pedido ${id}`);
     let confirmacion = confirm(`¿Está seguro que desea cancelar?`);
 
@@ -257,6 +263,8 @@ async function cancelarPedido(id) {
 
         Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success')
     }
+
+    hideLoader();
 }
 
 function verPedido(id) {
@@ -279,9 +287,9 @@ function configurarSignalR() {
 
     connection.on("RecibirPedido", async function () {
         console.log('Recibido pedido');
-        await obtenerPedidos(); // Obtén la lista actualizada de pedidos
+        await obtenerPedidos(); // Obtén la lista actualizada de pedidos        
     });
-
+    
     connection.start()
         .then(function () {
             console.log('Conectado a SignalR');

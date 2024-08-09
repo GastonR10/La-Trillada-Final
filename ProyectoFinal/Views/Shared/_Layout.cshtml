@@ -14,6 +14,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="~/js/utilities.js" asp-append-version="true"></script>
+
     <link href="~/icons/fontawesome.css" rel="stylesheet" />
     <link href="~/icons/brands.css" rel="stylesheet" />
     <link href="~/icons/solid.css" rel="stylesheet" />
@@ -25,7 +27,7 @@
     <script src="~/js/entities/carrito.js"></script>
     <script src="~/js/entities/productocantidad.js"></script>
     <script src="~/js/entities/mesa.js"></script>
-    <script src="~/js/entities/pedido.js"></script>
+    <script src="~/js/entities/pedido.js"></script>    
     @* FIN ENTITIES *@
     <script src="~/js/pages/layout.js"></script>
 </head>
@@ -36,8 +38,7 @@
             <div class="col-10"></div>
             <div class="col-1 btnMenu">
                 <a class="text-dark" asp-area="" asp-controller="Carrito" asp-action="Carrito">
-                    <i class="fa-regular fa-cart-shopping"></i> Carrito
-                    <span id="cart-counter" class="badge badge-pill badge-danger" style="display: none;">0</span>
+                    <i class="fa-regular fa-cart-shopping"></i> <span class="d-none d-lg-inline">Carrito</span>
                 </a>
             </div>
         </div>
@@ -102,8 +103,8 @@
         </main>
     </div>
 
-    <div id="loader" class="loader">
-        <div class="spinner"></div>
+    <div id="loader" class="loader" style="display:none;">
+        <div class="spinner" ></div>
         <p>Cargando...</p>
     </div>
 

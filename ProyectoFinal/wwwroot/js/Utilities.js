@@ -29,3 +29,23 @@ async function cargarMesas(slcId) {
 
 }
 
+function avisarNuevoPedido() {
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("/notificationHub") // Asegúrate de que la URL sea la correcta para tu servidor SignalR
+        .configureLogging(signalR.LogLevel.Information)
+        .build();
+
+    connection.on("AvisarPedido", async function () {
+        console.log('aviso pedido');
+        Tools.Toast("Se recibio un nuevo pedido", 'info')     
+    });
+
+    connection.start()
+        .then(function () {
+            console.log('Conectado a SignalR');
+        })
+        .catch(function (err) {
+            console.error('Error al conectar a SignalR:', err.message);
+        });
+}
+

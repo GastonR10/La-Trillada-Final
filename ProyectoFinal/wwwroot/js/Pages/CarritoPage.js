@@ -103,27 +103,17 @@ function generarGrilla(productosCantidad) {
 
     // Añadir el event listener para el botón de eliminar
     document.getElementById('divProdList').addEventListener('click', async function (event) {
+        showLoader();
         if (event.target.closest('.btn-eliminar-producto')) {
             const index = event.target.closest('.btn-eliminar-producto').getAttribute('data-index');
 
             if (sessionStorage.getItem('Logueado') == "true") {
                 await eliminarLineaPorId(index);
             } else {
-                // Obtener el carrito del localStorage
-                let carrito = JSON.parse(localStorage.getItem('carrito'));
-                if (!carrito) carrito = [];
-
-                // Filtrar el carrito para excluir el producto con el Id específico
-                carrito = carrito.filter(item => item.Id != index);
-
-                // Guardar el carrito actualizado en el localStorage
-                localStorage.setItem('carrito', JSON.stringify(carrito));
-                
-                // Volver a generar la grilla para reflejar los cambios
-                generarGrilla(carrito);
-            }
-         
+                eliminarLineaSinLogin(index);                               
+            }         
         }
+        hideLoader();
     });
 
     // Añadir el event listener para el botón Pedir
@@ -197,5 +187,27 @@ async function eliminarLineaPorId(id) {
         throw ex;
     }
 }
+
+function eliminarLineaSinLogin(index) {
+    try {
+        // Obtener el carrito del localStorage
+        let carrito = JSON.parse(localStorage.getItem('carrito'));
+        if (!carrito) carrito = [];
+
+        // Filtrar el carrito para excluir el producto con el Id específico
+        carrito = carrito.filter(item => item.Id != index);
+
+        // Guardar el carrito actualizado en el localStorage
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+
+        // Volver a generar la grilla para reflejar los cambios
+        generarGrilla(carrito);
+
+    } catch (ex) {
+        console.error('Error:', ex.message);
+        throw ex;
+    }
+    
+} 
 
 
