@@ -14,11 +14,13 @@ namespace ProyectoFinal.Controllers
     {
         private readonly BarContext _db;
         private readonly IHubContext<NotificationHub> _hubContext;
+        private readonly WhatsAppService _whatsAppService;
 
         public PedidoController(BarContext context, IHubContext<NotificationHub> hubContext)
         {
             _db = context;
             _hubContext = hubContext;
+            _whatsAppService = new WhatsAppService();
         }
 
         [HttpGet("Pedido/GetPedidoVista/{id}")]
@@ -148,6 +150,11 @@ namespace ProyectoFinal.Controllers
 
                 // Tirar toaster luego de cada nuevo pedido
                 await _hubContext.Clients.All.SendAsync("AvisarPedido");
+
+                string numeroDestino = "+598" + existingUser.Telefono;
+                string mensaje = "¡Hola! Esta es una notificación de tu aplicación.";
+
+                await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
 
                 return Ok();
 
