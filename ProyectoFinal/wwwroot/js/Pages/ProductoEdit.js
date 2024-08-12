@@ -128,9 +128,11 @@ async function eliminarProducto() {
             //Guardo variables para mostrar toaster luego de cambio de vista
             localStorage.setItem('toastMessage', 'Elemento eliminado con exito');
             localStorage.setItem('toastType', 'success');
-            
+
             let redirectUrl = $("#URLProductosList").val();
             window.location.href = redirectUrl;
+
+            
             
         } else {
             //alert("Eliminación cancelada");

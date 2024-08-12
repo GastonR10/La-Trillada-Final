@@ -88,7 +88,7 @@
             @if (Context.Session.GetString("rol") == "Cliente" || Context.Session.GetString("rol") == "Admin")
             {
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Productos</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Elegir Productos</a>
                 </li>
                 <li class="nav-item opcionMenu">
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="Logout"><i class="fa-regular fa-right-to-bracket"></i>  Cerrar Sesión</a>
@@ -107,6 +107,8 @@
         <div class="spinner" ></div>
         <p>Cargando...</p>
     </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
 
     <footer class="border-top footer text-muted">
         <div class="container">

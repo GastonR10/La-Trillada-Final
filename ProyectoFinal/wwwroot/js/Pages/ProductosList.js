@@ -11,7 +11,7 @@ $(document).ready(async function () {
         localStorage.removeItem('toastMessage');
         localStorage.removeItem('toastType');
     }
-
+    
     // Código a ejecutar cuando el DOM esté listo
     await obtenerProductos();
 

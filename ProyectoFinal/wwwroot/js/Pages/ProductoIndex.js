@@ -40,23 +40,41 @@ async function AgregarProducto() {
         let tipoId = $("#slcTipoProducto").val(); //hacer referencia al value del select y cargar el select.
         let precio = $("#precioProducto").val();
 
-        let respuesta = await Producto.AltaProducto(nombre, desc, foto, tipoId, precio, true, false);
-
-        if (respuesta.status == 200) {
-            let msj = document.getElementById('lblMensaje');
-            msj.textContent = "Alta exitosa!.";
-            Tools.Toast("Alta exitosa!", 'success')
-            let divMsj = document.getElementById('divMsj');
-            divMsj.style.display = 'block';
-            $("#nombreProducto").val("");
-            $("#descripcionProducto").val("");
-            $("#fotoProducto").val("");
-            $("#slcTipoProducto").val("0");
-            $("#precioProducto").val("");
+        let mensaje = "";
+        if (nombre == "") {
+            mensaje += `- Nombre no puede ser vacío.<br>`;
         }
+        if (tipoId == 0) {
+            mensaje += `- Seleccione un tipo de producto.<br>`;
+        }
+        if (precio == 0) {
+            mensaje += `- Precio no puede ser vacío.<br>`;
+        }
+        if (mensaje != "") {
+            Tools.Toast(mensaje, 'warning');
+        }
+        else {
+            let respuesta = await Producto.AltaProducto(nombre, desc, foto, tipoId, precio, true, false);
+
+            if (respuesta.status == 200) {
+                Tools.Toast("Alta exitosa!", 'success');
+
+                $("#nombreProducto").val("");
+                $("#descripcionProducto").val("");
+                $("#fotoProducto").val("");
+                $("#slcTipoProducto").val("0");
+                $("#precioProducto").val("");
+
+            } else if (respuesta.status == 500) {
+                Tools.Toast('Error inesperado, contacte al administrador', 'error');
+
+            } else if (respuesta.status == 400) {
+                Tools.Toast("No todos los datos son correctos", 'warning');
+            }
+        }        
         
     } catch (ex) {
-        console.error('Error:', ex.message);
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
         throw ex;
     }
 }

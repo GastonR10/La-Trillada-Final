@@ -49,6 +49,11 @@ namespace ProyectoFinal.Controllers
         {
             try
             {
+                if(prod.Nombre == "" || prod.Precio <= 0 || prod.IdTipoProducto == 0)
+                {
+                    return BadRequest();
+                }
+
                 if (file != null && file.Length > 0)
                 {
                     string uploads = Path.Combine(_webHostEnvironment.WebRootPath, @"img\product");
@@ -63,8 +68,6 @@ namespace ProyectoFinal.Controllers
                     {
                         await file.CopyToAsync(stream);
                     }
-
-
                 }
 
                 Producto producto = new Producto(prod);
@@ -76,9 +79,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500);
             }
-
         }
 
         [HttpGet]

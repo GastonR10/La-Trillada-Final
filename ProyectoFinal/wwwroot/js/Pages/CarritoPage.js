@@ -110,8 +110,8 @@ function generarGrilla(productosCantidad) {
             if (sessionStorage.getItem('Logueado') == "true") {
                 await eliminarLineaPorId(index);
             } else {
-                eliminarLineaSinLogin(index);                               
-            }         
+                eliminarLineaSinLogin(index);
+            }
         }
         hideLoader();
     });
@@ -133,44 +133,51 @@ function generarGrilla(productosCantidad) {
             }
         });
 
-        try {
+        if (duplas.length == 0) {
+            Tools.Toast('Carrito vacío', 'warning');
+        } else {
 
-            if (sessionStorage.getItem('Logueado') == "true") {
-                // Llamar a la función para agregar los comentarios en masa
-                await ProductoCantidad.AgregarComentariosMasivo(duplas);
+            try {
 
-                // Obtiene la URL desde el campo oculto
-                const urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
+                if (sessionStorage.getItem('Logueado') == "true") {
 
-                // Redirige a la vista PedidoLogueado del controlador Pedido
-                window.location.href = urlPedidoLogueado;
-            } else {
+                    // Llamar a la función para agregar los comentarios en masa
+                    await ProductoCantidad.AgregarComentariosMasivo(duplas);
 
-                // Obtener el carrito del localStorage
-                let carrito = JSON.parse(localStorage.getItem('carrito'));
-                if (!carrito) carrito = [];
+                    // Obtiene la URL desde el campo oculto
+                    const urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
 
-                // Actualizar los comentarios en el carrito
-                duplas.forEach(dupla => {
-                    const productoCantidad = carrito.find(item => item.Id == dupla.Id);
-                    if (productoCantidad) {
-                        productoCantidad.Comentario = dupla.Comentario;
-                    }
-                });
+                    // Redirige a la vista PedidoLogueado del controlador Pedido
+                    window.location.href = urlPedidoLogueado;
 
-                // Guardar el carrito actualizado en el localStorage
-                localStorage.setItem('carrito', JSON.stringify(carrito));
+                } else {
 
-                // Obtiene la URL desde el campo oculto
-                const urlPedidoLogueado = document.getElementById('URLPedidoExpress').value;
+                    // Obtener el carrito del localStorage
+                    let carrito = JSON.parse(localStorage.getItem('carrito'));
+                    if (!carrito) carrito = [];
 
-                // Redirige a la vista PedidoLogueado del controlador Pedido
-                window.location.href = urlPedidoLogueado;
+                    // Actualizar los comentarios en el carrito
+                    duplas.forEach(dupla => {
+                        const productoCantidad = carrito.find(item => item.Id == dupla.Id);
+                        if (productoCantidad) {
+                            productoCantidad.Comentario = dupla.Comentario;
+                        }
+                    });
+
+                    // Guardar el carrito actualizado en el localStorage
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                    // Obtiene la URL desde el campo oculto
+                    const urlPedidoLogueado = document.getElementById('URLPedidoExpress').value;
+
+                    // Redirige a la vista PedidoLogueado del controlador Pedido
+                    window.location.href = urlPedidoLogueado;
+                }
+
+            } catch (ex) {
+                console.error('Error:', ex.message);
             }
-         
-        } catch (ex) {
-            console.error('Error:', ex.message);
-        }
+        }        
     });
 }
 
@@ -207,7 +214,7 @@ function eliminarLineaSinLogin(index) {
         console.error('Error:', ex.message);
         throw ex;
     }
-    
-} 
+
+}
 
 

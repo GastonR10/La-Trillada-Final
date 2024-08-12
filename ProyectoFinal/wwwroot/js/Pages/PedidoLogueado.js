@@ -59,15 +59,38 @@ async function RealizarPedidoLog() {
         if (inputDir.style.display === "block") {
 
             let dir = $("#direccionPedido").text();
-            res = await Pedido.RealizarPedidoLogueado(dir, null, pagoTipo, comentario);
+            if (dir == "") {
+                Tools.Toast("Ingrese direccion en datos personales.", 'warning');
+            } else {
+                res = await Pedido.RealizarPedidoLogueado(dir, null, pagoTipo, comentario);
+            }
 
         } else if (inputLocal.style.display === "block") {
 
             let mesa = document.getElementById("mesasSlc").value;
-            res = await Pedido.RealizarPedidoLogueado("", mesa, pagoTipo, comentario);
+            if (mesa == 0) {
+                Tools.Toast("Seleccionar mesa", 'warning');
+            } else {
+                res = await Pedido.RealizarPedidoLogueado("", mesa, pagoTipo, comentario);
+            }                
         }
 
+        if (res.status == 200) {
+            Tools.Toast("Pedido realizado con exito!", 'success');
+            //Guardo variables para mostrar toaster luego de cambio de vista
+            localStorage.setItem('toastMessage', 'Pedido realizado');
+            localStorage.setItem('toastType', 'success');
 
+            let redirectUrl = $("#URLProductosActivos").val();
+            window.location.href = redirectUrl;
+
+        } else if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+
+        } else if (res.status == 403) {
+            Tools.Toast("Carrito esta vacío", 'warning');
+        }
+        
         console.log(res);
 
             

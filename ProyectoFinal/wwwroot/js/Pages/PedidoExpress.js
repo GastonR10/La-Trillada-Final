@@ -44,12 +44,49 @@ async function RealizarPedidoExpress() {
             let nom = $("#nombrePedEx").val();
             let mail = $("#mailPedEx").val();
             let tel = $("#telefonoPedEx").val();
-            res = await Pedido.RealizarPedidoExpress(dir, nom, mail, tel, null, pagoTipo, comentario);
+
+            let mensaje = "";
+            if (dir == "") {
+                mensaje += `- Direccion no puede ser vacío.<br>`;
+            }
+            if (nom == "") {
+                mensaje += `- Nombre no puede ser vacío.<br>`;
+            }
+            if (tel == 0) {
+                mensaje += `- Telefono no puede ser vacío.<br>`;
+            }
+            if (mensaje != "") {
+                Tools.Toast(mensaje, 'warning');
+            }
+            else {
+                res = await Pedido.RealizarPedidoExpress(dir, nom, mail, tel, null, pagoTipo, comentario);
+            }            
 
         } else if (inputLocal.style.display === "block") {
 
             let mesa = document.getElementById("mesasSlc").value;
-            res = await Pedido.RealizarPedidoExpress("", "", "", -1, mesa, pagoTipo, comentario);
+            if (mesa == 0) {
+                Tools.Toast("Seleccionar mesa", 'warning');
+            } else {
+                res = await Pedido.RealizarPedidoExpress("", "", "", -1, mesa, pagoTipo, comentario);
+                
+            } 
+                         
+        }
+        if (res.status == 200) {
+            Tools.Toast("Pedido realizado con exito!", 'success');
+            //Guardo variables para mostrar toaster luego de cambio de vista
+            localStorage.setItem('toastMessage', 'Pedido realizado');
+            localStorage.setItem('toastType', 'success');
+
+            let redirectUrl = $("#URLProductosActivos").val();
+            window.location.href = redirectUrl;
+
+        } else if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+
+        } else if (res.status == 403) {
+            Tools.Toast("Carrito esta vacío", 'warning');
         }
 
 

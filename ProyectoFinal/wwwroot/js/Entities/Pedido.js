@@ -111,7 +111,6 @@ class Pedido {
 
             pagoTipo == 1 ? pagoTipo = true : pagoTipo = false;
 
-
             let requestBody = {
                 Dir: dir,
                 Mesa: mesa,
@@ -127,14 +126,7 @@ class Pedido {
                 body: JSON.stringify(requestBody)
             });
 
-            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
-                return "El producto no existe.";
-            }
-            if (response.ok) {
-                return "ok"
-            }
-
-            return "error"
+            return response;
 
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -181,11 +173,10 @@ class Pedido {
                 return "El producto no existe.";
             }
             if (response.ok) {
-                localStorage.setItem('carrito', JSON.stringify([]));
-                return "ok"
+                localStorage.setItem('carrito', JSON.stringify([]));                
             }
 
-            return "error"
+            return response;
 
         } catch (error) {
             console.error('Error fetching products:', error);

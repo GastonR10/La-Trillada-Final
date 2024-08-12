@@ -11,6 +11,18 @@ $(document).ready(async function () {
         localStorage.setItem('carrito', JSON.stringify([]));
     }
 
+    //Mostrar toaster si entramos luego pedir
+    const toastMessage = localStorage.getItem('toastMessage');
+    const toastType = localStorage.getItem('toastType');
+    if (toastMessage && toastType) {
+        // Mostrar el toaster
+        Tools.Toast(toastMessage, toastType);
+
+        // Limpiar el almacenamiento local
+        localStorage.removeItem('toastMessage');
+        localStorage.removeItem('toastType');
+    }
+
     // Ejecuta la lógica inicial al cargar la página
     await actualizarVista();
 

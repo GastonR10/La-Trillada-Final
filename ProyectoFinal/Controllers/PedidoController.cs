@@ -108,14 +108,19 @@ namespace ProyectoFinal.Controllers
             {
                 // Verificar si el usuario ya existe en la base de datos
                 Usuario? existingUser = await _db.Usuarios
-                    .Include(p => p.CarritoAbierto)
-                        .ThenInclude(c => c.CantidadesProductos)
-                            .ThenInclude(pc => pc.Producto)
-                    .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
+                                                .Include(p => p.CarritoAbierto)
+                                                    .ThenInclude(c => c.CantidadesProductos)
+                                                        .ThenInclude(pc => pc.Producto)
+                                                .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
 
                 if (existingUser == null)
                 {
                     return BadRequest("El usuario no existe.");
+                }
+
+                if(existingUser.CarritoAbierto.CantidadesProductos.Count == 0)
+                {
+                    return StatusCode(403);
                 }
 
                 // Crear un nuevo pedido y agregarlo a la base de datos
@@ -152,7 +157,7 @@ namespace ProyectoFinal.Controllers
                 await _hubContext.Clients.All.SendAsync("AvisarPedido");
 
                 string numeroDestino = "+598" + existingUser.Telefono;
-                string mensaje = "¡Hola! Esta es una notificación de tu aplicación.";
+                string mensaje = "¡Hola! tu pedido fue recibido, en seguida lo confirmamos.";
 
                 await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
 
@@ -176,6 +181,10 @@ namespace ProyectoFinal.Controllers
         {
             try
             {
+                if(rp.Carrito.ProductosCantidad.Count == 0)
+                {
+                    return StatusCode(403);
+                }
 
                 // Crear un nuevo carrito y agregarlo a la base de datos
                 Carrito nuevoCarrito = new Carrito();
@@ -183,6 +192,7 @@ namespace ProyectoFinal.Controllers
 
                 // Guardar los cambios para obtener el nuevo Id del carrito
                 await _db.SaveChangesAsync();
+
 
                 //Fijar precio total del carrito viejo y cargando pc en bd
                 decimal total = 0;
@@ -211,6 +221,14 @@ namespace ProyectoFinal.Controllers
 
                 // Tirar toaster luego de cada nuevo pedido
                 await _hubContext.Clients.All.SendAsync("AvisarPedido");
+
+                if(rp.Tel != -1)
+                {
+                    string numeroDestino = "+598" + pedido.Telefono;
+                    string mensaje = "¡Hola! tu pedido fue recibido, en seguida lo confirmamos.";
+
+                    await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
+                }                
 
                 return Ok();
 
@@ -276,17 +294,59 @@ namespace ProyectoFinal.Controllers
                     return NotFound();
                 }
 
+                string? tipoPedido = _db.Entry(pedido).Property("TipoPedido").CurrentValue as string;
+
+                string numeroDestino = "+598";
+                string mensaje = "";
+
+                if (tipoPedido == "Cliente")
+                {
+                    // Lógica para PedidoCliente
+                    PedidoCliente? pedidoCliente = await _db.Pedidos.OfType<PedidoCliente>()
+                                                        .Include(p => p.Cliente)
+                                                        .FirstOrDefaultAsync(p => p.Id == pedido.Id);
+
+                    if (pedidoCliente == null)
+                    {
+                        return NotFound();
+                    }
+
+                    numeroDestino += pedidoCliente.Cliente.Telefono;
+
+                }
+                else if (tipoPedido == "Express")
+                {
+                    // Lógica para PedidoExpress
+                    PedidoExpress? pedidoExpress = await _db.Pedidos.OfType<PedidoExpress>()
+                                                        .FirstOrDefaultAsync(p => p.Id == pedido.Id);
+
+                    if (pedidoExpress == null)
+                    {
+                        return NotFound();
+                    }
+
+                    numeroDestino += pedidoExpress.Telefono;
+                }
+                else
+                {
+                    // Manejo de otros tipos de pedidos o error
+                    return NotFound();
+                }                
+
                 switch (pedido.Estado)
                 {
                     case Estado.Pendiente:
+                        mensaje += "Tu pedido fue confirmado con el numero " + pedido.Id + " y está en preparación";
                         pedido.Estado = Estado.EnPreparacion;
                         break;
 
                     case Estado.EnPreparacion:
+                        mensaje += "Pedido numero " + pedido.Id + " va en camino";
                         pedido.Estado = Estado.EnCamino;
                         break;
 
                     case Estado.EnCamino:
+                        mensaje += "Pedido numero " + pedido.Id + " entregado con exito";
                         pedido.Estado = Estado.Finalizado;
                         break;
 
@@ -297,7 +357,9 @@ namespace ProyectoFinal.Controllers
 
                 _db.Pedidos.Update(pedido);
 
-                await _db.SaveChangesAsync();
+                await _db.SaveChangesAsync();                
+                
+                await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
 
                 return Ok(pedido.Estado);
 
@@ -322,11 +384,53 @@ namespace ProyectoFinal.Controllers
                     return NotFound();
                 }
 
+
+                string? tipoPedido = _db.Entry(pedido).Property("TipoPedido").CurrentValue as string;
+
+                string numeroDestino = "+598";
+                string mensaje = "Pedido numero " + pedido.Id + " fue cancelado.";
+
+                if (tipoPedido == "Cliente")
+                {
+                    // Lógica para PedidoCliente
+                    PedidoCliente? pedidoCliente = await _db.Pedidos.OfType<PedidoCliente>()
+                                                        .Include(p => p.Cliente)
+                                                        .FirstOrDefaultAsync(p => p.Id == pedido.Id);
+
+                    if (pedidoCliente == null)
+                    {
+                        return NotFound();
+                    }
+
+                    numeroDestino += pedidoCliente.Cliente.Telefono;
+
+                }
+                else if (tipoPedido == "Express")
+                {
+                    // Lógica para PedidoExpress
+                    PedidoExpress? pedidoExpress = await _db.Pedidos.OfType<PedidoExpress>()
+                                                        .FirstOrDefaultAsync(p => p.Id == pedido.Id);
+
+                    if (pedidoExpress == null)
+                    {
+                        return NotFound();
+                    }
+
+                    numeroDestino += pedidoExpress.Telefono;
+                }
+                else
+                {
+                    // Manejo de otros tipos de pedidos o error
+                    return NotFound();
+                }
+
                 pedido.Estado = Estado.Cancelado;
 
                 _db.Pedidos.Update(pedido);
 
                 await _db.SaveChangesAsync();
+
+                await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
 
                 return Ok(pedido);
 
@@ -451,6 +555,7 @@ namespace ProyectoFinal.Controllers
             }
 
         }
+               
 
     }
 }
