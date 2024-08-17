@@ -39,7 +39,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Producto}/{action=GetProductos}");
+    pattern: "{controller=Home}/{action=Index}");
 
 app.MapHub<NotificationHub>("/notificationHub"); // Mapear el hub de SignalR
 

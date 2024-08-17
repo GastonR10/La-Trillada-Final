@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href="~/css/general.css" rel="stylesheet" />
-    <link href="~/css/login.css" rel="stylesheet" />
-    <link href="~/css/productosactivos.css" rel="stylesheet" />
-    <link href="~/css/pedidosadmin.css" rel="stylesheet" />
+        
     <link rel="stylesheet" href="~/ProyectoFinal.styles.css" asp-append-version="true" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
@@ -35,7 +33,11 @@
     <div id="divEncabezado" class="divEncabezado text-center content container-fluid">
         <div class="row">
             <button class="btnMenu col-1" id="btnMostrarMenu">☰ <span class="d-none d-lg-inline">Menú</span></button>
-            <div class="col-10"></div>
+            <div class="col-10" >
+                <a class="text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/img/logo.png"  />
+                </a>
+            </div>
             <div class="col-1 btnMenu">
                 <a class="text-dark" asp-area="" asp-controller="Carrito" asp-action="Carrito">
                     <i class="fa-regular fa-cart-shopping"></i> <span class="d-none d-lg-inline">Carrito</span>
@@ -54,7 +56,10 @@
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="Registro"><i class="fa-solid fa-arrow-right"></i>  Registrarse</a>
                 </li>
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Productos</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Elegir Productos</a>
+                </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="Login"><i class="fa-regular fa-book-open"></i>  Menú</a>
                 </li>
             }
             @if (Context.Session.GetString("rol") == "Admin")
@@ -74,6 +79,9 @@
                 <li class="nav-item opcionMenu">
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Pedido" asp-action="AdministracionPedidos"><i class="fa-solid fa-file-lines"></i>  Administración de Pedidos</a>
                 </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Pedido" asp-action="AdministracionPedidos"><i class="fa-regular fa-file-signature"></i>  Tipos de Producto</a>
+                </li>
 
             }
             @if (Context.Session.GetString("rol") == "Cliente")
@@ -88,11 +96,15 @@
             @if (Context.Session.GetString("rol") == "Cliente" || Context.Session.GetString("rol") == "Admin")
             {
                 <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="Login"><i class="fa-regular fa-book-open"></i>  Menú</a>
+                </li>
+                <li class="nav-item opcionMenu">
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Elegir Productos</a>
                 </li>
                 <li class="nav-item opcionMenu">
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="Logout"><i class="fa-regular fa-right-to-bracket"></i>  Cerrar Sesión</a>
                 </li>
+                
 
             }
         </ul>
@@ -110,7 +122,7 @@
 
     <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer">
         <div class="container">
             2024 - LaTrillada
         </div>

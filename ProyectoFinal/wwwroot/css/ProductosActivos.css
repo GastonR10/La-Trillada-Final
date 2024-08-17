@@ -1,7 +1,12 @@
-﻿.card {
+﻿h2 {
+    text-shadow: 5px 5px 8px rgba(256, 256, 256, 2);
+}
+
+.card {
     display: flex;
     flex-direction: column;
     height: 100%;
+    color: #000 !important;
 }
 
 .card-img-top {

@@ -1,4 +1,12 @@
-﻿
+﻿body {
+    background-image: url(/img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    user-select: none;
+}
+
+
 /*menu PRINCIPAL*/
 .menuPrincipal {
     height: 100vh;
@@ -10,7 +18,7 @@
     overflow-x: hidden;
     transition: all 0.3s;
     z-index: 1000;
-    margin-top: 40px;
+    margin-top: 60px;
     border-left: solid orangered !important;
     border-right: solid orangered !important;
 }
@@ -28,7 +36,7 @@
     }
 
 .divEncabezado {
-    height: 40px;
+    height: 60px;
     border-color: orangered !important;
     border: solid;
     position: fixed;
@@ -41,7 +49,7 @@
 .btnMenu {
     background-color: #fff;
     border: none;
-    padding: 5px;
+    padding: 13px;
 }
 
 .opcionMenu {
@@ -53,11 +61,19 @@
     width: 80%;
     display: inline-block !important;
 }
+
+.divEncabezado img {
+    height: 54px;
+}
+
+.divEncabezado a{
+    align-content: center;
+}
 /*FIN menu PRINCIPAL*/
 
 /*PAGINA MAIN*/
 .main-content {
-    margin-top: 40px; /* Ajusta este margen según la altura de tu encabezado */
+    margin-top: 60px; /* Ajusta este margen según la altura de tu encabezado */
     display: flex;
     justify-content: center;
     align-items: center;
