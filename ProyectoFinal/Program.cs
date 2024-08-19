@@ -17,6 +17,8 @@ builder.Services.AddControllersWithViews()
 
 builder.Services.AddDbContext<BarContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<Validaciones>();
+
 builder.Services.AddSession();
 
 var app = builder.Build();

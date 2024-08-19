@@ -1,0 +1,30 @@
+﻿
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>Agregar Nuevo Tipo de Producto</h2>
+            <div class="form-group">
+                <label for="nuevoTipoProducto">Nuevo Tipo de Producto</label>
+                <input type="text" class="form-control" id="nuevoTipoProducto" placeholder="Ingrese la descripción">
+                <button id="btnAgregarTipoProducto" class="btn btn-primary mt-2" onclick="agregarTipoProducto();">Agregar</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>Ordenar tipos de producto</h2>
+            <ul id="listaTiposProducto" class="list-group"></ul>
+            <button id="btnGuardarCambios" class="btn btn-success mt-3">Guardar Cambios</button>
+        </div>
+    </div>
+</div>
+
+<div style="display:none;">
+    @Html.Hidden("URLGetTiposProducto", Url.Action("GetTiposProducto", "TipoProducto"))
+    @Html.Hidden("URLOrdenar", Url.Action("OrdenarTipos", "TipoProducto"))
+    @Html.Hidden("URLAgregar", Url.Action("Create", "TipoProducto"))
+
+</div>
+
+<script src="~/js/sorteable.js"></script>
+<script type="text/javascript" src="~/js/pages/TipoProductos.js" asp-append-version="true"></script>

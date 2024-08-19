@@ -28,8 +28,52 @@
             return tiposProducto;
 
         } catch (ex) {
-            console.error('Error al agregar el producto:', error);
-            throw error;
+            console.error('Error al agregar el producto:', ex.error);
+            throw ex.error;
+        }
+    }
+
+    static async Ordenar(cambios) {
+        try {
+            // Aquí debes enviar los datos modificados al servidor para que se guarden los cambios
+            const url = $("#URLOrdenar").val(); // Suponiendo que tienes un endpoint para guardar los cambios
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(cambios)
+            });
+
+            if (!response.ok) {
+                throw new Error(`Error al guardar los cambios: ${response.statusText}`);
+            }
+
+            return response;
+
+        } catch (ex) {
+            console.error('Error al agregar el producto:', ex.error);
+            throw ex.error;
+        }
+    }
+
+    static async AgregarTipo(desc) {
+        try {
+            const url = $("#URLAgregar").val(); // Suponiendo que tienes un endpoint para guardar los cambios
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ Descripcion: desc })
+            });
+
+            return response;
+
+
+        } catch (ex) {
+            console.error('Error al agregar el producto:', ex.message);
+            throw ex.message;
         }
     }
 }

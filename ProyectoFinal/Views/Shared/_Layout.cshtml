@@ -59,7 +59,7 @@
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Elegir Productos</a>
                 </li>
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="Login"><i class="fa-regular fa-book-open"></i>  Menú</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductosMenu"><i class="fa-regular fa-book-open"></i>  Menú</a>
                 </li>
             }
             @if (Context.Session.GetString("rol") == "Admin")
@@ -80,7 +80,7 @@
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Pedido" asp-action="AdministracionPedidos"><i class="fa-solid fa-file-lines"></i>  Administración de Pedidos</a>
                 </li>
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Pedido" asp-action="AdministracionPedidos"><i class="fa-regular fa-file-signature"></i>  Tipos de Producto</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="TipoProducto" asp-action="GetTipoProductosView"><i class="fa-regular fa-file-signature"></i>  Tipos de Producto</a>
                 </li>
 
             }
@@ -96,7 +96,7 @@
             @if (Context.Session.GetString("rol") == "Cliente" || Context.Session.GetString("rol") == "Admin")
             {
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="Login"><i class="fa-regular fa-book-open"></i>  Menú</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductosMenu"><i class="fa-regular fa-book-open"></i>  Menú</a>
                 </li>
                 <li class="nav-item opcionMenu">
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Elegir Productos</a>

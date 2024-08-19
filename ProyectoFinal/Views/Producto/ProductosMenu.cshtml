@@ -1,0 +1,17 @@
+﻿<link href="~/css/productosmenu.css" rel="stylesheet" />
+
+<h1>MENU</h1>
+
+<div class="container mt-5 w-100 w-md-60 mx-auto">
+    <div class="row " id="productosMenuContainer">
+        <!-- Aquí se insertará el menú -->
+    </div>
+</div>
+
+<div style="display:none;">
+    @Html.Hidden("URLGetProductosActivos", Url.Action("GetProductosActivos", "Producto"))
+    @Html.Hidden("URLGetTiposProducto", Url.Action("GetTiposProducto", "TipoProducto"))
+
+</div>
+
+<script type="text/javascript" src="~/js/pages/ProductosMenu.js" asp-append-version="true"></script>

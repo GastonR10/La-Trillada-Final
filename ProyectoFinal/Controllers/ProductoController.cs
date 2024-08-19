@@ -114,6 +114,12 @@ namespace ProyectoFinal.Controllers
         }
 
         [HttpGet]
+        public IActionResult GetProductosMenu()
+        {
+            return View("ProductosMenu");
+        }
+
+        [HttpGet]
         public async Task<IActionResult> GetAllProductos()
         {
             try

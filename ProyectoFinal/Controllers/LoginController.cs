@@ -1,20 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using ProyectoFinal.Models;
 using ReglasNegocio.DTO_Entities;
 using ReglasNegocio.Entities;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 namespace ProyectoFinal.Controllers
 {
     public class LoginController : Controller
     {
         private readonly BarContext _db;
+        private readonly Validaciones _validaciones;
 
-        public LoginController(BarContext context)
+        public LoginController(BarContext context, Validaciones val)
         {
             _db = context;
+            _validaciones = val;
         }
 
         public IActionResult Login()
@@ -80,6 +81,19 @@ namespace ProyectoFinal.Controllers
         {
             try
             {
+                if (
+                    usuario.Nombre == "" || 
+                    usuario.Apellido == "" || 
+                    usuario.NombreUsuario == "" || 
+                    !_validaciones.EsContrasenaValida(usuario.Password) || 
+                    !_validaciones.EsEmailValido(usuario.Email) || 
+                    !_validaciones.EsNumeroValido(usuario.Telefono) || 
+                    usuario.Direccion == ""
+                    )
+                {
+                    return BadRequest("No todos los datos son correctos.");
+                }
+
                 // Verificar si el usuario ya existe en la base de datos
                 Usuario? existingUser = await _db.Usuarios
                     .FirstOrDefaultAsync(u => u.NombreUsuario == usuario.NombreUsuario);
@@ -107,7 +121,6 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception)
             {
-
                 return StatusCode(500);
             }
 

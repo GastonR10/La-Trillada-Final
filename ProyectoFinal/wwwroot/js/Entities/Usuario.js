@@ -91,18 +91,13 @@ class Usuario {
                 body: JSON.stringify(usu) // El cuerpo ahora está permitido con POST
             });
 
-            if (response.status == 400) {
-                return "El nombre de usuario ya existe.";
-            }
-            if (response.ok) {
-                return "ok"
-            }
-
-            return "error"
+            return response
 
         } catch (ex) {
             console.error('Error:', ex.message);
-            throw ex;
+            return {
+                status: 500
+            };
         }
     }
 
