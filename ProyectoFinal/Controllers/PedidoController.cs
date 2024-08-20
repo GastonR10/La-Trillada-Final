@@ -151,7 +151,7 @@ namespace ProyectoFinal.Controllers
                 await _db.SaveChangesAsync();
 
                 // Enviar notificación a los clientes
-                await _hubContext.Clients.All.SendAsync("RecibirPedido", "Nuevo pedido realizado");
+                await _hubContext.Clients.All.SendAsync("RecibirPedido", pedido.Id);
 
                 // Tirar toaster luego de cada nuevo pedido
                 await _hubContext.Clients.All.SendAsync("AvisarPedido");
@@ -217,7 +217,7 @@ namespace ProyectoFinal.Controllers
 
                 await _db.SaveChangesAsync();
 
-                await _hubContext.Clients.All.SendAsync("RecibirPedido", "Nuevo pedido realizado");
+                await _hubContext.Clients.All.SendAsync("RecibirPedido", pedido.Id);
 
                 // Tirar toaster luego de cada nuevo pedido
                 await _hubContext.Clients.All.SendAsync("AvisarPedido");
@@ -338,12 +338,13 @@ namespace ProyectoFinal.Controllers
                     case Estado.Pendiente:
                         mensaje += "Tu pedido fue confirmado con el numero " + pedido.Id + " y está en preparación";
                         pedido.Estado = Estado.EnPreparacion;
-                        await _hubContext.Clients.All.SendAsync("PedidoAceptado");
+                        await _hubContext.Clients.All.SendAsync("PedidoAceptado", pedido.Id);
                         break;
 
                     case Estado.EnPreparacion:
                         mensaje += "Pedido numero " + pedido.Id + " va en camino";
                         pedido.Estado = Estado.EnCamino;
+                        await _hubContext.Clients.All.SendAsync("PedidoPronto", pedido.Id);
                         break;
 
                     case Estado.EnCamino:

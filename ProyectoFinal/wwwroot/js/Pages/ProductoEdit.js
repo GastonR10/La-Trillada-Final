@@ -115,7 +115,7 @@ function volverListaProducto() {
 
 async function eliminarProducto() {
     try {
-        let confirmacion = confirm(`¿Estás seguro de que deseas eliminar el producto?`);
+        let confirmacion = await asyncConfirm(`¿Estás seguro de que deseas eliminar el producto?`);
 
         if (confirmacion) {
             // Lógica para eliminar el elemento

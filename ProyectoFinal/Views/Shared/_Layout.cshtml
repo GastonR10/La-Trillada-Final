@@ -125,6 +125,14 @@
 
     <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
 
+    <div id="asyncConfirm" class="confirm-dialog" style="display: none;">
+        <div class="confirm-content">
+            <p id="confirmMessage">Are you sure?</p>
+            <button id="confirmYes">Yes</button>
+            <button id="confirmNo">No</button>
+        </div>
+    </div>
+
     <footer class="border-top footer">
         <div class="container">
             2024 - LaTrillada
@@ -136,6 +144,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/tools.js" asp-append-version="true"></script>
     <script src="~/js/loader.js" asp-append-version="true"></script>
+    <script src="~/js/asyncconfirm.js" asp-append-version="true" ></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

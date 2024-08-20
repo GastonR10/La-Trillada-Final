@@ -217,29 +217,30 @@ function grillaPedidosPendientes(pedidosPendientes) {
 
 
 async function actualizarEstadoPedido(id, estado) {
-    showLoader();
+    console.log(`Se ejecutó actualizarEstadoPedido con el id: ${id} y estado: ${estado}`);
 
     console.log(`Aceptar pedido ${id}`);
     // Implementa la lógica para aceptar el pedido
     try {
-        let confirmacion = confirm(`¿Estás seguro?`);
+        let confirmacion = await asyncConfirm(`¿Estás seguro?`);
 
         if (confirmacion) {
+            
             await Pedido.actualizarEstadoPedido(id);
 
-            await obtenerPedidos();
+            //await obtenerPedidos();            
 
             let mensaje = "";    
 
-            if (estado == 'Pendiente') {
-                mensaje = "El pedido " + id + " fue enviado a preparacion";
-            } else if (estado == 'EnPreparacion') {
-                mensaje = "El pedido " + id + " fue colocado en camino";
-            } else if (estado == 'EnCamino') {
+            //if (estado == 'Pendiente') {
+            //    mensaje = "El pedido " + id + " fue enviado a preparacion";
+            //} else if (estado == 'EnPreparacion') {
+            //    mensaje = "El pedido " + id + " fue colocado en camino";
+            /*} else*/ if (estado == 'EnCamino') {
                 mensaje = "El pedido " + id + " fue finalizado con exito";
             } 
 
-            Tools.Toast(mensaje, 'success')
+            if(mensaje != "") Tools.Toast(mensaje, 'success')
         }
 
     } catch (ex) {
@@ -247,16 +248,17 @@ async function actualizarEstadoPedido(id, estado) {
         throw ex;
     }
 
-    hideLoader();
+    
 }
 
 async function cancelarPedido(id) {
-    showLoader();
+    
 
     console.log(`Cancelar pedido ${id}`);
-    let confirmacion = confirm(`¿Está seguro que desea cancelar?`);
+    let confirmacion = await asyncConfirm(`¿Está seguro que desea cancelar?`);
 
     if (confirmacion) {
+
         await Pedido.cancelarPedido(id);
 
         await obtenerPedidos();
@@ -264,7 +266,7 @@ async function cancelarPedido(id) {
         Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success')
     }
 
-    hideLoader();
+    
 }
 
 function verPedido(id) {
@@ -285,15 +287,25 @@ function configurarSignalR() {
         .configureLogging(signalR.LogLevel.Information)
         .build();
 
-    connection.on("RecibirPedido", async function () {
+    connection.on("RecibirPedido", async function (id) {
         console.log('Recibido pedido');
-        await obtenerPedidos(); // Obtén la lista actualizada de pedidos        
+        Tools.Toast('Nuevo pedido ' + id + ' recibido', 'success')
+        await obtenerPedidos(); // Obtén la lista actualizada de pedidos   
+        
+    });
+
+    connection.on("PedidoAceptado", async function (id) {
+        console.log('Aceptado pedido');
+        Tools.Toast('Pedido ' + id + ' fue enviado a preparacion', 'success')
+        await obtenerPedidos(); // Obtén la lista actualizada de pedidos 
+        
     });
 
     connection.on("PedidoPronto", async function (id) {
         console.log('Pedido pronto');
-        await obtenerPedidos(); // Obtén la lista actualizada de pedidos        
         Tools.Toast('El pedido ' + id + ' fue colocado en camino.', 'success')
+        await obtenerPedidos(); // Obtén la lista actualizada de pedidos        
+        
     });
     
     connection.start()

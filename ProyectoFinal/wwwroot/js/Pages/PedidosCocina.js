@@ -2,7 +2,7 @@
     showLoader();
     await cargarPedidosEnPreparacion();
 
-    configurarSignalR();
+    configurarSignalRR();
 
     hideLoader();
 });
@@ -85,21 +85,20 @@ async function cargarPedidosEnPreparacion() {
 
 }
 
-async function actualizarEstadoPedido(id) {
-    showLoader();
+async function actualizarEstadoPedido(id) {    
 
     // Implementa la lógica para aceptar el pedido
     try {
-        let confirmacion = confirm(`¿Estás seguro?`);
+        let confirmacion = await asyncConfirm(`¿Estás seguro?`);
 
         if (confirmacion) {
             await Pedido.actualizarEstadoPedido(id);
 
-            await cargarPedidosEnPreparacion();
+            //await cargarPedidosEnPreparacion();
 
-            Tools.Toast("El pedido " + id + " fue colocado en camino", 'success')
+          //  Tools.Toast("El pedido " + id + " fue colocado en camino", 'success')
 
-            await notificarPedidoEnCamino(id);
+           // await notificarPedidoEnCamino(id);
         }
 
     } catch (ex) {
@@ -107,32 +106,38 @@ async function actualizarEstadoPedido(id) {
         throw ex;
     }
 
-    hideLoader();
 }
 
-async function notificarPedidoEnCamino(idPedido) {
-    const connection = new signalR.HubConnectionBuilder()
-        .withUrl("/notificationHub")
-        .configureLogging(signalR.LogLevel.Information)
-        .build();
+//async function notificarPedidoEnCamino(idPedido) {
+//    const connection = new signalR.HubConnectionBuilder()
+//        .withUrl("/notificationHub")
+//        .configureLogging(signalR.LogLevel.Information)
+//        .build();
 
-    await connection.start();
+//    await connection.start();
 
-    // Invocar un método en el servidor para notificar que el pedido está en camino
-    await connection.invoke("NotificarPedidoEnCamino", idPedido);
+//    // Invocar un método en el servidor para notificar que el pedido está en camino
+//    await connection.invoke("NotificarPedidoEnCamino", idPedido);
 
-    console.log(`Notificación enviada para el pedido #${idPedido}`);
-}
-function configurarSignalR() {
+//    console.log(`Notificación enviada para el pedido #${idPedido}`);
+//}
+function configurarSignalRR() {
     const connection = new signalR.HubConnectionBuilder()
         .withUrl("/notificationHub") // Asegúrate de que la URL sea la correcta para tu servidor SignalR
         .configureLogging(signalR.LogLevel.Information)
         .build();
 
-    connection.on("PedidoAceptado", async function () {
+    connection.on("PedidoAceptado", async function (id) {
         console.log('Aceptado pedido');
+        Tools.Toast('Pedido ' + id + ' fue enviado a preparacion', 'success')
         await cargarPedidosEnPreparacion(); // Obtén la lista actualizada de pedidos 
-        Tools.Toast('Nuevo pedido recibido', 'success')
+    });
+
+    connection.on("PedidoPronto", async function (id) {
+        console.log('Pedido pronto');
+        Tools.Toast('El pedido ' + id + ' fue colocado en camino.', 'success')
+        await cargarPedidosEnPreparacion(); // Obtén la lista actualizada de pedidos      
+        
     });
 
     connection.start()

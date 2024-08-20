@@ -178,7 +178,7 @@ async function cargarPedido() {
         console.log(`Aceptar pedido ${id}`);
         // Implementa la lógica para aceptar el pedido
         try {
-            let confirmacion = confirm(`¿Está seguro?`);
+            let confirmacion = await asyncConfirm(`¿Está seguro?`);
 
             if (confirmacion) {
                 await Pedido.actualizarEstadoPedido(id);
@@ -205,7 +205,7 @@ async function cargarPedido() {
 
     async function cancelarPedido(id) {
         console.log(`Cancelar pedido ${id}`);
-        let confirmacion = confirm(`¿Está seguro que desea cancelar?`);
+        let confirmacion = await asyncConfirm(`¿Está seguro que desea cancelar?`);
 
         if (confirmacion) {
             await Pedido.cancelarPedido(id);
