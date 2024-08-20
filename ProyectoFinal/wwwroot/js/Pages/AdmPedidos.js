@@ -289,6 +289,12 @@ function configurarSignalR() {
         console.log('Recibido pedido');
         await obtenerPedidos(); // Obtén la lista actualizada de pedidos        
     });
+
+    connection.on("PedidoPronto", async function (id) {
+        console.log('Pedido pronto');
+        await obtenerPedidos(); // Obtén la lista actualizada de pedidos        
+        Tools.Toast('El pedido ' + id + ' fue colocado en camino.', 'success')
+    });
     
     connection.start()
         .then(function () {

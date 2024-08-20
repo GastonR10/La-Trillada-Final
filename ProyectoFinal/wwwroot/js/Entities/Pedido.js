@@ -1,5 +1,5 @@
 class Pedido {
-    constructor(id, comentario, estado, aceptado, idMesa, fecha, eliminado, email, telefono, direccion, nombre, pos) {
+    constructor(id, comentario, estado, aceptado, idMesa, fecha, eliminado, email, telefono, direccion, nombre, apellido, pos) {
         this.Id = id;
         this.Comentario = comentario;
         this.Estado = estado;
@@ -12,6 +12,7 @@ class Pedido {
         this.Telefono = telefono;
         this.Direccion = direccion;
         this.Nombre = nombre;
+        this.Apellido = apellido;
         this.Pos = pos;
     }
 
@@ -87,9 +88,9 @@ class Pedido {
             let pedido;
 
             if (data.Cliente != null && data.Cliente != undefined) {
-                pedido = new Pedido(data.Id, data.Comentario, data.Estado, data.Aceptado, data.IdMesa, data.Fecha, data.Eliminado, data.Cliente.Email, data.Cliente.Telefono, data.Cliente.Direccion, data.Cliente.Nombre, data.Pos);
+                pedido = new Pedido(data.Id, data.Comentario, data.Estado, data.Aceptado, data.IdMesa, data.Fecha, data.Eliminado, data.Cliente.Email, data.Cliente.Telefono, data.Cliente.Direccion, data.Cliente.Nombre, data.Cliente.Apellido, data.Pos);
             } else {
-                pedido = new Pedido(data.Id, data.Comentario, data.Estado, data.Aceptado, data.IdMesa, data.Fecha, data.Eliminado, data.Email, data.Telefono, data.Direccion, data.Nombre, data.Pos);
+                pedido = new Pedido(data.Id, data.Comentario, data.Estado, data.Aceptado, data.IdMesa, data.Fecha, data.Eliminado, data.Email, data.Telefono, data.Direccion, data.Nombre, data.Apellido, data.Pos);
             }
 
             pedido.Carrito = data.Carrito;
@@ -205,13 +206,13 @@ class Pedido {
 
             const pedidos = [
                 ...data.PedidosCliente.map(item => {
-                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Pos);
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Cliente.Apellido, item.Pos);
                     pedido.Carrito = item.Carrito;
                     return pedido;
                 }
                 ),
                 ...data.PedidosExpress.map(item => {
-                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, item.Pos);
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, item.Apellido, item.Pos);
                     pedido.Carrito = item.Carrito;
                     return pedido;
                 }
@@ -250,13 +251,13 @@ class Pedido {
 
             const pedidos = [
                 ...data.PedidosCliente.map(item => {
-                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Pos);
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Cliente.Apellido, item.Pos);
                     pedido.Carrito = item.Carrito;
                     return pedido;
                 }
                 ),
                 ...data.PedidosExpress.map(item => {
-                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, item.Pos);
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, item.Apellido, item.Pos);
                     pedido.Carrito = item.Carrito;
                     return pedido;
                 }
@@ -319,6 +320,52 @@ class Pedido {
         } catch (error) {
             console.error('Error fetching pedidos:', error);
             return [];
+        }
+    }
+
+    static async GetPedidosCocina() {
+        try {
+            const url = $("#URLPedidosCocina").val();
+
+
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify()
+            });
+
+            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
+                return "Sin permisos de Administrador.";
+            }
+
+            const data = await response.json();
+
+            const pedidos = [
+                ...data.PedidosCliente.map(item => {
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Cliente.Email, item.Cliente.Telefono, item.Direccion, item.Cliente.Nombre, item.Cliente.Apellido, item.Pos);
+                    pedido.Carrito = item.Carrito;
+                    return pedido;
+                }
+                ),
+                ...data.PedidosExpress.map(item => {
+                    const pedido = new Pedido(item.Id, item.Comentario, item.Estado, item.Aceptado, item.IdMesa, item.Fecha, item.Eliminado, item.Email, item.Telefono, item.Direccion, item.Nombre, item.Apellido, item.Pos);
+                    pedido.Carrito = item.Carrito;
+                    return pedido;
+                }
+
+                )
+            ];
+
+            // Ordenar por número de pedido (Id)
+            pedidos.sort((a, b) => a.Id - b.Id);
+
+            return pedidos;
+
+
+        } catch (error) {
+            console.error('Error fetching products:', error);
         }
     }
 

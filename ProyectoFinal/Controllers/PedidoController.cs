@@ -338,6 +338,7 @@ namespace ProyectoFinal.Controllers
                     case Estado.Pendiente:
                         mensaje += "Tu pedido fue confirmado con el numero " + pedido.Id + " y está en preparación";
                         pedido.Estado = Estado.EnPreparacion;
+                        await _hubContext.Clients.All.SendAsync("PedidoAceptado");
                         break;
 
                     case Estado.EnPreparacion:
@@ -555,7 +556,49 @@ namespace ProyectoFinal.Controllers
             }
 
         }
-               
+
+        public IActionResult PedidosCocina()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPedidosCocina()
+        {
+            try
+            {
+                List<PedidoCliente> pedidosCliente = await _db.Pedidos.OfType<PedidoCliente>()
+                                                      .Include(p => p.Cliente)
+                                                      .Include(p => p.Carrito)
+                                                            .ThenInclude(c => c.CantidadesProductos)
+                                                                .ThenInclude(pc => pc.Producto)
+                                                      .Where(p => p.Estado == Estado.EnPreparacion)
+                                                      .ToListAsync();
+
+                List<PedidoExpress> pedidosExpress = await _db.Pedidos.OfType<PedidoExpress>()
+                                                      .Include(p => p.Carrito)
+                                                            .ThenInclude(c => c.CantidadesProductos)
+                                                                .ThenInclude(pc => pc.Producto)
+                                                      .Where(p => p.Estado == Estado.EnPreparacion)
+                                                      .ToListAsync();
+
+                List<DTO_PedidoCliente> pedidosClienteDTO = pedidosCliente.Select(p => new DTO_PedidoCliente(p)).ToList();
+                List<DTO_PedidoExpress> pedidosExpressDTO = pedidosExpress.Select(p => new DTO_PedidoExpress(p)).ToList();
+
+                return Ok(new
+                {
+                    PedidosCliente = pedidosClienteDTO,
+                    PedidosExpress = pedidosExpressDTO
+                });
+
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
 
     }
 }
