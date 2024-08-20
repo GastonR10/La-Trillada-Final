@@ -88,5 +88,35 @@ namespace ProyectoFinal.Controllers
                 return StatusCode(500);
             }            
         }
+
+        [HttpDelete("TipoProducto/Delete/{Id}")]
+        public async Task<IActionResult> Delete(int Id)
+        {
+            try
+            {
+                TipoProducto? tipoBD = await _context.TipoProductos.FindAsync(Id);
+
+                List<Producto> prods = await _context.Productos.Where(p => p.IdTipoProducto == Id).ToListAsync();
+
+                if (prods.Count() > 0)
+                {
+                    return StatusCode(501, "No se puede eliminar un tipo si tiene productos.");
+                }
+                                                                                                    
+                if (tipoBD == null)
+                {
+                    return NotFound($"No existe el tipo de producto con id: {Id}");
+                }
+
+                _context.TipoProductos.Remove(tipoBD);
+                await _context.SaveChangesAsync();
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Ocurrió un error al intentar eliminar el tipo de producto.");
+            }
+        }
     }
 }

@@ -3,7 +3,7 @@
 
     // Obtener y mostrar los tipos de productos existentes
     await iniciarVista();
-       
+
     hideLoader();
 });
 
@@ -41,11 +41,22 @@ async function obtenerTipoProductos() {
         // Mostrar los tipos de productos en la lista con un atributo data-id para identificar
         tiposProd.forEach(tipo => {
             lista.append(`
-                <li class="list-group-item" data-id="${tipo.Id}">
+                <li class="list-group-item d-flex justify-content-between align-items-center" data-id="${tipo.Id}">
                     ${tipo.Descripcion}
+                    <button class="btn btn-link btn-eliminar-tipo" data-index="${tipo.Id}"><i class="fa-solid fa-trash"></i></button>
                 </li>
             `);
         });
+
+        // Primero, elimina cualquier event listener previo
+        $('#listaTiposProducto').off('click', '.btn-eliminar-tipo');
+
+        // Añadir el event listener para el botón de eliminar
+        $('#listaTiposProducto').on('click', '.btn-eliminar-tipo', async function (event) {
+            const index = $(this).data('index');
+            await eliminarTipoPorId(index);
+        });
+
     } catch (ex) {
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
         throw ex;
@@ -71,7 +82,7 @@ async function agregarTipoProducto() {
         } else if (respuesta.status == 400) {
             Tools.Toast("No todos los datos son correctos", 'warning');
         }
-    }   
+    }
 }
 
 async function guardarCambios(ordenIds) {
@@ -87,10 +98,36 @@ async function guardarCambios(ordenIds) {
         }
 
         if (res.status == 404) {
-            Tools.Toast(res.statusText, 'error');
+            let msj = await res.text();
+            Tools.Toast(msj, 'error');
         }
 
-        
+
+    } catch (ex) {
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
+        throw ex;
+    }
+}
+
+async function eliminarTipoPorId(id) {
+    try {
+        const res = await TipoProducto.Eliminar(id);
+
+        await iniciarVista();        
+
+        let msj = await res.text();
+
+        if (res.status == 500) {
+            Tools.Toast(msj, 'warning');
+        }
+        if (res.status == 501) {
+            
+            Tools.Toast(msj, 'warning');
+        }
+        if (res.status == 200) {
+            Tools.Toast('Elemento ' + id + ' eliminado correctamente', 'success');
+        }
+
     } catch (ex) {
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
         throw ex;

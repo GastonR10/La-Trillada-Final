@@ -76,5 +76,24 @@
             throw ex.message;
         }
     }
+
+    static async Eliminar(Id) {
+        try {
+            const url = `${$("#URLEliminar").val()}/${Id}`;
+            const response = await fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            return response;
+
+
+        } catch (ex) {
+            console.error('Error al eliminar el producto:', ex.message);
+            throw ex.message;
+        }
+    }
 }
 
