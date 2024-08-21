@@ -1,4 +1,4 @@
-$(document).ready(async function () {
+ï»¿$(document).ready(async function () {
     showLoader();
     //Mostrar toaster si entramos luego de eliminar producto
     const toastMessage = localStorage.getItem('toastMessage');
@@ -12,7 +12,7 @@ $(document).ready(async function () {
         localStorage.removeItem('toastType');
     }
     
-    // Código a ejecutar cuando el DOM esté listo
+    // CÃ³digo a ejecutar cuando el DOM estÃ© listo
     await obtenerProductos();
 
     hideLoader();
@@ -106,10 +106,10 @@ async function activarDesactivar(productId, prodNombre, isActive) {
 
 async function eliminarProducto(productId) {
     try {
-        let confirmacion = await asyncConfirm(`¿Estás seguro de que deseas eliminar el producto?`);
+        let confirmacion = await asyncConfirm(`Â¿EstÃ¡s seguro de que deseas eliminar el producto?`);
 
         if (confirmacion) {
-            // Lógica para eliminar el elemento
+            // LÃ³gica para eliminar el elemento
             let res = await Producto.UpdateEliminar(productId);
 
             if (!res.ok) {
@@ -120,7 +120,7 @@ async function eliminarProducto(productId) {
             Tools.Toast('Producto eliminado con exito', 'success');
 
         } else {
-            //alert("Eliminación cancelada");
+            //alert("EliminaciÃ³n cancelada");
             Tools.Toast('Eliminacion cancelada', 'error');
         }   
 

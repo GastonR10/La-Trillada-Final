@@ -1,4 +1,4 @@
-$(document).ready(async function () {
+﻿$(document).ready(async function () {
     showLoader();
     await cargarInfoPersonal();
     await cargarMesas("mesasSlc");
@@ -93,7 +93,7 @@ async function RealizarPedidoLog() {
             Tools.Toast('Error inesperado, contacte al administrador', 'error');
 
         } else if (res.status == 403) {
-            Tools.Toast("Carrito esta vac�o", 'warning');
+            Tools.Toast("Carrito esta vacío", 'warning');
         }
         hideLoader();
         

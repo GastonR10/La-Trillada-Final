@@ -1,4 +1,4 @@
-$(document).ready(async function () {
+ï»¿$(document).ready(async function () {
     showLoader();
     await obtenerCarrito();
     hideLoader();
@@ -87,7 +87,7 @@ function generarGrilla(productosCantidad) {
     `;
     tbody.appendChild(totalRow);
 
-    // Crear la fila del botón Pedir
+    // Crear la fila del botÃ³n Pedir
     const pedirRow = document.createElement('tr');
     pedirRow.innerHTML = `
           <td colspan="12">
@@ -101,7 +101,7 @@ function generarGrilla(productosCantidad) {
     table.appendChild(tbody);
     container.appendChild(table);
 
-    // Añadir el event listener para el botón de eliminar
+    // AÃ±adir el event listener para el botÃ³n de eliminar
     document.getElementById('divProdList').addEventListener('click', async function (event) {
         showLoader();
         if (event.target.closest('.btn-eliminar-producto')) {
@@ -116,7 +116,7 @@ function generarGrilla(productosCantidad) {
         hideLoader();
     });
 
-    // Añadir el event listener para el botón Pedir
+    // AÃ±adir el event listener para el botÃ³n Pedir
     document.getElementById('btnPedir').addEventListener('click', async function () {
         showLoader();
         const duplas = [];
@@ -134,14 +134,14 @@ function generarGrilla(productosCantidad) {
         });
 
         if (duplas.length == 0) {
-            Tools.Toast('Carrito vacío', 'warning');
+            Tools.Toast('Carrito vacÃ­o', 'warning');
         } else {
 
             try {
 
                 if (sessionStorage.getItem('Logueado') == "true") {
 
-                    // Llamar a la función para agregar los comentarios en masa
+                    // Llamar a la funciÃ³n para agregar los comentarios en masa
                     await ProductoCantidad.AgregarComentariosMasivo(duplas);
 
                     // Obtiene la URL desde el campo oculto
@@ -208,7 +208,7 @@ function eliminarLineaSinLogin(index) {
         let carrito = JSON.parse(localStorage.getItem('carrito'));
         if (!carrito) carrito = [];
 
-        // Filtrar el carrito para excluir el producto con el Id específico
+        // Filtrar el carrito para excluir el producto con el Id especÃ­fico
         carrito = carrito.filter(item => item.Id != index);
 
         // Guardar el carrito actualizado en el localStorage

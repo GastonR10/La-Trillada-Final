@@ -1,13 +1,13 @@
-
+ï»¿
 $(document).ready(function () {
     $('#btnMostrarMenu').click(function (event) {
         $('#sidebar').toggleClass('visible');
         $('#mainContent').toggleClass('shifted');
-        event.stopPropagation(); // Previene la propagación del evento click al documento
+        event.stopPropagation(); // Previene la propagaciÃ³n del evento click al documento
     });
 
     $(document).click(function (event) {
-        // Si el click no es en el sidebar ni en el botón del menú
+        // Si el click no es en el sidebar ni en el botÃ³n del menÃº
         if (!$(event.target).closest('#sidebar').length && !$(event.target).closest('#btnMostrarMenu').length) {
             if ($('#sidebar').hasClass('visible')) {
                 $('#sidebar').removeClass('visible');

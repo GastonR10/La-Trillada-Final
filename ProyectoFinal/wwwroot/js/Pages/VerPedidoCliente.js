@@ -1,8 +1,8 @@
-    let _idPedido;
+ï»¿    let _idPedido;
 
 $(document).ready(async function () {
     showLoader();
-    // Código a ejecutar cuando el DOM esté listo
+    // CÃ³digo a ejecutar cuando el DOM estÃ© listo
     await cargarPedido();
 
     hideLoader();
@@ -115,7 +115,7 @@ async function cargarPedido() {
 
         table.appendChild(tbody);
 
-        // Añadir la tabla al divProdList
+        // AÃ±adir la tabla al divProdList
         listaProd.innerHTML = ''; // Limpiar cualquier contenido previo
         listaProd.appendChild(table);
 

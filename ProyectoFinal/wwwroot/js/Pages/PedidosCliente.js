@@ -1,4 +1,4 @@
-
+ï»¿
 
 $(document).ready(async function () {
     showLoader();
@@ -33,7 +33,7 @@ function grillaPedidosCliente(pedidosCliente) {
             // Filtrar los pedidos por el estado actual
             const pedidosFiltrados = pedidosCliente.filter(pedido => pedido.Estado === estado);
 
-            // Si no hay pedidos en el estado actual, no crear la sección
+            // Si no hay pedidos en el estado actual, no crear la secciÃ³n
             if (pedidosFiltrados.length === 0) {
                 return;
             }
@@ -42,7 +42,7 @@ function grillaPedidosCliente(pedidosCliente) {
             const estadoContainer = document.createElement('div');
             estadoContainer.className = 'estado-container';
 
-            // Crear un título para cada estado
+            // Crear un tÃ­tulo para cada estado
             const estadoTitulo = document.createElement('h3');
             estadoTitulo.textContent = `${estado}`;
             estadoContainer.appendChild(estadoTitulo);
@@ -83,7 +83,7 @@ function grillaPedidosCliente(pedidosCliente) {
                 tdNombre.style.textAlign = 'center';
                 row.appendChild(tdNombre);
 
-                // Dirección
+                // DirecciÃ³n
                 const tdDireccion = document.createElement('td');
                 tdDireccion.textContent = pedido.Direccion || 'N/A';
                 tdDireccion.style.textAlign = 'center';
@@ -106,7 +106,7 @@ function grillaPedidosCliente(pedidosCliente) {
                 const divAcciones = document.createElement('div');
                 divAcciones.className = 'acciones';
 
-                // Botón Ver
+                // BotÃ³n Ver
                 const btnVer = document.createElement('button');
                 btnVer.className = 'btn btn-success';
                 btnVer.textContent = 'Ver';

@@ -1,6 +1,6 @@
-$(document).ready(async function () {
+ï»¿$(document).ready(async function () {
     showLoader();
-    // Código a ejecutar cuando el DOM esté listo
+    // CÃ³digo a ejecutar cuando el DOM estÃ© listo
     await getTiposProducto();
     hideLoader();
 });
@@ -11,13 +11,13 @@ async function getTiposProducto() {
 
         const selectElement = document.getElementById('slcTipoProducto');
 
-        // Crear y añadir la opción predeterminada
+        // Crear y aÃ±adir la opciÃ³n predeterminada
         const defaultOption = document.createElement('option');
         defaultOption.value = '0';
         defaultOption.text = '-- Seleccionar --';
         selectElement.appendChild(defaultOption);
 
-        // Añadir las opciones obtenidas del servidor
+        // AÃ±adir las opciones obtenidas del servidor
         res.forEach(tipo => {
             const option = document.createElement('option');
             option.value = tipo.Id;
@@ -42,13 +42,13 @@ async function AgregarProducto() {
 
         let mensaje = "";
         if (nombre == "") {
-            mensaje += `- Nombre no puede ser vacío.<br>`;
+            mensaje += `- Nombre no puede ser vacÃ­o.<br>`;
         }
         if (tipoId == 0) {
             mensaje += `- Seleccione un tipo de producto.<br>`;
         }
         if (precio == 0) {
-            mensaje += `- Precio no puede ser vacío.<br>`;
+            mensaje += `- Precio no puede ser vacÃ­o.<br>`;
         }
         if (mensaje != "") {
             Tools.Toast(mensaje, 'warning');

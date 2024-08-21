@@ -1,8 +1,8 @@
-let _idProducto;
+ï»¿let _idProducto;
 
 $(document).ready(async function () {
     showLoader();
-    // Código a ejecutar cuando el DOM esté listo
+    // CÃ³digo a ejecutar cuando el DOM estÃ© listo
     await obtenerProducto();
 
     hideLoader();
@@ -49,13 +49,13 @@ async function getTiposProducto() {
 
         const selectElement = document.getElementById('productoTipo');
 
-        // Crear y añadir la opción predeterminada
+        // Crear y aÃ±adir la opciÃ³n predeterminada
         const defaultOption = document.createElement('option');
         defaultOption.value = '0';
         defaultOption.text = '-- Seleccionar --';
         selectElement.appendChild(defaultOption);
 
-        // Añadir las opciones obtenidas del servidor
+        // AÃ±adir las opciones obtenidas del servidor
         res.forEach(tipo => {
             const option = document.createElement('option');
             option.value = tipo.Id;
@@ -115,10 +115,10 @@ function volverListaProducto() {
 
 async function eliminarProducto() {
     try {
-        let confirmacion = await asyncConfirm(`¿Estás seguro de que deseas eliminar el producto?`);
+        let confirmacion = await asyncConfirm(`Â¿EstÃ¡s seguro de que deseas eliminar el producto?`);
 
         if (confirmacion) {
-            // Lógica para eliminar el elemento
+            // LÃ³gica para eliminar el elemento
             let res = await Producto.UpdateEliminar(_idProducto);
 
             if (!res.ok) {
@@ -135,7 +135,7 @@ async function eliminarProducto() {
             
             
         } else {
-            //alert("Eliminación cancelada");
+            //alert("EliminaciÃ³n cancelada");
             Tools.Toast("Eliminacion cancelada", 'error')
         }
 

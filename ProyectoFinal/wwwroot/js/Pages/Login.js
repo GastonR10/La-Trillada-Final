@@ -1,4 +1,4 @@
-$(document).ready(function () {
+﻿$(document).ready(function () {
     sessionStorage.setItem('Logueado', false);
 });
 async function Ingresar() {

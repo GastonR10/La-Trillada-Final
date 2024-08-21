@@ -1,4 +1,4 @@
-async function RegistrarUsuario() {
+锘縜sync function RegistrarUsuario() {
     try {
         showLoader();
         let nombre = $("#nombre").val();
@@ -12,28 +12,28 @@ async function RegistrarUsuario() {
 
         let mensaje = "";
         if (contrasena != RepContrasena) {
-            mensaje += `- Repetici髇 de contrase馻 no coincide.<br>`;
+            mensaje += `- Repetici贸n de contrase帽a no coincide.<br>`;
         }
         if (nombre == "") {
-            mensaje += `- Nombre no puede ser vac韔.<br>`;
+            mensaje += `- Nombre no puede ser vac铆o.<br>`;
         }
         if (apellido == "") {
-            mensaje += `- Apellido no puede ser vac韔.<br>`;
+            mensaje += `- Apellido no puede ser vac铆o.<br>`;
         }
         if (nombreUsuario == "") {
-            mensaje += `- Nombre de usuario no puede ser vac韔.<br>`;
+            mensaje += `- Nombre de usuario no puede ser vac铆o.<br>`;
         }
         if (!esContrasenaValida(contrasena)) {
-            mensaje += `- Contrase馻 debe tener 8 caracteres, y al menos un numero.<br>`;
+            mensaje += `- Contrase帽a debe tener 8 caracteres, y al menos un numero.<br>`;
         }
         if (!esEmailValido(correo)) {
-            mensaje += `- Direcci髇 de correo inv醠ida.<br>`;
+            mensaje += `- Direcci贸n de correo inv谩lida.<br>`;
         }
         if (!esCelularValido(celular)) {
-            mensaje += `- Celular inv醠ido.<br>`;
+            mensaje += `- Celular inv谩lido.<br>`;
         }
         if (direccion == "") {
-            mensaje += `- Direcci髇 no puede ser vac韔.<br>`;
+            mensaje += `- Direcci贸n no puede ser vac铆o.<br>`;
         }
         if (mensaje != "") {
             Tools.Toast(mensaje, 'warning');
@@ -71,18 +71,18 @@ async function RegistrarUsuario() {
 }
 
 function esCelularValido(numero) {
-    // Expresi髇 regular para validar que el n鷐ero comienza con 0 y tiene 9 caracteres
+    // Expresi贸n regular para validar que el n煤mero comienza con 0 y tiene 9 caracteres
     const patron = /^0\d{8}$/;
     return patron.test(numero);
 }
 
 function esContrasenaValida(contrasena) {
-    // Expresi髇 regular para validar que tiene al menos 8 caracteres y al menos un n鷐ero
+    // Expresi贸n regular para validar que tiene al menos 8 caracteres y al menos un n煤mero
     const patron = /^(?=.*\d).{8,}$/;
     return patron.test(contrasena);
 }
 function esEmailValido(email) {
-    // Expresi髇 regular para validar una direcci髇 de correo electr髇ico incluyendo TLD de dos letras
+    // Expresi贸n regular para validar una direcci贸n de correo electr贸nico incluyendo TLD de dos letras
     const patron = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
     return patron.test(email);
 }

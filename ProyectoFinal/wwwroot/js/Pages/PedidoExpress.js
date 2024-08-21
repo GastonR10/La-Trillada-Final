@@ -1,4 +1,4 @@
-$(document).ready(async function () {
+ï»¿$(document).ready(async function () {
     showLoader();
     await cargarMesas("mesasSlc");
     hideLoader();
@@ -47,13 +47,13 @@ async function RealizarPedidoExpress() {
 
             let mensaje = "";
             if (dir == "") {
-                mensaje += `- Direccion no puede ser vacío.<br>`;
+                mensaje += `- Direccion no puede ser vacÃ­o.<br>`;
             }
             if (nom == "") {
-                mensaje += `- Nombre no puede ser vacío.<br>`;
+                mensaje += `- Nombre no puede ser vacÃ­o.<br>`;
             }
             if (tel == 0) {
-                mensaje += `- Telefono no puede ser vacío.<br>`;
+                mensaje += `- Telefono no puede ser vacÃ­o.<br>`;
             }
             if (mensaje != "") {
                 Tools.Toast(mensaje, 'warning');
@@ -86,7 +86,7 @@ async function RealizarPedidoExpress() {
             Tools.Toast('Error inesperado, contacte al administrador', 'error');
 
         } else if (res.status == 403) {
-            Tools.Toast("Carrito esta vacío", 'warning');
+            Tools.Toast("Carrito esta vacÃ­o", 'warning');
         }
 
 

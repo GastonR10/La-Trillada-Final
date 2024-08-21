@@ -1,4 +1,4 @@
-$(document).ready(async function () {
+ï»¿$(document).ready(async function () {
     showLoader();
 
     if (sessionStorage.getItem('Logueado') === null) {
@@ -7,7 +7,7 @@ $(document).ready(async function () {
     }
 
     if (localStorage.getItem('carrito') === null) {
-        // Si no existe, lo crea y le asigna un array vacío
+        // Si no existe, lo crea y le asigna un array vacÃ­o
         localStorage.setItem('carrito', JSON.stringify([]));
     }
 
@@ -23,7 +23,7 @@ $(document).ready(async function () {
         localStorage.removeItem('toastType');
     }
 
-    // Ejecuta la lógica inicial al cargar la página
+    // Ejecuta la lÃ³gica inicial al cargar la pÃ¡gina
     await actualizarVista();
 
     // Agregar un listener para el evento popstate
@@ -34,7 +34,7 @@ $(document).ready(async function () {
     hideLoader();
 });
 
-// Función para actualizar la vista
+// FunciÃ³n para actualizar la vista
 async function actualizarVista() {
     await obtenerProductosActivos();
     await mostrarTotalCarrito();
@@ -126,11 +126,11 @@ async function obtenerProductosActivos() {
                         let carrito = JSON.parse(localStorage.getItem('carrito'));
                         if (!carrito) carrito = [];
 
-                        // Encontrar el último ID usado en el carrito y calcular el siguiente
+                        // Encontrar el Ãºltimo ID usado en el carrito y calcular el siguiente
                         let ultimoId = carrito.length > 0 ? carrito[carrito.length - 1].Id : 0;
                         let nuevoId = ultimoId + 1;
 
-                        // Obtener información del producto
+                        // Obtener informaciÃ³n del producto
                         const producto = productos.find(p => p.Id == productoId);
 
                         // Crear el objeto del producto a agregar

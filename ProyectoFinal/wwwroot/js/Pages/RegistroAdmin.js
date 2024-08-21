@@ -1,4 +1,4 @@
-
+ï»¿
 async function RegistrarAdmin() {
     try {
         let RepContrasenaAdmin = $("#RepContrasenaAdmin").val();
@@ -26,7 +26,7 @@ async function RegistrarAdmin() {
 
         } else {
             let msj = document.getElementById('lblMensajeAdm');
-            msj.textContent = "La contraseña y su confirmación no son iguales.";
+            msj.textContent = "La contraseÃ±a y su confirmaciÃ³n no son iguales.";
             let divMsj = document.getElementById('divMsjAdm');
             divMsj.style.display = 'block';
         }
