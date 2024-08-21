@@ -113,6 +113,7 @@ async function obtenerProductosActivos() {
         // Asignar eventos de clic a los botones de agregar al carrito
         container.querySelectorAll('.btn-agregar-carrito').forEach(btn => {
             btn.addEventListener('click', async function (event) {
+                showLoader();
                 event.preventDefault();
                 const productoId = this.getAttribute('data-producto-id');
                 const cantidadInput = this.closest('.card').querySelector('.cantidad-input');
@@ -151,13 +152,13 @@ async function obtenerProductosActivos() {
                     }
 
                     cantidadInput.value = 1;
-                    mostrarTotalCarrito();
+                    await mostrarTotalCarrito();
+                    Tools.Toast(`Producto agregado al carrito`, 'success')
+
                 } else {
-                    Tools.Toast("La cantidad debe ser mayor a 0", 'error')
-                    Tools.Toast("La cantidad debe ser mayor a 0", 'success')
                     Tools.Toast("La cantidad debe ser mayor a 0", 'warning')
-                    Tools.Toast("La cantidad debe ser mayor a 0", 'info')
                 }
+                hideLoader();
             });
         });
 
@@ -189,6 +190,5 @@ async function mostrarTotalCarrito() {
         valorCarrito.innerText = totalCarrito.toFixed(2);
     } else {
         seccionTotal.style.display = 'none';
-    }
-    
+    }    
 }

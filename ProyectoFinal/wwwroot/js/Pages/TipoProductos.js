@@ -43,7 +43,7 @@ async function obtenerTipoProductos() {
             lista.append(`
                 <li class="list-group-item d-flex justify-content-between align-items-center" data-id="${tipo.Id}">
                     ${tipo.Descripcion}
-                    <button class="btn btn-link btn-eliminar-tipo" data-index="${tipo.Id}"><i class="fa-solid fa-trash"></i></button>
+                    <button class="btn btn-link btn-eliminar-tipo" data-index="${tipo.Id}" data-name="${tipo.Descripcion}"><i class="fa-solid fa-trash"></i></button>
                 </li>
             `);
         });
@@ -54,7 +54,8 @@ async function obtenerTipoProductos() {
         // Añadir el event listener para el botón de eliminar
         $('#listaTiposProducto').on('click', '.btn-eliminar-tipo', async function (event) {
             const index = $(this).data('index');
-            await eliminarTipoPorId(index);
+            const name = $(this).data('name');
+            await eliminarTipoPorId(index, name);
         });
 
     } catch (ex) {
@@ -109,24 +110,28 @@ async function guardarCambios(ordenIds) {
     }
 }
 
-async function eliminarTipoPorId(id) {
+async function eliminarTipoPorId(id, nombre) {
     try {
-        const res = await TipoProducto.Eliminar(id);
+        const conf = await asyncConfirm(`seguro que desea eliminar el tipo de producto "${nombre}"`);
 
-        await iniciarVista();        
+        if (conf) {
+            const res = await TipoProducto.Eliminar(id);
 
-        let msj = await res.text();
+            await iniciarVista();
 
-        if (res.status == 500) {
-            Tools.Toast(msj, 'warning');
-        }
-        if (res.status == 501) {
-            
-            Tools.Toast(msj, 'warning');
-        }
-        if (res.status == 200) {
-            Tools.Toast('Elemento ' + id + ' eliminado correctamente', 'success');
-        }
+            let msj = await res.text();
+
+            if (res.status == 500) {
+                Tools.Toast(msj, 'warning');
+            }
+            if (res.status == 501) {
+
+                Tools.Toast(msj, 'warning');
+            }
+            if (res.status == 200) {
+                Tools.Toast('Tipo "' + nombre + '" eliminado correctamente', 'success');
+            }
+        }        
 
     } catch (ex) {
         Tools.Toast('Error inesperado, contacte al administrador', 'error');

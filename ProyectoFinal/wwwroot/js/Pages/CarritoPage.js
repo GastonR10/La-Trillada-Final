@@ -118,7 +118,7 @@ function generarGrilla(productosCantidad) {
 
     // Añadir el event listener para el botón Pedir
     document.getElementById('btnPedir').addEventListener('click', async function () {
-
+        showLoader();
         const duplas = [];
 
         // Recorrer todas las filas del cuerpo de la tabla
@@ -174,6 +174,8 @@ function generarGrilla(productosCantidad) {
                     window.location.href = urlPedidoLogueado;
                 }
 
+                hideLoader();
+
             } catch (ex) {
                 console.error('Error:', ex.message);
             }
@@ -184,10 +186,14 @@ function generarGrilla(productosCantidad) {
 
 async function eliminarLineaPorId(id) {
     try {
+        showLoader();
+
         await Carrito.EliminarLinea(id);
 
         let productosCantidad = await Carrito.obtenerProductosCarrito();
         generarGrilla(productosCantidad);
+
+        hideLoader();
 
     } catch (ex) {
         console.error('Error:', ex.message);
@@ -197,6 +203,7 @@ async function eliminarLineaPorId(id) {
 
 function eliminarLineaSinLogin(index) {
     try {
+        showLoader();
         // Obtener el carrito del localStorage
         let carrito = JSON.parse(localStorage.getItem('carrito'));
         if (!carrito) carrito = [];
@@ -209,6 +216,8 @@ function eliminarLineaSinLogin(index) {
 
         // Volver a generar la grilla para reflejar los cambios
         generarGrilla(carrito);
+
+        hideLoader();
 
     } catch (ex) {
         console.error('Error:', ex.message);

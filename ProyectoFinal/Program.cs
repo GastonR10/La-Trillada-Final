@@ -46,4 +46,3 @@ app.MapControllerRoute(
 app.MapHub<NotificationHub>("/notificationHub"); // Mapear el hub de SignalR
 
 app.Run();
-

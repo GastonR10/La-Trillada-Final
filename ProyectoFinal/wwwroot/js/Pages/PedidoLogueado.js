@@ -48,6 +48,7 @@ function TipoPedido(tipoPedido) {
 
 async function RealizarPedidoLog() {
     try {
+        showLoader();
         let inputDir = document.getElementById("pedidoDomicilioLogueado");
         let inputLocal = document.getElementById("pedidoLocalLogueado");
 
@@ -61,6 +62,8 @@ async function RealizarPedidoLog() {
             let dir = $("#direccionPedido").text();
             if (dir == "") {
                 Tools.Toast("Ingrese direccion en datos personales.", 'warning');
+                hideLoader();
+                return;
             } else {
                 res = await Pedido.RealizarPedidoLogueado(dir, null, pagoTipo, comentario);
             }
@@ -70,6 +73,8 @@ async function RealizarPedidoLog() {
             let mesa = document.getElementById("mesasSlc").value;
             if (mesa == 0) {
                 Tools.Toast("Seleccionar mesa", 'warning');
+                hideLoader();
+                return;
             } else {
                 res = await Pedido.RealizarPedidoLogueado("", mesa, pagoTipo, comentario);
             }                
@@ -90,9 +95,8 @@ async function RealizarPedidoLog() {
         } else if (res.status == 403) {
             Tools.Toast("Carrito esta vacío", 'warning');
         }
+        hideLoader();
         
-        console.log(res);
-
             
     } catch (ex) {
         console.error('Error:', ex.message);

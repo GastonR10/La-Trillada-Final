@@ -1,5 +1,6 @@
 async function RegistrarUsuario() {
     try {
+        showLoader();
         let nombre = $("#nombre").val();
         let apellido = $("#apellido").val();
         let nombreUsuario = $("#nombreUsuario").val();
@@ -62,7 +63,7 @@ async function RegistrarUsuario() {
             }
 
         }
-
+        hideLoader();
     } catch (ex) {
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
         throw ex;

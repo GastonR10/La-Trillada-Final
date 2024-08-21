@@ -1,4 +1,4 @@
-let _PedidosPendientes;
+ï»¿let _PedidosPendientes;
 
 $(document).ready(async function () {
     showLoader();
@@ -34,7 +34,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
             // Filtrar los pedidos por el estado actual
             const pedidosFiltrados = pedidosPendientes.filter(pedido => pedido.Estado === estado);
 
-            // Si no hay pedidos en el estado actual, no crear la sección
+            // Si no hay pedidos en el estado actual, no crear la secciÃ³n
             if (pedidosFiltrados.length === 0) {
                 return;
             }
@@ -43,7 +43,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
             const estadoContainer = document.createElement('div');
             estadoContainer.className = 'estado-container';
 
-            // Crear un título para cada estado
+            // Crear un tÃ­tulo para cada estado
             const estadoTitulo = document.createElement('h3');
             estadoTitulo.textContent = `${estado}`;
             estadoContainer.appendChild(estadoTitulo);
@@ -99,7 +99,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
                 tdNombre.style.textAlign = 'center';
                 row.appendChild(tdNombre);
 
-                //Dirección
+                //DirecciÃ³n
                 const tdDireccion = document.createElement('td');
                 tdDireccion.textContent = pedido.Direccion || 'N/A';
                 tdDireccion.style.textAlign = 'center';
@@ -129,21 +129,21 @@ function grillaPedidosPendientes(pedidosPendientes) {
                 divAcciones.className = 'acciones';
                 if (estado === 'Pendiente') {
 
-                    // Botón Aceptar
+                    // BotÃ³n Aceptar
                     const btnAceptar = document.createElement('button');
                     btnAceptar.className = 'btn btn-primary';
                     btnAceptar.textContent = 'Aceptar';
                     btnAceptar.addEventListener('click', async () => await actualizarEstadoPedido(pedido.Id, pedido.Estado));
                     divAcciones.appendChild(btnAceptar);
 
-                    // Botón Cancelar
+                    // BotÃ³n Cancelar
                     const btnCancelar = document.createElement('button');
                     btnCancelar.className = 'btn btn-danger';
                     btnCancelar.textContent = 'Cancelar';
                     btnCancelar.addEventListener('click', async () => await cancelarPedido(pedido.Id));
                     divAcciones.appendChild(btnCancelar);
 
-                    // Botón Ver
+                    // BotÃ³n Ver
                     const btnVer = document.createElement('button');
                     btnVer.className = 'btn btn-success';
                     btnVer.textContent = 'Ver';
@@ -152,21 +152,21 @@ function grillaPedidosPendientes(pedidosPendientes) {
 
                 } else if (estado === 'EnPreparacion') {
 
-                    // Botón En Camino
+                    // BotÃ³n En Camino
                     const btnEnCamino = document.createElement('button');
                     btnEnCamino.className = 'btn btn-primary';
                     btnEnCamino.textContent = 'En camino';
                     btnEnCamino.addEventListener('click', async () => await actualizarEstadoPedido(pedido.Id, pedido.Estado));
                     divAcciones.appendChild(btnEnCamino);
 
-                    // Botón Cancelar
+                    // BotÃ³n Cancelar
                     const btnCancelar = document.createElement('button');
                     btnCancelar.className = 'btn btn-danger';
                     btnCancelar.textContent = 'Cancelar';
                     btnCancelar.addEventListener('click', async     () => await cancelarPedido(pedido.Id));
                     divAcciones.appendChild(btnCancelar);
 
-                    // Botón Ver
+                    // BotÃ³n Ver
                     const btnVer = document.createElement('button'); btnVer.className = 'btn btn-success';
                     btnVer.textContent = 'Ver';
                     btnVer.addEventListener('click', () => verPedido(pedido.Id));
@@ -174,21 +174,21 @@ function grillaPedidosPendientes(pedidosPendientes) {
 
                 } else if (estado === 'EnCamino') {
 
-                    // Botón Finalizar
+                    // BotÃ³n Finalizar
                     const btnFinalizar = document.createElement('button');
                     btnFinalizar.className = 'btn btn-primary';
                     btnFinalizar.textContent = 'Finalizar';
                     btnFinalizar.addEventListener('click', async () => await actualizarEstadoPedido(pedido.Id, pedido.Estado));
                     divAcciones.appendChild(btnFinalizar);
 
-                    // Botón Cancelar
+                    // BotÃ³n Cancelar
                     const btnCancelar = document.createElement('button');
                     btnCancelar.className = 'btn btn-danger';
                     btnCancelar.textContent = 'Cancelar';
                     btnCancelar.addEventListener('click', async () => await cancelarPedido(pedido.Id));
                     divAcciones.appendChild(btnCancelar);
 
-                    // Botón Ver
+                    // BotÃ³n Ver
                     const btnVer = document.createElement('button');
                     btnVer.className = 'btn btn-success';
                     btnVer.textContent = 'Ver';
@@ -217,12 +217,12 @@ function grillaPedidosPendientes(pedidosPendientes) {
 
 
 async function actualizarEstadoPedido(id, estado) {
-    console.log(`Se ejecutó actualizarEstadoPedido con el id: ${id} y estado: ${estado}`);
+    console.log(`Se ejecutÃ³ actualizarEstadoPedido con el id: ${id} y estado: ${estado}`);
 
     console.log(`Aceptar pedido ${id}`);
-    // Implementa la lógica para aceptar el pedido
+    // Implementa la lÃ³gica para aceptar el pedido
     try {
-        let confirmacion = await asyncConfirm(`¿Estás seguro?`);
+        let confirmacion = await asyncConfirm(`Â¿EstÃ¡s seguro?`);
 
         if (confirmacion) {
             
@@ -255,7 +255,7 @@ async function cancelarPedido(id) {
     
 
     console.log(`Cancelar pedido ${id}`);
-    let confirmacion = await asyncConfirm(`¿Está seguro que desea cancelar?`);
+    let confirmacion = await asyncConfirm(`Â¿EstÃ¡ seguro que desea cancelar?`);
 
     if (confirmacion) {
 
@@ -283,28 +283,28 @@ function verPedido(id) {
 
 function configurarSignalR() {
     const connection = new signalR.HubConnectionBuilder()
-        .withUrl("/notificationHub") // Asegúrate de que la URL sea la correcta para tu servidor SignalR
+        .withUrl("/notificationHub") // AsegÃºrate de que la URL sea la correcta para tu servidor SignalR
         .configureLogging(signalR.LogLevel.Information)
         .build();
 
     connection.on("RecibirPedido", async function (id) {
         console.log('Recibido pedido');
         Tools.Toast('Nuevo pedido ' + id + ' recibido', 'success')
-        await obtenerPedidos(); // Obtén la lista actualizada de pedidos   
+        await obtenerPedidos(); // ObtÃ©n la lista actualizada de pedidos   
         
     });
 
     connection.on("PedidoAceptado", async function (id) {
         console.log('Aceptado pedido');
         Tools.Toast('Pedido ' + id + ' fue enviado a preparacion', 'success')
-        await obtenerPedidos(); // Obtén la lista actualizada de pedidos 
+        await obtenerPedidos(); // ObtÃ©n la lista actualizada de pedidos 
         
     });
 
     connection.on("PedidoPronto", async function (id) {
         console.log('Pedido pronto');
         Tools.Toast('El pedido ' + id + ' fue colocado en camino.', 'success')
-        await obtenerPedidos(); // Obtén la lista actualizada de pedidos        
+        await obtenerPedidos(); // ObtÃ©n la lista actualizada de pedidos        
         
     });
     

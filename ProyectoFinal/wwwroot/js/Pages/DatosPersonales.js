@@ -33,21 +33,27 @@ async function cargarInfo() {
 
 async function EditarCliente() {
     try {
+        
+        const conf = await asyncConfirm("Seguro que desea confirmar?");
 
-        let nombre = $("#nombre").val();
-        let apellido = $("#apellido").val();
-        let correo = $("#correo").val();
-        let celular = $("#Celular").val();
-        let direccion = $("#direccion").val();
+        if (conf) {
+            showLoader();
+            let nombre = $("#nombre").val();
+            let apellido = $("#apellido").val();
+            let correo = $("#correo").val();
+            let celular = $("#Celular").val();
+            let direccion = $("#direccion").val();
 
-        let res = await Usuario.EditarCliente(nombre, apellido, correo, celular, direccion);
+            let res = await Usuario.EditarCliente(nombre, apellido, correo, celular, direccion);
 
-        if (res == "ok") {
-            Tools.Toast('Edicion exitosa!', 'success')
-        } else {            
-            Tools.Toast(res, 'error')
-        }
-
+            if (res == "ok") {
+                Tools.Toast('Edicion exitosa!', 'success')
+            } else {
+                Tools.Toast(res, 'error')
+            }
+            hideLoader();
+        }       
+        
     } catch (ex) {
         console.error('Error:', ex.message);
         throw ex;

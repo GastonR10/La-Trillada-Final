@@ -3,6 +3,7 @@ $(document).ready(function () {
 });
 async function Ingresar() {
     try {
+        showLoader();
         let usuario = $("#usuarioLogin").val();
         let password = $("#passwordLogin").val();
 
@@ -11,7 +12,7 @@ async function Ingresar() {
         if (res == null || res == undefined) {
             console.log("Es OK");
         }
-
+        hideLoader();
         /* if () si ingreso redirijo desde el controlador, sino tiro aca mensaje*/
     } catch (ex) {
 
@@ -21,6 +22,6 @@ async function Ingresar() {
 }
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
-        Ingresar();
+        Ingresar();       
     }
 });
