@@ -57,7 +57,6 @@ async function obtenerProductosMenu() {
         });
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

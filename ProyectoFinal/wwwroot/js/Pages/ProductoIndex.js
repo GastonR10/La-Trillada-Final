@@ -27,8 +27,7 @@ async function getTiposProducto() {
 
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
 
@@ -47,8 +46,8 @@ async function AgregarProducto() {
         if (tipoId == 0) {
             mensaje += `- Seleccione un tipo de producto.<br>`;
         }
-        if (precio == 0) {
-            mensaje += `- Precio no puede ser vacío.<br>`;
+        if (precio <= 0) {
+            mensaje += `- Precio debe ser mayor a 0.<br>`;
         }
         if (mensaje != "") {
             Tools.Toast(mensaje, 'warning');
@@ -75,6 +74,5 @@ async function AgregarProducto() {
         
     } catch (ex) {
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
-        throw ex;
     }
 }

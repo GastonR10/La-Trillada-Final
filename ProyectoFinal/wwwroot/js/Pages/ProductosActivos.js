@@ -36,8 +36,14 @@
 
 // Función para actualizar la vista
 async function actualizarVista() {
-    await obtenerProductosActivos();
-    await mostrarTotalCarrito();
+    try {
+        await obtenerProductosActivos();
+        await mostrarTotalCarrito();
+    }
+    catch (ex) {
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
+    }
+
 }
 
 async function obtenerProductosActivos() {
@@ -164,31 +170,36 @@ async function obtenerProductosActivos() {
 
     }
     catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
 
 async function mostrarTotalCarrito() {
-    const seccionTotal = document.getElementById('footerTotal');
-    const valorCarrito = document.getElementById('total-amount');
-    let totalCarrito = 0;
-    if (sessionStorage.getItem('Logueado') == "true") {
+    try {
+        const seccionTotal = document.getElementById('footerTotal');
+        const valorCarrito = document.getElementById('total-amount');
+        let totalCarrito = 0;
+        if (sessionStorage.getItem('Logueado') == "true") {
 
-        totalCarrito = await Carrito.obtenerTotalCarrito();
+            totalCarrito = await Carrito.obtenerTotalCarrito();
 
-    } else {
-        const carrito = JSON.parse(localStorage.getItem('carrito') || '[]'); // Convierte el string a un objeto JSON
+        } else {
+            const carrito = JSON.parse(localStorage.getItem('carrito') || '[]'); // Convierte el string a un objeto JSON
 
-        carrito.forEach(pc => {
-            totalCarrito += pc.Cantidad * pc.Producto.Precio;
-        })        
+            carrito.forEach(pc => {
+                totalCarrito += pc.Cantidad * pc.Producto.Precio;
+            })
+        }
+
+        if (totalCarrito > 0) {
+            seccionTotal.style.display = 'block';
+            valorCarrito.innerText = totalCarrito.toFixed(2);
+        } else {
+            seccionTotal.style.display = 'none';
+        } 
+
+    } catch (ex) {
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
-
-    if (totalCarrito > 0) {
-        seccionTotal.style.display = 'block';
-        valorCarrito.innerText = totalCarrito.toFixed(2);
-    } else {
-        seccionTotal.style.display = 'none';
-    }    
+       
 }

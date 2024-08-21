@@ -20,4 +20,8 @@ $(document).ready(function () {
     $('#sidebar').click(function (event) {
         event.stopPropagation();
     });
+
+    if ($('#rolUsuario').text() == "Admin") {
+        avisarNuevoPedido();
+    }
 });

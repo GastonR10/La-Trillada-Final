@@ -79,8 +79,7 @@ class Producto {
             return res;
 
         } catch (ex) {
-            console.error('Error al agregar el producto:', error);
-            throw error;
+            throw ex;
         }
     }
 
@@ -138,7 +137,7 @@ class Producto {
 
     static async UpdateActivo(productId, isActive) {
         try {
-            const url = $("#URLUpdateProducto").val();
+            const url = $("#URLActivarDesactivarProducto").val();
 
             const formData = new FormData();
             formData.append('Id', productId);
@@ -150,43 +149,33 @@ class Producto {
                 method: 'POST',
                 body: formData
             });
-
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
+                     
             return response;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
 
     }
 
     static async UpdateEliminar(productId) {
         try {
-            const url = $("#URLUpdateProducto").val();
+            const url = $("#URLEliminarProducto").val();
 
             const formData = new FormData();
             formData.append('Id', productId);
             formData.append('Activo', false);
             formData.append('Eliminado', true);
 
-            //const producto = new Producto(productId, null, null, null, 0, 0, false, true);
-
             const response = await fetch(url, {
                 method: 'POST',
                 body: formData
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
             return response;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
 
     }
@@ -224,14 +213,10 @@ class Producto {
                 body: formData,
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
             return response;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
 
     }

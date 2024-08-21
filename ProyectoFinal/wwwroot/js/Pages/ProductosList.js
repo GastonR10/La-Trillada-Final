@@ -75,7 +75,6 @@ async function obtenerProductos() {
         });
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
@@ -85,21 +84,24 @@ async function activarDesactivar(productId, prodNombre, isActive) {
 
         let res = await Producto.UpdateActivo(productId, isActive);
 
-        if (!res.ok) {
-            throw new Error('Failed to update product status');
-        }
+        if (res.status == 200) {
+            let mensaje = "";
+            if (!isActive) {
+                mensaje = prodNombre + ' desactivado con exito';
+            } else {
+                mensaje = prodNombre + ' activado con exito';
+            }
 
-        let mensaje = "";
-        if (!isActive) {
-            mensaje = prodNombre + ' desactivado con exito';
-        } else {
-            mensaje = prodNombre + ' activado con exito';
-        }
+            Tools.Toast(mensaje, 'success');
 
-        Tools.Toast(mensaje, 'success');
+        } else if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+
+        } else if (res.status == 404) {
+            Tools.Toast("Producto no existe.", 'warning');
+        }        
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
@@ -112,21 +114,22 @@ async function eliminarProducto(productId) {
             // Lógica para eliminar el elemento
             let res = await Producto.UpdateEliminar(productId);
 
-            if (!res.ok) {
-                throw new Error('Failed to update product status');
-            }
-            //alert("Elemento eliminado");
-            await obtenerProductos();
-            Tools.Toast('Producto eliminado con exito', 'success');
+            if (res.status == 200) {
+                showLoader();
+                await obtenerProductos();
+                hideLoader();
+                Tools.Toast('Producto eliminado con exito', 'success');
 
-        } else {
-            //alert("Eliminación cancelada");
-            Tools.Toast('Eliminacion cancelada', 'error');
-        }   
+            } else if (res.status == 500) {
+                Tools.Toast('Error inesperado, contacte al administrador', 'error');
+
+            } else if (res.status == 404) {
+                Tools.Toast("Producto no existe.", 'warning');
+            }
+        }
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
 
@@ -138,7 +141,6 @@ function vistaEditarProducto(id) {
         window.location.href = urlWithId;
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

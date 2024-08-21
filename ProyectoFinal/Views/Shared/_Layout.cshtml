@@ -138,6 +138,11 @@
             2024 - LaTrillada
         </div>
     </footer>
+
+    <div style="display:none;">
+        <span id="rolUsuario">@Context.Session.GetString("rol")</span>
+        @Html.Hidden("URLVerificarAdmin", Url.Action("VerificarAdmin", "Login"))
+    </div>
     
 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>

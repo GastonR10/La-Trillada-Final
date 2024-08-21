@@ -15,8 +15,10 @@ async function obtenerProducto() {
 
         _idProducto = id;
         let producto = await Producto.getProducto(id);
+        await getTiposProducto();
 
         if (producto == null) {
+            Tools.Toast('No se encontró producto en base de datos.', 'warning');
             return;
         }
 
@@ -32,14 +34,11 @@ async function obtenerProducto() {
         precio.value = producto.Precio;
         activo.checked = producto.Activo;
         img.src = producto.Foto || "/img/product/error.png";
-        await getTiposProducto();
-        tipo.value = producto.IdTipoProducto;
         img.alt = producto.Nombre;
-
+        tipo.value = producto.IdTipoProducto;
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
 
@@ -65,7 +64,6 @@ async function getTiposProducto() {
 
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
@@ -79,25 +77,38 @@ async function editarProducto() {
         const activo = $("#productoActivo").prop('checked');
         const fotoNueva = $("#fotoNueva")[0].files[0];
 
-        //const img = $("#productoImg")[0].files[0];
+        let mensaje = "";
+        if (nombre == "") {
+            mensaje += `- Nombre no puede ser vacío.<br>`;
+        }
+        if (tipo == 0) {
+            mensaje += `- Seleccione un tipo de producto.<br>`;
+        }
+        if (precio <= 0) {
+            mensaje += `- Precio debe ser mayor a 0.<br>`;
+        }
+        if (mensaje != "") {
+            Tools.Toast(mensaje, 'warning');
+            return;
+        }
 
         const producto = new Producto(_idProducto, nombre, desc, fotoNueva, tipo, precio, activo, 0);
 
-        //const fotoString = document.getElementById('productoImg').getAttribute('src');
-
         let res = await Producto.editarProducto(producto);
 
-        if (!res.ok) {
-            throw new Error('Failed to edit product');
+        if (res.status == 200) {
+            Tools.Toast('Producto editado con exito', 'success');
+            await obtenerProducto();
+
+        } else if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+
+        } else if (res.status == 400) {
+            Tools.Toast("No todos los datos son correctos", 'warning');
         }
-        
-        await obtenerProducto();
-        
-        Tools.Toast('Producto editado con exito', 'success');
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
 
@@ -108,8 +119,7 @@ function volverListaProducto() {
         window.location.href = redirectUrl;
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
 
@@ -121,27 +131,24 @@ async function eliminarProducto() {
             // Lógica para eliminar el elemento
             let res = await Producto.UpdateEliminar(_idProducto);
 
-            if (!res.ok) {
-                throw new Error('Failed to update product status');
+            if (res.status == 200) {
+                //Guardo variables para mostrar toaster luego de cambio de vista
+                localStorage.setItem('toastMessage', 'Elemento eliminado con exito');
+                localStorage.setItem('toastType', 'success');
+
+                let redirectUrl = $("#URLProductosList").val();
+                window.location.href = redirectUrl;
+
+            } else if (res.status == 500) {
+                Tools.Toast('Error inesperado, contacte al administrador', 'error');
+
+            } else if (res.status == 404) {
+                Tools.Toast("Producto no existe.", 'warning');
             }
-            
-            //Guardo variables para mostrar toaster luego de cambio de vista
-            localStorage.setItem('toastMessage', 'Elemento eliminado con exito');
-            localStorage.setItem('toastType', 'success');
 
-            let redirectUrl = $("#URLProductosList").val();
-            window.location.href = redirectUrl;
-
-            
-            
-        } else {
-            //alert("Eliminación cancelada");
-            Tools.Toast("Eliminacion cancelada", 'error')
         }
 
-
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

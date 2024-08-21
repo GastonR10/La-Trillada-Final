@@ -2,7 +2,6 @@
 
 $(document).ready(async function () {
     showLoader();
-    avisarNuevoPedido();
     // Código a ejecutar cuando el DOM esté listo
     await cargarPedido();
 
@@ -22,6 +21,7 @@ async function cargarPedido() {
             return;
         }
 
+        const titulo = document.getElementById('titulo');
         const nombre = document.getElementById('nombreCliente');
         const direccion = document.getElementById('direccionCliente');
         const divDireccion = document.getElementById('divDireccion');
@@ -33,6 +33,7 @@ async function cargarPedido() {
         const comentario = document.getElementById('comentarioPedido');
         const listaProd = document.getElementById('divProdList');
 
+        titulo.innerText = `PEDIDO N° ${pedido.Id}`
         nombre.innerText = pedido.Nombre;
         direccion.innerText = pedido.Direccion;
         mesa.innerText = "" + pedido.IdMesa;

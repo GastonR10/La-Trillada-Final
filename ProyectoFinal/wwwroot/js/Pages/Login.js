@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
     sessionStorage.setItem('Logueado', false);
 });
 async function Ingresar() {
@@ -7,17 +8,25 @@ async function Ingresar() {
         let usuario = $("#usuarioLogin").val();
         let password = $("#passwordLogin").val();
 
-        let res = await Usuario.AltaDeIngreso(usuario, password);
+        if (usuario == "" || password == "") {
+            Tools.Toast('Ningun campo puede ser vacío', 'error');
 
-        if (res == null || res == undefined) {
-            console.log("Es OK");
+        } else {
+            let res = await Usuario.AltaDeIngreso(usuario, password);
+
+            if (res.status == 404) {
+                Tools.Toast('Credenciales incorrectas.', 'warning');
+            }
+            if (res.status == 500) {
+                Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            }
         }
+        
         hideLoader();
         /* if () si ingreso redirijo desde el controlador, sino tiro aca mensaje*/
     } catch (ex) {
 
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
 document.addEventListener('keydown', function (event) {

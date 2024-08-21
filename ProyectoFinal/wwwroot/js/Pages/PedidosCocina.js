@@ -129,13 +129,11 @@ function configurarSignalRR() {
 
     connection.on("PedidoAceptado", async function (id) {
         console.log('Aceptado pedido');
-        Tools.Toast('Pedido ' + id + ' fue enviado a preparacion', 'success')
         await cargarPedidosEnPreparacion(); // Obtén la lista actualizada de pedidos 
     });
 
     connection.on("PedidoPronto", async function (id) {
         console.log('Pedido pronto');
-        Tools.Toast('El pedido ' + id + ' fue colocado en camino.', 'success')
         await cargarPedidosEnPreparacion(); // Obtén la lista actualizada de pedidos      
         
     });

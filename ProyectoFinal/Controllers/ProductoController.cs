@@ -178,6 +178,11 @@ namespace ProyectoFinal.Controllers
                     }
                 }
 
+                if(productoDTO.Nombre == "" || productoDTO.IdTipoProducto == 0 || productoDTO.Precio <= 0)
+                {
+                    return BadRequest();
+                }
+
                 // Actualizar los campos del producto según los valores en el DTO
                 if (productoDTO.Nombre != null && productoDTO.Nombre != producto.Nombre)
                 {
@@ -216,7 +221,65 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EliminarProducto(DTO_Producto productoDTO)
+        {
+            try
+            {
+                Producto? producto = await _db.Productos.FindAsync(productoDTO.Id);
+
+                if (producto == null)
+                {
+                    return NotFound();
+                }
+
+                if (productoDTO.Activo != producto.Activo)
+                {
+                    producto.Activo = productoDTO.Activo;
+                }
+                if (productoDTO.Eliminado != producto.Eliminado)
+                {
+                    producto.Eliminado = productoDTO.Eliminado;
+                }
+
+                await _db.SaveChangesAsync();
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ActivarDesactivarProducto(DTO_Producto productoDTO)
+        {
+            try
+            {
+                Producto? producto = await _db.Productos.FindAsync(productoDTO.Id);
+
+                if (producto == null)
+                {
+                    return NotFound();
+                }
+
+                if (productoDTO.Activo != producto.Activo)
+                {
+                    producto.Activo = productoDTO.Activo;
+                }
+
+                await _db.SaveChangesAsync();
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500);
             }
         }
 

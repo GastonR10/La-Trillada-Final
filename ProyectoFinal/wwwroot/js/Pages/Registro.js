@@ -70,19 +70,4 @@
     }
 }
 
-function esCelularValido(numero) {
-    // Expresión regular para validar que el número comienza con 0 y tiene 9 caracteres
-    const patron = /^0\d{8}$/;
-    return patron.test(numero);
-}
 
-function esContrasenaValida(contrasena) {
-    // Expresión regular para validar que tiene al menos 8 caracteres y al menos un número
-    const patron = /^(?=.*\d).{8,}$/;
-    return patron.test(contrasena);
-}
-function esEmailValido(email) {
-    // Expresión regular para validar una dirección de correo electrónico incluyendo TLD de dos letras
-    const patron = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
-    return patron.test(email);
-}

@@ -9,12 +9,13 @@ $(document).ready(async function () {
 
 async function obtenerPedidos() {
     try {
+        showLoader();
 
         _PedidosPendientes = await Pedido.GetAllPendientes();
 
         grillaPedidosPendientes(_PedidosPendientes)
 
-
+        hideLoader();
     }
     catch (ex) {
         console.error('Error:', ex.message);
@@ -289,21 +290,18 @@ function configurarSignalR() {
 
     connection.on("RecibirPedido", async function (id) {
         console.log('Recibido pedido');
-        Tools.Toast('Nuevo pedido ' + id + ' recibido', 'success')
         await obtenerPedidos(); // Obtén la lista actualizada de pedidos   
         
     });
 
     connection.on("PedidoAceptado", async function (id) {
         console.log('Aceptado pedido');
-        Tools.Toast('Pedido ' + id + ' fue enviado a preparacion', 'success')
         await obtenerPedidos(); // Obtén la lista actualizada de pedidos 
         
     });
 
     connection.on("PedidoPronto", async function (id) {
         console.log('Pedido pronto');
-        Tools.Toast('El pedido ' + id + ' fue colocado en camino.', 'success')
         await obtenerPedidos(); // Obtén la lista actualizada de pedidos        
         
     });

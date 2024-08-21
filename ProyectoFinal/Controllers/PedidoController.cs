@@ -153,13 +153,14 @@ namespace ProyectoFinal.Controllers
                 // Enviar notificación a los clientes
                 await _hubContext.Clients.All.SendAsync("RecibirPedido", pedido.Id);
 
-                // Tirar toaster luego de cada nuevo pedido
-                await _hubContext.Clients.All.SendAsync("AvisarPedido");
 
-                string numeroDestino = "+598" + existingUser.Telefono;
-                string mensaje = "¡Hola! tu pedido fue recibido, en seguida lo confirmamos.";
+                if(HttpContext.Session.GetString("rol") == "Cliente")
+                {
+                    string numeroDestino = "+598" + existingUser.Telefono;
+                    string mensaje = "¡Hola! tu pedido fue recibido, en seguida lo confirmamos.";
 
-                await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
+                    await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
+                }                
 
                 return Ok();
 
@@ -218,9 +219,6 @@ namespace ProyectoFinal.Controllers
                 await _db.SaveChangesAsync();
 
                 await _hubContext.Clients.All.SendAsync("RecibirPedido", pedido.Id);
-
-                // Tirar toaster luego de cada nuevo pedido
-                await _hubContext.Clients.All.SendAsync("AvisarPedido");
 
                 if(rp.Tel != -1)
                 {
