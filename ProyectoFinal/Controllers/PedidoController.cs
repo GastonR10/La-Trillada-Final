@@ -62,7 +62,7 @@ namespace ProyectoFinal.Controllers
                         return Ok(pedidoDTO);
                     }
 
-                    return NotFound();
+                    return NotFound("Error inesperado, contacte al administrador.");
 
                 }
 
@@ -81,18 +81,18 @@ namespace ProyectoFinal.Controllers
                         return Ok(pedidoDTO);
                     }
 
-                    return NotFound();
+                    return NotFound("Error inesperado, contacte al administrador.");
                 }
                 else
                 {
                     // Manejo de otros tipos de pedidos o error
-                    return NotFound();
+                    return NotFound("Error inesperado, contacte al administrador.");
                 }
 
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message);
+                return StatusCode(500);
             }
         }
 
@@ -118,9 +118,9 @@ namespace ProyectoFinal.Controllers
                     return BadRequest("El usuario no existe.");
                 }
 
-                if(existingUser.CarritoAbierto.CantidadesProductos.Count == 0)
+                if(existingUser.CarritoAbierto != null && existingUser.CarritoAbierto.CantidadesProductos.Count == 0)
                 {
-                    return StatusCode(403);
+                    return BadRequest("Carrito vacío.");
                 }
 
                 // Crear un nuevo pedido y agregarlo a la base de datos
@@ -168,7 +168,7 @@ namespace ProyectoFinal.Controllers
             catch (Exception ex)
             {
                 // Retornar un error 500 con un mensaje de error
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                return StatusCode(500);
             }
         }
 
@@ -182,9 +182,9 @@ namespace ProyectoFinal.Controllers
         {
             try
             {
-                if(rp.Carrito.ProductosCantidad.Count == 0)
+                if(rp.Carrito.ProductosCantidad == null || rp.Carrito.ProductosCantidad.Count == 0)
                 {
-                    return StatusCode(403);
+                    return BadRequest("Carrito vacío");
                 }
 
                 // Crear un nuevo carrito y agregarlo a la base de datos
@@ -233,8 +233,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                // Retornar un error 500 con un mensaje de error
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                return StatusCode(500);
             }
         }
 
@@ -275,7 +274,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500);
             }
 
         }
@@ -289,7 +288,7 @@ namespace ProyectoFinal.Controllers
 
                 if (pedido == null)
                 {
-                    return NotFound();
+                    return NotFound("Pedido no encontrado.");
                 }
 
                 string? tipoPedido = _db.Entry(pedido).Property("TipoPedido").CurrentValue as string;
@@ -306,7 +305,7 @@ namespace ProyectoFinal.Controllers
 
                     if (pedidoCliente == null)
                     {
-                        return NotFound();
+                        return NotFound("Cliente no encontrado.");
                     }
 
                     numeroDestino += pedidoCliente.Cliente.Telefono;
@@ -367,7 +366,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500);
             }
 
         }
@@ -438,7 +437,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500);
             }
 
         }
@@ -481,7 +480,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500);
             }
 
         }
@@ -508,7 +507,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message);
+                return StatusCode(500);
             }
         }
 
@@ -551,7 +550,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500);
             }
 
         }
@@ -594,7 +593,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500);
             }
 
         }

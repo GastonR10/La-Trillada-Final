@@ -30,14 +30,7 @@ class ProductoCantidad {
                 body: JSON.stringify(duplas)
             });
 
-            if (response.status == 400) {
-                return "Perdida de sesion.";
-            }
-            if (response.ok) {
-                return "ok"
-            }
-
-            return "error"
+            return response;
 
         }
         catch (ex) {

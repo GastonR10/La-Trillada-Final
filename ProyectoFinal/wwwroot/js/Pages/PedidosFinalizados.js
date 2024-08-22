@@ -1,23 +1,27 @@
 ﻿let _PedidosFinalizados;
 
 $(document).ready(async function () {
-    showLoader();
+    
     await obtenerPedidosFinalizados();
-    hideLoader();
+    
 });
 
 async function obtenerPedidosFinalizados() {
     try {
+        showLoader();
 
         _PedidosFinalizados = await Pedido.GetFinalizados();
 
+        if (_PedidosFinalizados.length == 0) {
+            Tools.Toast('No hay pedidos finalizados.', 'warning');
+        }
+
         grillaPedidosFinalizados(_PedidosFinalizados)
 
-
+        hideLoader();
     }
     catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 }
 
@@ -138,7 +142,6 @@ function grillaPedidosFinalizados(pedidosFinalizados) {
         container.appendChild(estadoContainer);
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
@@ -151,7 +154,6 @@ function verPedido(id) {
         const urlWithId = `${redirectUrl}/${id}`;
         window.location.href = urlWithId;
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 

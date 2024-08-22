@@ -1,37 +1,46 @@
 ﻿
 async function RegistrarAdmin() {
     try {
+        showLoader();
         let RepContrasenaAdmin = $("#RepContrasenaAdmin").val();
         let contrasenaAdmin = $("#contrasenaAdmin").val();
         let nombreUsuarioAdmin = $("#nombreUsuarioAdmin").val();
 
-        if (RepContrasenaAdmin == contrasenaAdmin) {
+        let mensaje = "";
+        if (contrasenaAdmin != RepContrasenaAdmin) {
+            mensaje += `- Repetición de contraseña no coincide.<br>`;
+        }
+        if (nombreUsuarioAdmin == "") {
+            mensaje += `- Nombre de usuario no puede ser vacío.<br>`;
+        }
+        if (!esContrasenaValida(contrasenaAdmin)) {
+            mensaje += `- Contraseña debe tener 8 caracteres, y al menos un numero.<br>`;
+        }
+
+        if (mensaje != "") {
+            Tools.Toast(mensaje, 'warning');
+        } else {
             let res = await Usuario.AltaAdmin(nombreUsuarioAdmin, contrasenaAdmin);
-            if (res == "ok") {
-                let msj = document.getElementById('lblMensajeAdm');
-                msj.textContent = "Alta exitosa!";
-                let divMsj = document.getElementById('divMsjAdm');
-                divMsj.style.display = 'block';
-            } else if (res == "error") {
-                let msj = document.getElementById('lblMensajeAdm');
-                msj.textContent = "Error inesperado, contacte a su administrador";
-                let divMsj = document.getElementById('divMsjAdm');
-                divMsj.style.display = 'block';
+            if (res.status == 200) {
+                $("#nombreUsuarioAdmin").val("");
+                $("#contrasenaAdmin").val("");
+                $("#RepContrasenaAdmin").val("");
+
+                Tools.Toast("Usuario creado con exito!", 'success');
+
+
+            } else if (res.status == 500) {
+                Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+
             } else {
-                let msj = document.getElementById('lblMensajeAdm');
-                msj.textContent = res;
-                let divMsj = document.getElementById('divMsjAdm');
-                divMsj.style.display = 'block';
+                const msj = await res.text();
+                Tools.Toast(msj, 'warning');
             }
 
-        } else {
-            let msj = document.getElementById('lblMensajeAdm');
-            msj.textContent = "La contraseña y su confirmación no son iguales.";
-            let divMsj = document.getElementById('divMsjAdm');
-            divMsj.style.display = 'block';
         }
-    } catch (err) {
-        console.error('Error:', ex.message);
-        throw ex;
+        hideLoader();
+
+    } catch (ex) {
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 }

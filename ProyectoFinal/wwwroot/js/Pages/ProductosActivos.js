@@ -1,5 +1,5 @@
 ﻿$(document).ready(async function () {
-    showLoader();
+    
 
     if (sessionStorage.getItem('Logueado') === null) {
         // Si no existe, la crea y le asigna el valor "false"
@@ -31,14 +31,18 @@
         await actualizarVista();
     });
 
-    hideLoader();
+    
 });
 
 // Función para actualizar la vista
 async function actualizarVista() {
     try {
+        showLoader();
+
         await obtenerProductosActivos();
         await mostrarTotalCarrito();
+
+        hideLoader();
     }
     catch (ex) {
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
@@ -49,8 +53,16 @@ async function actualizarVista() {
 async function obtenerProductosActivos() {
     try {
         let productos = await Producto.getProductosActivos();
-        let tiposProd = await TipoProducto.getTiposProducto();
+        if (productos == null) {
+            Tools.Toast('Error buscando productos.', 'warning');
+            return;
+        }
 
+        let tiposProd = await TipoProducto.getTiposProducto();
+        if (tiposProd == null) {
+            Tools.Toast('Error buscando los tipos.', 'warning');
+            return;
+        }
         const container = document.getElementById('productosContainer');
         container.innerHTML = ''; // Limpia el contenido previo
 

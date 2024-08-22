@@ -39,7 +39,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message);
+                return StatusCode(500);
             }
         }
 
@@ -102,7 +102,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500);
             }
 
         }
@@ -132,7 +132,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode(500);
             }
 
         }

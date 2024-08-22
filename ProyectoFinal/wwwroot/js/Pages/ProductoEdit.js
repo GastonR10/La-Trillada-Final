@@ -45,6 +45,10 @@ async function obtenerProducto() {
 async function getTiposProducto() {
     try {
         let res = await TipoProducto.getTiposProducto();
+        if (res == null) {
+            Tools.Toast('Error buscando los tipos.', 'warning');
+            return;
+        }
 
         const selectElement = document.getElementById('productoTipo');
 

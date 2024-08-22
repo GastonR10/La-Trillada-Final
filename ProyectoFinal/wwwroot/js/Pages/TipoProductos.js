@@ -1,14 +1,11 @@
-﻿$(document).ready(async function () {
-    showLoader();
+﻿$(document).ready(async function () {   
 
-    // Obtener y mostrar los tipos de productos existentes
-    await iniciarVista();
-
-    hideLoader();
+    await iniciarVista(); 
 });
 
 async function iniciarVista() {
-    // Obtener y mostrar los tipos de productos existentes
+    showLoader();
+    
     await obtenerTipoProductos();
 
     // Inicializar Sortable.js en la lista
@@ -16,25 +13,19 @@ async function iniciarVista() {
         animation: 150,
     });
 
-    // Manejar el evento de clic del botón para agregar un nuevo tipo de producto
-    //$('#btnAgregarTipoProducto').click(function () {
-    //    const descripcion = $('#nuevoTipoProducto').val().trim();
-    //    if (descripcion) {
-    //        agregarTipoProducto(descripcion);
-    //    } else {
-    //        Tools.Toast('error', 'La descripción no puede estar vacía');
-    //    }
-    //});
-
-    // Manejar el evento de clic para guardar los cambios
     $('#btnGuardarCambios').click(async function () {
         await guardarCambios(sortable.toArray());
     });
+    hideLoader();
 }
 
 async function obtenerTipoProductos() {
     try {
         const tiposProd = await TipoProducto.getTiposProducto();
+        if (tiposProd == null) {
+            Tools.Toast('Error buscando los tipos.', 'warning');
+            return;
+        }
         const lista = $('#listaTiposProducto');
         lista.empty();
 
@@ -60,30 +51,34 @@ async function obtenerTipoProductos() {
 
     } catch (ex) {
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
-        throw ex;
     }
 }
 
 async function agregarTipoProducto() {
-    const descripcion = $('#nuevoTipoProducto').val();
+    try {
+        const descripcion = $('#nuevoTipoProducto').val();
 
-    if (descripcion == "") {
-        Tools.Toast("Ingrese nombre de tipo.", 'warning');
+        if (descripcion == "") {
+            Tools.Toast("Ingrese nombre de tipo.", 'warning');
 
-    } else {
-        const res = await TipoProducto.AgregarTipo(descripcion);
+        } else {
+            const res = await TipoProducto.AgregarTipo(descripcion);
 
-        if (res.status == 200) {
-            $('#nuevoTipoProducto').val(''); // Limpiar el input después de agregar
-            await iniciarVista();
-            Tools.Toast(`Tipo de producto ${descripcion} agregado con éxito`, 'success');
-        } else if (respuesta.status == 500) {
-            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            if (res.status == 200) {
+                $('#nuevoTipoProducto').val(''); // Limpiar el input después de agregar
+                await iniciarVista();
+                Tools.Toast(`Tipo de producto ${descripcion} agregado con éxito`, 'success');
+            } else if (respuesta.status == 500) {
+                Tools.Toast('Error inesperado, contacte al administrador', 'error');
 
-        } else if (respuesta.status == 400) {
-            Tools.Toast("No todos los datos son correctos", 'warning');
+            } else if (respuesta.status == 400) {
+                const msj = await respuesta.text();
+                Tools.Toast(msj, 'warning');
+            }
         }
-    }
+    } catch (ex) {
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
+    }    
 }
 
 async function guardarCambios(ordenIds) {
@@ -106,7 +101,6 @@ async function guardarCambios(ordenIds) {
 
     } catch (ex) {
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
-        throw ex;
     }
 }
 
@@ -124,7 +118,11 @@ async function eliminarTipoPorId(id, nombre) {
             if (res.status == 500) {
                 Tools.Toast(msj, 'warning');
             }
-            if (res.status == 501) {
+            if (res.status == 400) {
+
+                Tools.Toast(msj, 'warning');
+            }
+            if (res.status == 404) {
 
                 Tools.Toast(msj, 'warning');
             }
@@ -135,7 +133,6 @@ async function eliminarTipoPorId(id, nombre) {
 
     } catch (ex) {
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
-        throw ex;
     }
 }
 

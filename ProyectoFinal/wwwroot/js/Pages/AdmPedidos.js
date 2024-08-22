@@ -1,10 +1,8 @@
 ﻿let _PedidosPendientes;
 
 $(document).ready(async function () {
-    showLoader();
     await obtenerPedidos();
     configurarSignalR();
-    hideLoader();
 });
 
 async function obtenerPedidos() {
@@ -12,13 +10,16 @@ async function obtenerPedidos() {
         showLoader();
 
         _PedidosPendientes = await Pedido.GetAllPendientes();
+        if (_PedidosPendientes == null) {
+            Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+            return;
+        } 
 
         grillaPedidosPendientes(_PedidosPendientes)
 
         hideLoader();
     }
     catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
@@ -211,41 +212,33 @@ function grillaPedidosPendientes(pedidosPendientes) {
 
     }
     catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
 
 
-async function actualizarEstadoPedido(id, estado) {
-    console.log(`Se ejecutó actualizarEstadoPedido con el id: ${id} y estado: ${estado}`);
-
-    console.log(`Aceptar pedido ${id}`);
-    // Implementa la lógica para aceptar el pedido
+async function actualizarEstadoPedido(id, estado) {    
     try {
+        showLoader();
         let confirmacion = await asyncConfirm(`¿Estás seguro?`);
 
         if (confirmacion) {
             
-            await Pedido.actualizarEstadoPedido(id);
+            const res = await Pedido.actualizarEstadoPedido(id);
 
-            //await obtenerPedidos();            
+            if (res.status == 200) {
+                let mensaje = "";
 
-            let mensaje = "";    
+                if (estado == 'EnCamino') {
+                    mensaje = "El pedido " + id + " fue finalizado con exito";
+                }
 
-            //if (estado == 'Pendiente') {
-            //    mensaje = "El pedido " + id + " fue enviado a preparacion";
-            //} else if (estado == 'EnPreparacion') {
-            //    mensaje = "El pedido " + id + " fue colocado en camino";
-            /*} else*/ if (estado == 'EnCamino') {
-                mensaje = "El pedido " + id + " fue finalizado con exito";
-            } 
-
-            if(mensaje != "") Tools.Toast(mensaje, 'success')
+                if (mensaje != "") Tools.Toast(mensaje, 'success')
+            }            
         }
+        hideLoader();
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 
@@ -277,7 +270,6 @@ function verPedido(id) {
         const urlWithId = `${redirectUrl}/${id}`;
         window.location.href = urlWithId;
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
@@ -289,19 +281,16 @@ function configurarSignalR() {
         .build();
 
     connection.on("RecibirPedido", async function (id) {
-        console.log('Recibido pedido');
         await obtenerPedidos(); // Obtén la lista actualizada de pedidos   
         
     });
 
     connection.on("PedidoAceptado", async function (id) {
-        console.log('Aceptado pedido');
         await obtenerPedidos(); // Obtén la lista actualizada de pedidos 
         
     });
 
     connection.on("PedidoPronto", async function (id) {
-        console.log('Pedido pronto');
         await obtenerPedidos(); // Obtén la lista actualizada de pedidos        
         
     });

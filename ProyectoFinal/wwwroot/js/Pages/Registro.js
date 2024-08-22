@@ -58,7 +58,7 @@
                 Tools.Toast("Error inesperado, contacte a su administrador", 'error');
 
             } else {
-                let msj = await res.text();
+                const msj = await res.text();
                 Tools.Toast(msj, 'warning');
             }
 
@@ -66,7 +66,6 @@
         hideLoader();
     } catch (ex) {
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
-        throw ex;
     }
 }
 

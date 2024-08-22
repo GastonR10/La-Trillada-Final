@@ -96,17 +96,18 @@ namespace ProyectoFinal.Controllers
             {
                 TipoProducto? tipoBD = await _context.TipoProductos.FindAsync(Id);
 
-                List<Producto> prods = await _context.Productos.Where(p => p.IdTipoProducto == Id).ToListAsync();
-
-                if (prods.Count() > 0)
-                {
-                    return StatusCode(501, "No se puede eliminar un tipo si tiene productos.");
-                }
-                                                                                                    
                 if (tipoBD == null)
                 {
                     return NotFound($"No existe el tipo de producto con id: {Id}");
                 }
+
+                List<Producto> prods = await _context.Productos.Where(p => p.IdTipoProducto == Id).ToListAsync();
+
+                if (prods.Count() > 0)
+                {
+                    return BadRequest("No se puede eliminar un tipo si tiene productos.");
+                }                                                                                                    
+                
 
                 _context.TipoProductos.Remove(tipoBD);
                 await _context.SaveChangesAsync();

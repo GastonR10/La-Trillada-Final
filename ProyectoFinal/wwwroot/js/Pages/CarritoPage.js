@@ -1,29 +1,38 @@
 ﻿$(document).ready(async function () {
-    showLoader();
     await obtenerCarrito();
-    hideLoader();
 });
 
 async function obtenerCarrito() {
     try {
+        showLoader();
 
         let productosCantidad = [];
 
         if (sessionStorage.getItem('Logueado') == "true") {
             productosCantidad = await Carrito.obtenerProductosCarrito();
+
+            if (productosCantidad.status == 400) {
+                const msj = await res.text();
+                Tools.Toast(msj, 'warning');
+                return;
+
+            } else if (productosCantidad.status == 500) {
+                Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+                return;
+            }
+
         }
         else {
             productosCantidad = JSON.parse(localStorage.getItem('carrito'));
         }
 
-        console.log(productosCantidad);
         // Generar la grilla de productos
         generarGrilla(productosCantidad);
 
+        hideLoader();
     }
     catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 }
 
@@ -142,13 +151,23 @@ function generarGrilla(productosCantidad) {
                 if (sessionStorage.getItem('Logueado') == "true") {
 
                     // Llamar a la función para agregar los comentarios en masa
-                    await ProductoCantidad.AgregarComentariosMasivo(duplas);
+                    const res = await ProductoCantidad.AgregarComentariosMasivo(duplas);
 
-                    // Obtiene la URL desde el campo oculto
-                    const urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
+                    if (res.status == 200) {
+                        // Obtiene la URL desde el campo oculto
+                        const urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
 
-                    // Redirige a la vista PedidoLogueado del controlador Pedido
-                    window.location.href = urlPedidoLogueado;
+                        // Redirige a la vista PedidoLogueado del controlador Pedido
+                        window.location.href = urlPedidoLogueado;
+                    }
+                    if (res.status == 500) {
+                        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+                    }
+                    if (res.status == 400) {
+                        const msj = res.text();
+                        Tools.Toast(msj, 'warning');
+                    }
+
 
                 } else {
 
@@ -177,9 +196,9 @@ function generarGrilla(productosCantidad) {
                 hideLoader();
 
             } catch (ex) {
-                console.error('Error:', ex.message);
+                throw ex;
             }
-        }        
+        }
     });
 }
 
@@ -188,15 +207,33 @@ async function eliminarLineaPorId(id) {
     try {
         showLoader();
 
-        await Carrito.EliminarLinea(id);
+        const res = await Carrito.EliminarLinea(id);
 
-        let productosCantidad = await Carrito.obtenerProductosCarrito();
-        generarGrilla(productosCantidad);
+        if (res.status == 200) {
+            let productosCantidad = await Carrito.obtenerProductosCarrito();
+            if (productosCantidad.status == 400) {
+                const msj = await res.text();
+                Tools.Toast(msj, 'warning');
+                return;
+
+            } else if (productosCantidad.status == 500) {
+                Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+                return;
+            }
+            generarGrilla(productosCantidad);
+        }
+
+        if (res.status == 400 || res.status == 404) {
+            const msj = await res.text();
+            Tools.Toast(msj, 'warning');
+        }
+        if (res.status == 500) {
+            Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+        }
 
         hideLoader();
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
@@ -220,7 +257,6 @@ function eliminarLineaSinLogin(index) {
         hideLoader();
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 

@@ -21,8 +21,7 @@ function TipoPedido(tipoPedido) {
             inputDir.style.display = "none";
         }
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 
 
@@ -30,6 +29,7 @@ function TipoPedido(tipoPedido) {
 
 async function RealizarPedidoExpress() {
     try {
+        showLoader();
         let inputDir = document.getElementById("pedidoDomicilioLogueado");
         let inputLocal = document.getElementById("pedidoLocalLogueado");
 
@@ -85,17 +85,14 @@ async function RealizarPedidoExpress() {
         } else if (res.status == 500) {
             Tools.Toast('Error inesperado, contacte al administrador', 'error');
 
-        } else if (res.status == 403) {
-            Tools.Toast("Carrito esta vacío", 'warning');
+        } else if (res.status == 400) {
+            const msj = await res.text();
+            Tools.Toast(msj, 'warning');
         }
-
-
-        console.log(res);
-
+        hideLoader();
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 
 }

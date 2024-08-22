@@ -1,15 +1,19 @@
 ﻿$(document).ready(async function () {
-    showLoader();
+    
     await cargarPedidosEnPreparacion();
 
     configurarSignalRR();
 
-    hideLoader();
+    
 });
 
 async function cargarPedidosEnPreparacion() {
     try {
+        showLoader();
         const pedidos = await Pedido.GetPedidosCocina();
+        if (pedidos.length == 0) {
+            Tools.Toast('No hay órdenes para cocinar.', 'warning');
+        }
 
         const container = document.getElementById('divPedidosCocina');
         container.innerHTML = ''; // Limpiar el contenedor
@@ -77,10 +81,10 @@ async function cargarPedidosEnPreparacion() {
         if (row.hasChildNodes()) {
             container.appendChild(row);
         }
+        hideLoader();
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }   
 
 }
@@ -93,34 +97,14 @@ async function actualizarEstadoPedido(id) {
 
         if (confirmacion) {
             await Pedido.actualizarEstadoPedido(id);
-
-            //await cargarPedidosEnPreparacion();
-
-          //  Tools.Toast("El pedido " + id + " fue colocado en camino", 'success')
-
-           // await notificarPedidoEnCamino(id);
         }
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 
 }
 
-//async function notificarPedidoEnCamino(idPedido) {
-//    const connection = new signalR.HubConnectionBuilder()
-//        .withUrl("/notificationHub")
-//        .configureLogging(signalR.LogLevel.Information)
-//        .build();
-
-//    await connection.start();
-
-//    // Invocar un método en el servidor para notificar que el pedido está en camino
-//    await connection.invoke("NotificarPedidoEnCamino", idPedido);
-
-//    console.log(`Notificación enviada para el pedido #${idPedido}`);
-//}
 function configurarSignalRR() {
     const connection = new signalR.HubConnectionBuilder()
         .withUrl("/notificationHub") // Asegúrate de que la URL sea la correcta para tu servidor SignalR
@@ -128,12 +112,12 @@ function configurarSignalRR() {
         .build();
 
     connection.on("PedidoAceptado", async function (id) {
-        console.log('Aceptado pedido');
+        
         await cargarPedidosEnPreparacion(); // Obtén la lista actualizada de pedidos 
     });
 
     connection.on("PedidoPronto", async function (id) {
-        console.log('Pedido pronto');
+        
         await cargarPedidosEnPreparacion(); // Obtén la lista actualizada de pedidos      
         
     });

@@ -10,14 +10,16 @@ async function obtenerPedidosCliente() {
     try {
 
         let pedidosCliente = await Pedido.GetPedidosCliente();
+        if (pedidosCliente.length == 0) {
+            Tools.Toast('No hay pedidos.', 'warning');
+        }
 
         grillaPedidosCliente(pedidosCliente)
 
 
     }
     catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 }
 
@@ -123,12 +125,10 @@ function grillaPedidosCliente(pedidosCliente) {
             container.appendChild(estadoContainer);
         });
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
 
-//arreglar el boton ver que va a cualquier lado y muestra cosas que no deberia, como los botenes aceptar y cancelar. Tmabien el boton volver.
 function verPedido(id) {
     try {
         console.log(`Ver pedido ${id}`);
@@ -136,7 +136,6 @@ function verPedido(id) {
         const urlWithId = `${redirectUrl}/${id}`;
         window.location.href = urlWithId;
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 

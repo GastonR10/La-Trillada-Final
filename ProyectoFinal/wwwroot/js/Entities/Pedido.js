@@ -29,10 +29,6 @@ class Pedido {
 
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
             return response;
 
         } catch (ex) {
@@ -54,15 +50,10 @@ class Pedido {
 
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
-            return true;
+            return response;
 
         } catch (ex) {
-            console.error('Error al agregar el producto:', error);
-            throw error;
+            throw ex;
         }
     }
 
@@ -79,24 +70,24 @@ class Pedido {
                 }
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
-            const data = await response.json();
-
-            let pedido;
-
-            if (data.Cliente != null && data.Cliente != undefined) {
-                pedido = new Pedido(data.Id, data.Comentario, data.Estado, data.Aceptado, data.IdMesa, data.Fecha, data.Eliminado, data.Cliente.Email, data.Cliente.Telefono, data.Cliente.Direccion, data.Cliente.Nombre, data.Cliente.Apellido, data.Pos);
+            if (response.status != 200) {
+                return null;
+                
             } else {
-                pedido = new Pedido(data.Id, data.Comentario, data.Estado, data.Aceptado, data.IdMesa, data.Fecha, data.Eliminado, data.Email, data.Telefono, data.Direccion, data.Nombre, data.Apellido, data.Pos);
+                const data = await response.json();
+
+                let pedido;
+
+                if (data.Cliente != null && data.Cliente != undefined) {
+                    pedido = new Pedido(data.Id, data.Comentario, data.Estado, data.Aceptado, data.IdMesa, data.Fecha, data.Eliminado, data.Cliente.Email, data.Cliente.Telefono, data.Cliente.Direccion, data.Cliente.Nombre, data.Cliente.Apellido, data.Pos);
+                } else {
+                    pedido = new Pedido(data.Id, data.Comentario, data.Estado, data.Aceptado, data.IdMesa, data.Fecha, data.Eliminado, data.Email, data.Telefono, data.Direccion, data.Nombre, data.Apellido, data.Pos);
+                }
+
+                pedido.Carrito = data.Carrito;
+
+                return pedido;
             }
-
-            pedido.Carrito = data.Carrito;
-
-            return pedido;
-
 
         } catch (ex) {
             console.error('Error al agregar el producto:', error);
@@ -173,14 +164,14 @@ class Pedido {
             if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
                 return "El producto no existe.";
             }
-            if (response.ok) {
+            if (response.status == 200) {
                 localStorage.setItem('carrito', JSON.stringify([]));                
             }
 
             return response;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
 
     }
@@ -198,8 +189,8 @@ class Pedido {
                 body: JSON.stringify()
             });
 
-            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
-                return "Sin permisos de Administrador.";
+            if (response.status != 200) {
+                return null;
             }
 
             const data = await response.json();
@@ -225,8 +216,8 @@ class Pedido {
 
             return pedidos;
             
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
     }
 
@@ -242,10 +233,6 @@ class Pedido {
                 },
                 body: JSON.stringify()
             });
-
-            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
-                return "Sin permisos de Administrador.";
-            }
 
             const data = await response.json();
 
@@ -271,8 +258,8 @@ class Pedido {
             return pedidos;
 
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
     }
 
@@ -287,8 +274,8 @@ class Pedido {
                 }
             });
 
-            if (response.status === 400) {
-                return "Sin permisos.";
+            if (response.status != 200) {
+                return null;
             }
 
             const data = await response.json();
@@ -317,9 +304,8 @@ class Pedido {
 
             return pedidos;
 
-        } catch (error) {
-            console.error('Error fetching pedidos:', error);
-            return [];
+        } catch (ex) {
+            throw ex;
         }
     }
 
@@ -335,11 +321,7 @@ class Pedido {
                 },
                 body: JSON.stringify()
             });
-
-            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
-                return "Sin permisos de Administrador.";
-            }
-
+                    
             const data = await response.json();
 
             const pedidos = [
@@ -364,8 +346,8 @@ class Pedido {
             return pedidos;
 
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
     }
 

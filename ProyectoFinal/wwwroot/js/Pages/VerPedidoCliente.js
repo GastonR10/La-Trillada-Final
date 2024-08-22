@@ -17,6 +17,7 @@ async function cargarPedido() {
         let pedido = await Pedido.getPedido(id);
 
         if (pedido == null) {
+            Tools.Toast('Error buscando el pedido.', 'warning');
             return;
         }
 
@@ -120,7 +121,6 @@ async function cargarPedido() {
         listaProd.appendChild(table);
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

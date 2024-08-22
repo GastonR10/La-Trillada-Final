@@ -1,16 +1,13 @@
 ﻿let _idPedido;
 
 $(document).ready(async function () {
-    showLoader();
     // Código a ejecutar cuando el DOM esté listo
     await cargarPedido();
-
-    hideLoader();
-
 });
 
 async function cargarPedido() {
     try {
+        showLoader();
         const parts = window.location.pathname.split('/');
         const id = parts.pop();
 
@@ -168,7 +165,7 @@ async function cargarPedido() {
                 btnEstado.textContent = 'Desconocido';
                 break;
         }
-        
+        hideLoader();
 
     } catch (ex) {
         console.error('Error:', ex.message);
@@ -199,7 +196,6 @@ async function cargarPedido() {
             }
 
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
     }
@@ -209,11 +205,22 @@ async function cargarPedido() {
         let confirmacion = await asyncConfirm(`¿Está seguro que desea cancelar?`);
 
         if (confirmacion) {
-            await Pedido.cancelarPedido(id);
+            const res = await Pedido.cancelarPedido(id);
 
-            await cargarPedido();
+            if (res.status == 500) {
+                Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+            } 
 
-            Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success')
+            if (res.status == 404) {
+                Tools.Toast("Problemas buscando el pedido.", 'warning');
+            }
+
+            if (res.status == 200) {
+                await cargarPedido();
+
+                Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success')
+            }
+            
         }
     }
 

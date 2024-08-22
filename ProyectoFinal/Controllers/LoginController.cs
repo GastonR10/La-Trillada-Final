@@ -76,79 +76,80 @@ namespace ProyectoFinal.Controllers
             return View();
         }
 
-        [HttpPost("AltaUsuario")]
-        public async Task<IActionResult> AltaUsuario([FromBody] DTO_Usuario usuario)
-        {
-            try
-            {
-                if (
-                    usuario.Nombre == "" || 
-                    usuario.Apellido == "" || 
-                    usuario.NombreUsuario == "" || 
-                    !_validaciones.EsContrasenaValida(usuario.Password) || 
-                    !_validaciones.EsEmailValido(usuario.Email) || 
-                    !_validaciones.EsNumeroValido(usuario.Telefono) || 
-                    usuario.Direccion == ""
-                    )
-                {
-                    return BadRequest("No todos los datos son correctos.");
-                }
+        //[HttpPost("AltaUsuario")]
+        //public async Task<IActionResult> AltaUsuario([FromBody] DTO_Usuario usuario)
+        //{
+        //    try
+        //    {
+        //        if (
+        //            usuario.Nombre == "" ||
+        //            usuario.Apellido == "" ||
+        //            usuario.NombreUsuario == "" ||
+        //            !_validaciones.EsContrasenaValida(usuario.Password) ||
+        //            !_validaciones.EsEmailValido(usuario.Email) ||
+        //            !_validaciones.EsNumeroValido(usuario.Telefono) ||
+        //            usuario.Direccion == ""
+        //            )
+        //        {
+        //            return BadRequest("No todos los datos son correctos.");
+        //        }
 
-                // Verificar si el usuario ya existe en la base de datos
-                Usuario? existingUser = await _db.Usuarios
-                    .FirstOrDefaultAsync(u => u.NombreUsuario == usuario.NombreUsuario);
+        //        // Verificar si el usuario ya existe en la base de datos
+        //        Usuario? existingUser = await _db.Usuarios
+        //            .FirstOrDefaultAsync(u => u.NombreUsuario == usuario.NombreUsuario);
 
-                if (existingUser != null)
-                {
-                    // Si el usuario ya existe, retornar un BadRequest
-                    return BadRequest("El nombre de usuario ya existe.");
-                }
+        //        if (existingUser != null)
+        //        {
+        //            // Si el usuario ya existe, retornar un BadRequest
+        //            return BadRequest("El nombre de usuario ya existe.");
+        //        }
 
-                // Crear el nuevo usuario con rol "Admin"
-                Usuario newUser = new Usuario
-                {
-                    NombreUsuario = usuario.NombreUsuario,
-                    Password = usuario.Password,
-                    rol = "Admin"
-                };
+        //        // Crear el nuevo usuario con rol "Admin"
+        //        Usuario newUser = new Usuario
+        //        {
+        //            NombreUsuario = usuario.NombreUsuario,
+        //            Password = usuario.Password,
+        //            rol = "Admin"
+        //        };
 
-                // Guardar el nuevo usuario en la base de datos
-                _db.Usuarios.Add(newUser);
-                await _db.SaveChangesAsync();
+        //        // Guardar el nuevo usuario en la base de datos
+        //        _db.Usuarios.Add(newUser);
+        //        await _db.SaveChangesAsync();
 
-                // Retornar una respuesta exitosa
-                return Ok(newUser);
-            }
-            catch (Exception)
-            {
-                return StatusCode(500);
-            }
+        //        // Retornar una respuesta exitosa
+        //        return Ok(newUser);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return StatusCode(500);
+        //    }
 
-        }
+        //}
 
         [HttpPost("AltaAdmin")]
         public async Task<IActionResult> AltaAdmin([FromBody] DTO_Usuario usuario)
         {
             try
             {
-                // Verificar si el usuario ya existe en la base de datos
+                if (usuario.NombreUsuario == "" || !_validaciones.EsContrasenaValida(usuario.Password))
+                {
+                    return BadRequest("No todos los datos son correctos.");
+                }
+
                 Usuario? existingUser = await _db.Usuarios
                     .FirstOrDefaultAsync(u => u.NombreUsuario == usuario.NombreUsuario);
 
                 if (existingUser != null)
                 {
-                    // Si el usuario ya existe, retornar un BadRequest
-                    return BadRequest();
-                }
+                    return BadRequest("Nombre de usuario ya se está usando.");
+                }               
 
                 // Crear el nuevo usuario con rol "Admin"
                 Usuario newUser = new Usuario(usuario.NombreUsuario, usuario.Password, "Admin");
 
-                // Guardar el nuevo usuario en la base de datos
                 _db.Usuarios.Add(newUser);
                 await _db.SaveChangesAsync();
 
-                // Retornar una respuesta exitosa
                 return Ok();
             }
             catch (Exception)
@@ -164,30 +165,40 @@ namespace ProyectoFinal.Controllers
         {
             try
             {
-                // Verificar si el usuario ya existe en la base de datos
+                if (
+                    usuario.Nombre == "" ||
+                    usuario.Apellido == "" ||
+                    usuario.NombreUsuario == "" ||
+                    !_validaciones.EsContrasenaValida(usuario.Password) ||
+                    usuario.Email == null ||   
+                    !_validaciones.EsEmailValido(usuario.Email) ||
+                    usuario.Telefono == null ||
+                    !_validaciones.EsNumeroValido(usuario.Telefono) ||
+                    usuario.Direccion == ""
+                    )
+                {
+                    return BadRequest("No todos los datos son correctos.");
+                }
+
                 Usuario? existingUser = await _db.Usuarios
                     .FirstOrDefaultAsync(u => u.NombreUsuario == usuario.NombreUsuario);
 
                 if (existingUser != null)
                 {
-                    // Si el usuario ya existe, retornar un BadRequest con un mensaje
-                    return BadRequest("El usuario ya existe.");
+                    return BadRequest("Nombre de usuario ya se está usando.");
                 }
 
                 // Crear el nuevo usuario con rol "Cliente"
-                Usuario newUser = new Usuario(usuario.NombreUsuario, usuario.Password, "Cliente", usuario.Nombre, usuario.Apellido, usuario.Email, usuario.Telefono, usuario.Direccion);       
+                Usuario newUser = new Usuario(usuario.NombreUsuario, usuario.Password, "Cliente", usuario.Nombre, usuario.Apellido, usuario.Email, usuario.Telefono, usuario.Direccion);
 
-                // Guardar el nuevo usuario en la base de datos
                 _db.Usuarios.Add(newUser);
                 await _db.SaveChangesAsync();
 
-                // Retornar una respuesta exitosa con el nuevo usuario
                 return Ok(newUser);
             }
             catch (Exception ex)
             {
-                // Retornar un error 500 con un mensaje de error
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                return StatusCode(500);
             }
         }
 
@@ -207,10 +218,10 @@ namespace ProyectoFinal.Controllers
 
                 if (us == null)
                 {
-                    return BadRequest();
+                    return BadRequest("Usuario no encontrado.");
                 }
 
-                DTO_Usuario UsuarioRetorno = new DTO_Usuario("", "", "",us.Nombre, us.Apellido, us.Email, us.Telefono, us.Direccion);
+                DTO_Usuario UsuarioRetorno = new DTO_Usuario("", "", "", us.Nombre, us.Apellido, us.Email, us.Telefono, us.Direccion);
                 return Ok(UsuarioRetorno);
             }
             catch (Exception ex)
@@ -232,7 +243,7 @@ namespace ProyectoFinal.Controllers
                 {
                     // Si el usuario no existe, retornar un BadRequest con un mensaje
                     return BadRequest();
-                } 
+                }
 
                 if (
                     usuario.Nombre == "" ||
@@ -243,7 +254,7 @@ namespace ProyectoFinal.Controllers
                     )
                 {
                     return BadRequest("No todos los datos son correctos.");
-                } 
+                }
                 else
                 {
 
@@ -257,7 +268,7 @@ namespace ProyectoFinal.Controllers
                     await _db.SaveChangesAsync();
 
                     return Ok();
-                }                
+                }
 
             }
             catch (Exception ex)
@@ -266,32 +277,6 @@ namespace ProyectoFinal.Controllers
                 return StatusCode(500);
             }
         }
-
-        //[HttpGet]
-        //public async Task<IActionResult> VerificarUsuario()
-        //{
-        //    try
-        //    {
-        //        // Verificar si el usuario ya existe en la base de datos
-        //        Usuario? us = await _db.Usuarios
-        //            .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
-
-        //        if (us == null)
-        //        {
-        //            // Si el usuario ya existe, retornar un BadRequest con un mensaje
-        //            return BadRequest("El usuario no existe.");
-        //        }
-
-        //        DTO_Usuario UsuarioRetorno = new DTO_Usuario("", "", "", us.Nombre, us.Apellido, us.Email, us.Telefono, us.Direccion);
-        //        return Ok(UsuarioRetorno);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Retornar un error 500 con un mensaje de error
-        //        return StatusCode(500, $"Error interno del servidor: {ex.Message}");
-        //    }
-        //}
-
 
     }
 

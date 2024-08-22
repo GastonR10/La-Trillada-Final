@@ -10,11 +10,6 @@ class Usuario {
         this.CarritoAbierto = new Carrito();
     }
 
-    //constructor(usuario, password) {
-    //    this.NombreUsuario = usuario;
-    //    this.Password = password;
-    //}
-
     static async AltaDeIngreso(usuario, password) {
         try {
             const url = $("#URLIngresar").val();
@@ -43,7 +38,6 @@ class Usuario {
 
 
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
     }
@@ -61,17 +55,9 @@ class Usuario {
                 body: JSON.stringify(usu) // El cuerpo ahora está permitido con POST
             });
 
-            if (response.status == 400) {
-                return "El nombre de usuario ya existe.";
-            }
-            if (response.ok) {
-                return "ok"
-            }
-
-            return "error"
+            return response;
 
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
     }
@@ -90,13 +76,10 @@ class Usuario {
                 body: JSON.stringify(usu) // El cuerpo ahora está permitido con POST
             });
 
-            return response
+            return response;
 
         } catch (ex) {
-            console.error('Error:', ex.message);
-            return {
-                status: 500
-            };
+            throw ex;
         }
     }
 
@@ -115,7 +98,6 @@ class Usuario {
             return response;
 
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
     }
@@ -140,29 +122,4 @@ class Usuario {
         }
     }
 
-    //static async VerificarAdmin() {
-    //    try {
-    //        const url = $("#URLVerificarAdmin").val();
-
-    //        const response = await fetch(url, {
-    //            method: 'GET',
-    //            headers: {
-    //                'Content-Type': 'application/json'
-    //            }
-    //        });
-
-    //        if (response.status == 400) {
-    //            return "El nombre de usuario ya existe.";
-    //        }
-    //        if (response.ok) {
-                    
-    //        }
-
-    //        return response;
-
-    //    } catch (ex) {
-    //        console.error('Error:', ex.message);
-    //        throw ex;
-    //    }
-    //}
 }

@@ -9,17 +9,25 @@ async function cargarInfoPersonal() {
     try {
         let res = await Usuario.ObtenerUsuario();
 
-        if (res != null) {
-            let inputDir = document.getElementById("direccionPedido");
+        if (res.status == 200) {
+            if (res != null) {
+                let inputDir = document.getElementById("direccionPedido");
 
-            inputDir.innerText = res.Direccion;
+                inputDir.innerText = res.Direccion;
+            }
         }
 
-        console.log(res);
+        if (res.status == 400) {
+            const msj = await res.text();
+            Tools.Toast(msj, 'warning');
+        }
+
+        if (res.status == 500) {
+            Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+        }
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 }
 
@@ -39,8 +47,7 @@ function TipoPedido(tipoPedido) {
             inputDir.style.display = "none";
         }
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 
 
@@ -92,15 +99,15 @@ async function RealizarPedidoLog() {
         } else if (res.status == 500) {
             Tools.Toast('Error inesperado, contacte al administrador', 'error');
 
-        } else if (res.status == 403) {
-            Tools.Toast("Carrito esta vacío", 'warning');
+        } else if (res.status == 400) {
+            const msj = await res.text();
+            Tools.Toast(msj, 'warning');
         }
         hideLoader();
         
             
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 
 }

@@ -104,7 +104,6 @@ namespace ProyectoFinal.Controllers
 
                 if (existingUser == null)
                 {
-                    // Si el usuario no existe, retornar un BadRequest con un mensaje
                     return BadRequest("El usuario no existe.");
                 }
 
@@ -120,8 +119,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                // Retornar un error 500 con un mensaje de error
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                return StatusCode(500);
             }
         }
 
@@ -146,7 +144,6 @@ namespace ProyectoFinal.Controllers
 
                 if (productoCantidad == null)
                 {
-                    // Si el objeto no existe, retornar un NotFound con un mensaje
                     return NotFound("La línea de producto no existe.");
                 }
 
@@ -159,7 +156,7 @@ namespace ProyectoFinal.Controllers
             catch (Exception ex)
             {
                 // Retornar un error 500 con un mensaje de error
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                return StatusCode(500);
             }
         }
     }

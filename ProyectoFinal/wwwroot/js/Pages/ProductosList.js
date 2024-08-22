@@ -22,7 +22,16 @@
 async function obtenerProductos() {
     try {
         let productos = await Producto.getProductosList();
+        if (productos == null) {
+            Tools.Toast('Error buscando productos.', 'warning');
+            return;
+        }
+
         let tiposProd = await TipoProducto.getTiposProducto();
+        if (tiposProd == null) {
+            Tools.Toast('Error buscando los tipos.', 'warning');
+            return;
+        }
 
         const container = document.getElementById('tblProductos');
         container.innerHTML = '';

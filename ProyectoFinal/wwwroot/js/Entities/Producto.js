@@ -23,8 +23,8 @@ class Producto {
                 }
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            if (response.status != 200) {
+                return response;
             }
 
             const data = await response.json();
@@ -35,8 +35,7 @@ class Producto {
 
 
         } catch (ex) {
-            console.error('Error al agregar el producto:', error);
-            throw error;
+            throw ex;
         }
     }
 
@@ -94,8 +93,8 @@ class Producto {
                 }
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            if (response.status != 200) {
+                return null;
             }
 
             const data = await response.json();
@@ -104,8 +103,8 @@ class Producto {
 
             return productos;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
     }
 
@@ -120,8 +119,8 @@ class Producto {
                 }
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            if (response.status != 200) {
+                return null;
             }
 
             const data = await response.json();
@@ -130,8 +129,8 @@ class Producto {
 
             return productos;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
     }
 
@@ -221,33 +220,33 @@ class Producto {
 
     }
 
-    static async ObtenerProductosIds(arrayIds) {
+    //static async ObtenerProductosIds(arrayIds) {
 
-        try {
-            const url = $("#URLGetProductIds").val();
+    //    try {
+    //        const url = $("#URLGetProductIds").val();
 
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(arrayIds)               
-            });
+    //        const response = await fetch(url, {
+    //            method: 'POST',
+    //            headers: {
+    //                'Content-Type': 'application/json'
+    //            },
+    //            body: JSON.stringify(arrayIds)               
+    //        });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
+    //        if (response.badRequest) {
+    //            throw new Error(`Error en la solicitud: ${response.statusText}`);
+    //        }
 
-            const data = await response.json();
+    //        const data = await response.json();
 
-            const productos = data.map(item => new Producto(item.Id, item.Nombre, item.Descripcion, item.Foto, item.IdTipoProducto, item.Precio, item.Activo, item.Eliminado));
+    //        const productos = data.map(item => new Producto(item.Id, item.Nombre, item.Descripcion, item.Foto, item.IdTipoProducto, item.Precio, item.Activo, item.Eliminado));
 
-            return productos;
+    //        return productos;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
-        }
-    }
+    //    } catch (error) {
+    //        console.error('Error fetching products:', error);
+    //    }
+    //}
 
     /* return arrayIds.map(id => new Producto(id, `Producto ${id}`, `Descripción del producto ${id}`, null, 1, 100 + id, true, false));*/
 

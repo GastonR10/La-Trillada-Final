@@ -16,8 +16,8 @@
                 }
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            if (response.status != 200) {
+                return null;
             }
 
             const data = await response.json();
@@ -28,8 +28,7 @@
             return tiposProducto;
 
         } catch (ex) {
-            console.error('Error al agregar el producto:', ex.error);
-            throw ex.error;
+            throw ex;
         }
     }
 
@@ -45,15 +44,10 @@
                 body: JSON.stringify(cambios)
             });
 
-            if (!response.ok) {
-                throw new Error(`Error al guardar los cambios: ${response.statusText}`);
-            }
-
             return response;
 
         } catch (ex) {
-            console.error('Error al agregar el producto:', ex.error);
-            throw ex.error;
+            throw ex;
         }
     }
 
@@ -72,8 +66,7 @@
 
 
         } catch (ex) {
-            console.error('Error al agregar el producto:', ex.message);
-            throw ex.message;
+            throw ex;
         }
     }
 
@@ -89,10 +82,8 @@
 
             return response;
 
-
         } catch (ex) {
-            console.error('Error al eliminar el producto:', ex.message);
-            throw ex.message;
+            throw ex;
         }
     }
 }

@@ -44,8 +44,8 @@ class Carrito {
                 }
             });
 
-            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
-                return "No se encontro usuario logeado.";
+            if (response.status != 200) {
+                return respuesta;
             }
 
             const data = await response.json();
@@ -126,14 +126,7 @@ class Carrito {
                 body: JSON.stringify(id)
             });
 
-            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
-                return "La linea no existe";
-            }
-            if (response.ok) {
-                return "ok"
-            }
-
-            return "error"
+            return response
 
         }
         catch (ex) {

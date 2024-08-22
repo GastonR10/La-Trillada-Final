@@ -48,8 +48,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                // Retornar un error 500 con un mensaje de error
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                return StatusCode(500);
             }
         }
     }
