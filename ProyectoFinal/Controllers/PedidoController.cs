@@ -15,12 +15,14 @@ namespace ProyectoFinal.Controllers
         private readonly BarContext _db;
         private readonly IHubContext<NotificationHub> _hubContext;
         private readonly WhatsAppService _whatsAppService;
+        private readonly ErrorLogger _errorLogger;
 
-        public PedidoController(BarContext context, IHubContext<NotificationHub> hubContext)
+        public PedidoController(BarContext context, IHubContext<NotificationHub> hubContext, ErrorLogger errorLogger)
         {
             _db = context;
             _hubContext = hubContext;
             _whatsAppService = new WhatsAppService();
+            _errorLogger = errorLogger;
         }
 
         [HttpGet("Pedido/GetPedidoVista/{id}")]
@@ -62,7 +64,7 @@ namespace ProyectoFinal.Controllers
                         return Ok(pedidoDTO);
                     }
 
-                    return NotFound("Error inesperado, contacte al administrador.");
+                    return NotFound("Tipo de pedido no existente.");
 
                 }
 
@@ -81,17 +83,18 @@ namespace ProyectoFinal.Controllers
                         return Ok(pedidoDTO);
                     }
 
-                    return NotFound("Error inesperado, contacte al administrador.");
+                    return NotFound("Tipo de pedido no existente.");
                 }
                 else
                 {
                     // Manejo de otros tipos de pedidos o error
-                    return NotFound("Error inesperado, contacte al administrador.");
+                    return NotFound("Tipo de pedido no existente.");
                 }
 
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }
@@ -167,7 +170,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                // Retornar un error 500 con un mensaje de error
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }
@@ -233,6 +236,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }
@@ -274,6 +278,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
 
@@ -366,6 +371,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
 
@@ -437,6 +443,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
 
@@ -480,6 +487,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
 
@@ -507,6 +515,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }
@@ -550,6 +559,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
 
@@ -593,6 +603,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
 

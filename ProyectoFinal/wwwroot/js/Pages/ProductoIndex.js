@@ -31,6 +31,7 @@ async function getTiposProducto() {
 
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
@@ -77,6 +78,7 @@ async function AgregarProducto() {
         }        
         
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

@@ -3,6 +3,7 @@
     await cargarInfoPersonal();
     await cargarMesas("mesasSlc");
     hideLoader();
+
 });
 
 async function cargarInfoPersonal() {
@@ -27,11 +28,12 @@ async function cargarInfoPersonal() {
         }
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 }
 
-function TipoPedido(tipoPedido) {
+async function TipoPedido(tipoPedido) {
     try {
 
         let inputGral = document.getElementById("pedidoLogueadoGeneral");
@@ -47,6 +49,7 @@ function TipoPedido(tipoPedido) {
             inputDir.style.display = "none";
         }
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 
@@ -61,7 +64,7 @@ async function RealizarPedidoLog() {
 
         let res;
 
-        let pagoTipo = document.getElementById("metodoPago").value; 
+        let pagoTipo = document.getElementById("metodoPago").value;
         let comentario = $("#comPedido").val();
 
         if (inputDir.style.display === "block") {
@@ -84,7 +87,7 @@ async function RealizarPedidoLog() {
                 return;
             } else {
                 res = await Pedido.RealizarPedidoLogueado("", mesa, pagoTipo, comentario);
-            }                
+            }
         }
 
         if (res.status == 200) {
@@ -104,9 +107,10 @@ async function RealizarPedidoLog() {
             Tools.Toast(msj, 'warning');
         }
         hideLoader();
-        
-            
+
+
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 

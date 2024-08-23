@@ -12,20 +12,13 @@ async function Ingresar() {
             Tools.Toast('Ningun campo puede ser vacío', 'error');
 
         } else {
-            let res = await Usuario.AltaDeIngreso(usuario, password);
-
-            if (res.status == 404) {
-                Tools.Toast('Credenciales incorrectas.', 'warning');
-            }
-            if (res.status == 500) {
-                Tools.Toast('Error inesperado, contacte al administrador', 'error');
-            }
+            await Usuario.AltaDeIngreso(usuario, password);            
         }
         
         hideLoader();
         /* if () si ingreso redirijo desde el controlador, sino tiro aca mensaje*/
     } catch (ex) {
-
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

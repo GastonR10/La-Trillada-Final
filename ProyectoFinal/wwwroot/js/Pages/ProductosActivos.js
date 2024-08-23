@@ -1,37 +1,37 @@
 ﻿$(document).ready(async function () {
-    
+    try {
+        if (sessionStorage.getItem('Logueado') === null) {
+            // Si no existe, la crea y le asigna el valor "false"
+            sessionStorage.setItem('Logueado', false);
+        }
 
-    if (sessionStorage.getItem('Logueado') === null) {
-        // Si no existe, la crea y le asigna el valor "false"
-        sessionStorage.setItem('Logueado', false);
-    }
+        if (localStorage.getItem('carrito') === null) {
+            // Si no existe, lo crea y le asigna un array vacío
+            localStorage.setItem('carrito', JSON.stringify([]));
+        }
 
-    if (localStorage.getItem('carrito') === null) {
-        // Si no existe, lo crea y le asigna un array vacío
-        localStorage.setItem('carrito', JSON.stringify([]));
-    }
+        //Mostrar toaster si entramos luego pedir
+        const toastMessage = localStorage.getItem('toastMessage');
+        const toastType = localStorage.getItem('toastType');
+        if (toastMessage && toastType) {
+            // Mostrar el toaster
+            Tools.Toast(toastMessage, toastType);
 
-    //Mostrar toaster si entramos luego pedir
-    const toastMessage = localStorage.getItem('toastMessage');
-    const toastType = localStorage.getItem('toastType');
-    if (toastMessage && toastType) {
-        // Mostrar el toaster
-        Tools.Toast(toastMessage, toastType);
+            // Limpiar el almacenamiento local
+            localStorage.removeItem('toastMessage');
+            localStorage.removeItem('toastType');
+        }
 
-        // Limpiar el almacenamiento local
-        localStorage.removeItem('toastMessage');
-        localStorage.removeItem('toastType');
-    }
-
-    // Ejecuta la lógica inicial al cargar la página
-    await actualizarVista();
-
-    // Agregar un listener para el evento popstate
-    window.addEventListener('pageshow', async function (event) {
+        // Ejecuta la lógica inicial al cargar la página
         await actualizarVista();
-    });
 
-    
+        // Agregar un listener para el evento popstate
+        window.addEventListener('pageshow', async function (event) {
+            await actualizarVista();
+        });
+    } catch (ex) {
+        throw ex;
+    }
 });
 
 // Función para actualizar la vista
@@ -45,6 +45,7 @@ async function actualizarVista() {
         hideLoader();
     }
     catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 
@@ -139,7 +140,19 @@ async function obtenerProductosActivos() {
 
                 if (cantidad > 0) {
                     if (sessionStorage.getItem('Logueado') == "true") {
-                        await Carrito.agregarProducto(productoId, cantidad);
+                        const res = await Carrito.agregarProducto(productoId, cantidad);
+                        if (res.status == 400) {
+                            const msj = await res.text();
+                            Tools.Toast(msj, 'warning');
+                            hideLoader();
+                            return;
+                        }
+                        if (res.status == 500) {
+                            Tools.Toast("Error inesperado, contacte al administrador", 'error');
+                            hideLoader();
+                            return;
+                        }
+
                     } else {
                         let carrito = JSON.parse(localStorage.getItem('carrito'));
                         if (!carrito) carrito = [];
@@ -211,6 +224,7 @@ async function mostrarTotalCarrito() {
         } 
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
        

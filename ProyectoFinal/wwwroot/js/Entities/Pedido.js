@@ -32,8 +32,7 @@ class Pedido {
             return response;
 
         } catch (ex) {
-            console.error('Error al agregar el producto:', error);
-            throw error;
+            throw ex;
         }
     }
 
@@ -90,8 +89,7 @@ class Pedido {
             }
 
         } catch (ex) {
-            console.error('Error al agregar el producto:', error);
-            throw error;
+            throw ex;
         }
     }
 
@@ -120,8 +118,8 @@ class Pedido {
 
             return response;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
 
     }

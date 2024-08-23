@@ -21,6 +21,7 @@ async function obtenerPedidosFinalizados() {
         hideLoader();
     }
     catch (ex) {
+        await handleError(ex);
         Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 }

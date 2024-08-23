@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal.Models;
 using ReglasNegocio.DTO_Entities;
@@ -11,11 +12,13 @@ namespace ProyectoFinal.Controllers
     {
         private readonly BarContext _db;
         private readonly Validaciones _validaciones;
+        private readonly ErrorLogger _errorLogger;
 
-        public LoginController(BarContext context, Validaciones val)
+        public LoginController(BarContext context, Validaciones val, ErrorLogger errorLogger)
         {
             _db = context;
             _validaciones = val;
+            _errorLogger = errorLogger;
         }
 
         public IActionResult Login()
@@ -29,34 +32,41 @@ namespace ProyectoFinal.Controllers
             try
             {
                 Usuario? user = await _db.Usuarios
-                                .Where(u => u.NombreUsuario == usuario.NombreUsuario && u.Password == usuario.Password)
+                                .Where(u => u.NombreUsuario == usuario.NombreUsuario)
                                 .FirstOrDefaultAsync();
 
                 if (user != null)
                 {
-                    HttpContext.Session.SetString("rol", user.rol);
-                    HttpContext.Session.SetString("Usuario", user.NombreUsuario);
+                    PasswordHasher<Usuario> passwordHasher = new PasswordHasher<Usuario>();
+                    PasswordVerificationResult verificationResult = passwordHasher.VerifyHashedPassword(null, user.Password, usuario.Password);
 
-                    // Verificar el rol del usuario
-                    if (user.rol == "Admin")
+                    if (verificationResult == PasswordVerificationResult.Success)
                     {
-                        return Ok(new { redirectUrl = Url.Action("AdministracionPedidos", "Pedido") });
-                    }
-                    else if (user.rol == "Cliente")
-                    {
-                        return Ok(new { redirectUrl = Url.Action("GetProductos", "Producto") });
+                        HttpContext.Session.SetString("rol", user.rol);
+                        HttpContext.Session.SetString("Usuario", user.NombreUsuario);
+
+                        // Verificar el rol del usuario
+                        if (user.rol == "Admin")
+                        {
+                            return Ok(new { redirectUrl = Url.Action("AdministracionPedidos", "Pedido") });
+                        }
+                        else if (user.rol == "Cliente")
+                        {
+                            return Ok(new { redirectUrl = Url.Action("GetProductos", "Producto") });
+                        }
+
+                        // Si por alguna razón no es ni Admin ni Cliente, manejarlo adecuadamente
+                        return NotFound("Hay un problema con el tipo de usuario, contactar administrador");
                     }
 
-                    // Si por alguna razón no es ni Admin ni Cliente, manejarlo adecuadamente
-                    return NotFound();
+                    return NotFound("Credenciales incorrectas.");
                 }
-                else
-                {
-                    return NotFound();
-                }
+
+                return NotFound("Usuario no existe.");
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"Error interno del servidor: {ex.Message}");
                 return StatusCode(500);
             }
         }
@@ -142,19 +152,23 @@ namespace ProyectoFinal.Controllers
                 if (existingUser != null)
                 {
                     return BadRequest("Nombre de usuario ya se está usando.");
-                }               
+                }
+
+                // Hashear la contraseña antes de guardarla
+                PasswordHasher<Usuario> passwordHasher = new PasswordHasher<Usuario>();
+                string hashedPassword = passwordHasher.HashPassword(null, usuario.Password);
 
                 // Crear el nuevo usuario con rol "Admin"
-                Usuario newUser = new Usuario(usuario.NombreUsuario, usuario.Password, "Admin");
+                Usuario newUser = new Usuario(usuario.NombreUsuario, hashedPassword, "Admin");
 
                 _db.Usuarios.Add(newUser);
                 await _db.SaveChangesAsync();
 
                 return Ok();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
 
@@ -170,7 +184,7 @@ namespace ProyectoFinal.Controllers
                     usuario.Apellido == "" ||
                     usuario.NombreUsuario == "" ||
                     !_validaciones.EsContrasenaValida(usuario.Password) ||
-                    usuario.Email == null ||   
+                    usuario.Email == null ||
                     !_validaciones.EsEmailValido(usuario.Email) ||
                     usuario.Telefono == null ||
                     !_validaciones.EsNumeroValido(usuario.Telefono) ||
@@ -188,8 +202,12 @@ namespace ProyectoFinal.Controllers
                     return BadRequest("Nombre de usuario ya se está usando.");
                 }
 
+                // Hashear la contraseña antes de guardarla
+                PasswordHasher<Usuario> passwordHasher = new PasswordHasher<Usuario>();
+                string hashedPassword = passwordHasher.HashPassword(null, usuario.Password);
+
                 // Crear el nuevo usuario con rol "Cliente"
-                Usuario newUser = new Usuario(usuario.NombreUsuario, usuario.Password, "Cliente", usuario.Nombre, usuario.Apellido, usuario.Email, usuario.Telefono, usuario.Direccion);
+                Usuario newUser = new Usuario(usuario.NombreUsuario, hashedPassword, "Cliente", usuario.Nombre, usuario.Apellido, usuario.Email, usuario.Telefono, usuario.Direccion);
 
                 _db.Usuarios.Add(newUser);
                 await _db.SaveChangesAsync();
@@ -198,6 +216,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }
@@ -226,6 +245,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }
@@ -273,7 +293,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                // Retornar un error 500 con un mensaje de error
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }

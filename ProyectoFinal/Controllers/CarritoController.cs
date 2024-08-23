@@ -10,10 +10,12 @@ namespace ProyectoFinal.Controllers
     {
 
         private readonly BarContext _db;
+        private readonly ErrorLogger _errorLogger;
 
-        public CarritoController(BarContext context)
+        public CarritoController(BarContext context, ErrorLogger errorLogger)
         {
             _db = context;
+            _errorLogger = errorLogger;
         }
 
         public IActionResult Carrito()
@@ -30,8 +32,8 @@ namespace ProyectoFinal.Controllers
                 // Verificar si el usuario ya existe en la base de datos
                 Usuario? existingUser = await _db.Usuarios
                     .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
-
-                if (existingUser == null)
+                
+                if (existingUser.Nombre == null)
                 {
                     // Si el usuario no existe, retornar un BadRequest con un mensaje
                     return BadRequest("El usuario no existe.");
@@ -46,8 +48,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                // Retornar un error 500 con un mensaje de error
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
+                return StatusCode(500);
             }
         }
 
@@ -87,8 +89,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                // Retornar un error 500 con un mensaje de error
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
+                return StatusCode(500);
             }
         }
 
@@ -119,6 +121,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }
@@ -155,7 +158,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                // Retornar un error 500 con un mensaje de error
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }

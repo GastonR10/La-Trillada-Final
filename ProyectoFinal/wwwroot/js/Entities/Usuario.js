@@ -24,18 +24,24 @@ class Usuario {
                 body: JSON.stringify(usu) 
             });
 
+            if (response.status == 404) {
+                let msj = await res.text();
+                Tools.Toast(msj, 'warning');
+            }
+
+            if (response.status == 500) {
+                Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            }
+
             if (response.status == 200) {
                 const data = await response.json();
 
                 if (data.redirectUrl) {
                     sessionStorage.setItem('Logueado', true);
                     window.location.href = data.redirectUrl;
-                } 
-
-            } else {
-                return response;
-            }
-
+                }
+                
+            } 
 
         } catch (ex) {
             throw ex;

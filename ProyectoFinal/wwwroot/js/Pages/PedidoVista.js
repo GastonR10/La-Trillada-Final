@@ -168,7 +168,6 @@ async function cargarPedido() {
         hideLoader();
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 
@@ -201,27 +200,33 @@ async function cargarPedido() {
     }
 
     async function cancelarPedido(id) {
-        console.log(`Cancelar pedido ${id}`);
-        let confirmacion = await asyncConfirm(`¿Está seguro que desea cancelar?`);
-
-        if (confirmacion) {
-            const res = await Pedido.cancelarPedido(id);
-
-            if (res.status == 500) {
-                Tools.Toast("Error inesperado, contacte a su administrador", 'error');
-            } 
-
-            if (res.status == 404) {
-                Tools.Toast("Problemas buscando el pedido.", 'warning');
-            }
-
-            if (res.status == 200) {
-                await cargarPedido();
-
-                Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success')
-            }
+        try {
             
+            let confirmacion = await asyncConfirm(`¿Está seguro que desea cancelar?`);
+
+            if (confirmacion) {
+                const res = await Pedido.cancelarPedido(id);
+
+                if (res.status == 500) {
+                    Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+                }
+
+                if (res.status == 404) {
+                    Tools.Toast("Problemas buscando el pedido.", 'warning');
+                }
+
+                if (res.status == 200) {
+                    await cargarPedido();
+
+                    Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success')
+                }
+
+            }
+
+        } catch (ex) {
+            throw ex;
         }
+        
     }
 
     function volver(finalizado) {
@@ -236,7 +241,6 @@ async function cargarPedido() {
             }
             
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
 

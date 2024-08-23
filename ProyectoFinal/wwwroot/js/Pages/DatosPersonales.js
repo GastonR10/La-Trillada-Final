@@ -31,6 +31,7 @@ async function cargarInfo() {
         }
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 
@@ -89,6 +90,7 @@ async function EditarCliente() {
         }       
         
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

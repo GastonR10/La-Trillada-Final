@@ -38,6 +38,7 @@ async function obtenerProducto() {
         tipo.value = producto.IdTipoProducto;
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
@@ -123,6 +124,7 @@ function volverListaProducto() {
         window.location.href = redirectUrl;
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
@@ -153,6 +155,7 @@ async function eliminarProducto() {
         }
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

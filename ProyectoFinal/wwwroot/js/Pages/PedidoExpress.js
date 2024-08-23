@@ -5,7 +5,7 @@
 });
 
 
-function TipoPedido(tipoPedido) {
+async function TipoPedido(tipoPedido) {
     try {
 
         let inputGral = document.getElementById("pedidoLogueadoGeneral");
@@ -21,6 +21,7 @@ function TipoPedido(tipoPedido) {
             inputDir.style.display = "none";
         }
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 
@@ -92,6 +93,7 @@ async function RealizarPedidoExpress() {
         hideLoader();
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 

@@ -9,10 +9,12 @@ namespace ProyectoFinal.Controllers
     public class TipoProductoController : Controller
     {
         private readonly BarContext _context;
+        private readonly ErrorLogger _errorLogger;
 
-        public TipoProductoController(BarContext context)
+        public TipoProductoController(BarContext context, ErrorLogger errorLogger)
         {
             _context = context;
+            _errorLogger = errorLogger;
         }
           
       
@@ -31,7 +33,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
+                return StatusCode(500);
             }
         }
 
@@ -61,6 +64,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
 
@@ -85,6 +89,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }            
         }
@@ -116,7 +121,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Ocurrió un error al intentar eliminar el tipo de producto.");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
+                return StatusCode(500);
             }
         }
     }

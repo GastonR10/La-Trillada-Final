@@ -121,6 +121,7 @@ async function cargarPedido() {
         listaProd.appendChild(table);
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

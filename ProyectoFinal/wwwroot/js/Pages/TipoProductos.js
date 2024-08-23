@@ -50,6 +50,7 @@ async function obtenerTipoProductos() {
         });
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
@@ -77,6 +78,7 @@ async function agregarTipoProducto() {
             }
         }
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }    
 }
@@ -100,6 +102,7 @@ async function guardarCambios(ordenIds) {
 
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
@@ -132,6 +135,7 @@ async function eliminarTipoPorId(id, nombre) {
         }        
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

@@ -138,6 +138,7 @@ async function eliminarProducto(productId) {
         }
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
@@ -150,6 +151,7 @@ function vistaEditarProducto(id) {
         window.location.href = urlWithId;
 
     } catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

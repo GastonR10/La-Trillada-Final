@@ -71,13 +71,13 @@ async function cargarMesas(slcId) {
                 option.text = m.Id;
                 slcMesas.appendChild(option);
             });
+        } else {
+            Tools.Toast("Error inesperado, contacte al administrador", 'error');
         }
 
-        console.log(res);
-
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        await handleError(ex);
+        Tools.Toast("Error inesperado, contacte al administrador", 'error');
     }
 
 }
@@ -166,4 +166,17 @@ function esEmailValido(email) {
     // Expresión regular para validar una dirección de correo electrónico incluyendo TLD de dos letras
     const patron = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
     return patron.test(email);
+}
+
+/* ------------------------------ LOG DE ERRORES ------------------------------  */
+async function handleError(ex) {
+    let errorMessage = `${new Date().toISOString()}: ${ex.message}\n${ex.stack}\n\n`;
+
+    await fetch('/api/log/error', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ error: errorMessage })
+    });
 }

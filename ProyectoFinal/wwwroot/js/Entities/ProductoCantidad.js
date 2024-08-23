@@ -34,7 +34,6 @@ class ProductoCantidad {
 
         }
         catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
 

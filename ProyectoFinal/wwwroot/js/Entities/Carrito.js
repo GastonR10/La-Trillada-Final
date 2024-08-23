@@ -26,7 +26,6 @@ class Carrito {
 
         }
         catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
 
@@ -63,7 +62,6 @@ class Carrito {
             
         }
         catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
 
@@ -75,7 +73,6 @@ class Carrito {
             return producto ? producto.Cantidad : 0;
 
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
 
@@ -94,19 +91,11 @@ class Carrito {
                 },
                 body: JSON.stringify(productoCantidad)
             });
-
-            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
-                return "El producto no existe.";
-            }
-            if (response.ok) {                
-                return "ok"
-            }
-
-            return "error"
+                        
+            return response;
 
         }
         catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
 
@@ -130,7 +119,6 @@ class Carrito {
 
         }
         catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
     }

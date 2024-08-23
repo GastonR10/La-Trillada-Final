@@ -212,6 +212,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
 
     }
     catch (ex) {
+        await handleError(ex);
         Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
@@ -246,21 +247,22 @@ async function actualizarEstadoPedido(id, estado) {
 }
 
 async function cancelarPedido(id) {
-    
+    try {
+        
+        let confirmacion = await asyncConfirm(`¿Está seguro que desea cancelar?`);
 
-    console.log(`Cancelar pedido ${id}`);
-    let confirmacion = await asyncConfirm(`¿Está seguro que desea cancelar?`);
+        if (confirmacion) {
 
-    if (confirmacion) {
+            await Pedido.cancelarPedido(id);
 
-        await Pedido.cancelarPedido(id);
+            await obtenerPedidos();
 
-        await obtenerPedidos();
+            Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success')
+        }
 
-        Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success')
+    } catch (ex) {
+        throw ex;
     }
-
-    
 }
 
 function verPedido(id) {

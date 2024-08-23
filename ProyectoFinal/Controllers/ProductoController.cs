@@ -10,11 +10,13 @@ namespace ProyectoFinal.Controllers
     {
         private readonly BarContext _db;
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly ErrorLogger _errorLogger;
 
-        public ProductoController(BarContext context, IWebHostEnvironment webHostEnvironment)
+        public ProductoController(BarContext context, IWebHostEnvironment webHostEnvironment, ErrorLogger errorLogger)
         {
             _db = context;
             _webHostEnvironment = webHostEnvironment;
+            _errorLogger = errorLogger;
         }
 
         public IActionResult CreateProducto()
@@ -39,6 +41,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }
@@ -79,6 +82,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }
@@ -102,6 +106,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
 
@@ -132,6 +137,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
 
@@ -221,6 +227,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }
@@ -252,6 +259,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }
@@ -279,6 +287,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
                 return StatusCode(500);
             }
         }
@@ -298,7 +307,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
+                return StatusCode(500);
             }
 
         }
