@@ -1,0 +1,83 @@
+﻿/* Ajustes al contenedor del Swiper */
+.swiper-container {
+    width: 100%;
+    padding: 40px;
+    max-width: 95%;
+    height: auto;
+    position: relative;
+    margin: 0 auto; /* Centra el contenedor */
+    overflow: hidden; /* Oculta las tarjetas que se salen del contenedor */
+}
+
+/* Contenedor de los slides */
+.swiper-wrapper {
+    display: flex;
+}
+
+/* Cada slide */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: calc(33.33% - 20px); /* Ajusta el ancho para tres tarjetas */
+    margin: 0 10px;
+    box-sizing: border-box;
+}
+
+/* Paginación */
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.swiper-pagination-bullet {
+    background: #000;
+}
+
+
+/* Estilo para la calificación de estrellas */
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+    .rating .star-container {
+        position: relative;
+        width: 24px; /* Ajusta el tamaño de la estrella aquí */
+        height: 24px;
+    }
+
+        .rating .star-container .star-bg,
+        .rating .star-container .star-fg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 24px;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        .rating .star-container .star-bg {
+            color: black; /* Color de la estrella vacía */
+        }
+
+        .rating .star-container .star-fg {
+            color: yellow; /* Color de la media estrella */
+            clip-path: inset(0 50% 0 0); /* Mostrar solo la mitad izquierda */
+        }
+
+    /* Estilo para las estrellas completas */
+    .rating .full-star {
+        color: yellow;
+        font-size: 24px;
+    }
+
+    /* Estilo para las estrellas vacías */
+    .rating .empty-star {
+        color: black;
+        font-size: 24px;
+    }

@@ -8,7 +8,7 @@
 
         if (res.status == 200) {
             $('#comentario').val("");
-            $('#calificacion').val("");
+            $('#calificacion').val(-1);
             Tools.Toast('Comentario creado con éxito', 'success');
 
         } else if (res.status == 400) {

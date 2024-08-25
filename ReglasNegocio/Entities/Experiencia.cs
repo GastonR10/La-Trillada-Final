@@ -14,7 +14,7 @@ namespace ReglasNegocio.Entities
         public int Id { get; set; }
         [Required]
         public string NombreUsuario { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime Fecha { get; set; }
         [Required]
         [Range(0, 10, ErrorMessage = "El valor debe estar entre 0 y 10.")]
         public int Calificacion { get; set; }
@@ -23,7 +23,7 @@ namespace ReglasNegocio.Entities
         public Experiencia(DTO_Experiencia dto)
         {
             NombreUsuario = dto.NombreUsuario;
-            DateTime = DateTime.Now;
+            Fecha = DateTime.Now;
             Calificacion = dto.Calificacion;
             Comentario = dto.Comentario;
         }
@@ -31,7 +31,7 @@ namespace ReglasNegocio.Entities
         public Experiencia(string nombreUsuario, int calificacion, string comentario)
         {
             NombreUsuario = nombreUsuario;
-            DateTime = DateTime.Now;
+            Fecha = DateTime.Now;
             Calificacion = calificacion;
             Comentario = comentario;
         }

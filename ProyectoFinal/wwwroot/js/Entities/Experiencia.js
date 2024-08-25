@@ -2,7 +2,7 @@
     constructor(nombre, fecha, calif, coment) {
         this.NombreUsuario = nombre;
         this.Fecha = fecha;
-        this.Calificacion = calif;
+        this.Calificacion = parseInt(calif);
         this.Comentario = coment;
     }
 
@@ -10,7 +10,7 @@
         try {
             let url = $("#URLCrearExperiencia").val();
 
-            const exp = new Experiencia(null, null, calif, coment);
+            const exp = new Experiencia("", new Date().toISOString(), calif, coment);
 
             const response = await fetch(url, {
                 method: 'POST',
@@ -56,6 +56,34 @@
 
             return comentarios;
                         
+        } catch (ex) {
+            throw ex;
+        }
+    }
+
+    static async ObtenerExperiencias() {
+        try {
+            const url = $("#URLObtenerExperiencias").val();
+
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+
+            });
+
+
+            if (response.status == 200) {
+                const data = await response.json();
+                
+                // Convertir los objetos recibidos en instancias de la clase Experiencia
+                const experiencias = data.map(exp => new Experiencia(exp.NombreUsuario, exp.Fecha, exp.Calificacion, exp.Comentario));              
+                return experiencias;
+            } 
+            
+            return response;
+
         } catch (ex) {
             throw ex;
         }

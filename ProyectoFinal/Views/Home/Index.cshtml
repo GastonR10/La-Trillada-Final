@@ -1,4 +1,10 @@
 ﻿<link href="~/css/home.css" rel="stylesheet" />
+<link href="~/css/principal.css" rel="stylesheet" />
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <div class="text-center">
     <div class="inicial">
@@ -32,4 +38,17 @@
     <div class="experiencia">
         <a class="experiencia-btn" asp-controller="Experiencia" asp-action="Index">CONTANOS TU EXPERIENCIA</a>
     </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper" id="carruselExperiencias">
+            <!-- Las tarjetas de experiencia se insertarán aquí -->
+        </div>
+        <!-- Paginación -->
+        <div class="swiper-pagination"></div>
+    </div>
 </div>
+
+<div style="display:none;">
+    @Html.Hidden("URLObtenerExperiencias", Url.Action("ObtenerExperiencias", "Experiencia"))
+</div>
+
+<script type="text/javascript" src="~/js/pages/principal.js" asp-append-version="true"></script>

@@ -15,7 +15,7 @@ async function FiltrarExperiencias() {
         comentariosList.empty();
 
         res.forEach(c => {
-            comentariosList.append(`<div><strong>Usuario:</strong> ${c.NombreUsuario}<br><strong>Calificación:</strong> ${c.Calificacion}<br><strong>Fecha:</strong> ${new Date(c.DateTime).toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })}<br><strong>Comentario:</strong> ${c.Comentario}</div><hr>`);
+            comentariosList.append(`<div><strong>Usuario:</strong> ${c.NombreUsuario}<br><strong>Calificación:</strong> ${c.Calificacion}<br><strong>Fecha:</strong> ${new Date(c.Fecha).toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })}<br><strong>Comentario:</strong> ${c.Comentario}</div><hr>`);
         });
         hideLoader();
     } catch (ex) {
