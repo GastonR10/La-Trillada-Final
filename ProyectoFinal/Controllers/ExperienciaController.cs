@@ -30,7 +30,7 @@ namespace ProyectoFinal.Controllers
                 {
                     return BadRequest("Calificación debe estar entre 0 y 10.");
                 }
-                if (string.IsNullOrWhiteSpace(expDTO.Comentario))
+                if (expDTO.Comentario == null)
                 {
                     return BadRequest("Ingrese comentario válido.");
                 }
@@ -42,8 +42,8 @@ namespace ProyectoFinal.Controllers
                 // Verificar si el usuario ya existe en la base de datos
                 Usuario? existingUser = await _context.Usuarios
                                                 .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
-
-                if (existingUser == null)
+                existingUser = null;
+                if (existingUser.rol == null)
                 {
                     return BadRequest("El usuario no existe.");
                 }
@@ -58,7 +58,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
                 return StatusCode(500);
             }
         }

@@ -50,7 +50,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace} \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
                 return StatusCode(500);
             }
         }
