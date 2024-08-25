@@ -11,6 +11,11 @@ async function cargarPedidosEnPreparacion() {
     try {
         showLoader();
         const pedidos = await Pedido.GetPedidosCocina();
+        if (pedidos.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            return;
+        }
+
         if (pedidos.length == 0) {
             Tools.Toast('No hay órdenes para cocinar.', 'warning');
         }

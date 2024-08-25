@@ -23,9 +23,10 @@ class Producto {
                 }
             });
 
-            if (response.status != 200) {
+            if (response.status == 404 || response.status == 500) {
                 return response;
-            }
+
+            } 
 
             const data = await response.json();
 
@@ -71,10 +72,6 @@ class Producto {
                 body: formData,
             });
 
-            if (!res.ok) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
             return res;
 
         } catch (ex) {
@@ -93,8 +90,8 @@ class Producto {
                 }
             });
 
-            if (response.status != 200) {
-                return null;
+            if (response.status == 500) {
+                return response;
             }
 
             const data = await response.json();
@@ -119,8 +116,8 @@ class Producto {
                 }
             });
 
-            if (response.status != 200) {
-                return null;
+            if (response.status == 500) {
+                return response;
             }
 
             const data = await response.json();
@@ -219,35 +216,5 @@ class Producto {
         }
 
     }
-
-    //static async ObtenerProductosIds(arrayIds) {
-
-    //    try {
-    //        const url = $("#URLGetProductIds").val();
-
-    //        const response = await fetch(url, {
-    //            method: 'POST',
-    //            headers: {
-    //                'Content-Type': 'application/json'
-    //            },
-    //            body: JSON.stringify(arrayIds)               
-    //        });
-
-    //        if (response.badRequest) {
-    //            throw new Error(`Error en la solicitud: ${response.statusText}`);
-    //        }
-
-    //        const data = await response.json();
-
-    //        const productos = data.map(item => new Producto(item.Id, item.Nombre, item.Descripcion, item.Foto, item.IdTipoProducto, item.Precio, item.Activo, item.Eliminado));
-
-    //        return productos;
-
-    //    } catch (error) {
-    //        console.error('Error fetching products:', error);
-    //    }
-    //}
-
-    /* return arrayIds.map(id => new Producto(id, `Producto ${id}`, `Descripción del producto ${id}`, null, 1, 100 + id, true, false));*/
 
 }

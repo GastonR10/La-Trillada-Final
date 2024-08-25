@@ -8,8 +8,8 @@
 async function getTiposProducto() {
     try {
         let res = await TipoProducto.getTiposProducto();
-        if (res == null) {
-            Tools.Toast('Error buscando los tipos.', 'warning');
+        if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }
 

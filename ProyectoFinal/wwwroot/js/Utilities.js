@@ -55,7 +55,7 @@ async function cargarMesas(slcId) {
     try {
         let res = await Mesa.getMesas();
 
-        if (res != null) {
+        if (res.status != 500) {
             let slcMesas = document.getElementById(slcId);
 
             // Crear y añadir la opción predeterminada
@@ -90,19 +90,16 @@ function avisarNuevoPedido() {
         .build();
 
     connection.on("RecibirPedido", async function (id) {
-        console.log('Recibido pedido');
         Tools.Toast('Nuevo pedido ' + id + ' recibido', 'info')
 
     });
 
     connection.on("PedidoAceptado", async function (id) {
-        console.log('Aceptado pedido');
         Tools.Toast('Pedido ' + id + ' fue enviado a preparacion', 'info')
 
     });
 
     connection.on("PedidoPronto", async function (id) {
-        console.log('Pedido pronto');
         Tools.Toast('El pedido ' + id + ' fue colocado en camino.', 'info') 
 
     });

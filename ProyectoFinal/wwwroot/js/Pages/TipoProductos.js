@@ -22,8 +22,8 @@ async function iniciarVista() {
 async function obtenerTipoProductos() {
     try {
         const tiposProd = await TipoProducto.getTiposProducto();
-        if (tiposProd == null) {
-            Tools.Toast('Error buscando los tipos.', 'warning');
+        if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }
         const lista = $('#listaTiposProducto');

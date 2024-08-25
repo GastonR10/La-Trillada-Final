@@ -55,7 +55,7 @@ h2 {
         margin-right: 10px;
     }
 
-.delivery-btn {
+.delivery-btn, .experiencia-btn{
     background-color: #b41b2d;
     text-decoration: auto;
     color: #fff;
@@ -67,8 +67,8 @@ h2 {
     margin: 20px 0;
 }
 
-    .delivery-btn:hover{
-        color:#aaa;
+    .delivery-btn:hover, .experiencia-btn:hover {
+        color: #aaa;
     }
 
     .branches-list p {
@@ -99,4 +99,15 @@ h2 {
 
 .nosotros img{
     width:100%;
+}
+
+.experiencia {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+}
+
+.experiencia-btn {
+    width: 80%;
+    padding: 10px;
 }

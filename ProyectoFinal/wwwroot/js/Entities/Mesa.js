@@ -16,7 +16,7 @@ class Mesa {
             });
 
             if (response.status == 500) {
-                return null;
+                return response;
             }
 
             const data = await response.json();

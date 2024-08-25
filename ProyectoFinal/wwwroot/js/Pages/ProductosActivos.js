@@ -54,14 +54,14 @@ async function actualizarVista() {
 async function obtenerProductosActivos() {
     try {
         let productos = await Producto.getProductosActivos();
-        if (productos == null) {
-            Tools.Toast('Error buscando productos.', 'warning');
+        if (productos.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }
 
         let tiposProd = await TipoProducto.getTiposProducto();
-        if (tiposProd == null) {
-            Tools.Toast('Error buscando los tipos.', 'warning');
+        if (tiposProd.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }
         const container = document.getElementById('productosContainer');
@@ -207,6 +207,15 @@ async function mostrarTotalCarrito() {
         if (sessionStorage.getItem('Logueado') == "true") {
 
             totalCarrito = await Carrito.obtenerTotalCarrito();
+            if (totalCarrito.status == 500) {
+                Tools.Toast('Error inesperado, contacte al administrador', 'error');
+                return;
+            }
+            if (totalCarrito.status == 400) {
+                const msj = await totalCarrito.text();
+                Tools.Toast(msj, 'warning');
+                return;
+            }
 
         } else {
             const carrito = JSON.parse(localStorage.getItem('carrito') || '[]'); // Convierte el string a un objeto JSON

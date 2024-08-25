@@ -19,7 +19,12 @@ builder.Services.AddDbContext<BarContext>(options => options.UseSqlServer(builde
 
 builder.Services.AddScoped<Validaciones>();
 
+builder.Services.AddScoped<ErrorLogger>();
+
 builder.Services.AddSession();
+
+// Agregar HttpClient para hacer solicitudes HTTP
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

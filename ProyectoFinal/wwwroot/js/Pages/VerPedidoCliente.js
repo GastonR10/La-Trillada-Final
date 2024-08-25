@@ -16,8 +16,13 @@ async function cargarPedido() {
         _idPedido = id;
         let pedido = await Pedido.getPedido(id);
 
-        if (pedido == null) {
-            Tools.Toast('Error buscando el pedido.', 'warning');
+        if (pedido.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            return;
+        }
+        if (pedido.status == 404) {
+            let msj = await pedidos.text();
+            Tools.Toast(msj, 'warning');
             return;
         }
 

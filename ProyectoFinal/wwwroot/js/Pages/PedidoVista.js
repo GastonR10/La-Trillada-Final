@@ -14,7 +14,13 @@ async function cargarPedido() {
         _idPedido = id;
         let pedido = await Pedido.getPedido(id);
 
-        if (pedido == null) {
+        if (pedidos.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            return;
+        }
+        if (pedidos.status == 404) {
+            let msj = await pedidos.text();
+            Tools.Toast(msj, 'warning');
             return;
         }
 
@@ -172,8 +178,6 @@ async function cargarPedido() {
     }
 
     async function actualizarEstadoPedido(id, estado) {
-        console.log(`Aceptar pedido ${id}`);
-        // Implementa la lógica para aceptar el pedido
         try {
             let confirmacion = await asyncConfirm(`¿Está seguro?`);
 

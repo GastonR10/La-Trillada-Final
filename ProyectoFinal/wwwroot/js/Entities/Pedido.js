@@ -70,7 +70,7 @@ class Pedido {
             });
 
             if (response.status != 200) {
-                return null;
+                return response;
                 
             } else {
                 const data = await response.json();
@@ -158,14 +158,7 @@ class Pedido {
                 },
                 body: JSON.stringify(requestBody)
             });
-
-            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
-                return "El producto no existe.";
-            }
-            if (response.status == 200) {
-                localStorage.setItem('carrito', JSON.stringify([]));                
-            }
-
+                           
             return response;
 
         } catch (ex) {
@@ -188,7 +181,7 @@ class Pedido {
             });
 
             if (response.status != 200) {
-                return null;
+                return response;
             }
 
             const data = await response.json();
@@ -232,6 +225,10 @@ class Pedido {
                 body: JSON.stringify()
             });
 
+            if (response.status != 200) {
+                return response;
+            }
+
             const data = await response.json();
 
             const pedidos = [
@@ -273,7 +270,7 @@ class Pedido {
             });
 
             if (response.status != 200) {
-                return null;
+                return response;
             }
 
             const data = await response.json();
@@ -319,6 +316,8 @@ class Pedido {
                 },
                 body: JSON.stringify()
             });
+
+            if (response.status == 500) return response;
                     
             const data = await response.json();
 

@@ -17,8 +17,12 @@ async function obtenerProducto() {
         let producto = await Producto.getProducto(id);
         await getTiposProducto();
 
-        if (producto == null) {
+        if (producto.status == 404) {
             Tools.Toast('No se encontró producto en base de datos.', 'warning');
+            return;
+        }
+        if (producto.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }
 
@@ -46,8 +50,8 @@ async function obtenerProducto() {
 async function getTiposProducto() {
     try {
         let res = await TipoProducto.getTiposProducto();
-        if (res == null) {
-            Tools.Toast('Error buscando los tipos.', 'warning');
+        if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }
 

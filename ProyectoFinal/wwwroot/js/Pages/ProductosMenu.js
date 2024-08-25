@@ -11,14 +11,14 @@ async function obtenerProductosMenu() {
     try {
 
         let productos = await Producto.getProductosActivos();
-        if (productos == null) {
+        if (productos.status == 500) {
             Tools.Toast('Error buscando productos.', 'warning');
             return;
         }
 
         let tiposProd = await TipoProducto.getTiposProducto();
-        if (tiposProd == null) {
-            Tools.Toast('Error buscando los tipos.', 'warning');
+        if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }
 

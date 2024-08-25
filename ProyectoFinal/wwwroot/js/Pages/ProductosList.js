@@ -22,14 +22,15 @@
 async function obtenerProductos() {
     try {
         let productos = await Producto.getProductosList();
-        if (productos == null) {
-            Tools.Toast('Error buscando productos.', 'warning');
+        if (productos.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }
 
+
         let tiposProd = await TipoProducto.getTiposProducto();
-        if (tiposProd == null) {
-            Tools.Toast('Error buscando los tipos.', 'warning');
+        if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }
 

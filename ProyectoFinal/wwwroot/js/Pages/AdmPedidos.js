@@ -10,7 +10,7 @@ async function obtenerPedidos() {
         showLoader();
 
         _PedidosPendientes = await Pedido.GetAllPendientes();
-        if (_PedidosPendientes == null) {
+        if (_PedidosPendientes != 200) {
             Tools.Toast("Error inesperado, contacte a su administrador", 'error');
             return;
         } 
@@ -267,7 +267,6 @@ async function cancelarPedido(id) {
 
 function verPedido(id) {
     try {
-        console.log(`Ver pedido ${id}`);
         let redirectUrl = $("#URLGetPedidoVista").val();
         const urlWithId = `${redirectUrl}/${id}`;
         window.location.href = urlWithId;

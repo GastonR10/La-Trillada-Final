@@ -28,7 +28,6 @@ namespace ProyectoFinal.Models
                     to: to
                 );
 
-                Console.WriteLine($"Mensaje enviado con SID: {message.Sid}");
             }
             catch (Exception ex)
             {

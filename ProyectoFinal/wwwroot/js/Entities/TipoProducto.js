@@ -16,8 +16,8 @@
                 }
             });
 
-            if (response.status != 200) {
-                return null;
+            if (response.status == 500) {
+                return response;
             }
 
             const data = await response.json();

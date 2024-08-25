@@ -12,6 +12,11 @@ async function obtenerPedidosFinalizados() {
 
         _PedidosFinalizados = await Pedido.GetFinalizados();
 
+        if (_PedidosFinalizados != 200) {
+            Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+            return;
+        }
+
         if (_PedidosFinalizados.length == 0) {
             Tools.Toast('No hay pedidos finalizados.', 'warning');
         }
@@ -150,7 +155,6 @@ function grillaPedidosFinalizados(pedidosFinalizados) {
 
 function verPedido(id) {
     try {
-        console.log(`Ver pedido ${id}`);
         let redirectUrl = $("#URLGetPedidoVista").val();
         const urlWithId = `${redirectUrl}/${id}`;
         window.location.href = urlWithId;

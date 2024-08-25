@@ -10,6 +10,13 @@ async function obtenerPedidosCliente() {
     try {
 
         let pedidosCliente = await Pedido.GetPedidosCliente();
+        if (pedidosCliente.status == 500) {
+            Tools.Toast("Error inesperado, contacte al administrador", 'error');
+        }
+        if (pedidosCliente.status == 400) {
+            const msj = await pedidosCliente.text();
+            Tools.Toast(msj, 'warning');
+        }
         if (pedidosCliente.length == 0) {
             Tools.Toast('No hay pedidos.', 'warning');
         }
@@ -20,7 +27,7 @@ async function obtenerPedidosCliente() {
     }
     catch (ex) {
         await handleError(ex);
-        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+        Tools.Toast("Error inesperado, contacte al administrador", 'error');
     }
 }
 
@@ -132,7 +139,6 @@ function grillaPedidosCliente(pedidosCliente) {
 
 function verPedido(id) {
     try {
-        console.log(`Ver pedido ${id}`);
         let redirectUrl = $("#URLGetPedidoClienteVista").val();
         const urlWithId = `${redirectUrl}/${id}`;
         window.location.href = urlWithId;
