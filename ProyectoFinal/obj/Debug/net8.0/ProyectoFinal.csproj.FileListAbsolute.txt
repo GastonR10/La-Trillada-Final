@@ -264,3 +264,4 @@ C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal\bin\Debug\net
 C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
 C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal\bin\Debug\net8.0\Twilio.dll

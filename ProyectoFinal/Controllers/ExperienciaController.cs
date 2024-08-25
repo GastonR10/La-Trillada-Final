@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using ProyectoFinal.Models;
 using ReglasNegocio.DTO_Entities;
 using ReglasNegocio.Entities;
+using static ReglasNegocio.Enums;
 
 namespace ProyectoFinal.Controllers
 {
@@ -79,12 +80,12 @@ namespace ProyectoFinal.Controllers
                 {
                     if (filtro.FechaInicio.HasValue)
                     {
-                        query = query.Where(e => e.DateTime >= filtro.FechaInicio.Value);
+                        query = query.Where(e => e.Fecha >= filtro.FechaInicio.Value);
                     }
 
                     if (filtro.FechaFin.HasValue)
                     {
-                        query = query.Where(e => e.DateTime <= filtro.FechaFin.Value);
+                        query = query.Where(e => e.Fecha <= filtro.FechaFin.Value);
                     }
 
                     if (filtro.Calificacion.HasValue)
@@ -102,6 +103,40 @@ namespace ProyectoFinal.Controllers
                 await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
                 return StatusCode(500, "Error al obtener los comentarios");
             }
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> ObtenerExperiencias()
+        {
+            try
+            {
+                // Obtener el primer y último día del año actual
+                DateTime inicioAnio = new DateTime(DateTime.Now.Year, 1, 1);
+                DateTime finAnio = new DateTime(DateTime.Now.Year, 12, 31);
+
+                // Filtrar las experiencias del año actual
+                List<DTO_Experiencia> experienciasAnioActual = await _context.Experiencias
+                    .Where(e => e.Fecha >= inicioAnio && e.Fecha <= finAnio)
+                     .Select(e => new DTO_Experiencia(e))
+                    .ToListAsync();
+
+
+                // Seleccionar hasta 20 experiencias aleatorias
+                var experienciasRandom = experienciasAnioActual
+                    .OrderBy(x => Guid.NewGuid())
+                    .Take(20)
+                    .ToList();
+
+                return Ok(experienciasRandom);
+
+            }
+            catch (Exception ex)
+            {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
+            }
+
         }
 
     }

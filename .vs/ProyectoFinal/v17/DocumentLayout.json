@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\wwwroot\\js\\pages\\admpedidos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\pages\\admpedidos.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\wwwroot\\js\\pages\\principal.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\pages\\principal.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\wwwroot\\css\\principal.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\css\\principal.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\wwwroot\\js\\entities\\experiencia.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\entities\\experiencia.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\controllers\\experienciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\experienciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\reglasnegocio\\entities\\experiencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|solutionrelative:reglasnegocio\\entities\\experiencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\reglasnegocio\\dto_entities\\dto_experiencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45C0F84F-169D-494D-B488-CFF97875E171}|ReglasNegocio\\ReglasNegocio.csproj|solutionrelative:reglasnegocio\\dto_entities\\dto_experiencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\wwwroot\\js\\pages\\experienciafiltrar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\pages\\experienciafiltrar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\ignacio\\desktop\\proyectofinal\\proyectofinal\\proyectofinal\\wwwroot\\js\\pages\\experienciacomentar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{37668852-5D08-48AC-B50C-CCD057A21C46}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\wwwroot\\js\\pages\\experienciacomentar.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +46,123 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AdmPedidos.js",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\AdmPedidos.js",
-              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Pages\\AdmPedidos.js",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\AdmPedidos.js",
-              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Pages\\AdmPedidos.js",
-              "ViewState": "AQIAAOwAAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-08-21T13:56:45.42Z",
+              "DocumentIndex": 2,
+              "Title": "Principal.css",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\Principal.css",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\css\\Principal.css",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\css\\Principal.css",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\css\\Principal.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-08-25T21:15:46.352Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "ProyectoFinal\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-04T22:24:04.461Z"
+              "DocumentIndex": 3,
+              "Title": "Experiencia.js",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Experiencia.js",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Entities\\Experiencia.js",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Entities\\Experiencia.js",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Entities\\Experiencia.js",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAgwFoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-25T20:30:27.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DTO_Experiencia.cs",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\DTO_Entities\\DTO_Experiencia.cs",
+              "RelativeDocumentMoniker": "ReglasNegocio\\DTO_Entities\\DTO_Experiencia.cs",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\DTO_Entities\\DTO_Experiencia.cs",
+              "RelativeToolTip": "ReglasNegocio\\DTO_Entities\\DTO_Experiencia.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAqwCEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T20:37:42.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Experiencia.cs",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\Entities\\Experiencia.cs",
+              "RelativeDocumentMoniker": "ReglasNegocio\\Entities\\Experiencia.cs",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ReglasNegocio\\Entities\\Experiencia.cs",
+              "RelativeToolTip": "ReglasNegocio\\Entities\\Experiencia.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAQwBYAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T20:36:14.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ExperienciaController.cs",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Controllers\\ExperienciaController.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Controllers\\ExperienciaController.cs",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Controllers\\ExperienciaController.cs",
+              "RelativeToolTip": "ProyectoFinal\\Controllers\\ExperienciaController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAcwB0AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T20:32:26.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Principal.js",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Principal.js",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Pages\\Principal.js",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\Principal.js",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Pages\\Principal.js",
+              "ViewState": "AQIAACAAAAAAAAAAAAAIwC8AAAB5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-25T20:28:05.448Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Program.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal\\Program.cs",
-              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Program.cs",
-              "RelativeToolTip": "ProyectoFinal\\Program.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAIAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T22:18:33.495Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ProyectoFinal\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACcAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-25T20:26:55.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ExperienciaFiltrar.js",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ExperienciaFiltrar.js",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Pages\\ExperienciaFiltrar.js",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ExperienciaFiltrar.js",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Pages\\ExperienciaFiltrar.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-25T20:26:09.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ExperienciaComentar.js",
+              "DocumentMoniker": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ExperienciaComentar.js",
+              "RelativeDocumentMoniker": "ProyectoFinal\\wwwroot\\js\\Pages\\ExperienciaComentar.js",
+              "ToolTip": "C:\\Users\\Ignacio\\Desktop\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal\\wwwroot\\js\\Pages\\ExperienciaComentar.js",
+              "RelativeToolTip": "ProyectoFinal\\wwwroot\\js\\Pages\\ExperienciaComentar.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-25T20:23:08.355Z",
               "EditorCaption": ""
             }
           ]

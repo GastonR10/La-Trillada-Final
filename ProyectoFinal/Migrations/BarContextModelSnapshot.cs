@@ -38,6 +38,34 @@ namespace ProyectoFinal.Migrations
                     b.ToTable("Carritos");
                 });
 
+            modelBuilder.Entity("ReglasNegocio.Entities.Experiencia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Calificacion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Comentario")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("NombreUsuario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Experiencias");
+                });
+
             modelBuilder.Entity("ReglasNegocio.Entities.Mesa", b =>
                 {
                     b.Property<int>("Id")
@@ -169,36 +197,6 @@ namespace ProyectoFinal.Migrations
                     b.HasIndex("IdProducto");
 
                     b.ToTable("ProductoCantidad");
-                });
-
-            modelBuilder.Entity("ReglasNegocio.Entities.Reserva", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ClienteId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("HoraFin")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("HoraInicio")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("IdCliente")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdMesa")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClienteId");
-
-                    b.ToTable("Reservas");
                 });
 
             modelBuilder.Entity("ReglasNegocio.Entities.TipoProducto", b =>
@@ -336,17 +334,6 @@ namespace ProyectoFinal.Migrations
                     b.Navigation("Carrito");
 
                     b.Navigation("Producto");
-                });
-
-            modelBuilder.Entity("ReglasNegocio.Entities.Reserva", b =>
-                {
-                    b.HasOne("ReglasNegocio.Entities.Usuario", "Cliente")
-                        .WithMany()
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cliente");
                 });
 
             modelBuilder.Entity("ReglasNegocio.Entities.Usuario", b =>

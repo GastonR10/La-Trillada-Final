@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ProyectoFinal.Migrations
 {
     /// <inheritdoc />
-    public partial class cambioCarritos : Migration
+    public partial class inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,6 +22,22 @@ namespace ProyectoFinal.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Carritos", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Experiencias",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NombreUsuario = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Calificacion = table.Column<int>(type: "int", nullable: false),
+                    Comentario = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Experiencias", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -113,13 +129,14 @@ namespace ProyectoFinal.Migrations
                     Estado = table.Column<int>(type: "int", nullable: false),
                     Aceptado = table.Column<bool>(type: "bit", nullable: false),
                     IdCarrito = table.Column<int>(type: "int", nullable: false),
-                    IdMesa = table.Column<int>(type: "int", nullable: false),
+                    IdMesa = table.Column<int>(type: "int", nullable: true),
+                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Pos = table.Column<bool>(type: "bit", nullable: false),
                     TipoPedido = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),
                     ClienteId = table.Column<int>(type: "int", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Telefono = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -140,29 +157,6 @@ namespace ProyectoFinal.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Reservas",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    HoraInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    HoraFin = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IdMesa = table.Column<int>(type: "int", nullable: false),
-                    IdCliente = table.Column<int>(type: "int", nullable: false),
-                    ClienteId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Reservas", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Reservas_Usuarios_ClienteId",
-                        column: x => x.ClienteId,
-                        principalTable: "Usuarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ProductoCantidad",
                 columns: table => new
                 {
@@ -170,7 +164,8 @@ namespace ProyectoFinal.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IdProducto = table.Column<int>(type: "int", nullable: false),
                     Cantidad = table.Column<int>(type: "int", nullable: false),
-                    CarritoId = table.Column<int>(type: "int", nullable: false)
+                    CarritoId = table.Column<int>(type: "int", nullable: false),
+                    Comentario = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -215,11 +210,6 @@ namespace ProyectoFinal.Migrations
                 column: "IdTipoProducto");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reservas_ClienteId",
-                table: "Reservas",
-                column: "ClienteId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Usuarios_CarritoAbiertoId",
                 table: "Usuarios",
                 column: "CarritoAbiertoId");
@@ -228,6 +218,9 @@ namespace ProyectoFinal.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Experiencias");
+
             migrationBuilder.DropTable(
                 name: "Mesa");
 
@@ -238,19 +231,16 @@ namespace ProyectoFinal.Migrations
                 name: "ProductoCantidad");
 
             migrationBuilder.DropTable(
-                name: "Reservas");
+                name: "Usuarios");
 
             migrationBuilder.DropTable(
                 name: "Productos");
 
             migrationBuilder.DropTable(
-                name: "Usuarios");
+                name: "Carritos");
 
             migrationBuilder.DropTable(
                 name: "TipoProductos");
-
-            migrationBuilder.DropTable(
-                name: "Carritos");
         }
     }
 }
