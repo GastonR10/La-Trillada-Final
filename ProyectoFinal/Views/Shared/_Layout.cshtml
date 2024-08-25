@@ -1,19 +1,19 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>@ViewData["Title"] - ProyectoFinal</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href="~/css/general.css" rel="stylesheet" />
-    <link href="~/css/login.css" rel="stylesheet" />
-    <link href="~/css/productosactivos.css" rel="stylesheet" />
-    <link href="~/css/pedidosadmin.css" rel="stylesheet" />
+        
     <link rel="stylesheet" href="~/ProyectoFinal.styles.css" asp-append-version="true" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="~/js/utilities.js" asp-append-version="true"></script>
+
     <link href="~/icons/fontawesome.css" rel="stylesheet" />
     <link href="~/icons/brands.css" rel="stylesheet" />
     <link href="~/icons/solid.css" rel="stylesheet" />
@@ -25,7 +25,8 @@
     <script src="~/js/entities/carrito.js"></script>
     <script src="~/js/entities/productocantidad.js"></script>
     <script src="~/js/entities/mesa.js"></script>
-    <script src="~/js/entities/pedido.js"></script>
+    <script src="~/js/entities/pedido.js"></script>   
+    <script src="~/js/entities/experiencia.js"></script>
     @* FIN ENTITIES *@
     <script src="~/js/pages/layout.js"></script>
 </head>
@@ -33,9 +34,15 @@
     <div id="divEncabezado" class="divEncabezado text-center content container-fluid">
         <div class="row">
             <button class="btnMenu col-1" id="btnMostrarMenu">☰ <span class="d-none d-lg-inline">Menú</span></button>
-            <div class="col-10"></div>
+            <div class="col-10" >
+                <a class="text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/img/logo.png"  />
+                </a>
+            </div>
             <div class="col-1 btnMenu">
-                <a class="text-dark" asp-area="" asp-controller="Carrito" asp-action="Carrito"><i class="fa-regular fa-cart-shopping"></i> Carrito</a>
+                <a class="text-dark" asp-area="" asp-controller="Carrito" asp-action="Carrito">
+                    <i class="fa-regular fa-cart-shopping"></i> <span class="d-none d-lg-inline">Carrito</span>
+                </a>
             </div>
         </div>
     </div>
@@ -50,7 +57,10 @@
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="Registro"><i class="fa-solid fa-arrow-right"></i>  Registrarse</a>
                 </li>
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Productos</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Elegir Productos</a>
+                </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductosMenu"><i class="fa-regular fa-book-open"></i>  Menú</a>
                 </li>
             }
             @if (Context.Session.GetString("rol") == "Admin")
@@ -70,6 +80,15 @@
                 <li class="nav-item opcionMenu">
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Pedido" asp-action="AdministracionPedidos"><i class="fa-solid fa-file-lines"></i>  Administración de Pedidos</a>
                 </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Pedido" asp-action="PedidosCocina"><i class="fa-regular fa-clipboard-list"></i>  Cocina</a>
+                </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="TipoProducto" asp-action="GetTipoProductosView"><i class="fa-regular fa-file-signature"></i>  Tipos de Producto</a>
+                </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Experiencia" asp-action="GetComentarios"><i class="fa-regular fa-file-signature"></i>  Experiencias Clientes</a>
+                </li>
 
             }
             @if (Context.Session.GetString("rol") == "Cliente")
@@ -84,11 +103,15 @@
             @if (Context.Session.GetString("rol") == "Cliente" || Context.Session.GetString("rol") == "Admin")
             {
                 <li class="nav-item opcionMenu">
-                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Productos</a>
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductosMenu"><i class="fa-regular fa-book-open"></i>  Menú</a>
+                </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Producto" asp-action="GetProductos"><i class="fa-regular fa-bag-shopping"></i>  Elegir Productos</a>
                 </li>
                 <li class="nav-item opcionMenu">
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Login" asp-action="Logout"><i class="fa-regular fa-right-to-bracket"></i>  Cerrar Sesión</a>
                 </li>
+                
 
             }
         </ul>
@@ -98,14 +121,35 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top footer text-muted">
+
+    <div id="loader" class="loader" style="display:none;">
+        <div class="spinner" ></div>
+        <p>Cargando...</p>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <div id="asyncConfirm" class="confirm-dialog" style="display: none;">
+        <div class="confirm-content">
+            <p id="confirmMessage">Are you sure?</p>
+            <button id="confirmYes">Yes</button>
+            <button id="confirmNo">No</button>
+        </div>
+    </div>
+
+    <footer class="border-top footer">
         <div class="container">
             2024 - LaTrillada
         </div>
     </footer>
 
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <div style="display:none;">
+        <span id="rolUsuario">@Context.Session.GetString("rol")</span>
+        @Html.Hidden("URLVerificarAdmin", Url.Action("VerificarAdmin", "Login"))
+    </div>
+    
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

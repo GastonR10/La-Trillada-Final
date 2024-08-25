@@ -3,21 +3,28 @@
 $(document).ready(async function () {
     // Código a ejecutar cuando el DOM esté listo
     await cargarPedido();
-
 });
 
 async function cargarPedido() {
     try {
+        showLoader();
         const parts = window.location.pathname.split('/');
         const id = parts.pop();
 
         _idPedido = id;
         let pedido = await Pedido.getPedido(id);
 
-        if (pedido == null) {
+        if (pedidos.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            return;
+        }
+        if (pedidos.status == 404) {
+            let msj = await pedidos.text();
+            Tools.Toast(msj, 'warning');
             return;
         }
 
+        const titulo = document.getElementById('titulo');
         const nombre = document.getElementById('nombreCliente');
         const direccion = document.getElementById('direccionCliente');
         const divDireccion = document.getElementById('divDireccion');
@@ -29,6 +36,7 @@ async function cargarPedido() {
         const comentario = document.getElementById('comentarioPedido');
         const listaProd = document.getElementById('divProdList');
 
+        titulo.innerText = `PEDIDO N° ${pedido.Id}`
         nombre.innerText = pedido.Nombre;
         direccion.innerText = pedido.Direccion;
         mesa.innerText = "" + pedido.IdMesa;
@@ -126,12 +134,16 @@ async function cargarPedido() {
         const btnCancelar = document.getElementById('btnCancelar');
         const btnVolver = document.getElementById('btnVolver');
 
-        btnEstado.onclick = function () {
-            actualizarEstadoPedido(_idPedido); // Reemplaza _idPedido con el ID del pedido
+        btnEstado.onclick = async function () {
+            showLoader();
+            await actualizarEstadoPedido(_idPedido, pedido.Estado); // Reemplaza _idPedido con el ID del pedido
+            hideLoader();
         };
 
-        btnCancelar.onclick = function () {
-            cancelarPedido(_idPedido); // Reemplaza _idPedido con el ID del pedido
+        btnCancelar.onclick = async function () {
+            showLoader();
+            await cancelarPedido(_idPedido); // Reemplaza _idPedido con el ID del pedido
+            hideLoader();
         };
 
         btnVolver.onclick = function () {
@@ -159,40 +171,66 @@ async function cargarPedido() {
                 btnEstado.textContent = 'Desconocido';
                 break;
         }
-        
+        hideLoader();
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 
-    async function actualizarEstadoPedido(id) {
-        console.log(`Aceptar pedido ${id}`);
-        // Implementa la lógica para aceptar el pedido
+    async function actualizarEstadoPedido(id, estado) {
         try {
-            let confirmacion = confirm(`¿Está seguro?`);
+            let confirmacion = await asyncConfirm(`¿Está seguro?`);
 
             if (confirmacion) {
                 await Pedido.actualizarEstadoPedido(id);
 
                 await cargarPedido();
+
+                let mensaje = "";
+                if (estado == 'Pendiente') {
+                    mensaje = "El pedido " + id + " fue enviado a preparacion";
+                } else if (estado == 'EnPreparacion') {
+                    mensaje = "El pedido " + id + " fue colocado en camino";
+                } else if (estado == 'EnCamino') {
+                    mensaje = "El pedido " + id + " fue finalizado con exito";
+                }
+
+                Tools.Toast(mensaje, 'success')
             }
 
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
     }
 
     async function cancelarPedido(id) {
-        console.log(`Cancelar pedido ${id}`);
-        let confirmacion = confirm(`¿Está seguro que desea cancelar?`);
+        try {
+            
+            let confirmacion = await asyncConfirm(`¿Está seguro que desea cancelar?`);
 
-        if (confirmacion) {
-            await Pedido.cancelarPedido(id);
+            if (confirmacion) {
+                const res = await Pedido.cancelarPedido(id);
 
-            await cargarPedido();
+                if (res.status == 500) {
+                    Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+                }
+
+                if (res.status == 404) {
+                    Tools.Toast("Problemas buscando el pedido.", 'warning');
+                }
+
+                if (res.status == 200) {
+                    await cargarPedido();
+
+                    Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success')
+                }
+
+            }
+
+        } catch (ex) {
+            throw ex;
         }
+        
     }
 
     function volver(finalizado) {
@@ -207,7 +245,6 @@ async function cargarPedido() {
             }
             
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
 

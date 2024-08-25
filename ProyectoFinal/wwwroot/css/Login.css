@@ -1,4 +1,6 @@
-﻿
+﻿main{
+    color: #000;
+}
 #boxCentral {
     margin-top: 40px;
     display: flex;
@@ -15,6 +17,7 @@
     background: url('../img/login.jpg') no-repeat center center;  
     background-size: cover;
     color: white;
+    font: bold; 
     width: 50%;
     display: flex;
     flex-direction: column;

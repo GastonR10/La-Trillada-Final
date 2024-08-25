@@ -9,10 +9,12 @@ namespace ProyectoFinal.Controllers
     public class ProductoCantidadController : Controller
     {
         private readonly BarContext _db;
+        private readonly ErrorLogger _errorLogger;
 
-        public ProductoCantidadController(BarContext context)
+        public ProductoCantidadController(BarContext context, ErrorLogger errorLogger)
         {
             _db = context;
+            _errorLogger = errorLogger;
         }
 
         [HttpPost("ActualizarComentarios")]
@@ -48,8 +50,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                // Retornar un error 500 con un mensaje de error
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
         }
     }

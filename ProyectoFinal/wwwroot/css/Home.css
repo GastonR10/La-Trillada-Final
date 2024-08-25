@@ -1,0 +1,113 @@
+﻿
+main{
+    width: 100%;
+    
+}
+
+.main-content{
+    justify-content:unset;
+
+}
+
+h2 {
+    font-size: 24px;
+}
+
+.inicial {
+    font-family: Arial, sans-serif;
+    height: 400px;
+    width: 100%;
+    color: #fff;
+    background-image: url(/img/pizza.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.branch-info {
+    background-color: #1c1c1c;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    color: #fff;
+}
+
+
+    .branch-info h2 {
+        
+        margin-bottom: 15px;
+    }
+
+    .branch-info p {
+        margin: 10px 0;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .branch-info i {
+        margin-right: 10px;
+    }
+
+.delivery-btn, .experiencia-btn{
+    background-color: #b41b2d;
+    text-decoration: auto;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+    .delivery-btn:hover, .experiencia-btn:hover {
+        color: #aaa;
+    }
+
+    .branches-list p {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+.social-icons {
+    margin-top: 20px;
+}
+
+    .social-icons a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 20px;
+    }
+
+        .social-icons a:hover {
+            color: #b41b2d;
+        }
+
+.nosotros{
+    background-color: #101010;
+    color:#fff;
+    padding-top: 20px;
+}
+
+.nosotros img{
+    width:100%;
+}
+
+.experiencia {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+}
+
+.experiencia-btn {
+    width: 80%;
+    padding: 10px;
+}

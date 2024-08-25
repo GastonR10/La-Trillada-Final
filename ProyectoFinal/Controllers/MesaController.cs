@@ -10,11 +10,13 @@ namespace ProyectoFinal.Controllers
     {
         private readonly BarContext _db;
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly ErrorLogger _errorLogger;
 
-        public MesaController(BarContext context, IWebHostEnvironment webHostEnvironment)
+        public MesaController(BarContext context, IWebHostEnvironment webHostEnvironment, ErrorLogger errorLogger)
         {
             _db = context;
             _webHostEnvironment = webHostEnvironment;
+            _errorLogger = errorLogger;
         }
 
         [HttpGet]
@@ -30,7 +32,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
 
         }

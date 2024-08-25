@@ -14,11 +14,15 @@ namespace ProyectoFinal.Controllers
     {
         private readonly BarContext _db;
         private readonly IHubContext<NotificationHub> _hubContext;
+        private readonly WhatsAppService _whatsAppService;
+        private readonly ErrorLogger _errorLogger;
 
-        public PedidoController(BarContext context, IHubContext<NotificationHub> hubContext)
+        public PedidoController(BarContext context, IHubContext<NotificationHub> hubContext, ErrorLogger errorLogger)
         {
             _db = context;
             _hubContext = hubContext;
+            _whatsAppService = new WhatsAppService();
+            _errorLogger = errorLogger;
         }
 
         [HttpGet("Pedido/GetPedidoVista/{id}")]
@@ -60,7 +64,7 @@ namespace ProyectoFinal.Controllers
                         return Ok(pedidoDTO);
                     }
 
-                    return NotFound();
+                    return NotFound("Tipo de pedido no existente.");
 
                 }
 
@@ -79,18 +83,19 @@ namespace ProyectoFinal.Controllers
                         return Ok(pedidoDTO);
                     }
 
-                    return NotFound();
+                    return NotFound("Tipo de pedido no existente.");
                 }
                 else
                 {
                     // Manejo de otros tipos de pedidos o error
-                    return NotFound();
+                    return NotFound("Tipo de pedido no existente.");
                 }
 
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
         }
 
@@ -106,14 +111,19 @@ namespace ProyectoFinal.Controllers
             {
                 // Verificar si el usuario ya existe en la base de datos
                 Usuario? existingUser = await _db.Usuarios
-                    .Include(p => p.CarritoAbierto)
-                        .ThenInclude(c => c.CantidadesProductos)
-                            .ThenInclude(pc => pc.Producto)
-                    .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
+                                                .Include(p => p.CarritoAbierto)
+                                                    .ThenInclude(c => c.CantidadesProductos)
+                                                        .ThenInclude(pc => pc.Producto)
+                                                .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
 
                 if (existingUser == null)
                 {
                     return BadRequest("El usuario no existe.");
+                }
+
+                if(existingUser.CarritoAbierto != null && existingUser.CarritoAbierto.CantidadesProductos.Count == 0)
+                {
+                    return BadRequest("Carrito vacío.");
                 }
 
                 // Crear un nuevo pedido y agregarlo a la base de datos
@@ -144,15 +154,24 @@ namespace ProyectoFinal.Controllers
                 await _db.SaveChangesAsync();
 
                 // Enviar notificación a los clientes
-                await _hubContext.Clients.All.SendAsync("RecibirPedido", "Nuevo pedido realizado");
+                await _hubContext.Clients.All.SendAsync("RecibirPedido", pedido.Id);
+
+
+                if(HttpContext.Session.GetString("rol") == "Cliente")
+                {
+                    string numeroDestino = "+598" + existingUser.Telefono;
+                    string mensaje = "¡Hola! tu pedido fue recibido, en seguida lo confirmamos.";
+
+                    await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
+                }                
 
                 return Ok();
 
             }
             catch (Exception ex)
             {
-                // Retornar un error 500 con un mensaje de error
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
         }
 
@@ -166,6 +185,10 @@ namespace ProyectoFinal.Controllers
         {
             try
             {
+                if(rp.Carrito.ProductosCantidad == null || rp.Carrito.ProductosCantidad.Count == 0)
+                {
+                    return BadRequest("Carrito vacío");
+                }
 
                 // Crear un nuevo carrito y agregarlo a la base de datos
                 Carrito nuevoCarrito = new Carrito();
@@ -173,6 +196,7 @@ namespace ProyectoFinal.Controllers
 
                 // Guardar los cambios para obtener el nuevo Id del carrito
                 await _db.SaveChangesAsync();
+
 
                 //Fijar precio total del carrito viejo y cargando pc en bd
                 decimal total = 0;
@@ -197,13 +221,23 @@ namespace ProyectoFinal.Controllers
 
                 await _db.SaveChangesAsync();
 
+                await _hubContext.Clients.All.SendAsync("RecibirPedido", pedido.Id);
+
+                if(rp.Tel != -1)
+                {
+                    string numeroDestino = "+598" + pedido.Telefono;
+                    string mensaje = "¡Hola! tu pedido fue recibido, en seguida lo confirmamos.";
+
+                    await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
+                }                
+
                 return Ok();
 
             }
             catch (Exception ex)
             {
-                // Retornar un error 500 con un mensaje de error
-                return StatusCode(500, $"Error interno del servidor: {ex.Message}");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
         }
 
@@ -244,7 +278,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
 
         }
@@ -258,20 +293,64 @@ namespace ProyectoFinal.Controllers
 
                 if (pedido == null)
                 {
-                    return NotFound();
+                    return NotFound("Pedido no encontrado.");
                 }
+
+                string? tipoPedido = _db.Entry(pedido).Property("TipoPedido").CurrentValue as string;
+
+                string numeroDestino = "+598";
+                string mensaje = "";
+
+                if (tipoPedido == "Cliente")
+                {
+                    // Lógica para PedidoCliente
+                    PedidoCliente? pedidoCliente = await _db.Pedidos.OfType<PedidoCliente>()
+                                                        .Include(p => p.Cliente)
+                                                        .FirstOrDefaultAsync(p => p.Id == pedido.Id);
+
+                    if (pedidoCliente == null)
+                    {
+                        return NotFound("Cliente no encontrado.");
+                    }
+
+                    numeroDestino += pedidoCliente.Cliente.Telefono;
+
+                }
+                else if (tipoPedido == "Express")
+                {
+                    // Lógica para PedidoExpress
+                    PedidoExpress? pedidoExpress = await _db.Pedidos.OfType<PedidoExpress>()
+                                                        .FirstOrDefaultAsync(p => p.Id == pedido.Id);
+
+                    if (pedidoExpress == null)
+                    {
+                        return NotFound();
+                    }
+
+                    numeroDestino += pedidoExpress.Telefono;
+                }
+                else
+                {
+                    // Manejo de otros tipos de pedidos o error
+                    return NotFound();
+                }                
 
                 switch (pedido.Estado)
                 {
                     case Estado.Pendiente:
+                        mensaje += "Tu pedido fue confirmado con el numero " + pedido.Id + " y está en preparación";
                         pedido.Estado = Estado.EnPreparacion;
+                        await _hubContext.Clients.All.SendAsync("PedidoAceptado", pedido.Id);
                         break;
 
                     case Estado.EnPreparacion:
+                        mensaje += "Pedido numero " + pedido.Id + " va en camino";
                         pedido.Estado = Estado.EnCamino;
+                        await _hubContext.Clients.All.SendAsync("PedidoPronto", pedido.Id);
                         break;
 
                     case Estado.EnCamino:
+                        mensaje += "Pedido numero " + pedido.Id + " entregado con exito";
                         pedido.Estado = Estado.Finalizado;
                         break;
 
@@ -282,15 +361,18 @@ namespace ProyectoFinal.Controllers
 
                 _db.Pedidos.Update(pedido);
 
-                await _db.SaveChangesAsync();
+                await _db.SaveChangesAsync();                
+                
+                await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
 
-                return Ok(pedido);
+                return Ok(pedido.Estado);
 
 
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
 
         }
@@ -307,11 +389,53 @@ namespace ProyectoFinal.Controllers
                     return NotFound();
                 }
 
+
+                string? tipoPedido = _db.Entry(pedido).Property("TipoPedido").CurrentValue as string;
+
+                string numeroDestino = "+598";
+                string mensaje = "Pedido numero " + pedido.Id + " fue cancelado.";
+
+                if (tipoPedido == "Cliente")
+                {
+                    // Lógica para PedidoCliente
+                    PedidoCliente? pedidoCliente = await _db.Pedidos.OfType<PedidoCliente>()
+                                                        .Include(p => p.Cliente)
+                                                        .FirstOrDefaultAsync(p => p.Id == pedido.Id);
+
+                    if (pedidoCliente == null)
+                    {
+                        return NotFound();
+                    }
+
+                    numeroDestino += pedidoCliente.Cliente.Telefono;
+
+                }
+                else if (tipoPedido == "Express")
+                {
+                    // Lógica para PedidoExpress
+                    PedidoExpress? pedidoExpress = await _db.Pedidos.OfType<PedidoExpress>()
+                                                        .FirstOrDefaultAsync(p => p.Id == pedido.Id);
+
+                    if (pedidoExpress == null)
+                    {
+                        return NotFound();
+                    }
+
+                    numeroDestino += pedidoExpress.Telefono;
+                }
+                else
+                {
+                    // Manejo de otros tipos de pedidos o error
+                    return NotFound();
+                }
+
                 pedido.Estado = Estado.Cancelado;
 
                 _db.Pedidos.Update(pedido);
 
                 await _db.SaveChangesAsync();
+
+                await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
 
                 return Ok(pedido);
 
@@ -319,7 +443,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
 
         }
@@ -362,7 +487,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
 
         }
@@ -389,7 +515,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
         }
 
@@ -432,7 +559,52 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
+            }
+
+        }
+
+        public IActionResult PedidosCocina()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPedidosCocina()
+        {
+            try
+            {
+                List<PedidoCliente> pedidosCliente = await _db.Pedidos.OfType<PedidoCliente>()
+                                                      .Include(p => p.Cliente)
+                                                      .Include(p => p.Carrito)
+                                                            .ThenInclude(c => c.CantidadesProductos)
+                                                                .ThenInclude(pc => pc.Producto)
+                                                      .Where(p => p.Estado == Estado.EnPreparacion)
+                                                      .ToListAsync();
+
+                List<PedidoExpress> pedidosExpress = await _db.Pedidos.OfType<PedidoExpress>()
+                                                      .Include(p => p.Carrito)
+                                                            .ThenInclude(c => c.CantidadesProductos)
+                                                                .ThenInclude(pc => pc.Producto)
+                                                      .Where(p => p.Estado == Estado.EnPreparacion)
+                                                      .ToListAsync();
+
+                List<DTO_PedidoCliente> pedidosClienteDTO = pedidosCliente.Select(p => new DTO_PedidoCliente(p)).ToList();
+                List<DTO_PedidoExpress> pedidosExpressDTO = pedidosExpress.Select(p => new DTO_PedidoExpress(p)).ToList();
+
+                return Ok(new
+                {
+                    PedidosCliente = pedidosClienteDTO,
+                    PedidosExpress = pedidosExpressDTO
+                });
+
+
+            }
+            catch (Exception ex)
+            {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
 
         }

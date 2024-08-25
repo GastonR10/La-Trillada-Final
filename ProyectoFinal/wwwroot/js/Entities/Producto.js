@@ -23,9 +23,10 @@ class Producto {
                 }
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
+            if (response.status == 404 || response.status == 500) {
+                return response;
+
+            } 
 
             const data = await response.json();
 
@@ -35,8 +36,7 @@ class Producto {
 
 
         } catch (ex) {
-            console.error('Error al agregar el producto:', error);
-            throw error;
+            throw ex;
         }
     }
 
@@ -72,15 +72,10 @@ class Producto {
                 body: formData,
             });
 
-            if (!res.ok) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
             return res;
 
         } catch (ex) {
-            console.error('Error al agregar el producto:', error);
-            throw error;
+            throw ex;
         }
     }
 
@@ -95,8 +90,8 @@ class Producto {
                 }
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            if (response.status == 500) {
+                return response;
             }
 
             const data = await response.json();
@@ -105,8 +100,8 @@ class Producto {
 
             return productos;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
     }
 
@@ -121,8 +116,8 @@ class Producto {
                 }
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            if (response.status == 500) {
+                return response;
             }
 
             const data = await response.json();
@@ -131,14 +126,14 @@ class Producto {
 
             return productos;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
     }
 
     static async UpdateActivo(productId, isActive) {
         try {
-            const url = $("#URLUpdateProducto").val();
+            const url = $("#URLActivarDesactivarProducto").val();
 
             const formData = new FormData();
             formData.append('Id', productId);
@@ -150,43 +145,33 @@ class Producto {
                 method: 'POST',
                 body: formData
             });
-
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
+                     
             return response;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
 
     }
 
     static async UpdateEliminar(productId) {
         try {
-            const url = $("#URLUpdateProducto").val();
+            const url = $("#URLEliminarProducto").val();
 
             const formData = new FormData();
             formData.append('Id', productId);
             formData.append('Activo', false);
             formData.append('Eliminado', true);
 
-            //const producto = new Producto(productId, null, null, null, 0, 0, false, true);
-
             const response = await fetch(url, {
                 method: 'POST',
                 body: formData
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
             return response;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
 
     }
@@ -224,46 +209,12 @@ class Producto {
                 body: formData,
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
             return response;
 
-        } catch (error) {
-            console.error('Error fetching products:', error);
+        } catch (ex) {
+            throw ex;
         }
 
     }
-
-    static async ObtenerProductosIds(arrayIds) {
-
-        try {
-            const url = $("#URLGetProductIds").val();
-
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(arrayIds)               
-            });
-
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-
-            const data = await response.json();
-
-            const productos = data.map(item => new Producto(item.Id, item.Nombre, item.Descripcion, item.Foto, item.IdTipoProducto, item.Precio, item.Activo, item.Eliminado));
-
-            return productos;
-
-        } catch (error) {
-            console.error('Error fetching products:', error);
-        }
-    }
-
-    /* return arrayIds.map(id => new Producto(id, `Producto ${id}`, `Descripción del producto ${id}`, null, 1, 100 + id, true, false));*/
 
 }

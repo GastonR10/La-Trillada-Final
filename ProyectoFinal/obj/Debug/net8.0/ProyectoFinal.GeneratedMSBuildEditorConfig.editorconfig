@@ -17,107 +17,107 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProyectoFinal
 build_property.RootNamespace = ProyectoFinal
-build_property.ProjectDir = C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal\
+build_property.ProjectDir = C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ProyectoFinal\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Ignacio\Desktop\ProyectoFinal\ProyectoFinal\ProyectoFinal
+build_property.MSBuildProjectDirectory = C:\Users\Santiago\Desktop\ProyectoFinal\La-Trillada-Privado\ProyectoFinal
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Carrito/Carrito.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Carrito/Carrito.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xDYXJyaXRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Home/Index.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Home/Pantalla.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Home/Pantalla.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYW50YWxsYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Home/Privacy.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Login/DatosPersonales.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Login/DatosPersonales.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cRGF0b3NQZXJzb25hbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Login/Login.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Login/Registro.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Login/Registro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVnaXN0cm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Login/RegistroAdmin.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Login/RegistroAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVnaXN0cm9BZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Pedido/AdministracionPedidos.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Pedido/AdministracionPedidos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEFkbWluaXN0cmFjaW9uUGVkaWRvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Pedido/PedidoExpress.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Pedido/PedidoExpress.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBlZGlkb0V4cHJlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Pedido/PedidoLogueado.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Pedido/PedidoLogueado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBlZGlkb0xvZ3VlYWRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Pedido/PedidosCliente.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Pedido/PedidosCliente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBlZGlkb3NDbGllbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Pedido/PedidosFinalizados.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Pedido/PedidosFinalizados.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBlZGlkb3NGaW5hbGl6YWRvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Pedido/PedidoVista.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Pedido/PedidoVista.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBlZGlkb1Zpc3RhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Pedido/VerPedidoCliente.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Pedido/VerPedidoCliente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFZlclBlZGlkb0NsaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Producto/ProductoCreate.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Producto/ProductoCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cUHJvZHVjdG9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Producto/ProductoEdit.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Producto/ProductoEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cUHJvZHVjdG9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Producto/Productos.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Producto/Productos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cUHJvZHVjdG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Producto/ProductosList.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Producto/ProductosList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cUHJvZHVjdG9zTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Shared/Error.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/_ViewImports.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/_ViewStart.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ignacio/Desktop/ProyectoFinal/ProyectoFinal/ProyectoFinal/Views/Shared/_Layout.cshtml]
+[C:/Users/Santiago/Desktop/ProyectoFinal/La-Trillada-Privado/ProyectoFinal/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ww5h623m21

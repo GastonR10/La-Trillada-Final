@@ -1,24 +1,71 @@
-$(document).ready(async function () {
+ï»¿$(document).ready(async function () {
+    try {
+        if (sessionStorage.getItem('Logueado') === null) {
+            // Si no existe, la crea y le asigna el valor "false"
+            sessionStorage.setItem('Logueado', false);
+        }
 
-    if (sessionStorage.getItem('Logueado') === null) {
-        // Si no existe, la crea y le asigna el valor "false"
-        sessionStorage.setItem('Logueado', false);
-    }
+        if (localStorage.getItem('carrito') === null) {
+            // Si no existe, lo crea y le asigna un array vacÃ­o
+            localStorage.setItem('carrito', JSON.stringify([]));
+        }
 
-    if (localStorage.getItem('carrito') === null) {
-        // Si no existe, lo crea y le asigna un array vacío
-        localStorage.setItem('carrito', JSON.stringify([]));
+        //Mostrar toaster si entramos luego pedir
+        const toastMessage = localStorage.getItem('toastMessage');
+        const toastType = localStorage.getItem('toastType');
+        if (toastMessage && toastType) {
+            // Mostrar el toaster
+            Tools.Toast(toastMessage, toastType);
+
+            // Limpiar el almacenamiento local
+            localStorage.removeItem('toastMessage');
+            localStorage.removeItem('toastType');
+        }
+
+        // Ejecuta la lÃ³gica inicial al cargar la pÃ¡gina
+        await actualizarVista();
+
+        // Agregar un listener para el evento popstate
+        window.addEventListener('pageshow', async function (event) {
+            await actualizarVista();
+        });
+    } catch (ex) {
+        throw ex;
     }
-    // Código a ejecutar cuando el DOM esté listo
-    await obtenerProductosActivos();
 });
+
+// FunciÃ³n para actualizar la vista
+async function actualizarVista() {
+    try {
+        showLoader();
+
+        await obtenerProductosActivos();
+        await mostrarTotalCarrito();
+
+        hideLoader();
+    }
+    catch (ex) {
+        await handleError(ex);
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
+    }
+
+}
 
 async function obtenerProductosActivos() {
     try {
         let productos = await Producto.getProductosActivos();
-        let tiposProd = await TipoProducto.getTiposProducto();
+        if (productos.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            return;
+        }
 
+        let tiposProd = await TipoProducto.getTiposProducto();
+        if (tiposProd.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            return;
+        }
         const container = document.getElementById('productosContainer');
+        container.innerHTML = ''; 
 
         tiposProd.forEach(tipo => {
             const productosPorTipo = productos.filter(p => p.IdTipoProducto === tipo.Id);
@@ -42,7 +89,7 @@ async function obtenerProductosActivos() {
                         <div class="card-body">
                         <h5 class="card-title">${producto.Nombre}</h5>
                         <p class="card-text">${producto.Descripcion}</p>
-                        <p class="card-text"><strong>Precio:</strong> $${producto.Precio}</p>
+                        <p class="card-text" ><strong>Precio:</strong> $${producto.Precio}</p>
                         </div>
                         <div class="card-footer">
                         <div class="input-group">
@@ -82,51 +129,112 @@ async function obtenerProductosActivos() {
             });
         });
 
-        container.addEventListener('click', async function (event) {
-            if (event.target.classList.contains('btn-agregar-carrito')) {
-                const productoId = event.target.getAttribute('data-producto-id');
-                const cantidadInput = event.target.closest('.card').querySelector('.cantidad-input');
+        // Asignar eventos de clic a los botones de agregar al carrito
+        container.querySelectorAll('.btn-agregar-carrito').forEach(btn => {
+            btn.addEventListener('click', async function (event) {
+                showLoader();
+                event.preventDefault();
+                const productoId = this.getAttribute('data-producto-id');
+                const cantidadInput = this.closest('.card').querySelector('.cantidad-input');
                 const cantidad = parseInt(cantidadInput.value);
 
-                if (sessionStorage.getItem('Logueado') == "true") {
-                    await Carrito.agregarProducto(productoId, cantidad);
-                } else {
-                    let carrito = JSON.parse(localStorage.getItem('carrito'));
-                    if (!carrito) carrito = [];
-
-                    // Encontrar el último ID usado en el carrito y calcular el siguiente
-                    let ultimoId = carrito.length > 0 ? carrito[carrito.length - 1].Id : 0;
-                    let nuevoId = ultimoId + 1;
-
-                    // Obtener información del producto
-                    const producto = productos.find(p => p.Id == productoId);
-
-                    // Crear el objeto del producto a agregar
-                    let productoCantidad = {
-                        Id: nuevoId,
-                        IdProducto: parseInt(productoId, 10),
-                        Cantidad: cantidad,
-                        Comentario: "",
-                        Producto: {
-                            Id: producto.Id,
-                            Nombre: producto.Nombre,
-                            Foto: producto.Foto,
-                            Precio: producto.Precio
+                if (cantidad > 0) {
+                    if (sessionStorage.getItem('Logueado') == "true") {
+                        const res = await Carrito.agregarProducto(productoId, cantidad);
+                        if (res.status == 400) {
+                            const msj = await res.text();
+                            Tools.Toast(msj, 'warning');
+                            hideLoader();
+                            return;
                         }
-                    };
+                        if (res.status == 500) {
+                            Tools.Toast("Error inesperado, contacte al administrador", 'error');
+                            hideLoader();
+                            return;
+                        }
 
-                    carrito.push(productoCantidad);
-                    localStorage.setItem('carrito', JSON.stringify(carrito));
+                    } else {
+                        let carrito = JSON.parse(localStorage.getItem('carrito'));
+                        if (!carrito) carrito = [];
+
+                        // Encontrar el Ãºltimo ID usado en el carrito y calcular el siguiente
+                        let ultimoId = carrito.length > 0 ? carrito[carrito.length - 1].Id : 0;
+                        let nuevoId = ultimoId + 1;
+
+                        // Obtener informaciÃ³n del producto
+                        const producto = productos.find(p => p.Id == productoId);
+
+                        // Crear el objeto del producto a agregar
+                        let productoCantidad = {
+                            Id: nuevoId,
+                            IdProducto: parseInt(productoId, 10),
+                            Cantidad: cantidad,
+                            Comentario: "",
+                            Producto: {
+                                Id: producto.Id,
+                                Nombre: producto.Nombre,
+                                Foto: producto.Foto,
+                                Precio: producto.Precio
+                            }
+                        };
+
+                        carrito.push(productoCantidad);
+                        localStorage.setItem('carrito', JSON.stringify(carrito));
+                    }
+
+                    cantidadInput.value = 1;
+                    await mostrarTotalCarrito();
+                    Tools.Toast(`Producto agregado al carrito`, 'success')
+
+                } else {
+                    Tools.Toast("La cantidad debe ser mayor a 0", 'warning')
                 }
-
-                // Reiniciar el campo de cantidad a 1
-                cantidadInput.value = 1;
-            }
+                hideLoader();
+            });
         });
 
     }
     catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
+}
+
+async function mostrarTotalCarrito() {
+    try {
+        const seccionTotal = document.getElementById('footerTotal');
+        const valorCarrito = document.getElementById('total-amount');
+        let totalCarrito = 0;
+        if (sessionStorage.getItem('Logueado') == "true") {
+
+            totalCarrito = await Carrito.obtenerTotalCarrito();
+            if (totalCarrito.status == 500) {
+                Tools.Toast('Error inesperado, contacte al administrador', 'error');
+                return;
+            }
+            if (totalCarrito.status == 400) {
+                const msj = await totalCarrito.text();
+                Tools.Toast(msj, 'warning');
+                return;
+            }
+
+        } else {
+            const carrito = JSON.parse(localStorage.getItem('carrito') || '[]'); // Convierte el string a un objeto JSON
+
+            carrito.forEach(pc => {
+                totalCarrito += pc.Cantidad * pc.Producto.Precio;
+            })
+        }
+
+        if (totalCarrito > 0) {
+            seccionTotal.style.display = 'block';
+            valorCarrito.innerText = totalCarrito.toFixed(2);
+        } else {
+            seccionTotal.style.display = 'none';
+        } 
+
+    } catch (ex) {
+        await handleError(ex);
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
+    }
+       
 }

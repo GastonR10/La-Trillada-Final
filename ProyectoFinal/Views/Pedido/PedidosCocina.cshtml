@@ -1,0 +1,14 @@
+﻿<link href="/css/pedidoscocina.css" rel="stylesheet" />
+<div class="text-center">
+    <h1>Pedidos Cocina</h1>
+</div>
+
+<div id="divPedidosCocina" class="row">
+</div>
+
+<div style="display:none;">
+    @Html.Hidden("URLPedidosCocina", Url.Action("GetPedidosCocina", "Pedido"))
+    @Html.Hidden("URLActualizarEstadoPedido", Url.Action("ActualizarEstadoPedido", "Pedido"))
+</div>
+
+<script type="text/javascript" src="~/js/pages/PedidosCocina.js" asp-append-version="true"></script>

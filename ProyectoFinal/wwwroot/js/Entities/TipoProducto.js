@@ -16,8 +16,8 @@
                 }
             });
 
-            if (response.badRequest) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            if (response.status == 500) {
+                return response;
             }
 
             const data = await response.json();
@@ -28,8 +28,62 @@
             return tiposProducto;
 
         } catch (ex) {
-            console.error('Error al agregar el producto:', error);
-            throw error;
+            throw ex;
+        }
+    }
+
+    static async Ordenar(cambios) {
+        try {
+            // Aquí debes enviar los datos modificados al servidor para que se guarden los cambios
+            const url = $("#URLOrdenar").val(); // Suponiendo que tienes un endpoint para guardar los cambios
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(cambios)
+            });
+
+            return response;
+
+        } catch (ex) {
+            throw ex;
+        }
+    }
+
+    static async AgregarTipo(desc) {
+        try {
+            const url = $("#URLAgregar").val(); // Suponiendo que tienes un endpoint para guardar los cambios
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ Descripcion: desc })
+            });
+
+            return response;
+
+
+        } catch (ex) {
+            throw ex;
+        }
+    }
+
+    static async Eliminar(Id) {
+        try {
+            const url = `${$("#URLEliminar").val()}/${Id}`;
+            const response = await fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            return response;
+
+        } catch (ex) {
+            throw ex;
         }
     }
 }

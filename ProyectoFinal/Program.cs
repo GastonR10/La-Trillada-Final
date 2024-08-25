@@ -17,7 +17,14 @@ builder.Services.AddControllersWithViews()
 
 builder.Services.AddDbContext<BarContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<Validaciones>();
+
+builder.Services.AddScoped<ErrorLogger>();
+
 builder.Services.AddSession();
+
+// Agregar HttpClient para hacer solicitudes HTTP
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
@@ -39,9 +46,8 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Producto}/{action=GetProductos}");
+    pattern: "{controller=Home}/{action=Index}");
 
 app.MapHub<NotificationHub>("/notificationHub"); // Mapear el hub de SignalR
 
 app.Run();
-

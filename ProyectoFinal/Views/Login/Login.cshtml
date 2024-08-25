@@ -1,4 +1,4 @@
-﻿<script type="text/javascript" src="~/js/pages/login.js" asp-append-version="true"></script>
+﻿<link href="~/css/login.css" rel="stylesheet" />
 
 <div id="boxCentral">
     <div class="imagen-box">
@@ -20,11 +20,12 @@
             <input type="password" class="form-control" id="passwordLogin" placeholder="Ingrese su contraseña">
         </div>
         <br />
-        <button id="btnLogin" class="btn btn-primary btn-block" onclick="Ingresar();">Enviar</button>
-        <p class="text-center mt-3">¿No tienes cuenta? <a href="#">Regístrate</a></p>
+        <button id="btnLogin" class="btn btn-primary btn-block" onclick="Ingresar();">Ingresar</button>
+        <p class="text-center mt-3">¿No tienes cuenta? <a asp-controller="Login" asp-action="Registro">Regístrate</a></p>
     </div>
 </div>
 
 <div style="display:none;">
     @Html.Hidden("URLIngresar", Url.Action("Ingresar", "Login"))
 </div>
+<script type="text/javascript" src="~/js/pages/login.js" asp-append-version="true"></script>

@@ -1,21 +1,33 @@
 ﻿let _PedidosFinalizados;
 
 $(document).ready(async function () {
+    
     await obtenerPedidosFinalizados();
+    
 });
 
 async function obtenerPedidosFinalizados() {
     try {
+        showLoader();
 
         _PedidosFinalizados = await Pedido.GetFinalizados();
 
+        if (_PedidosFinalizados != 200) {
+            Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+            return;
+        }
+
+        if (_PedidosFinalizados.length == 0) {
+            Tools.Toast('No hay pedidos finalizados.', 'warning');
+        }
+
         grillaPedidosFinalizados(_PedidosFinalizados)
 
-
+        hideLoader();
     }
     catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        await handleError(ex);
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 }
 
@@ -45,7 +57,7 @@ function grillaPedidosFinalizados(pedidosFinalizados) {
         // Crear el encabezado de la tabla
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
-        const headers = ['Nro de Pedido','Nombre', 'Direccion', 'Telefono', 'Precio', 'Acciones'];
+        const headers = ['Fecha', 'Hora', 'Nro de Pedido', 'Nombre', 'Direccion', 'Telefono', 'Forma de pago', 'Precio', 'Acciones'];
 
         headers.forEach(headerText => {
             const th = document.createElement('th');
@@ -61,6 +73,21 @@ function grillaPedidosFinalizados(pedidosFinalizados) {
         const tbody = document.createElement('tbody');
         pedidosFinalizados.forEach(pedido => {
             const row = document.createElement('tr');
+
+            // Fecha
+            const tdFecha = document.createElement('td');
+            const date = new Date(pedido.Fecha);
+            const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`;
+            tdFecha.textContent = formattedDate;
+            tdFecha.style.textAlign = 'center';
+            row.appendChild(tdFecha);
+
+            // Hora
+            const tdHora = document.createElement('td');
+            const formattedHour = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+            tdHora.textContent = formattedHour;
+            tdHora.style.textAlign = 'center';
+            row.appendChild(tdHora);
 
             // Nro de Pedido
             const tdId = document.createElement('td');
@@ -85,6 +112,12 @@ function grillaPedidosFinalizados(pedidosFinalizados) {
             tdTelefono.textContent = pedido.Telefono || 'N/A';
             tdTelefono.style.textAlign = 'center';
             row.appendChild(tdTelefono);
+
+            // Forma de pago
+            const tdPos = document.createElement('td');
+            tdPos.textContent = pedido.Pos ? "POS" : "Efectivo";
+            tdPos.style.textAlign = 'center';
+            row.appendChild(tdPos);
 
             // Precio
             const tdPrecio = document.createElement('td');
@@ -115,7 +148,6 @@ function grillaPedidosFinalizados(pedidosFinalizados) {
         container.appendChild(estadoContainer);
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
@@ -123,12 +155,10 @@ function grillaPedidosFinalizados(pedidosFinalizados) {
 
 function verPedido(id) {
     try {
-        console.log(`Ver pedido ${id}`);
         let redirectUrl = $("#URLGetPedidoVista").val();
         const urlWithId = `${redirectUrl}/${id}`;
         window.location.href = urlWithId;
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 

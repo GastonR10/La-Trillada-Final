@@ -20,10 +20,10 @@
         <label for="productoActivo">Activo</label>
         <input type="checkbox" id="productoActivo" />
     </div>
-    <div class="col-12">
-        <img id="productoImg" />
+    <div class="col-12" >
+        <img id="productoImg" style="height: 150px;" />
     </div>
-    <div class="col-12">
+    <div class="col-12" style="width: 40%;">
         <label for="fotoNueva">Nueva Foto: </label>
         <br />
         <input type="file" id="fotoNueva" class="form-control" />
@@ -33,14 +33,16 @@
         <button class="btn btn-danger" onclick="eliminarProducto();">Eliminar</button>
         <button class="btn btn-primary" onclick="volverListaProducto();">Volver</button>
     </div>
-
+    
 </div>
+
 <div style="display:none;">
     @Html.Hidden("URLGetProducto", Url.Action("GetProducto", "Producto"))
     @Html.Hidden("URLProductosList", Url.Action("GetProductosList", "Producto"))
     @Html.Hidden("URLEditProducto", Url.Action("Edit", "Producto"))
     @Html.Hidden("URLGetTiposProducto", Url.Action("GetTiposProducto", "TipoProducto"))
     @Html.Hidden("URLUpdateProducto", Url.Action("UpdateProducto", "Producto"))
+    @Html.Hidden("URLEliminarProducto", Url.Action("EliminarProducto", "Producto"))
     @Html.Hidden("URLGetProductoVista", Url.Action("GetProductoVista", "Producto"))
 </div>
 <script type="text/javascript" src="~/js/pages/ProductoEdit.js" asp-append-version="true"></script>

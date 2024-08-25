@@ -10,11 +10,13 @@ namespace ProyectoFinal.Controllers
     {
         private readonly BarContext _db;
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly ErrorLogger _errorLogger;
 
-        public ProductoController(BarContext context, IWebHostEnvironment webHostEnvironment)
+        public ProductoController(BarContext context, IWebHostEnvironment webHostEnvironment, ErrorLogger errorLogger)
         {
             _db = context;
             _webHostEnvironment = webHostEnvironment;
+            _errorLogger = errorLogger;
         }
 
         public IActionResult CreateProducto()
@@ -39,7 +41,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
         }
 
@@ -49,6 +52,11 @@ namespace ProyectoFinal.Controllers
         {
             try
             {
+                if(prod.Nombre == "" || prod.Precio <= 0 || prod.IdTipoProducto == 0)
+                {
+                    return BadRequest();
+                }
+
                 if (file != null && file.Length > 0)
                 {
                     string uploads = Path.Combine(_webHostEnvironment.WebRootPath, @"img\product");
@@ -63,8 +71,6 @@ namespace ProyectoFinal.Controllers
                     {
                         await file.CopyToAsync(stream);
                     }
-
-
                 }
 
                 Producto producto = new Producto(prod);
@@ -76,9 +82,9 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
-
         }
 
         [HttpGet]
@@ -100,7 +106,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
 
         }
@@ -109,6 +116,12 @@ namespace ProyectoFinal.Controllers
         public IActionResult GetProductosList()
         {
             return View("ProductosList");
+        }
+
+        [HttpGet]
+        public IActionResult GetProductosMenu()
+        {
+            return View("ProductosMenu");
         }
 
         [HttpGet]
@@ -124,7 +137,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
 
         }
@@ -170,6 +184,11 @@ namespace ProyectoFinal.Controllers
                     }
                 }
 
+                if(productoDTO.Nombre == "" || productoDTO.IdTipoProducto == 0 || productoDTO.Precio <= 0)
+                {
+                    return BadRequest();
+                }
+
                 // Actualizar los campos del producto según los valores en el DTO
                 if (productoDTO.Nombre != null && productoDTO.Nombre != producto.Nombre)
                 {
@@ -208,7 +227,68 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EliminarProducto(DTO_Producto productoDTO)
+        {
+            try
+            {
+                Producto? producto = await _db.Productos.FindAsync(productoDTO.Id);
+
+                if (producto == null)
+                {
+                    return NotFound();
+                }
+
+                if (productoDTO.Activo != producto.Activo)
+                {
+                    producto.Activo = productoDTO.Activo;
+                }
+                if (productoDTO.Eliminado != producto.Eliminado)
+                {
+                    producto.Eliminado = productoDTO.Eliminado;
+                }
+
+                await _db.SaveChangesAsync();
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ActivarDesactivarProducto(DTO_Producto productoDTO)
+        {
+            try
+            {
+                Producto? producto = await _db.Productos.FindAsync(productoDTO.Id);
+
+                if (producto == null)
+                {
+                    return NotFound();
+                }
+
+                if (productoDTO.Activo != producto.Activo)
+                {
+                    producto.Activo = productoDTO.Activo;
+                }
+
+                await _db.SaveChangesAsync();
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
         }
 
@@ -227,7 +307,8 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500);
             }
 
         }

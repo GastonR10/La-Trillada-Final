@@ -1,27 +1,39 @@
-$(document).ready(async function () {
+ï»¿$(document).ready(async function () {
     await obtenerCarrito();
 });
 
 async function obtenerCarrito() {
     try {
+        showLoader();
 
         let productosCantidad = [];
 
         if (sessionStorage.getItem('Logueado') == "true") {
             productosCantidad = await Carrito.obtenerProductosCarrito();
+
+            if (productosCantidad.status == 400) {
+                const msj = await res.text();
+                Tools.Toast(msj, 'warning');
+                return;
+
+            } else if (productosCantidad.status == 500) {
+                Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+                return;
+            }
+
         }
         else {
             productosCantidad = JSON.parse(localStorage.getItem('carrito'));
         }
 
-
         // Generar la grilla de productos
         generarGrilla(productosCantidad);
 
+        hideLoader();
     }
     catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        await handleError(ex);
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 }
 
@@ -85,7 +97,7 @@ function generarGrilla(productosCantidad) {
     `;
     tbody.appendChild(totalRow);
 
-    // Crear la fila del botón Pedir
+    // Crear la fila del botÃ³n Pedir
     const pedirRow = document.createElement('tr');
     pedirRow.innerHTML = `
           <td colspan="12">
@@ -99,34 +111,24 @@ function generarGrilla(productosCantidad) {
     table.appendChild(tbody);
     container.appendChild(table);
 
-    // Añadir el event listener para el botón de eliminar
+    // AÃ±adir el event listener para el botÃ³n de eliminar
     document.getElementById('divProdList').addEventListener('click', async function (event) {
+        showLoader();
         if (event.target.closest('.btn-eliminar-producto')) {
             const index = event.target.closest('.btn-eliminar-producto').getAttribute('data-index');
 
             if (sessionStorage.getItem('Logueado') == "true") {
                 await eliminarLineaPorId(index);
             } else {
-                // Obtener el carrito del localStorage
-                let carrito = JSON.parse(localStorage.getItem('carrito'));
-                if (!carrito) carrito = [];
-
-                // Filtrar el carrito para excluir el producto con el Id específico
-                carrito = carrito.filter(item => item.Id != index);
-
-                // Guardar el carrito actualizado en el localStorage
-                localStorage.setItem('carrito', JSON.stringify(carrito));
-                
-                // Volver a generar la grilla para reflejar los cambios
-                generarGrilla(carrito);
+                eliminarLineaSinLogin(index);
             }
-         
         }
+        hideLoader();
     });
 
-    // Añadir el event listener para el botón Pedir
+    // AÃ±adir el event listener para el botÃ³n Pedir
     document.getElementById('btnPedir').addEventListener('click', async function () {
-
+        showLoader();
         const duplas = [];
 
         // Recorrer todas las filas del cuerpo de la tabla
@@ -141,43 +143,62 @@ function generarGrilla(productosCantidad) {
             }
         });
 
-        try {
+        if (duplas.length == 0) {
+            Tools.Toast('Carrito vacÃ­o', 'warning');
+        } else {
 
-            if (sessionStorage.getItem('Logueado') == "true") {
-                // Llamar a la función para agregar los comentarios en masa
-                await ProductoCantidad.AgregarComentariosMasivo(duplas);
+            try {
 
-                // Obtiene la URL desde el campo oculto
-                const urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
+                if (sessionStorage.getItem('Logueado') == "true") {
 
-                // Redirige a la vista PedidoLogueado del controlador Pedido
-                window.location.href = urlPedidoLogueado;
-            } else {
+                    // Llamar a la funciÃ³n para agregar los comentarios en masa
+                    const res = await ProductoCantidad.AgregarComentariosMasivo(duplas);
 
-                // Obtener el carrito del localStorage
-                let carrito = JSON.parse(localStorage.getItem('carrito'));
-                if (!carrito) carrito = [];
+                    if (res.status == 200) {
+                        // Obtiene la URL desde el campo oculto
+                        const urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
 
-                // Actualizar los comentarios en el carrito
-                duplas.forEach(dupla => {
-                    const productoCantidad = carrito.find(item => item.Id == dupla.Id);
-                    if (productoCantidad) {
-                        productoCantidad.Comentario = dupla.Comentario;
+                        // Redirige a la vista PedidoLogueado del controlador Pedido
+                        window.location.href = urlPedidoLogueado;
                     }
-                });
+                    if (res.status == 500) {
+                        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+                    }
+                    if (res.status == 400) {
+                        const msj = res.text();
+                        Tools.Toast(msj, 'warning');
+                    }
 
-                // Guardar el carrito actualizado en el localStorage
-                localStorage.setItem('carrito', JSON.stringify(carrito));
 
-                // Obtiene la URL desde el campo oculto
-                const urlPedidoLogueado = document.getElementById('URLPedidoExpress').value;
+                } else {
 
-                // Redirige a la vista PedidoLogueado del controlador Pedido
-                window.location.href = urlPedidoLogueado;
+                    // Obtener el carrito del localStorage
+                    let carrito = JSON.parse(localStorage.getItem('carrito'));
+                    if (!carrito) carrito = [];
+
+                    // Actualizar los comentarios en el carrito
+                    duplas.forEach(dupla => {
+                        const productoCantidad = carrito.find(item => item.Id == dupla.Id);
+                        if (productoCantidad) {
+                            productoCantidad.Comentario = dupla.Comentario;
+                        }
+                    });
+
+                    // Guardar el carrito actualizado en el localStorage
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                    // Obtiene la URL desde el campo oculto
+                    const urlPedidoLogueado = document.getElementById('URLPedidoExpress').value;
+
+                    // Redirige a la vista PedidoLogueado del controlador Pedido
+                    window.location.href = urlPedidoLogueado;
+                }
+
+                hideLoader();
+
+            } catch (ex) {
+                throw ex;
             }
-         
-        } catch (ex) {
-            console.error('Error:', ex.message);
         }
     });
 }
@@ -185,15 +206,61 @@ function generarGrilla(productosCantidad) {
 
 async function eliminarLineaPorId(id) {
     try {
-        await Carrito.EliminarLinea(id);
+        showLoader();
 
-        let productosCantidad = await Carrito.obtenerProductosCarrito();
-        generarGrilla(productosCantidad);
+        const res = await Carrito.EliminarLinea(id);
+
+        if (res.status == 200) {
+            let productosCantidad = await Carrito.obtenerProductosCarrito();
+            if (productosCantidad.status == 400) {
+                const msj = await res.text();
+                Tools.Toast(msj, 'warning');
+                return;
+
+            } else if (productosCantidad.status == 500) {
+                Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+                return;
+            }
+            generarGrilla(productosCantidad);
+        }
+
+        if (res.status == 400 || res.status == 404) {
+            const msj = await res.text();
+            Tools.Toast(msj, 'warning');
+        }
+        if (res.status == 500) {
+            Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+        }
+
+        hideLoader();
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
+}
+
+function eliminarLineaSinLogin(index) {
+    try {
+        showLoader();
+        // Obtener el carrito del localStorage
+        let carrito = JSON.parse(localStorage.getItem('carrito'));
+        if (!carrito) carrito = [];
+
+        // Filtrar el carrito para excluir el producto con el Id especÃ­fico
+        carrito = carrito.filter(item => item.Id != index);
+
+        // Guardar el carrito actualizado en el localStorage
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+
+        // Volver a generar la grilla para reflejar los cambios
+        generarGrilla(carrito);
+
+        hideLoader();
+
+    } catch (ex) {
+        throw ex;
+    }
+
 }
 
 

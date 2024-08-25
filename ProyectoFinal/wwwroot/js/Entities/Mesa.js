@@ -15,21 +15,18 @@ class Mesa {
                 }
             });
 
-            if (!response.ok) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            if (response.status == 500) {
+                return response;
             }
 
             const data = await response.json();
-
-            // Verificar la estructura del JSON
-            console.log('Datos recibidos:', data);
 
             const mesas = data.map(item => new Mesa(item.Id, item.Reservada));
 
             return mesas;
 
-        } catch (error) {
-            console.error('Error fetching mesas:', error);
+        } catch (ex) {
+            throw ex;
         }
     }
 }

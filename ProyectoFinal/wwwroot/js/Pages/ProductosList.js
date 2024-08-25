@@ -1,13 +1,38 @@
-$(document).ready(function () {
-    // Código a ejecutar cuando el DOM esté listo
-    obtenerProductos();
+ï»¿$(document).ready(async function () {
+    showLoader();
+    //Mostrar toaster si entramos luego de eliminar producto
+    const toastMessage = localStorage.getItem('toastMessage');
+    const toastType = localStorage.getItem('toastType');
+    if (toastMessage && toastType) {
+        // Mostrar el toaster
+        Tools.Toast(toastMessage, toastType);
+
+        // Limpiar el almacenamiento local
+        localStorage.removeItem('toastMessage');
+        localStorage.removeItem('toastType');
+    }
+    
+    // CÃ³digo a ejecutar cuando el DOM estÃ© listo
+    await obtenerProductos();
+
+    hideLoader();
 });
 
 
 async function obtenerProductos() {
     try {
         let productos = await Producto.getProductosList();
+        if (productos.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            return;
+        }
+
+
         let tiposProd = await TipoProducto.getTiposProducto();
+        if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            return;
+        }
 
         const container = document.getElementById('tblProductos');
         container.innerHTML = '';
@@ -46,7 +71,7 @@ async function obtenerProductos() {
                     </td>
                     <td>
                     <label for="activo-${producto.Id}">Activo</label>
-                    <input type="checkbox" ${producto.Activo ? 'checked' : ''} id="activo-${producto.Id}" onchange="activarDesactivar(${producto.Id}, this.checked);">
+                    <input type="checkbox" ${producto.Activo ? 'checked' : ''} id="activo-${producto.Id}" onchange="activarDesactivar(${producto.Id}, '${producto.Nombre}', this.checked);">
                     </td>
                         `;
                     tbody.appendChild(tr);
@@ -60,47 +85,62 @@ async function obtenerProductos() {
         });
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
 
-async function activarDesactivar(productId, isActive) {
+async function activarDesactivar(productId, prodNombre, isActive) {
     try {
 
         let res = await Producto.UpdateActivo(productId, isActive);
 
-        if (!res.ok) {
-            throw new Error('Failed to update product status');
-        }
+        if (res.status == 200) {
+            let mensaje = "";
+            if (!isActive) {
+                mensaje = prodNombre + ' desactivado con exito';
+            } else {
+                mensaje = prodNombre + ' activado con exito';
+            }
+
+            Tools.Toast(mensaje, 'success');
+
+        } else if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+
+        } else if (res.status == 404) {
+            Tools.Toast("Producto no existe.", 'warning');
+        }        
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
 
 async function eliminarProducto(productId) {
     try {
-        let confirmacion = confirm(`¿Estás seguro de que deseas eliminar el producto?`);
+        let confirmacion = await asyncConfirm(`Â¿EstÃ¡s seguro de que deseas eliminar el producto?`);
 
         if (confirmacion) {
-            // Lógica para eliminar el elemento
+            // LÃ³gica para eliminar el elemento
             let res = await Producto.UpdateEliminar(productId);
 
-            if (!res.ok) {
-                throw new Error('Failed to update product status');
-            }
-            alert("Elemento eliminado");
-            await obtenerProductos();
+            if (res.status == 200) {
+                showLoader();
+                await obtenerProductos();
+                hideLoader();
+                Tools.Toast('Producto eliminado con exito', 'success');
 
-        } else {
-            alert("Eliminación cancelada");
+            } else if (res.status == 500) {
+                Tools.Toast('Error inesperado, contacte al administrador', 'error');
+
+            } else if (res.status == 404) {
+                Tools.Toast("Producto no existe.", 'warning');
+            }
         }
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        await handleError(ex);
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
 
@@ -112,7 +152,7 @@ function vistaEditarProducto(id) {
         window.location.href = urlWithId;
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        await handleError(ex);
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

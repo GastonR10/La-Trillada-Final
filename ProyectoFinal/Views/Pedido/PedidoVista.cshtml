@@ -1,6 +1,6 @@
 ﻿
 <div class="text-center">
-    <h1>Pedido</h1>
+    <h1 id="titulo">Pedido</h1>
 </div>
 
 <div class="row" id="pedidoSeleccionado">
@@ -57,7 +57,6 @@
         <button id="btnVolver" class="btn btn-warning">Volver</button>
     </div>
 </div>
-
 
 <div style="display:none;">
     @Html.Hidden("URLGetPedido", Url.Action("GetPedido", "Pedido"))

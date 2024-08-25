@@ -1,8 +1,35 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<link href="~/css/home.css" rel="stylesheet" />
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="inicial">
+        <h1>LA LLAMA ENCENDIDA DESDE 2016</h1>
+    </div>
+
+    <div class="branch-info">
+        <h2>SUCURSAL MALVIN</h2>
+        <p>
+            <i class="fas fa-map-marker-alt"></i> Orinoco 5088 esquina Michigan<br>
+            <i class="fas fa-phone-alt"></i> Pedidos y reservas 2619 7894<br>
+            <i class="fas fa-clock"></i> Lunes a Viernes de 19:00 a 01:00 hs.<br>
+            <i class="fas fa-clock"></i> Sabado y Domingo de 11:00 a 01:00 hs.
+        </p>
+        <a class="delivery-btn" asp-controller="Producto" asp-action="GetProductos">PEDIR DELIVERY</a>
+        <div class="branches-list">
+            <p> · Malvín · </p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100040875866345"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/latrilladaatr/?hl=es"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="nosotros">
+        <h2>SOBRE NOSOTROS</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <img src="~/img/frente local.jpg" alt="Alternate Text" />
+    </div>
+    <div class="experiencia">
+        <a class="experiencia-btn" asp-controller="Experiencia" asp-action="Index">CONTANOS TU EXPERIENCIA</a>
+    </div>
 </div>

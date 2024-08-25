@@ -11,7 +11,7 @@ namespace ProyectoFinal.Models
         public DbSet<Carrito> Carritos { get; set; }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<TipoProducto> TipoProductos { get; set; }
-        public DbSet<Reserva> Reservas { get; set; }
+        public DbSet<Experiencia> Experiencias { get; set; }
         public DbSet<ProductoCantidad> ProductoCantidad { get; set; }
 
         public BarContext(DbContextOptions<BarContext> options): base(options) { 

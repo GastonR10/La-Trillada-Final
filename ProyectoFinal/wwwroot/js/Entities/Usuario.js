@@ -10,41 +10,40 @@ class Usuario {
         this.CarritoAbierto = new Carrito();
     }
 
-    //constructor(usuario, password) {
-    //    this.NombreUsuario = usuario;
-    //    this.Password = password;
-    //}
-
     static async AltaDeIngreso(usuario, password) {
         try {
             const url = $("#URLIngresar").val();
-            /* const usu = new Usuario(usuario, password);*/ // Cambié el nombre de la variable a 'usu'
+            
             const usu = new Usuario(null, null, usuario, password, null, null, null);
 
             const response = await fetch(url, {
-                method: 'POST', // Cambiado a POST
+                method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(usu) // El cuerpo ahora está permitido con POST
+                body: JSON.stringify(usu) 
             });
 
             if (response.status == 404) {
-                return null;
+                let msj = await res.text();
+                Tools.Toast(msj, 'warning');
             }
 
-            const data = await response.json();
-
-            if (data.redirectUrl) {
-                sessionStorage.setItem('Logueado', true);
-                window.location.href = data.redirectUrl;
-            } else if (data.error) {
-                console.error('Error:', data.error);
-                alert('Error: ' + data.error);
+            if (response.status == 500) {
+                Tools.Toast('Error inesperado, contacte al administrador', 'error');
             }
+
+            if (response.status == 200) {
+                const data = await response.json();
+
+                if (data.redirectUrl) {
+                    sessionStorage.setItem('Logueado', true);
+                    window.location.href = data.redirectUrl;
+                }
+                
+            } 
 
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
     }
@@ -62,17 +61,9 @@ class Usuario {
                 body: JSON.stringify(usu) // El cuerpo ahora está permitido con POST
             });
 
-            if (response.status == 400) {
-                return "El nombre de usuario ya existe.";
-            }
-            if (response.ok) {
-                return "ok"
-            }
-
-            return "error"
+            return response;
 
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
     }
@@ -91,17 +82,9 @@ class Usuario {
                 body: JSON.stringify(usu) // El cuerpo ahora está permitido con POST
             });
 
-            if (response.status == 400) {
-                return "El nombre de usuario ya existe.";
-            }
-            if (response.ok) {
-                return "ok"
-            }
-
-            return "error"
+            return response;
 
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
     }
@@ -118,17 +101,9 @@ class Usuario {
                 }
             });
 
-            if (response.status == 400) {
-                return "El nombre de usuario ya existe.";
-            }
-            if (response.ok) {
-                return await response.json();
-            }
-
-            return "error"
+            return response;
 
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
     }
@@ -146,20 +121,11 @@ class Usuario {
                 body: JSON.stringify(usu) // El cuerpo ahora está permitido con POST
             });
 
-            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
-                return "El nombre de usuario ya existe.";
-            }
-            if (response.ok) {
-                return "ok"
-            }
-
-            return "error"
+            return response;
 
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
     }
 
-   
 }

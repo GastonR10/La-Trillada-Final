@@ -1,8 +1,11 @@
-    let _idPedido;
+ï»¿    let _idPedido;
 
 $(document).ready(async function () {
-    // Código a ejecutar cuando el DOM esté listo
+    showLoader();
+    // CÃ³digo a ejecutar cuando el DOM estÃ© listo
     await cargarPedido();
+
+    hideLoader();
 });
 
 async function cargarPedido() {
@@ -13,7 +16,13 @@ async function cargarPedido() {
         _idPedido = id;
         let pedido = await Pedido.getPedido(id);
 
-        if (pedido == null) {
+        if (pedido.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            return;
+        }
+        if (pedido.status == 404) {
+            let msj = await pedidos.text();
+            Tools.Toast(msj, 'warning');
             return;
         }
 
@@ -112,12 +121,12 @@ async function cargarPedido() {
 
         table.appendChild(tbody);
 
-        // Añadir la tabla al divProdList
+        // AÃ±adir la tabla al divProdList
         listaProd.innerHTML = ''; // Limpiar cualquier contenido previo
         listaProd.appendChild(table);
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        await handleError(ex);
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

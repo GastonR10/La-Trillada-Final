@@ -38,13 +38,10 @@
 <div class="row">
     <div class="col-6 col-sm-10"></div>
     <div class="col-6 col-sm-2">
-        <button class="btnGeneral" onclick="AgregarProducto();">Agregar</button>
+        <button class="btnGeneral " onclick="AgregarProducto();">Agregar</button>
     </div>
 
-</div>
-<div class="row text-center" id="divMsj" style="display:none;">
-    <label id="lblMensaje"></label>
-</div>
+</div>  
 
 <div style="display:none;">
     @Html.Hidden("URLCreateProducto", Url.Action("Create", "Producto"))

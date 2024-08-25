@@ -1,27 +1,39 @@
-$(document).ready(async function () {
+﻿$(document).ready(async function () {
+    showLoader();
     await cargarInfoPersonal();
     await cargarMesas("mesasSlc");
+    hideLoader();
+
 });
 
 async function cargarInfoPersonal() {
     try {
         let res = await Usuario.ObtenerUsuario();
 
-        if (res != null) {
-            let inputDir = document.getElementById("direccionPedido");
+        if (res.status == 200) {
+            if (res != null) {
+                let inputDir = document.getElementById("direccionPedido");
 
-            inputDir.innerText = res.Direccion;
+                inputDir.innerText = res.Direccion;
+            }
         }
 
-        console.log(res);
+        if (res.status == 400) {
+            const msj = await res.text();
+            Tools.Toast(msj, 'warning');
+        }
+
+        if (res.status == 500) {
+            Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+        }
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        await handleError(ex);
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 }
 
-function TipoPedido(tipoPedido) {
+async function TipoPedido(tipoPedido) {
     try {
 
         let inputGral = document.getElementById("pedidoLogueadoGeneral");
@@ -37,8 +49,8 @@ function TipoPedido(tipoPedido) {
             inputDir.style.display = "none";
         }
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        await handleError(ex);
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 
 
@@ -46,32 +58,60 @@ function TipoPedido(tipoPedido) {
 
 async function RealizarPedidoLog() {
     try {
+        showLoader();
         let inputDir = document.getElementById("pedidoDomicilioLogueado");
         let inputLocal = document.getElementById("pedidoLocalLogueado");
 
         let res;
 
-        let pagoTipo = document.getElementById("metodoPago").value; 
+        let pagoTipo = document.getElementById("metodoPago").value;
         let comentario = $("#comPedido").val();
 
         if (inputDir.style.display === "block") {
 
             let dir = $("#direccionPedido").text();
-            res = await Pedido.RealizarPedidoLogueado(dir, null, pagoTipo, comentario);
+            if (dir == "") {
+                Tools.Toast("Ingrese direccion en datos personales.", 'warning');
+                hideLoader();
+                return;
+            } else {
+                res = await Pedido.RealizarPedidoLogueado(dir, null, pagoTipo, comentario);
+            }
 
         } else if (inputLocal.style.display === "block") {
 
             let mesa = document.getElementById("mesasSlc").value;
-            res = await Pedido.RealizarPedidoLogueado("", mesa, pagoTipo, comentario);
+            if (mesa == 0) {
+                Tools.Toast("Seleccionar mesa", 'warning');
+                hideLoader();
+                return;
+            } else {
+                res = await Pedido.RealizarPedidoLogueado("", mesa, pagoTipo, comentario);
+            }
         }
 
+        if (res.status == 200) {
+            Tools.Toast("Pedido realizado con exito!", 'success');
+            //Guardo variables para mostrar toaster luego de cambio de vista
+            localStorage.setItem('toastMessage', 'Pedido realizado');
+            localStorage.setItem('toastType', 'success');
 
-        console.log(res);
+            let redirectUrl = $("#URLProductosActivos").val();
+            window.location.href = redirectUrl;
 
-            
+        } else if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+
+        } else if (res.status == 400) {
+            const msj = await res.text();
+            Tools.Toast(msj, 'warning');
+        }
+        hideLoader();
+
+
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        await handleError(ex);
+        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
     }
 
 }

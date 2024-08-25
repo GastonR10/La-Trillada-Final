@@ -1,9 +1,11 @@
-let _idProducto;
+ï»¿let _idProducto;
 
 $(document).ready(async function () {
-    // Código a ejecutar cuando el DOM esté listo
+    showLoader();
+    // CÃ³digo a ejecutar cuando el DOM estÃ© listo
     await obtenerProducto();
 
+    hideLoader();
 });
 
 async function obtenerProducto() {
@@ -13,8 +15,14 @@ async function obtenerProducto() {
 
         _idProducto = id;
         let producto = await Producto.getProducto(id);
+        await getTiposProducto();
 
-        if (producto == null) {
+        if (producto.status == 404) {
+            Tools.Toast('No se encontrÃ³ producto en base de datos.', 'warning');
+            return;
+        }
+        if (producto.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }
 
@@ -29,31 +37,33 @@ async function obtenerProducto() {
         desc.value = producto.Descripcion;
         precio.value = producto.Precio;
         activo.checked = producto.Activo;
-        img.src = producto.Foto;
-        await getTiposProducto();
-        tipo.value = producto.IdTipoProducto;
+        img.src = producto.Foto || "/img/product/error.png";
         img.alt = producto.Nombre;
-
+        tipo.value = producto.IdTipoProducto;
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        await handleError(ex);
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
 
 async function getTiposProducto() {
     try {
         let res = await TipoProducto.getTiposProducto();
+        if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            return;
+        }
 
         const selectElement = document.getElementById('productoTipo');
 
-        // Crear y añadir la opción predeterminada
+        // Crear y aÃ±adir la opciÃ³n predeterminada
         const defaultOption = document.createElement('option');
         defaultOption.value = '0';
         defaultOption.text = '-- Seleccionar --';
         selectElement.appendChild(defaultOption);
 
-        // Añadir las opciones obtenidas del servidor
+        // AÃ±adir las opciones obtenidas del servidor
         res.forEach(tipo => {
             const option = document.createElement('option');
             option.value = tipo.Id;
@@ -63,7 +73,6 @@ async function getTiposProducto() {
 
 
     } catch (ex) {
-        console.error('Error:', ex.message);
         throw ex;
     }
 }
@@ -77,25 +86,38 @@ async function editarProducto() {
         const activo = $("#productoActivo").prop('checked');
         const fotoNueva = $("#fotoNueva")[0].files[0];
 
-        //const img = $("#productoImg")[0].files[0];
+        let mensaje = "";
+        if (nombre == "") {
+            mensaje += `- Nombre no puede ser vacÃ­o.<br>`;
+        }
+        if (tipo == 0) {
+            mensaje += `- Seleccione un tipo de producto.<br>`;
+        }
+        if (precio <= 0) {
+            mensaje += `- Precio debe ser mayor a 0.<br>`;
+        }
+        if (mensaje != "") {
+            Tools.Toast(mensaje, 'warning');
+            return;
+        }
 
         const producto = new Producto(_idProducto, nombre, desc, fotoNueva, tipo, precio, activo, 0);
 
-        //const fotoString = document.getElementById('productoImg').getAttribute('src');
-
         let res = await Producto.editarProducto(producto);
 
-        if (!res.ok) {
-            throw new Error('Failed to edit product');
+        if (res.status == 200) {
+            Tools.Toast('Producto editado con exito', 'success');
+            await obtenerProducto();
+
+        } else if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+
+        } else if (res.status == 400) {
+            Tools.Toast("No todos los datos son correctos", 'warning');
         }
-        let redirectUrl = $("#URLGetProductoVista").val();
-        //const urlWithId = `${redirectUrl}/${_idProducto}`;
-        window.location.href = redirectUrl
-        alert("Producto editado con éxito");
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
 
@@ -106,33 +128,38 @@ function volverListaProducto() {
         window.location.href = redirectUrl;
 
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        await handleError(ex);
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }
 
 async function eliminarProducto() {
     try {
-        let confirmacion = confirm(`¿Estás seguro de que deseas eliminar el producto?`);
+        let confirmacion = await asyncConfirm(`Â¿EstÃ¡s seguro de que deseas eliminar el producto?`);
 
         if (confirmacion) {
-            // Lógica para eliminar el elemento
+            // LÃ³gica para eliminar el elemento
             let res = await Producto.UpdateEliminar(_idProducto);
 
-            if (!res.ok) {
-                throw new Error('Failed to update product status');
-            }
-            alert("Elemento eliminado");
-            let redirectUrl = $("#URLProductosList").val();
-            window.location.href = redirectUrl;
+            if (res.status == 200) {
+                //Guardo variables para mostrar toaster luego de cambio de vista
+                localStorage.setItem('toastMessage', 'Elemento eliminado con exito');
+                localStorage.setItem('toastType', 'success');
 
-        } else {
-            alert("Eliminación cancelada");
+                let redirectUrl = $("#URLProductosList").val();
+                window.location.href = redirectUrl;
+
+            } else if (res.status == 500) {
+                Tools.Toast('Error inesperado, contacte al administrador', 'error');
+
+            } else if (res.status == 404) {
+                Tools.Toast("Producto no existe.", 'warning');
+            }
+
         }
 
-
     } catch (ex) {
-        console.error('Error:', ex.message);
-        throw ex;
+        await handleError(ex);
+        Tools.Toast('Error inesperado, contacte al administrador', 'error');
     }
 }

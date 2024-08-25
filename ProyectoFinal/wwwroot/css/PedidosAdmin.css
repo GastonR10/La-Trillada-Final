@@ -1,4 +1,9 @@
-﻿.table th, .table td {
+﻿
+#divPedidosPendientes{
+    background: #fff;
+}
+
+.table th, .table td {
     text-align: center;
     vertical-align: middle;
 }

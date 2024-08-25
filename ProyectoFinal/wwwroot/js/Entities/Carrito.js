@@ -4,6 +4,33 @@ class Carrito {
         this.PrecioTotal = 0;
     }
 
+    static async obtenerTotalCarrito() {
+
+        try {
+            const url = $("#URLObtenerTotalCarrito").val();
+
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.status != 200) {
+                return response;
+            }
+
+            const data = await response.json();
+                        
+            return data;
+
+        }
+        catch (ex) {
+            throw ex;
+        }
+
+    }
+
     static async obtenerProductosCarrito() {
 
         try {
@@ -16,8 +43,8 @@ class Carrito {
                 }
             });
 
-            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
-                return "No se encontro usuario logeado.";
+            if (response.status != 200) {
+                return respuesta;
             }
 
             const data = await response.json();
@@ -32,17 +59,11 @@ class Carrito {
             });
 
             return productosCantidad;
-
-            return "error"
-
+            
         }
         catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
-
-
-
 
     }
 
@@ -52,16 +73,14 @@ class Carrito {
             return producto ? producto.Cantidad : 0;
 
         } catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
 
     }
-
+    
     static async agregarProducto(idProducto, cantidad) {
         try {
-
-
+                        
             const url = $("#URLAgregarProducto").val();
             const productoCantidad = new ProductoCantidad(idProducto, cantidad);
 
@@ -72,19 +91,11 @@ class Carrito {
                 },
                 body: JSON.stringify(productoCantidad)
             });
-
-            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
-                return "El producto no existe.";
-            }
-            if (response.ok) {
-                return "ok"
-            }
-
-            return "error"
+                        
+            return response;
 
         }
         catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
 
@@ -104,18 +115,10 @@ class Carrito {
                 body: JSON.stringify(id)
             });
 
-            if (response.status == 400) {// lo dejamos de momento pero no deberia estar.
-                return "La linea no existe";
-            }
-            if (response.ok) {
-                return "ok"
-            }
-
-            return "error"
+            return response
 
         }
         catch (ex) {
-            console.error('Error:', ex.message);
             throw ex;
         }
     }
