@@ -1,0 +1,13 @@
+﻿#comentariosList div {
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#comentariosList hr {
+    border-top: 1px solid #ccc;
+}
+
+

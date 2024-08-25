@@ -1,24 +1,24 @@
 ﻿<link href="~/css/experiencia.css" rel="stylesheet" />
 <h2>Contanos tu experiencia</h2>
 
-<form id="experienciaForm">
-    <div class="form-group">
-        <label for="comentario">Comentario</label>
-        <textarea id="comentario" name="comentario" class="form-control" rows="5"></textarea>
-    </div>
+<div class="form-group">
+    <label for="comentario">Comentario</label>
+    <textarea id="comentario" name="comentario" class="form-control" rows="5"></textarea>
+</div>
 
-    <div class="form-group">
-        <label for="calificacion">Calificación</label>
-        <select id="calificacion" name="calificacion" class="form-control">
-            @for (int i = 0; i <= 10; i++)
-            {
-                <option value="@i">@i</option>
-            }
-        </select>
-    </div>
+<div class="form-group">
+    <label for="calificacion">Calificación</label>
+    <select id="calificacion" name="calificacion" class="form-control">
+        <option value="-1" selected>-- Seleccionar calificación --</option>
+        @for (int i = 0; i <= 10; i++)
+        {
+            <option value="@i">@i</option>
+        }
+    </select>
+</div>
 
-    <button type="submit" class="btn btn-primary" onclick="CrearExperiencia();">Guardar</button>
-</form>
+<button type="submit" class="btn btn-primary" onclick="CrearExperiencia();">Guardar</button>
+
 <div style="display:none;">
     @Html.Hidden("URLCrearExperiencia", Url.Action("Create", "Experiencia"))
 

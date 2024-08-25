@@ -42,8 +42,8 @@ namespace ProyectoFinal.Controllers
                 // Verificar si el usuario ya existe en la base de datos
                 Usuario? existingUser = await _context.Usuarios
                                                 .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
-                existingUser = null;
-                if (existingUser.rol == null)
+                
+                if (existingUser == null)
                 {
                     return BadRequest("El usuario no existe.");
                 }
@@ -54,7 +54,7 @@ namespace ProyectoFinal.Controllers
                 _context.Experiencias.Add(exp);
                 await _context.SaveChangesAsync();
 
-                return Ok();
+                return Ok("nueva exp");
             }
             catch (Exception ex)
             {
@@ -62,5 +62,47 @@ namespace ProyectoFinal.Controllers
                 return StatusCode(500);
             }
         }
+
+        public IActionResult GetComentarios()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GetComentariosList([FromBody] DTO_ExperienciaFiltrar filtro)
+        {
+            try
+            {
+                var query = _context.Experiencias.AsQueryable();
+
+                if(filtro != null)
+                {
+                    if (filtro.FechaInicio.HasValue)
+                    {
+                        query = query.Where(e => e.DateTime >= filtro.FechaInicio.Value);
+                    }
+
+                    if (filtro.FechaFin.HasValue)
+                    {
+                        query = query.Where(e => e.DateTime <= filtro.FechaFin.Value);
+                    }
+
+                    if (filtro.Calificacion.HasValue)
+                    {
+                        query = query.Where(e => e.Calificacion == filtro.Calificacion.Value);
+                    }
+                }                
+
+                var comentarios = await query.ToListAsync();
+
+                return Json(comentarios);
+            }
+            catch (Exception ex)
+            {
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                return StatusCode(500, "Error al obtener los comentarios");
+            }
+        }
+
     }
 }

@@ -23,9 +23,9 @@ Tools.Toast = function (mensaje, tipo) {
           <div class="toast fade ${toastClase}" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-body">
               <div class="d-flex gap-4">
-                <span ${tipo == 'info' ? 'class= "text-primary"' : 'class= "text-white"'}><i class="fa-solid ${iconoClase} fa-lg"></i></span>
+                <span ${tipo == 'info' ? 'class= "text-primary"' : tipo == 'warning' ? 'class= "text-black"' : 'class= "text-white"'}><i class="fa-solid ${iconoClase} fa-lg"></i></span>
                 <div class="d-flex flex-grow-1 align-items-center">
-                  <span ${tipo == 'info' ? 'class= "text-primary fw-semibold"' : 'class= "text-white fw-semibold"'}>${mensaje}</span>
+                  <span ${tipo == 'info' ? 'class= "text-primary fw-semibold"' : tipo == 'warning' ? 'class= "text-black"' : 'class= "text-white fw-semibold"'}>${mensaje}</span>
                   <button type="button" class="btn-close btn-close-sm ${tipo == 'info' ? "btn-close-black" : "btn-close-white"} ms-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
               </div>

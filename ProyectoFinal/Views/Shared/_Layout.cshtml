@@ -86,6 +86,9 @@
                 <li class="nav-item opcionMenu">
                     <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="TipoProducto" asp-action="GetTipoProductosView"><i class="fa-regular fa-file-signature"></i>  Tipos de Producto</a>
                 </li>
+                <li class="nav-item opcionMenu">
+                    <a class="nav-link text-dark opcionMenuAs" asp-area="" asp-controller="Experiencia" asp-action="GetComentarios"><i class="fa-regular fa-file-signature"></i>  Experiencias Clientes</a>
+                </li>
 
             }
             @if (Context.Session.GetString("rol") == "Cliente")

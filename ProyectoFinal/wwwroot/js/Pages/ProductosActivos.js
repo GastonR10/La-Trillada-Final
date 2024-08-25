@@ -65,7 +65,7 @@ async function obtenerProductosActivos() {
             return;
         }
         const container = document.getElementById('productosContainer');
-        container.innerHTML = ''; // Limpia el contenido previo
+        container.innerHTML = ''; 
 
         tiposProd.forEach(tipo => {
             const productosPorTipo = productos.filter(p => p.IdTipoProducto === tipo.Id);
