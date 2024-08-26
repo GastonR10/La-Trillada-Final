@@ -10,4 +10,29 @@
     border-top: 1px solid #ccc;
 }
 
+.form-group {
+    margin: 15px 0;
+}
 
+.form-group button {
+    margin: 10px 0;
+}
+
+button {
+    width: 100%;
+}
+
+#btnOrdenar {
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    padding-right: 30px; /* Ajusta el espacio para el ícono */
+    text-align: center;
+}
+
+    #btnOrdenar i {
+        position: absolute;
+        right: 10px; /* Ajusta la distancia del ícono al borde derecho */
+        top: 50%;
+        transform: translateY(-50%); /* Centra verticalmente el ícono */
+    }

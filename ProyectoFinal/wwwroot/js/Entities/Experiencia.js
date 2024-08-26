@@ -38,7 +38,7 @@
             if (!fechaFin) {
                 fechaFin = new Date().toISOString(); 
             }
-
+           
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -88,4 +88,6 @@
             throw ex;
         }
     }
+
+
 }

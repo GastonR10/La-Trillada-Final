@@ -52,7 +52,7 @@ namespace ProyectoFinal.Controllers
                         var claims = new List<Claim>
                         {
                             new(ClaimTypes.Name, user.NombreUsuario),
-                            new Claim("rol", user.rol)
+                            new Claim(ClaimTypes.Role, user.rol)
                         };
 
                         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

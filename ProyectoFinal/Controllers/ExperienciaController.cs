@@ -84,21 +84,26 @@ namespace ProyectoFinal.Controllers
                 {
                     if (filtro.FechaInicio.HasValue)
                     {
-                        query = query.Where(e => e.Fecha >= filtro.FechaInicio.Value);
+                        DateTime fechaInicio = filtro.FechaInicio.Value.Date;
+                        query = query.Where(e => e.Fecha.Date >= fechaInicio);
                     }
 
                     if (filtro.FechaFin.HasValue)
                     {
-                        query = query.Where(e => e.Fecha <= filtro.FechaFin.Value);
+                        DateTime fechaFin = filtro.FechaFin.Value.Date.AddDays(1).AddTicks(-1);
+                        query = query.Where(e => e.Fecha <= fechaFin);
                     }
 
-                    if (filtro.Calificacion.HasValue)
+                    if (filtro.Calificacion.HasValue && filtro.Calificacion != -1)
                     {
                         query = query.Where(e => e.Calificacion == filtro.Calificacion.Value);
                     }
-                }                
+                }
 
-                var comentarios = await query.ToListAsync();
+                // Ordenar las experiencias poniendo las últimas primero
+                query = query.OrderByDescending(e => e.Fecha);
+
+                List<Experiencia> comentarios = await query.ToListAsync();
 
                 return Json(comentarios);
             }

@@ -25,7 +25,7 @@ class Usuario {
             });
 
             if (response.status == 404) {
-                let msj = await res.text();
+                let msj = await response.text();
                 Tools.Toast(msj, 'warning');
             }
 
