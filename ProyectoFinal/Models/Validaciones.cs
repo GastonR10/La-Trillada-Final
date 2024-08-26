@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using ReglasNegocio.Entities;
 using System.Text.RegularExpressions;
 
 namespace ProyectoFinal.Models

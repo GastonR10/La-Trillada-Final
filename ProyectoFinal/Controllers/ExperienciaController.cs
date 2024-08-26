@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal.Models;
 using ReglasNegocio.DTO_Entities;
@@ -17,6 +18,8 @@ namespace ProyectoFinal.Controllers
             _context = context;
             _errorLogger = errorLogger;
         }
+
+        [Authorize(Policy = "ClienteOnly")]
         public IActionResult Index()
         {
             return View();
@@ -37,7 +40,7 @@ namespace ProyectoFinal.Controllers
                 }
                 if (expDTO.Comentario.Length > 500)
                 {
-                    return BadRequest("Elcomentario puede tener un máximo de 500 caracteres.");
+                    return BadRequest("El comentario puede tener un máximo de 500 caracteres.");
                 }
 
                 // Verificar si el usuario ya existe en la base de datos
@@ -64,6 +67,7 @@ namespace ProyectoFinal.Controllers
             }
         }
 
+        [Authorize(Policy = "AdminOnly")]
         public IActionResult GetComentarios()
         {
             return View();
@@ -110,12 +114,11 @@ namespace ProyectoFinal.Controllers
         public async Task<IActionResult> ObtenerExperiencias()
         {
             try
-            {
-                // Obtener el primer y último día del año actual
-                DateTime inicioAnio = new DateTime(DateTime.Now.Year, 1, 1);
-                DateTime finAnio = new DateTime(DateTime.Now.Year, 12, 31);
+            {                
+                DateTime finAnio = DateTime.Now;
+                DateTime inicioAnio = finAnio.AddYears(-1);
 
-                // Filtrar las experiencias del año actual
+                // Filtrar las experiencias del ultimo año
                 List<DTO_Experiencia> experienciasAnioActual = await _context.Experiencias
                     .Where(e => e.Fecha >= inicioAnio && e.Fecha <= finAnio)
                      .Select(e => new DTO_Experiencia(e))

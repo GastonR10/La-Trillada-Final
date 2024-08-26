@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal.Models;
 using ReglasNegocio.DTO_Entities;
 using ReglasNegocio.Entities;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace ProyectoFinal.Controllers
@@ -45,6 +49,24 @@ namespace ProyectoFinal.Controllers
                         HttpContext.Session.SetString("rol", user.rol);
                         HttpContext.Session.SetString("Usuario", user.NombreUsuario);
 
+                        var claims = new List<Claim>
+                        {
+                            new(ClaimTypes.Name, user.NombreUsuario),
+                            new Claim("rol", user.rol)
+                        };
+
+                        var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+
+                        // Crear propiedades de autenticación
+                        var authProperties = new AuthenticationProperties
+                        {
+                            IsPersistent = true, // Configurar como verdadero si deseas una cookie persistente
+                        };
+
+                        // Iniciar sesión del usuario
+                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+
                         // Verificar el rol del usuario
                         if (user.rol == "Admin")
                         {
@@ -81,60 +103,12 @@ namespace ProyectoFinal.Controllers
         {
             return View();
         }
+
+        [Authorize(Policy = "AdminOnly")]
         public IActionResult RegistroAdmin()
         {
             return View();
         }
-
-        //[HttpPost("AltaUsuario")]
-        //public async Task<IActionResult> AltaUsuario([FromBody] DTO_Usuario usuario)
-        //{
-        //    try
-        //    {
-        //        if (
-        //            usuario.Nombre == "" ||
-        //            usuario.Apellido == "" ||
-        //            usuario.NombreUsuario == "" ||
-        //            !_validaciones.EsContrasenaValida(usuario.Password) ||
-        //            !_validaciones.EsEmailValido(usuario.Email) ||
-        //            !_validaciones.EsNumeroValido(usuario.Telefono) ||
-        //            usuario.Direccion == ""
-        //            )
-        //        {
-        //            return BadRequest("No todos los datos son correctos.");
-        //        }
-
-        //        // Verificar si el usuario ya existe en la base de datos
-        //        Usuario? existingUser = await _db.Usuarios
-        //            .FirstOrDefaultAsync(u => u.NombreUsuario == usuario.NombreUsuario);
-
-        //        if (existingUser != null)
-        //        {
-        //            // Si el usuario ya existe, retornar un BadRequest
-        //            return BadRequest("El nombre de usuario ya existe.");
-        //        }
-
-        //        // Crear el nuevo usuario con rol "Admin"
-        //        Usuario newUser = new Usuario
-        //        {
-        //            NombreUsuario = usuario.NombreUsuario,
-        //            Password = usuario.Password,
-        //            rol = "Admin"
-        //        };
-
-        //        // Guardar el nuevo usuario en la base de datos
-        //        _db.Usuarios.Add(newUser);
-        //        await _db.SaveChangesAsync();
-
-        //        // Retornar una respuesta exitosa
-        //        return Ok(newUser);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return StatusCode(500);
-        //    }
-
-        //}
 
         [HttpPost("AltaAdmin")]
         public async Task<IActionResult> AltaAdmin([FromBody] DTO_Usuario usuario)
@@ -221,6 +195,7 @@ namespace ProyectoFinal.Controllers
             }
         }
 
+        [Authorize(Policy = "ClienteOnly")]
         public IActionResult DatosPersonales()
         {
             return View();

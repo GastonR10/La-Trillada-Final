@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.EntityFrameworkCore;
@@ -25,12 +26,14 @@ namespace ProyectoFinal.Controllers
             _errorLogger = errorLogger;
         }
 
+        [Authorize(Policy = "AdminOnly")]
         [HttpGet("Pedido/GetPedidoVista/{id}")]
         public IActionResult GetPedidoVista(int id)
         {
             return View("PedidoVista", id);
         }
 
+        [Authorize(Policy = "ClienteOnly")]   
         [HttpGet("Pedido/VerPedidoCliente/{id}")]
         public IActionResult VerPedidoCliente(int id)
         {
@@ -99,6 +102,8 @@ namespace ProyectoFinal.Controllers
             }
         }
 
+        [Authorize(Policy = "AdminOnly")]
+        [Authorize(Policy = "ClienteOnly")]
         public IActionResult PedidoLogueado()
         {
             return View();
@@ -241,6 +246,8 @@ namespace ProyectoFinal.Controllers
             }
         }
 
+
+        [Authorize(Policy = "AdminOnly")]
         public IActionResult AdministracionPedidos()
         {
             return View();
@@ -449,6 +456,7 @@ namespace ProyectoFinal.Controllers
 
         }
 
+        [Authorize(Policy = "AdminOnly")]
         public IActionResult PedidosFinalizados()
         {
             return View();
@@ -520,6 +528,7 @@ namespace ProyectoFinal.Controllers
             }
         }
 
+        [Authorize(Policy = "ClienteOnly")]
         public IActionResult PedidosCliente()
         {
             return View();
@@ -565,6 +574,7 @@ namespace ProyectoFinal.Controllers
 
         }
 
+        [Authorize(Policy = "AdminOnly")]
         public IActionResult PedidosCocina()
         {
             return View();

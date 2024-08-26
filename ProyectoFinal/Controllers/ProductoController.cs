@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal.Models;
 using ReglasNegocio.DTO_Entities;
@@ -19,10 +20,13 @@ namespace ProyectoFinal.Controllers
             _errorLogger = errorLogger;
         }
 
+        [Authorize(Policy = "AdminOnly")]
         public IActionResult CreateProducto()
         {
             return View("ProductoCreate");
         }
+
+        [Authorize(Policy = "AdminOnly")]
 
         [HttpGet("Producto/GetProductoVista/{id}")]
         public IActionResult GetProductoVista(int id)
@@ -112,6 +116,7 @@ namespace ProyectoFinal.Controllers
 
         }
 
+        [Authorize(Policy = "AdminOnly")]
         [HttpGet]
         public IActionResult GetProductosList()
         {

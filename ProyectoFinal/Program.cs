@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProyectoFinal.Models;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,10 +22,24 @@ builder.Services.AddScoped<Validaciones>();
 
 builder.Services.AddScoped<ErrorLogger>();
 
-builder.Services.AddSession();
-
 // Agregar HttpClient para hacer solicitudes HTTP
 builder.Services.AddHttpClient();
+
+builder.Services.AddSession();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.Cookie.HttpOnly = true;
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+        options.LoginPath = "/Login/Login";
+        options.AccessDeniedPath = "/Home/Index";
+        options.SlidingExpiration = true;
+    });
+
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("AdminOnly", policy => policy.RequireClaim("rol", "Admin"))
+    .AddPolicy("ClienteOnly", policy => policy.RequireClaim("rol", "Cliente"));
 
 var app = builder.Build();
 
@@ -42,6 +57,7 @@ app.UseRouting();
 
 app.UseSession();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

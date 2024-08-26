@@ -1,11 +1,8 @@
 $(document).ready(async function () {
     try {
-        let res = await Experiencia.ObtenerExperiencias();
+        showLoader();
 
-        if (res.status == 500) {
-            Tools.Toast('Error inesperado, contacte al administrador', 'error');
-            return;
-        }
+        let res = await Experiencia.ObtenerExperiencias();
 
         if (res.status == 500) {
             Tools.Toast('Error inesperado, contacte al administrador', 'error');
@@ -56,18 +53,25 @@ $(document).ready(async function () {
 
         // Inicializar Swiper
         new Swiper('.swiper-container', {
-            slidesPerView: 3, // Mostrar 3 tarjetas a la vez
+            slidesPerView: 1, // Mostrar 1 tarjeta a la vez por defecto (para pantallas pequeñas)
             spaceBetween: 10, // Espacio entre las tarjetas
             slidesPerGroup: 1, // Deslizar una tarjeta a la vez
             loop: true, // Habilitar el looping
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true
+            },
+            breakpoints: {
+                // Cuando la pantalla es mayor a 768px (escritorio)
+                769: {
+                    slidesPerView: 3    , // Mostrar 3 tarjetas a la vez en pantallas grandes
+                    spaceBetween: 10 // Espacio entre las tarjetas
+                }
             }
         });
 
 
-
+        hideLoader();
 
     } catch (ex) {
         await handleError(ex);

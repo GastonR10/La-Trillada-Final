@@ -25,6 +25,14 @@
     box-sizing: border-box;
 }
 
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .swiper-slide {
+        width: calc(100% - 20px); /* Ajusta el ancho para una tarjeta */
+        margin: 0 10px;
+    }
+}
+
 /* Paginación */
 .swiper-pagination {
     position: absolute;
