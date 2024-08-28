@@ -47,7 +47,7 @@
     <br />
 
     <div class="col-8">
-        <button id="btnPedidoLog" class="btnGeneral" onclick="RealizarPedidoLog();">Realizar</button>
+        <button id="btnPedidoLog" class="btn btn-primary btn-block margenGeneral" onclick="RealizarPedidoLog();">Realizar</button>
     </div>
 
 </div>
@@ -57,7 +57,7 @@
     @Html.Hidden("URLGetMesas", Url.Action("GetMesas", "Mesa"))
     @Html.Hidden("URLRealizarPedidoLogueado", Url.Action("RealizarPedidoLogueado", "Pedido"))
     @Html.Hidden("URLProductosActivos", Url.Action("GetProductos", "Producto"))
-    @Html.Hidden("URLPantallaPricipal", Url.Action("Index", "Home"))
+    @Html.Hidden("URLPantallaPrincipal", Url.Action("Index", "Home"))
 </div>
 
 

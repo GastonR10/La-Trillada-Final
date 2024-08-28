@@ -110,12 +110,14 @@ async function RealizarPedidoLog() {
 
         } else if (res.status == 500) {
             Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            hideLoader();
 
         } else if (res.status == 400) {
             const msj = await res.text();
             Tools.Toast(msj, 'warning');
+            hideLoader();
         }
-        hideLoader();
+        
 
 
     } catch (ex) {
