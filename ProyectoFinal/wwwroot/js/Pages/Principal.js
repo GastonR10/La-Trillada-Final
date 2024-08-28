@@ -1,6 +1,18 @@
 $(document).ready(async function () {
     try {
         showLoader();
+            
+        //Mostrar toaster si entramos luego pedir
+        const toastMessage = localStorage.getItem('toastMessage');
+        const toastType = localStorage.getItem('toastType');
+        if (toastMessage && toastType) {
+            // Mostrar el toaster
+            Tools.Toast(toastMessage, toastType);
+
+            // Limpiar el almacenamiento local
+            localStorage.removeItem('toastMessage');
+            localStorage.removeItem('toastType');
+        }
 
         let res = await Experiencia.ObtenerExperiencias();
 

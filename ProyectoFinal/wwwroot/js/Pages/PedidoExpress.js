@@ -96,7 +96,7 @@ async function RealizarPedidoExpress() {
             localStorage.setItem('toastMessage', 'Pedido realizado');
             localStorage.setItem('toastType', 'success');
 
-            let redirectUrl = $("#URLProductosActivos").val();
+            let redirectUrl = $("#URLPantallaPrincipal").val();
             window.location.href = redirectUrl;
 
         } else if (res.status == 500) {

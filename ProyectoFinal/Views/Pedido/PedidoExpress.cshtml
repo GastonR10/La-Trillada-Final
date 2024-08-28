@@ -62,7 +62,7 @@
     <br />
 
     <div class="col-8">
-        <button id="btnPedidoLog" class="btnGeneral" onclick="RealizarPedidoExpress();">Realizar</button>
+        <button id="btnPedidoLog" class="btn btn-primary btn-block margenGeneral" onclick="RealizarPedidoExpress();">Realizar</button>
     </div>
 
 </div>
@@ -70,7 +70,7 @@
 <div style="display:none;">
     @Html.Hidden("URLGetMesas", Url.Action("GetMesas", "Mesa"))
     @Html.Hidden("URLRealizarPedidoExpress", Url.Action("RealizarPedidoExpress", "Pedido"))
-    @Html.Hidden("URLProductosActivos", Url.Action("GetProductos", "Producto"))
+    @Html.Hidden("URLPantallaPrincipal", Url.Action("Index", "Home"))
 </div>
 
 
