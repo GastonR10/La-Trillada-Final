@@ -77,8 +77,8 @@ async function RealizarPedidoExpress() {
 
             let mesa = document.getElementById("mesaNumero").textContent;
             let nombre = document.getElementById("nombrePedExMesa").value;
-            if (mesa == 0) {
-                Tools.Toast("Seleccionar mesa", 'warning');
+            if (nombre == "") {
+                Tools.Toast("Ingresar Nombre", 'warning');
             } else {
                 res = await Pedido.RealizarPedidoExpress("", nombre, "", -1, mesa, pagoTipo, comentario);
                 
