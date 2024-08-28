@@ -68,6 +68,8 @@ async function RealizarPedidoExpress() {
             }
             if (mensaje != "") {
                 Tools.Toast(mensaje, 'warning');
+                return;
+                hideLoader();
             }
             else {
                 res = await Pedido.RealizarPedidoExpress(dir, nom, mail, tel, null, pagoTipo, comentario);
@@ -79,6 +81,8 @@ async function RealizarPedidoExpress() {
             let nombre = document.getElementById("nombrePedExMesa").value;
             if (nombre == "") {
                 Tools.Toast("Ingresar Nombre", 'warning');
+                return;
+                hideLoader();
             } else {
                 res = await Pedido.RealizarPedidoExpress("", nombre, "", -1, mesa, pagoTipo, comentario);
                 
