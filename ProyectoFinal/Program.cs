@@ -41,7 +41,12 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
     options.AddPolicy("ClienteOnly", policy => policy.RequireRole("Cliente"));
+
+    options.AddPolicy("AdminOrCliente", policy =>
+        policy.RequireAssertion(context =>
+            context.User.IsInRole("Admin") || context.User.IsInRole("Cliente")));
 });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

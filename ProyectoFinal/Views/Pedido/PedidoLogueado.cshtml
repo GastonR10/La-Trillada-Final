@@ -3,7 +3,7 @@
 </div>
 
 
-<div class="row" id="">
+@* <div class="row" id="">
 
     <div class="col-6" id="">
         <button class="btnGeneral" onclick="TipoPedido(1);" style="border-color:aqua">Domicilio</button>
@@ -13,10 +13,10 @@
         <button class="btnGeneral" onclick="TipoPedido(2);">Local</button>
     </div>
 
-</div>
+</div> *@
 
 
-<div class="row" id="pedidoLogueadoGeneral" style="display:none">
+<div class="row" id="pedidoLogueadoGeneral" @* style="display:none" *@>
     <div class="col-6 col-12" id="pedidoDomicilioLogueado" style="display:none">
         <label>Dirección: </label>
         <br />
@@ -26,10 +26,7 @@
 
 
     <div class="col-6 col-12" id="pedidoLocalLogueado" style="display:none">
-        <label>Mesa: </label>
-        <br />
-        <select id="mesasSlc" class="form-select">
-        </select>
+        <h3>Mesa <span id="mesaNumero"></span></h3>
     </div>
     <br />
 

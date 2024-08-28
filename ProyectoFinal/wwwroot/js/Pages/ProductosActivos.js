@@ -1,5 +1,16 @@
 ﻿$(document).ready(async function () {
     try {
+        localStorage.removeItem('mesaId');
+        // Obtener el ID de la URL
+        const url = window.location.pathname;
+
+        const id = url.substring(url.lastIndexOf('/') + 1);
+
+        if (!isNaN(id) && id.trim() !== '') {
+            // Guardar el ID en localStorage
+            localStorage.setItem('mesaId', id);
+        }
+
         if (sessionStorage.getItem('Logueado') === null) {
             // Si no existe, la crea y le asigna el valor "false"
             sessionStorage.setItem('Logueado', false);

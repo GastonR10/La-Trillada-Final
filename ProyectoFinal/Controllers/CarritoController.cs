@@ -33,7 +33,7 @@ namespace ProyectoFinal.Controllers
                 Usuario? existingUser = await _db.Usuarios
                     .FirstOrDefaultAsync(u => u.NombreUsuario == HttpContext.Session.GetString("Usuario"));
                 
-                if (existingUser.Nombre == null)
+                if (existingUser.NombreUsuario == null)
                 {
                     // Si el usuario no existe, retornar un BadRequest con un mensaje
                     return BadRequest("El usuario no existe.");
@@ -48,7 +48,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
         }
@@ -89,7 +89,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
         }
@@ -121,7 +121,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
         }
@@ -158,7 +158,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
         }

@@ -12,7 +12,7 @@ async function obtenerPedidosFinalizados() {
 
         _PedidosFinalizados = await Pedido.GetFinalizados();
 
-        if (_PedidosFinalizados != 200) {
+        if (_PedidosFinalizados == 500) {
             Tools.Toast("Error inesperado, contacte a su administrador", 'error');
             return;
         }

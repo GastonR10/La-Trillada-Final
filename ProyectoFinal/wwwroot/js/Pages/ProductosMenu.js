@@ -17,7 +17,7 @@ async function obtenerProductosMenu() {
         }
 
         let tiposProd = await TipoProducto.getTiposProducto();
-        if (res.status == 500) {
+        if (tiposProd.status == 500) {
             Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }

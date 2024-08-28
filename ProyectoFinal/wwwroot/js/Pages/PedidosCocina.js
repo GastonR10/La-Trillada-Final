@@ -49,7 +49,7 @@ async function cargarPedidosEnPreparacion() {
 
             const cardText = document.createElement('p');
             cardText.className = 'card-text';
-            cardText.innerText = `Cliente: ${pedido.Nombre} ${pedido.Apellido}\nComentario: ${pedido.Comentario}`;
+            cardText.innerText = `Cliente: ${pedido.Nombre} ${pedido.Apellido ? pedido.Apellido : ''}\nComentario: ${pedido.Comentario}`;
 
             const listaProd = document.createElement('ul');
             listaProd.className = 'list-group list-group-flush';

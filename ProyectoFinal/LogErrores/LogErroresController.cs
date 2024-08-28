@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Text;
 
 namespace ProyectoFinal.LogErrores
 {
@@ -18,7 +19,10 @@ namespace ProyectoFinal.LogErrores
                 }
 
                 string logFilePath = Path.Combine(logDirectory, $"error_{DateTime.Now:yyyyMMdd}.txt");
-                await System.IO.File.AppendAllTextAsync(logFilePath, logError.Error);
+
+                // Especificar la codificación UTF-8 y añadir nueva línea con CR LF
+                string errorContent = $"{logError.Error}{Environment.NewLine}{Environment.NewLine}";
+                await System.IO.File.AppendAllTextAsync(logFilePath, errorContent, Encoding.UTF8);
 
                 return Ok();
             }

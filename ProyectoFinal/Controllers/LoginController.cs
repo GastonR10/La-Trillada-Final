@@ -38,8 +38,8 @@ namespace ProyectoFinal.Controllers
                 Usuario? user = await _db.Usuarios
                                 .Where(u => u.NombreUsuario == usuario.NombreUsuario)
                                 .FirstOrDefaultAsync();
-
-                if (user != null)
+                user = null;
+                if (user.Apellido != null)
                 {
                     PasswordHasher<Usuario> passwordHasher = new PasswordHasher<Usuario>();
                     PasswordVerificationResult verificationResult = passwordHasher.VerifyHashedPassword(null, user.Password, usuario.Password);
@@ -88,14 +88,20 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
         }
 
-        public ActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
+            // Limpia la sesión
             HttpContext.Session.Clear();
+
+            // Cierra la sesión de autenticación
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            // Redirige al usuario a la página de inicio de sesión
             return RedirectToAction(nameof(Login));
         }
 
@@ -142,7 +148,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
 
@@ -190,7 +196,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
         }
@@ -220,7 +226,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
         }
@@ -268,7 +274,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
         }

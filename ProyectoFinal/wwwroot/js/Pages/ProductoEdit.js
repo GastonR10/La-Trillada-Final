@@ -121,7 +121,7 @@ async function editarProducto() {
     }
 }
 
-function volverListaProducto() {
+async function volverListaProducto() {
     try {
 
         let redirectUrl = $("#URLProductosList").val();

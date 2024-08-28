@@ -10,12 +10,12 @@ async function obtenerPedidos() {
         showLoader();
 
         _PedidosPendientes = await Pedido.GetAllPendientes();
-        if (_PedidosPendientes != 200) {
+        if (_PedidosPendientes.status == 500) {
             Tools.Toast("Error inesperado, contacte a su administrador", 'error');
             return;
         } 
 
-        grillaPedidosPendientes(_PedidosPendientes)
+        await grillaPedidosPendientes(_PedidosPendientes)
 
         hideLoader();
     }
@@ -24,7 +24,7 @@ async function obtenerPedidos() {
     }
 }
 
-function grillaPedidosPendientes(pedidosPendientes) {
+async function grillaPedidosPendientes(pedidosPendientes) {
     try {
         const container = document.getElementById('divPedidosPendientes');
         container.innerHTML = '';
@@ -103,7 +103,7 @@ function grillaPedidosPendientes(pedidosPendientes) {
 
                 //Dirección
                 const tdDireccion = document.createElement('td');
-                tdDireccion.textContent = pedido.Direccion || 'N/A';
+                tdDireccion.textContent = pedido.IdMesa !== 0 ? "Mesa " + pedido.IdMesa : (pedido.Direccion || 'N/A');
                 tdDireccion.style.textAlign = 'center';
                 row.appendChild(tdDireccion);
 
@@ -220,11 +220,11 @@ function grillaPedidosPendientes(pedidosPendientes) {
 
 async function actualizarEstadoPedido(id, estado) {    
     try {
-        showLoader();
+        
         let confirmacion = await asyncConfirm(`¿Estás seguro?`);
 
         if (confirmacion) {
-            
+            showLoader();
             const res = await Pedido.actualizarEstadoPedido(id);
 
             if (res.status == 200) {

@@ -188,10 +188,10 @@ function generarGrilla(productosCantidad) {
                     localStorage.setItem('carrito', JSON.stringify(carrito));
 
                     // Obtiene la URL desde el campo oculto
-                    const urlPedidoLogueado = document.getElementById('URLPedidoExpress').value;
+                    const urlPedidoExpress = document.getElementById('URLPedidoExpress').value;
 
-                    // Redirige a la vista PedidoLogueado del controlador Pedido
-                    window.location.href = urlPedidoLogueado;
+                    // Redirige a la vista PedidoExpress del controlador Pedido
+                    window.location.href = urlPedidoExpress;
                 }
 
                 hideLoader();

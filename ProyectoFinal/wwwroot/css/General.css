@@ -83,10 +83,8 @@
 /*FIN PAGINA MAIN*/
 
 /*BOTON GRAL*/
-.btnGeneral {
-    border-color: orangered !important;
-    border: solid;
-    padding: 5% 10%;
+.margenGeneral {
+    margin-top: 15px;
 }
 /*FIN BOTON GRAL*/
 

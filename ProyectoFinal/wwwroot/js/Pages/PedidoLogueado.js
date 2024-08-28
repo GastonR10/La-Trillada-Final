@@ -1,31 +1,41 @@
 ﻿$(document).ready(async function () {
-    showLoader();
-    await cargarInfoPersonal();
-    await cargarMesas("mesasSlc");
+    showLoader();    
+    const mesaId = localStorage.getItem('mesaId');
+    $("#mesaNumero").text(mesaId);
+    const inputDir = document.getElementById("pedidoDomicilioLogueado");
+    const inputLocal = document.getElementById("pedidoLocalLogueado");
+    if (!mesaId) {
+        await cargarInfoPersonal();
+        inputDir.style.display = "block";
+        inputLocal.style.display = "none";
+    } else {
+        inputLocal.style.display = "block";
+        inputDir.style.display = "none";
+    }
     hideLoader();
-
 });
 
 async function cargarInfoPersonal() {
     try {
         let res = await Usuario.ObtenerUsuario();
 
-        if (res.status == 200) {
-            if (res != null) {
-                let inputDir = document.getElementById("direccionPedido");
-
-                inputDir.innerText = res.Direccion;
-            }
-        }
-
         if (res.status == 400) {
             const msj = await res.text();
             Tools.Toast(msj, 'warning');
+            
         }
 
         if (res.status == 500) {
             Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+            return;
         }
+
+        if (res != null) {
+            let inputDir = document.getElementById("direccionPedido");
+
+            inputDir.innerText = res.Direccion;
+        }
+
 
     } catch (ex) {
         await handleError(ex);
@@ -33,28 +43,28 @@ async function cargarInfoPersonal() {
     }
 }
 
-async function TipoPedido(tipoPedido) {
-    try {
+//async function TipoPedido(tipoPedido) {
+//    try {
 
-        let inputGral = document.getElementById("pedidoLogueadoGeneral");
-        inputGral.style.display = "block";
-        let inputDir = document.getElementById("pedidoDomicilioLogueado");
-        let inputLocal = document.getElementById("pedidoLocalLogueado");
+//        let inputGral = document.getElementById("pedidoLogueadoGeneral");
+//        inputGral.style.display = "block";
+//        let inputDir = document.getElementById("pedidoDomicilioLogueado");
+//        let inputLocal = document.getElementById("pedidoLocalLogueado");
 
-        if (tipoPedido == 1) {
-            inputDir.style.display = "block";
-            inputLocal.style.display = "none";
-        } else {
-            inputLocal.style.display = "block";
-            inputDir.style.display = "none";
-        }
-    } catch (ex) {
-        await handleError(ex);
-        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
-    }
+//        if (tipoPedido == 1) {
+//            inputDir.style.display = "block";
+//            inputLocal.style.display = "none";
+//        } else {
+//            inputLocal.style.display = "block";
+//            inputDir.style.display = "none";
+//        }
+//    } catch (ex) {
+//        await handleError(ex);
+//        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+//    }
 
 
-}
+//}
 
 async function RealizarPedidoLog() {
     try {
@@ -80,7 +90,7 @@ async function RealizarPedidoLog() {
 
         } else if (inputLocal.style.display === "block") {
 
-            let mesa = document.getElementById("mesasSlc").value;
+            let mesa = document.getElementById("mesaNumero").textContent;
             if (mesa == 0) {
                 Tools.Toast("Seleccionar mesa", 'warning');
                 hideLoader();

@@ -13,15 +13,15 @@ class Usuario {
     static async AltaDeIngreso(usuario, password) {
         try {
             const url = $("#URLIngresar").val();
-            
+
             const usu = new Usuario(null, null, usuario, password, null, null, null);
 
             const response = await fetch(url, {
-                method: 'POST', 
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(usu) 
+                body: JSON.stringify(usu)
             });
 
             if (response.status == 404) {
@@ -40,8 +40,8 @@ class Usuario {
                     sessionStorage.setItem('Logueado', true);
                     window.location.href = data.redirectUrl;
                 }
-                
-            } 
+
+            }
 
         } catch (ex) {
             throw ex;
@@ -101,7 +101,13 @@ class Usuario {
                 }
             });
 
-            return response;
+            if (response.status != 200) {
+                return response;
+            }
+
+            const data = await response.json();
+
+            return data;
 
         } catch (ex) {
             throw ex;

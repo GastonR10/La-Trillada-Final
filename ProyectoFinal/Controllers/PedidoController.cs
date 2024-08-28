@@ -97,13 +97,12 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
         }
 
-        [Authorize(Policy = "AdminOnly")]
-        [Authorize(Policy = "ClienteOnly")]
+        [Authorize(Policy = "AdminOrCliente")]
         public IActionResult PedidoLogueado()
         {
             return View();
@@ -175,7 +174,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
         }
@@ -241,7 +240,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
         }
@@ -285,7 +284,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
 
@@ -378,7 +377,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
 
@@ -450,7 +449,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
 
@@ -495,7 +494,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
 
@@ -523,7 +522,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
         }
@@ -568,7 +567,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
 
@@ -613,7 +612,7 @@ namespace ProyectoFinal.Controllers
             }
             catch (Exception ex)
             {
-                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} \n {ex.StackTrace}; \n\n");
+                await _errorLogger.LogErrorAsync($"{DateTime.Now}: {ex.Message} {Environment.NewLine} {ex.StackTrace}");
                 return StatusCode(500);
             }
 

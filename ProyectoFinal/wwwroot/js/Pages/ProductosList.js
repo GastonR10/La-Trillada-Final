@@ -29,7 +29,7 @@ async function obtenerProductos() {
 
 
         let tiposProd = await TipoProducto.getTiposProducto();
-        if (res.status == 500) {
+        if (tiposProd.status == 500) {
             Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }
@@ -144,7 +144,7 @@ async function eliminarProducto(productId) {
     }
 }
 
-function vistaEditarProducto(id) {
+async function vistaEditarProducto(id) {
     try {
 
         let redirectUrl = $("#URLGetProductoVista").val();

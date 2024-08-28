@@ -269,7 +269,7 @@ class Pedido {
                 }
             });
 
-            if (response.status != 200) {
+            if (response.status == 500) {
                 return response;
             }
 
