@@ -101,7 +101,6 @@ async function RealizarPedidoLog() {
         }
 
         if (res.status == 200) {
-            Tools.Toast("Pedido realizado con exito!", 'success');
             //Guardo variables para mostrar toaster luego de cambio de vista
             localStorage.setItem('toastMessage', 'Pedido realizado');
             localStorage.setItem('toastType', 'success');

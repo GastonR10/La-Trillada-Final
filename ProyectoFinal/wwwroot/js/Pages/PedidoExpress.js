@@ -89,8 +89,7 @@ async function RealizarPedidoExpress() {
             } 
                          
         }
-        if (res.status == 200) {
-            Tools.Toast("Pedido realizado con exito!", 'success');
+        if (res.status == 200) {            
             //Guardo variables para mostrar toaster luego de cambio de vista
             localStorage.removeItem('carrito');
             localStorage.setItem('toastMessage', 'Pedido realizado');
