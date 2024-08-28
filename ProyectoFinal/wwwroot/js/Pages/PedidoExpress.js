@@ -67,9 +67,9 @@ async function RealizarPedidoExpress() {
                 mensaje += `- Telefono no puede ser vacío.<br>`;
             }
             if (mensaje != "") {
-                Tools.Toast(mensaje, 'warning');
-                return;
+                Tools.Toast(mensaje, 'warning');                
                 hideLoader();
+                return;
             }
             else {
                 res = await Pedido.RealizarPedidoExpress(dir, nom, mail, tel, null, pagoTipo, comentario);
@@ -81,8 +81,8 @@ async function RealizarPedidoExpress() {
             let nombre = document.getElementById("nombrePedExMesa").value;
             if (nombre == "") {
                 Tools.Toast("Ingresar Nombre", 'warning');
-                return;
                 hideLoader();
+                return;                
             } else {
                 res = await Pedido.RealizarPedidoExpress("", nombre, "", -1, mesa, pagoTipo, comentario);
                 
