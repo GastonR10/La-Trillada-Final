@@ -38,8 +38,8 @@ namespace ProyectoFinal.Controllers
                 Usuario? user = await _db.Usuarios
                                 .Where(u => u.NombreUsuario == usuario.NombreUsuario)
                                 .FirstOrDefaultAsync();
-                user = null;
-                if (user.Apellido != null)
+                
+                if (user != null)
                 {
                     PasswordHasher<Usuario> passwordHasher = new PasswordHasher<Usuario>();
                     PasswordVerificationResult verificationResult = passwordHasher.VerifyHashedPassword(null, user.Password, usuario.Password);
