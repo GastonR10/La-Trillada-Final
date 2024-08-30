@@ -436,7 +436,20 @@ namespace ProyectoFinal.Controllers
                         return NotFound();
                     }
 
-                    numeroDestino += pedidoCliente.Cliente.Telefono;
+                    // Verificar si Telefono es null
+                    string telefonoCliente = pedidoCliente.Cliente.Telefono ?? "-1";
+
+                    // Eliminar el primer dígito si es '0'
+                    telefonoCliente = telefonoCliente.TrimStart('0');
+
+                    if (telefonoCliente == "-1")
+                    {
+                        numeroDestino = "-1";
+                    }
+                    else
+                    {
+                        numeroDestino += telefonoCliente;
+                    }
 
                 }
                 else if (tipoPedido == "Express")
@@ -450,7 +463,15 @@ namespace ProyectoFinal.Controllers
                         return NotFound();
                     }
 
-                    numeroDestino += pedidoExpress.Telefono;
+                    if (pedidoExpress.Telefono == "-1")
+                    {
+                        numeroDestino = "-1";
+                    }
+                    else
+                    {
+                        string telefono = pedidoExpress.Telefono.TrimStart('0');
+                        numeroDestino += telefono;
+                    }
                 }
                 else
                 {
@@ -464,7 +485,10 @@ namespace ProyectoFinal.Controllers
 
                 await _db.SaveChangesAsync();
 
-                await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
+                if (numeroDestino != "-1")
+                {
+                    await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
+                }
 
                 return Ok(pedido);
 
