@@ -8,7 +8,12 @@ async function cargarInfo() {
     try {
         let res = await Usuario.ObtenerUsuario();
         
-        if (res.status == 200) {
+        if (res.status == 400) {
+            Tools.Toast('Usuario no encontrado.', 'warning');
+
+        } else if (res.status == 500) {
+            Tools.Toast('Error inesperado, contacte al administrador', 'error');
+        } else {
             res = await res.json();
 
             let inputNombre = document.getElementById("nombre");
@@ -23,12 +28,7 @@ async function cargarInfo() {
             inputTel.value = res.Telefono;
             inputDir.value = res.Direccion;
 
-        } else if (res.status == 400) {
-            Tools.Toast('Usuario no encontrado.', 'warning');
-
-        } else if (res.status == 500) {
-            Tools.Toast('Error inesperado, contacte al administrador', 'error');
-        }
+        } 
 
     } catch (ex) {
         await handleError(ex);
