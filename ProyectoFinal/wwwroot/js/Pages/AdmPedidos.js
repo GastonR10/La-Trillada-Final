@@ -109,7 +109,7 @@ async function grillaPedidosPendientes(pedidosPendientes) {
 
                 // Telefono
                 const tdTelefono = document.createElement('td');
-                tdTelefono.textContent = pedido.Telefono || 'N/A';
+                tdTelefono.textContent = pedido.Telefono != -1 ? pedido.Telefono : 'N/A' ;
                 tdTelefono.style.textAlign = 'center';
                 row.appendChild(tdTelefono);
 
