@@ -37,7 +37,7 @@ async function obtenerProducto() {
         desc.value = producto.Descripcion;
         precio.value = producto.Precio;
         activo.checked = producto.Activo;
-        (producto.Foto || "/img/product/error.png")
+        img.src = producto.Foto || "/img/product/error.png";
         img.alt = producto.Nombre;
         tipo.value = producto.IdTipoProducto;
 
