@@ -106,7 +106,7 @@ namespace ProyectoFinal.Controllers
                     return NotFound($"No existe el tipo de producto con id: {Id}");
                 }
 
-                List<Producto> prods = await _context.Productos.Where(p => p.IdTipoProducto == Id).ToListAsync();
+                List<Producto> prods = await _context.Productos.Where(p => p.IdTipoProducto == Id && p.Eliminado == false).ToListAsync();
 
                 if (prods.Count() > 0)
                 {

@@ -18,10 +18,12 @@ $(document).ready(async function () {
 
         if (res.status == 500) {
             Tools.Toast('Error inesperado, contacte al administrador', 'error');
+            hideLoader();
             return;
         }
 
         if (res.length === 0) {
+            hideLoader();
             return; // No hacer nada si la lista está vacía
         }
 
