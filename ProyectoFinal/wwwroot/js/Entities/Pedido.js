@@ -294,8 +294,8 @@ class Pedido {
                 return pedido;
             });
 
-            // Ordenar por fecha de la más reciente a la más antigua
-            pedidos.sort((a, b) => b.Fecha - a.Fecha);
+            // Ordenar por Id de la más reciente a la más antigua
+            pedidos.sort((a, b) => b.Id - a.Id);
 
             return pedidos;
 

@@ -167,7 +167,7 @@ function esEmailValido(email) {
 
 /* ------------------------------ LOG DE ERRORES ------------------------------  */
 async function handleError(ex) {
-    let errorMessage = `${new Date().toISOString()}: ${ex.message}${os.EOL}${os.EOL}${ex.stack}${os.EOL}${os.EOL};`;
+    let errorMessage = `${new Date().toISOString()}: ${ex.message}${os.EOL}${os.EOL}${ex.stack}${os.EOL}${os.EOL}`;
 
     await fetch('/api/log/error', {
         method: 'POST',
