@@ -232,6 +232,7 @@ async function actualizarEstadoPedido(id, estado) {
 
                 if (estado == 'EnCamino') {
                     mensaje = "El pedido " + id + " fue finalizado con exito";
+                    await obtenerPedidos();
                 }
 
                 if (mensaje != "") Tools.Toast(mensaje, 'success')
