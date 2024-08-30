@@ -101,13 +101,7 @@ class Usuario {
                 }
             });
 
-            if (response.status != 200) {
-                return response;
-            }
-
-            const data = await response.json();
-
-            return data;
+            return response;
 
         } catch (ex) {
             throw ex;

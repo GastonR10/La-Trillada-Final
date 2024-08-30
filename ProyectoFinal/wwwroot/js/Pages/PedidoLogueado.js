@@ -30,9 +30,9 @@ async function cargarInfoPersonal() {
             return;
         }
 
-        if (res != null) {
+        if (res.status == 200) {
+            res = await res.json();
             let inputDir = document.getElementById("direccionPedido");
-
             inputDir.innerText = res.Direccion;
         }
 
