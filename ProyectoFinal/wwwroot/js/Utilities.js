@@ -50,37 +50,7 @@ Tools.Toast = function (mensaje, tipo) {
     }
 };
 
-/* ------------------------------ SELECT PARA CARGAR MESAS ------------------------------  */
-async function cargarMesas(slcId) {
-    try {
-        let res = await Mesa.getMesas();
 
-        if (res.status != 500) {
-            let slcMesas = document.getElementById(slcId);
-
-            // Crear y añadir la opción predeterminada
-            const defaultOption = document.createElement('option');
-            defaultOption.value = '0';
-            defaultOption.text = '-- Seleccionar --';
-            slcMesas.appendChild(defaultOption);
-
-            // Añadir las opciones obtenidas del servidor
-            res.forEach(m => {
-                const option = document.createElement('option');
-                option.value = m.Id;
-                option.text = m.Id;
-                slcMesas.appendChild(option);
-            });
-        } else {
-            Tools.Toast("Error inesperado, contacte al administrador", 'error');
-        }
-
-    } catch (ex) {
-        await handleError(ex);
-        Tools.Toast("Error inesperado, contacte al administrador", 'error');
-    }
-
-}
 
 /* ------------------------------ AVISAR NUEVO PEDIDO SIGNALR ------------------------------  */
 function avisarNuevoPedido() {

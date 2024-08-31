@@ -1,6 +1,5 @@
 ﻿$(document).ready(async function () {
     showLoader();
-    //await cargarMesas("mesasSlc");
     const mesaId = localStorage.getItem('mesaId');
     $("#mesaNumero").text(mesaId);
 
