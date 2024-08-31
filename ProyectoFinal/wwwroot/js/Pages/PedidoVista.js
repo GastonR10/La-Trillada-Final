@@ -14,11 +14,11 @@ async function cargarPedido() {
         _idPedido = id;
         let pedido = await Pedido.getPedido(id);
 
-        if (pedidos.status == 500) {
+        if (pedido.status == 500) {
             Tools.Toast('Error inesperado, contacte al administrador', 'error');
             return;
         }
-        if (pedidos.status == 404) {
+        if (pedido.status == 404) {
             let msj = await pedidos.text();
             Tools.Toast(msj, 'warning');
             return;
