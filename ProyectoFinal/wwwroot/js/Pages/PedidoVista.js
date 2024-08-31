@@ -135,9 +135,7 @@ async function cargarPedido() {
         const btnVolver = document.getElementById('btnVolver');
 
         btnEstado.onclick = async function () {
-            showLoader();
             await actualizarEstadoPedido(_idPedido, pedido.Estado); // Reemplaza _idPedido con el ID del pedido
-            hideLoader();
         };
 
         btnCancelar.onclick = async function () {
@@ -182,6 +180,7 @@ async function cargarPedido() {
             let confirmacion = await asyncConfirm(`¿Está seguro?`);
 
             if (confirmacion) {
+                showLoader();
                 await Pedido.actualizarEstadoPedido(id);
 
                 await cargarPedido();
@@ -194,7 +193,7 @@ async function cargarPedido() {
                 } else if (estado == 'EnCamino') {
                     mensaje = "El pedido " + id + " fue finalizado con exito";
                 }
-
+                hideLoader();
                 Tools.Toast(mensaje, 'success')
             }
 
@@ -209,22 +208,28 @@ async function cargarPedido() {
             let confirmacion = await asyncConfirm(`¿Está seguro que desea cancelar?`);
 
             if (confirmacion) {
+                showLoader();
                 const res = await Pedido.cancelarPedido(id);
 
                 if (res.status == 500) {
                     Tools.Toast("Error inesperado, contacte a su administrador", 'error');
+                    hideLoader();
+                    return;
                 }
 
                 if (res.status == 404) {
                     Tools.Toast("Problemas buscando el pedido.", 'warning');
+                    hideLoader();
+                    return;
                 }
 
                 if (res.status == 200) {
                     await cargarPedido();
-
-                    Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success')
+                    Tools.Toast('El pedido ' + id + ' fue cancelado con exito', 'success');
+                    hideLoader();
+                    return;
                 }
-
+                hideLoader();
             }
 
         } catch (ex) {
