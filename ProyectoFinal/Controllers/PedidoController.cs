@@ -490,7 +490,7 @@ namespace ProyectoFinal.Controllers
                     await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
                 }
 
-                return Ok(pedido);
+                return Ok();
 
 
             }
