@@ -139,9 +139,7 @@ async function cargarPedido() {
         };
 
         btnCancelar.onclick = async function () {
-            showLoader();
             await cancelarPedido(_idPedido); // Reemplaza _idPedido con el ID del pedido
-            hideLoader();
         };
 
         btnVolver.onclick = function () {
