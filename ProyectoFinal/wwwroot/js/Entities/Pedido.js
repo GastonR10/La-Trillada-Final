@@ -248,7 +248,7 @@ class Pedido {
             ];
 
             // Ordenar por número de pedido (Id)
-            pedidos.sort((a, b) => a.Id - b.Id);
+            pedidos.sort((a, b) => b.Id - a.Id);
 
             return pedidos;
 
