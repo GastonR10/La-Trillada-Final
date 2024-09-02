@@ -43,29 +43,6 @@ async function cargarInfoPersonal() {
     }
 }
 
-//async function TipoPedido(tipoPedido) {
-//    try {
-
-//        let inputGral = document.getElementById("pedidoLogueadoGeneral");
-//        inputGral.style.display = "block";
-//        let inputDir = document.getElementById("pedidoDomicilioLogueado");
-//        let inputLocal = document.getElementById("pedidoLocalLogueado");
-
-//        if (tipoPedido == 1) {
-//            inputDir.style.display = "block";
-//            inputLocal.style.display = "none";
-//        } else {
-//            inputLocal.style.display = "block";
-//            inputDir.style.display = "none";
-//        }
-//    } catch (ex) {
-//        await handleError(ex);
-//        Tools.Toast("Error inesperado, contacte a su administrador", 'error');
-//    }
-
-
-//}
-
 async function RealizarPedidoLog() {
     try {
         showLoader();
@@ -110,15 +87,13 @@ async function RealizarPedidoLog() {
 
         } else if (res.status == 500) {
             Tools.Toast('Error inesperado, contacte al administrador', 'error');
-            hideLoader();
 
         } else if (res.status == 400) {
             const msj = await res.text();
             Tools.Toast(msj, 'warning');
-            hideLoader();
         }
         
-
+        hideLoader();
 
     } catch (ex) {
         await handleError(ex);

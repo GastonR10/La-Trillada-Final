@@ -33,7 +33,7 @@ namespace ProyectoFinal.Controllers
             return View("PedidoVista", id);
         }
 
-        [Authorize(Policy = "ClienteOnly")]   
+        [Authorize(Policy = "ClienteOnly")]
         [HttpGet("Pedido/VerPedidoCliente/{id}")]
         public IActionResult VerPedidoCliente(int id)
         {
@@ -102,7 +102,13 @@ namespace ProyectoFinal.Controllers
             }
         }
 
-        [Authorize(Policy = "AdminOrCliente")]
+        [Authorize(Policy = "AdminOnly")]
+        public IActionResult PedidoAdmin()
+        {
+            return View();
+        }
+
+        [Authorize(Policy = "ClienteOnly")]
         public IActionResult PedidoLogueado()
         {
             return View();
@@ -125,7 +131,7 @@ namespace ProyectoFinal.Controllers
                     return BadRequest("El usuario no existe.");
                 }
 
-                if(existingUser.CarritoAbierto != null && existingUser.CarritoAbierto.CantidadesProductos.Count == 0)
+                if (existingUser.CarritoAbierto != null && existingUser.CarritoAbierto.CantidadesProductos.Count == 0)
                 {
                     return BadRequest("Carrito vacío.");
                 }
@@ -161,13 +167,13 @@ namespace ProyectoFinal.Controllers
                 await _hubContext.Clients.All.SendAsync("RecibirPedido", pedido.Id);
 
 
-                if(HttpContext.Session.GetString("rol") == "Cliente")
+                if (HttpContext.Session.GetString("rol") == "Cliente")
                 {
                     string numeroDestino = "+598" + existingUser.Telefono;
                     string mensaje = "¡Hola! tu pedido fue recibido, en seguida lo confirmamos.";
 
                     await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
-                }                
+                }
 
                 return Ok();
 
@@ -189,7 +195,7 @@ namespace ProyectoFinal.Controllers
         {
             try
             {
-                if(rp.Carrito.ProductosCantidad == null || rp.Carrito.ProductosCantidad.Count == 0)
+                if (rp.Carrito.ProductosCantidad == null || rp.Carrito.ProductosCantidad.Count == 0)
                 {
                     return BadRequest("Carrito vacío");
                 }
@@ -227,13 +233,13 @@ namespace ProyectoFinal.Controllers
 
                 await _hubContext.Clients.All.SendAsync("RecibirPedido", pedido.Id);
 
-                if(rp.Tel != -1)
+                if (rp.Tel != -1)
                 {
                     string numeroDestino = "+598" + pedido.Telefono;
                     string mensaje = "¡Hola! tu pedido fue recibido, en seguida lo confirmamos.";
 
                     await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
-                }                
+                }
 
                 return Ok();
 
@@ -323,16 +329,16 @@ namespace ProyectoFinal.Controllers
                     string telefonoCliente = pedidoCliente.Cliente.Telefono ?? "-1";
 
                     // Eliminar el primer dígito si es '0'
-                    telefonoCliente = telefonoCliente.TrimStart('0');                    
+                    telefonoCliente = telefonoCliente.TrimStart('0');
 
-                    if(telefonoCliente == "-1")
+                    if (telefonoCliente == "-1")
                     {
                         numeroDestino = "-1";
                     }
                     else
                     {
                         numeroDestino += telefonoCliente;
-                    }                   
+                    }
 
                 }
                 else if (tipoPedido == "Express")
@@ -346,20 +352,21 @@ namespace ProyectoFinal.Controllers
                         return NotFound();
                     }
 
-                    if(pedidoExpress.Telefono == "-1")
+                    if (pedidoExpress.Telefono == "-1")
                     {
                         numeroDestino = "-1";
-                    } else
+                    }
+                    else
                     {
                         string telefono = pedidoExpress.Telefono.TrimStart('0');
                         numeroDestino += telefono;
-                    }                    
+                    }
                 }
                 else
                 {
                     // Manejo de otros tipos de pedidos o error
                     return NotFound();
-                }                
+                }
 
                 switch (pedido.Estado)
                 {
@@ -387,12 +394,12 @@ namespace ProyectoFinal.Controllers
 
                 _db.Pedidos.Update(pedido);
 
-                await _db.SaveChangesAsync();      
-                
-                if(numeroDestino != "-1")
+                await _db.SaveChangesAsync();
+
+                if (numeroDestino != "-1")
                 {
                     await _whatsAppService.EnviarNotificacionWhatsAppAsync(numeroDestino, mensaje);
-                }                
+                }
 
                 return Ok(pedido.Estado);
 
@@ -594,22 +601,22 @@ namespace ProyectoFinal.Controllers
                     // Si el usuario no existe, retornar un BadRequest con un mensaje
                     return BadRequest("El usuario no existe.");
                 }
-                 
+
                 List<PedidoCliente> pedidosCliente = await _db.Pedidos.OfType<PedidoCliente>()
                                                       .Include(p => p.Cliente)
                                                       .Include(p => p.Carrito)
                                                             .ThenInclude(c => c.CantidadesProductos)
-                                                                .ThenInclude(pc => pc.Producto)      
+                                                                .ThenInclude(pc => pc.Producto)
                                                       .Where(p => p.ClienteId == existingUser.Id)
                                                       .ToListAsync();
 
-              
+
 
                 List<DTO_PedidoCliente> pedidosClienteDTO = pedidosCliente.Select(p => new DTO_PedidoCliente(p)).ToList();
 
 
                 return Ok(pedidosClienteDTO);
-                    
+
 
             }
             catch (Exception ex)

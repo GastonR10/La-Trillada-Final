@@ -6,12 +6,14 @@
 
 </div>
 
+<input type="hidden" id="rolUsuario" value="@ViewBag.RolUsuario" />
 
 <div style="display:none;">
     @* @Html.Hidden("URLGetProductIds", Url.Action("GetProductIds", "Producto")) *@
     @Html.Hidden("URLObtenerProductosCarrito", Url.Action("ObtenerProductosCarrito", "Carrito"))
     @Html.Hidden("URLEliminarLinea", Url.Action("EliminarLinea", "Carrito"))
     @Html.Hidden("URLPedidoLogueado", Url.Action("PedidoLogueado", "Pedido"))   
+    @Html.Hidden("URLPedidoAdmin", Url.Action("PedidoAdmin", "Pedido"))
     @Html.Hidden("URLActualizarComentarios", Url.Action("ActualizarComentarios", "ProductoCantidad"))
     @Html.Hidden("URLPedidoExpress", Url.Action("PedidoExpress", "Pedido"))
 

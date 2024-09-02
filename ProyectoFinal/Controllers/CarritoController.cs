@@ -20,6 +20,7 @@ namespace ProyectoFinal.Controllers
 
         public IActionResult Carrito()
         {
+            ViewBag.RolUsuario = HttpContext.Session.GetString("rol");
             return View();
         }
 
@@ -71,7 +72,7 @@ namespace ProyectoFinal.Controllers
                     // Si el usuario no existe, retornar un BadRequest con un mensaje
                     return BadRequest("El usuario no existe.");
                 }
-
+                                
                 decimal total = 0;
                 // Verificar si el CarritoAbierto es nulo
                 if (existingUser.CarritoAbierto == null)

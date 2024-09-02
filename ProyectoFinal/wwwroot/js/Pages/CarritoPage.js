@@ -154,12 +154,23 @@ function generarGrilla(productosCantidad) {
                     // Llamar a la función para agregar los comentarios en masa
                     const res = await ProductoCantidad.AgregarComentariosMasivo(duplas);
 
-                    if (res.status == 200) {
-                        // Obtiene la URL desde el campo oculto
-                        const urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
+                    if (res.status == 200) {                       
+                        
+                                               
+                        if (document.getElementById("rolUsuario").value == "Cliente") {
+                            // Obtiene la URL desde el campo oculto
+                            const urlPedidoLogueado = document.getElementById('URLPedidoLogueado').value;
 
-                        // Redirige a la vista PedidoLogueado del controlador Pedido
-                        window.location.href = urlPedidoLogueado;
+                            // Redirige a la vista PedidoLogueado del controlador Pedido
+                            window.location.href = urlPedidoLogueado;
+                        } else {
+                            // Obtiene la URL desde el campo oculto
+                            const urlPedidoAdmin = document.getElementById('URLPedidoAdmin').value;
+
+                            // Redirige a la vista PedidoAdmin del controlador Pedido
+                            window.location.href = urlPedidoAdmin;
+                        }
+                        
                     }
                     if (res.status == 500) {
                         Tools.Toast("Error inesperado, contacte a su administrador", 'error');
